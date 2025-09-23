@@ -1,0 +1,121 @@
+\chapter{相似理论}
+\section{化归相似对角化的基本局面}
+\DOne+\DTwoThree
+
+若 $n$ 阶矩阵 $A$ 有 $n$ 个线性无关的特征向量，则 $A$ 可相似对角化，且有
+$$[\xi_1, \xi_2, \cdots, \xi_n]^{-1} A [\xi_1, \xi_2, \cdots, \xi_n] = \begin{bmatrix} \lambda_1 & & \\ & \lambda_2 & \\ & & \ddots \\ & & & \lambda_n \end{bmatrix},$$
+牢记这个形式．
+
+\section{用各种条件判$A$能否相似对角化}
+\DOne+\DTwoTwo
+
+$\star \star \star$
+
+\begin{enumerate}
+    \item 充要条件
+          \begin{enumerate}
+              \item $A$有$n$个线性无关的特征向量 $\Leftrightarrow A \sim\Lambda$
+              \item $n_i = n - r(\lambda_i E - A) \Leftrightarrow A \sim \Lambda$.
+          \end{enumerate}
+    \item 充分条件
+          \begin{enumerate}
+              \item $A$是实对称矩阵$\Leftrightarrow A \sim \Lambda$.
+              \item $A$有$n$个互异特征值$\Leftrightarrow A \sim \Lambda$.
+              \item $A^k=E$($k$为正整数) $\Leftrightarrow A \sim \Lambda$.
+              \item $A^2 - (k_1 + k_2)A + k_1 k_2 E = O$ 且 $k_1 \neq k_2 \Rightarrow A \sim \Lambda$.
+              \item $r(A) = 1$ 且 $\text{tr}(A) \neq 0 \Rightarrow A \sim \Lambda$.
+          \end{enumerate}
+    \item 必要条件
+
+          $A \sim \Lambda \Rightarrow r(A) =$ 非零特征值的个数 (重根按重数算).
+    \item 否定条件
+          \begin{enumerate}
+              \item $A \neq O$, $A^k = O$ ($k$ 为大于 1 的整数) $\Rightarrow A$ 不可相似对角化.
+              \item $A$ 的特征值全为 $k$, 但 $A \neq kE \Rightarrow A$ 不可相似对角化.
+          \end{enumerate}
+\end{enumerate}
+
+\section{非对称矩阵$A$与实对称矩阵$A$相似对角化的异同}
+\DOne+\DTwoOne
+
+\begin{enumerate}
+    \item 非对称矩阵$A$不存在正交矩阵$Q$，使其相似对角化
+    \item 实对称矩阵$A$存在正交矩阵$Q$，使其相似对角化
+\end{enumerate}
+\section{$A$与$B$相似}
+\DOne+\DTwoOne+\PFour
+
+$\star \star \star$
+
+\begin{enumerate}
+    \item 若$A$相似于$B$，则
+          \begin{enumerate}
+              \item $|A| = |B|$;
+              \item $r(A)=r(B)$;
+              \item $tr(A)=tr(B)$;
+              \item $\lambda_{A} = \lambda_{B}$ (或 |$\lambda E - A$| = |$\lambda E - B$|);
+              \item 属于 $\lambda_{A}$ 的线性无关的特征向量的个数等于属于 $\lambda_{B}$ 的线性无关的特征向量的个数;
+              \item $A, B$  的各阶主子式之和分别相等.
+          \end{enumerate}
+
+    \item 若$A$相似于$\Lambda$,$B$相似于$\Lambda$,则$A$相似于$B$.
+    \item 若$A$相似于$B$，$B$相似于$\Lambda$,则$A$相似于$\Lambda$.
+    \item $A$与$B$的相似手段的“三同一不同”.
+
+          若 $P^{-1}AP = B$, 则 $P^{-1}f(A)P = f(B)$, $P^{-1}A^{-1}P = B^{-1}$, $P^{-1}A^{*}P = B^{*}$, 即 $f(A)$ 与 $f(B)$, $A^{-1}$ 与 $B^{-1}$, $A^{*}$ 与 $B^{*}$ 相似的手段相同, 也即 $P^{-1}[af(A) + bA^{-1} + cA^{*}]P = af(B) + bB^{-1} + cB^{*}$. 但 $A^{T}$ 与 $B^{T}$ 相似的手段与上面不同.
+\end{enumerate}
+\section{相似对角化的应用}
+\DOne+\DTwoTwo
+
+\begin{example}{}{}
+    已知数列 $\{x_n\}$, $\{y_n\}$, $\{z_n\}$ 满足 $x_0 = -1$, $y_0 = 0$, $z_0 = 2$, 且
+    $$\begin{cases}
+            x_n = -2x_{n-1} + 2z_{n-1}, \\
+            y_n = -2y_{n-1} - 2z_{n-1}, \\
+            z_n = -6x_{n-1} - 3y_{n-1} + 3z_{n-1},
+        \end{cases}$$
+    记 $\alpha_n = \begin{bmatrix} x_n \\ y_n \\ z_n \end{bmatrix}$, 写出满足 $\alpha_n = A\alpha_{n-1}$ 的矩阵 $A$, 并求 $A^n$ 及 $x_n$, $y_n$, $z_n (n=1,2,\cdots)$.
+\end{example}
+\begin{solution}
+    由题设得$\begin{bmatrix}x_n\\y_n\\z_n\end{bmatrix}=\begin{bmatrix}-2&0&2\\0&-2&-2\\-6&-3&3\end{bmatrix}\begin{bmatrix}x_{n-1}\\y_{n-1}\\z_{n-1}\end{bmatrix}$，得矩阵$A=\begin{bmatrix}-2&0&2\\0&-2&-2\\-6&-3&3\end{bmatrix}$满足$\alpha_n=A\alpha_{n-1}$.
+
+    因为
+
+    $|\lambda E-A|=\begin{vmatrix}\lambda+2&0&-2\\0&\lambda+2&2\\6&3&\lambda-3\end{vmatrix}=\lambda(\lambda-1)(\lambda+2)$，
+
+    所以矩阵$A$的特征值为$\lambda_1=0$，$\lambda_2=1$，$\lambda_3=-2$.
+
+    当$\lambda_1=0$时，解方程组$(0E-A)x=0$，得特征向量$\xi_1=\begin{bmatrix}1&-1&1\end{bmatrix}^{T}$；
+
+    当$\lambda_2=1$时，解方程组$(E-A)x=0$，得特征向量$\xi_2=\begin{bmatrix}2&-2&3\end{bmatrix}^{T}$；
+
+    当$\lambda_3=-2$时，解方程组$(-2E-A)x=0$，得特征向量$\xi_3=\begin{bmatrix}-1&2&0\end{bmatrix}^T$.
+
+    令$P=[\xi_1,\xi_2,\xi_3]=\begin{bmatrix}1&2&-1\\-1&-2&2\\1&3&0\end{bmatrix}$，则$P^{-1}AP=\begin{bmatrix}0&0&0\\0&1&0\\0&0&-2\end{bmatrix}$，即$A=P\begin{bmatrix}0&0&0\\0&1&0\\0&0&-2\end{bmatrix}P^{-1}$，从而得$A^n=P\begin{bmatrix}0&0&0\\0&1&0\\0&0&-2\end{bmatrix}^nP^{-1}=\begin{bmatrix}1&2&-1\\-1&-2&2\\1&3&0\end{bmatrix}\begin{bmatrix}0&0&0\\0&1&0\\0&0&(-2)^n\end{bmatrix}\begin{bmatrix}6&3&-2\\-2&-1&1\\1&1&0\end{bmatrix}$
+
+    $$=\begin{bmatrix}-4-(-2)^n&-2-(-2)^n&2\\4-(-2)^{n+1}&2-(-2)^{n+1}&-2\\-6&-3&3\end{bmatrix}$$.
+
+    由递推式$\alpha_n=A\alpha_{n-1}$知$\alpha_n=A^n\alpha_0$，其中$\alpha_0=\begin{bmatrix}-1&0&2\end{bmatrix}^T$，所以
+
+    $\alpha_n=A^n\alpha_0=\begin{bmatrix}-4-(-2)^n&-2-(-2)^n&2\\4-(-2)^{n+1}&2-(-2)^{n+1}&-2\\-6&-3&3\end{bmatrix}\begin{bmatrix}-1\\0\\2\end{bmatrix}=\begin{bmatrix}8+(-2)^n\\-8+(-2)^{n+1}\\12\end{bmatrix}$，
+
+    故$x_n=8+(-2)^n$，$y_n=-8+(-2)^{n+1}$，$z_n=12(n=1,2,\cdots)$.
+\end{solution}
+
+\section{正交矩阵及其使用}
+\DOne + \DTwoOne
+
+$\star \star \star$
+
+\begin{enumerate}
+    \item 若$A$为正交矩阵，则
+          $$A^\top A = E \Leftrightarrow A^{-1} = A^\top$$
+          $$\Leftrightarrow A \text{ 由规范正交基组成 }$$
+          $$\Leftrightarrow A^{\mathrm{T}}\text{是正交矩阵}$$
+          $$\Leftrightarrow A^{-1}\text{是正交矩阵}$$
+          $$\Leftrightarrow A^{*}\text{是正交矩阵}$$
+          $$\Leftrightarrow-A\text{是正交矩阵.}$$
+    \item 若$A,B$为同阶正交矩阵，则$AB$为正交矩阵，但$A+B$不一定为正交矩阵.
+    \item ${\text{若 }A\text{ 为正交矩阵，则其实特征值的取值范围为}\{-1,1\}}.$
+    \item 设$A$为$n$阶非零矩阵，$\begin{cases}\text{若}a_{ij}=A_{ij},\text{则}A^{\mathrm{T}}=A^{*},AA^{\mathrm{T}}=E,\text{且}\mid A\mid=1;\\\text{若}a_{ij}=-A_{ij},\text{则}A^{\mathrm{T}}=-A^*,AA^{\mathrm{T}}=E,\text{且}\mid A\mid=-1.\end{cases}$
+\end{enumerate}

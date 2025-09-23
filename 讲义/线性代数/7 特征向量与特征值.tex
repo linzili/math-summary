@@ -1,0 +1,73 @@
+\chapter{特征向量与特征值}
+\term{求解利用} $A$的特征值与特征向量
+
+\section{利用特征值命题}
+\DOne +\DTwoTwo
+\begin{enumerate}
+    \item $\lambda_0$是$A$ 的特征值$\Leftrightarrow|\lambda_0E-A|=0$(建立方程求参数或证明行列式 $|\lambda_0E-A|=0$ );
+          $\lambda_0$不是$A$ 的特征值$\Leftrightarrow|\lambda_0E-A|\neq0$(矩阵可逆，满秩).
+    \item 若$\lambda_1,\lambda_2,\cdots,\lambda_n$是$A$的 $n$个特征值，则
+
+          $$\begin{cases}|A|=\lambda_1\lambda_2\cdots\lambda_n\:,\\\mathrm{tr}\left(A\right)=\lambda_1+\lambda_2+\cdots+\lambda_n\:.\end{cases}$$
+    \item \begin{enumerate}
+              \item 记住下表
+                    \begin{table}[h]
+                        \centering
+                        \begin{tabular}{|c|c|c|c|c|c|c|}
+                            \hline
+                            矩阵      & $A$       & $f(A)$       & $A^{-1}$            & $f(A^*)$               & $P^{-1}AP=B$ & $P^{-1}f(A)P=B$ \\
+                            \hline
+                            特征值     & $\lambda$ & $f(\lambda)$ & $\frac{1}{\lambda}$ & $\frac{|A|}{\lambda} $ & $\lambda$    & $f(\lambda)$    \\
+                            \hline
+                            对应的特征向量 & $\xi$     & $\xi$        & $\xi$               & $\xi$                  & $P^{-1}\xi$  & $P^{-1}\xi$     \\
+                            \hline
+                        \end{tabular}
+                    \end{table}
+
+                    表中$\lambda$在分母上的，设 $\lambda != 0$
+                    \begin{note}{}{}
+                        当$\lambda\neq0$ 时，$af(A)\pm bA^{-1}\pm cA^{.}$的特征值为$af\left(\lambda\right)\pm b\frac1\lambda\pm c\frac{|A|}\lambda$,特征向量仍为$\xi$.但
+                        $f(A),A^{-1},A^*$ 与$A^T$,$B$ 的线性组合因特征向量不同，无上述规律.
+                    \end{note}
+              \item $\text{虽然 }A^\mathrm{T}\text{ 的特征值与 }A\text{ 相同,但特征向量不再是 }\xi\text{,要单独计算才能得出 }.$
+                    \begin{note}{}{}
+                        $ A^\mathrm{T}\text{ 和 }A\text{ 属于不同特征值的特征向量正交 }.$
+                    \end{note}
+              \item 归零原则.
+                    \begin{enumerate}
+                        \item 归零准则一: 设$f(x)$为多项式, 若矩阵$A$满足$f(A)=O$, $\lambda$是$A$的任一特征值, 则$\lambda$满足$f(\lambda)=0$.
+                        \item 归零准则二：设$n$ 阶方阵 $A$ 的特征多项式为$f(\lambda)=|\lambda E-A|=\lambda^n+a_{n-1}\lambda^{n-1}+\cdots+a_1\lambda+a_0$,则$A$ 的
+                              多项式$f(A)$为零矩阵，即$f( A) = A^{n }+ a_{n- 1}A^{n- 1}+ \cdots + a_{1}A+ a_{0}E= O$ .
+                    \end{enumerate}
+          \end{enumerate}
+\end{enumerate}
+
+\section{利用特征向量命题}
+\DOne + \DTwoTwo
+\begin{enumerate}
+    \item $\xi(\neq0)$是$A$的属于$\lambda_{0}$的特征向量$\Leftrightarrow\xi$是$(\lambda_{0}E-A)x=0$的非零解.\DTwoTwo
+    \item 重要结论.
+          \begin{enumerate}
+              \item 单根恰有$1$个线性无关的特征向量．
+              \item $k$重特征值$\lambda$至多只有$k$个线性无关的特征向量($k≥2$)．
+              \item 若$\xi_1,\xi_2$是$A$的属于不同特征值$\lambda_1,\lambda_2$的特征向量，则$\xi_1,\xi_2$线性无关.
+              \item 若$\xi_1,\xi_2$是$A$ 的属于同一特征值 $\lambda$ 的特征向量，则当 $k_1k_2\neq0$ 时，非零向量 $k_1\xi_1+k_2\xi_2$仍是 $A$ 的属于特征值$\lambda$的特征向量(常考其中一个系数(如$k_2$)等于0的情形).
+              \item 若$\xi_1,\xi_2$是$A$的属于不同特征值$\lambda_1,\lambda_2$的特征向量，则当$k_1\neq0,k_2\neq0$时，$k_1\xi_1+k_2\xi_2$不是$A$的任何特征值的特征向量(常考$k_1=k_2=1$的情形 ).
+              \item 若 $\xi$ 是 $A$ 的属于特征值 $\lambda_1$ 的特征向量，$\lambda_1 \neq \lambda_2$，则 $\xi$ 不是 $\lambda_2$ 的特征向量.
+              \item 若$A$只有$1$个线性无关的特征向量，即$\sum_{i=1}^{m}[n-r(\lambda_{i}E-A)]=1$，$\lambda_{i}(i=1,2,\cdots,m)$是A的m个不同特征值，则只能有一个$\lambda_{k}(1\leqslant k\leqslant m)$，使$r(\lambda_{k}E-A)=n-1$，而其余$r(\lambda_{i}E-A)=n$，这与$r(\lambda_{i}E-A)<n$矛盾。故A只能有一个$\lambda_{k}$，且此$\lambda_{k}$为n重特征值.
+              \item 设$n$阶矩阵$A，B$满足$AB=BA$，且$A$有$n$个互不相同的特征值，则$A$的特征向量都是$B$的特征向量.
+              \item 若 $r(A) + r(B) < n$，则 $Ax = 0$，$Bx = 0$ 至少有一个公共非零解 $\xi$.
+          \end{enumerate}
+\end{enumerate}
+\section{利用矩阵方程命题}
+\DOne + \DTwoTwo + \DTwoThree
+
+\begin{enumerate}
+    \item $AB=O \Rightarrow A[\beta_1, \beta_2, \cdots, \beta_n] = [0, 0, \cdots, 0]$, 即 $A\beta_i = 0\beta_i (i=1, 2, \cdots, n)$, 若 $\beta_i$ 均为非零列向量, 则 $\beta_i$ 为 $A$ 的属于特征值 $\lambda=0$ 的特征向量.
+    \item 若任意 $n$ 维列向量 $\xi (\neq 0)$ 均为 $(\lambda E - A)x = 0$ 的解, 则令 $e_1 = \begin{bmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{bmatrix}$, $e_2 = \begin{bmatrix} 0 \\ 1 \\ \vdots \\ 0 \end{bmatrix}$, $\cdots$, $e_n = \begin{bmatrix} 0 \\ \vdots \\ 0 \\ 1 \end{bmatrix}$,且$\boldsymbol{B}=[\boldsymbol{e}_{1},\boldsymbol{e}_{2},\cdots,\boldsymbol{e}_{n}]$，于是$(\lambda\boldsymbol{E}-\boldsymbol{A})\boldsymbol{B}=\boldsymbol{O}$，由于$\boldsymbol{B}$可逆，因此有$\lambda\boldsymbol{E}-\boldsymbol{A}=\boldsymbol{O}$，即$\boldsymbol{A}=\lambda\boldsymbol{E}$.
+    \item $AB = C \Rightarrow A[\beta_1, \beta_2, \cdots, \beta_n] = [\gamma_1, \gamma_2, \cdots, \gamma_n] = [\lambda_1\beta_1, \lambda_2\beta_2, \cdots, \lambda_n\beta_n]$, 即 $A\beta_i = \lambda_i\beta_i (i=1, 2, \cdots, n)$, 其中 $\gamma_i = \lambda_i\beta_i$, $\beta_i$ 为非零列向量, 则 $\beta_i$ 为 $A$ 的属于特征值 $\lambda_i$ 的特征向量.
+    \item  $AP = PB$, $P$ 可逆 $\Rightarrow P^{-1}AP = B \Rightarrow A \sim B \Rightarrow \lambda_A = \lambda_B$.
+    \item $A$ 的每行元素之和均为 $k \Rightarrow A\begin{bmatrix} 1 \\ 1 \\ \vdots \\ 1 \end{bmatrix} = k\begin{bmatrix} 1 \\ 1 \\ \vdots \\ 1 \end{bmatrix}\Rightarrow k$ 是特征值, $\begin{bmatrix} 1 \\ 1 \\ \vdots \\ 1 \end{bmatrix}$ 是 $A$ 的属于特征值 $k$ 的特征向量.
+    \item 若 $A$ 可逆, $A$ 的每行元素之和均为 $k$, 则 $A^{-1}$ 的每行元素之和均为 $\frac{1}{k}$.
+    \item 若 $A$ 的每行元素之和均为 $k$, 则 $A^n$ 的每行元素之和均为 $k^n$.
+\end{enumerate}

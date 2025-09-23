@@ -1,0 +1,166 @@
+\chapter{二次型}
+\section{$f=x^TAx$ 中$A$的表示}
+\DOne+\DTwoThree
+
+\begin{enumerate}
+    \item 给出非对称矩阵 $B$,令$A=\frac{B+B^T}{2}$,则$A=A^\mathrm{T}.$
+    \item 通过题设或基本变形显化出 $A.$
+\end{enumerate}
+
+\section{配方法与正交变换法的异同}
+
+\begin{enumerate}
+    \item 命题语言
+          \DTwoTwo
+          \begin{enumerate}
+              \item 配方法
+
+                    二次型语言：将 $f = x^T A x$ 通过配方法化为标准形，并求出可逆变换矩阵 $C$．
+
+                    矩阵语言：求可逆矩阵 $C$，使得 $C^T A C = \Lambda$．
+              \item 正交变换法
+
+                    二次型语言：将 $f = x^T A x$ 通过正交变换法化为标准形，并求出正交矩阵 $Q$．
+
+                    矩阵语言：求正交矩阵 $Q$，使得 $Q^T A Q = \Lambda$．
+          \end{enumerate}
+    \item 过程与结果的异同
+          \DTwoThree
+
+          设$f(x)=x^TAx$.
+          \begin{enumerate}
+              \item 配方法(可逆线性变换)
+
+                    $x=Cy$,$C$可逆.使得$f\xlongequal{x=\boldsymbol{C}y}y^T\Lambda y$,其中$C^TAC=\Lambda$(使$A$合同于对角矩阵).
+              \item 正交变换法(可逆线性变换):
+
+                    $x=Qy$（这里的$Q$不仅可逆，还满足$Q^{-1}=Q^{T}$），使得$f\xlongequal{x=\boldsymbol{Q}y}y^T\Lambda y$，其中$Q^{T}AQ=Q^{-1}AQ=A$.
+          \end{enumerate}
+          二者区别：在配方法中，$c$只满足可逆，所以$c^{-1}$不一定等于$c^T$,但是在正交变换法中，变换手段$Q$满足$Q^{- 1}= Q^T$ .
+
+          二者相同点：它们的正、负惯性指数是对应相等的.
+    \item 惯性指数
+          \begin{example}{}{}
+              $f(x_{1},x_{2},x_{3})=-2x_{1}x_{2}-2x_{1}x_{3}+6x_{2}x_{3}$的正惯性指数为（　　）．
+          \end{example}
+          \begin{solution}
+              令$\begin{cases}x_{1}=y_{1}+y_{2},\\x_{2}=y_{1}-y_{2},\end{cases}$则
+
+              $$f=-2y_{1}^{2}+2y_{2}^{2}+4y_{1}y_{3}-8y_{2}y_{3}
+                  =-2(y_{1}-y_{3})^{2}+2(y_{2}-2y_{3})^{2}-6y_{3}^{2},$$
+
+              再令$\begin{cases}z_{1}=y_{1}-y_{3},\\z_{2}=y_{2}-2y_{3},\end{cases}$则
+
+              $$f=-2z_{1}^{2}+2z_{2}^{2}-6z_{3}^{2},$$
+
+              故$f$的正惯性指数为1.
+          \end{solution}
+\end{enumerate}
+
+\section{伪配方法}
+\DTwoThree
+
+“平方和式$A^2+B^2+C^2$”未必就是(拉格朗日)配方法得来的结果，故若非拉格朗日配方法，则称伪配方法.要注意伪配方法的变换矩阵是否有可逆性.
+\begin{enumerate}
+    \item 如果变换没有可逆性，则有可能改变表达式的几何性质，如封闭性，此时不能得出平方和式正定；
+    \item 如果变换是可逆的，则平方和式正定.
+\end{enumerate}
+
+
+\begin{note}{}{}
+    对于$f(x_{1},x_{2},x_{3})=(a_{1}x_{1}+a_{2}x_{2}+a_{3}x_{3})^{2}+(b_{1}x_{1}+b_{2}x_{2}+b_{3}x_{3})^{2}+(c_{1}x_{1}+c_{2}x_{2}+c_{3}x_{3})^{2}$的情形，可总结如下做题方法：
+
+    令$f=0$，即$\begin{cases}a_{1}x_{1}+a_{2}x_{2}+a_{3}x_{3}=0,\\b_{1}x_{1}+b_{2}x_{2}+b_{3}x_{3}=0,\\c_{1}x_{1}+c_{2}x_{2}+c_{3}x_{3}=0,\end{cases}$计算$|\boldsymbol{A}|=\begin{vmatrix}a_{1}&a_{2}&a_{3}\\b_{1}&b_{2}&b_{3}\\c_{1}&c_{2}&c_{3}\end{vmatrix}$，若$|\boldsymbol{A}|\neq0$，则$f$正定；若$|\boldsymbol{A}|=0$，则$f$不正定．
+\end{note}
+\section{正交变换法的传递性}
+\DOne+\DTwoThree
+
+若$A$相似于$B$，则$B$相似于$C$，则$A$相似于$C$.这里$B$常为$\Lambda$.
+
+\section{合同的判定与手段}
+\DOne+\DTwoThree
+
+\begin{enumerate}
+    \item 同阶实对称矩阵$A,B$合同的判定
+
+          用正、负惯性指数：$A,B$合同$\Leftrightarrow p_A=p_B,q_A=q_B$(相同的正、负惯性指数).
+    \item 已知$A$，$\Lambda$（$\Lambda$是对角矩阵）,求可逆矩阵$C$，使得$C^TAC=\Lambda$
+    \item 已知$A$，$B$（$B$不是对角矩阵），求可逆矩阵$C$，使得$C^TAC=B$
+\end{enumerate}
+\begin{idea}{求可逆矩阵$C$，使得$C^TAC=\Lambda$}{}
+    \begin{enumerate}
+        \item 配方 盯着$\Lambda$的对角线元素，提出对应系数
+        \item 换元
+        \item 求逆
+    \end{enumerate}
+\end{idea}
+\begin{idea}{求可逆矩阵$C$，使得$C^TAC=B$}{}
+    \begin{enumerate}
+        \item 对$f$配方、换元，写$D_1$
+        \item 对$g$配方、换元，写$D_2$
+        \item 令$D_1x=D_2y$，求$D_2^{-1}D_1$
+    \end{enumerate}
+\end{idea}
+\section{合同与相似的异同}
+\DOne+\DTwoThree
+
+对于实对称矩阵$A$与$B$，相似必合同，反之不成立.
+\begin{example}{合同与相似的异同}{合同与相似的异同}
+    已知二次型
+    $$f(x_{1}, x_{2}, x_{3}) = x_{1}^{2} + 2x_{2}^{2} + 2x_{3}^{2} + 2x_{1}x_{2} - 2x_{1}x_{3}$$
+    $$
+        g(y_{1}, y_{2}, y_{3}) = y_{1}^{2} + y_{2}^{2} + y_{3}^{2} + 2y_{2}y_{3}$$
+    \begin{enumerate}
+        \item 求可逆变换 $x = Py$，将 $f(x_{1}, x_{2}, x_{3})$ 化成 $g(y_{1}, y_{2}, y_{3})$.
+        \item 是否存在正交变换 $x = Qy$，将 $f(x_{1}, x_{2}, x_{3})$ 化成 $g(y_{1}, y_{2}, y_{3})$?
+    \end{enumerate}
+\end{example}
+\begin{idea}{解题思路 \ref{ex:合同与相似的异同}}{}
+    \begin{enumerate}
+        \item 求可逆变换用配方法
+        \item 判断是否存在正交变换，如果存在必相似，使用相似的充分条件和充要条件
+    \end{enumerate}
+\end{idea}
+\section{正定的判定与应用}
+\DOne+\DTwoThree
+
+$\star\star\star$
+
+\begin{enumerate}
+    \item 前提
+          $A=A^T$（$A$是实对称矩阵）
+    \item 二次型$f=x^TAx$正定的充要条件 \DTwo
+
+          $n$元二次型$f=x^{T}Ax$正定
+
+          $\Leftrightarrow$对任意的$x\neq 0$，有$x^{T}Ax>0$(定义)
+
+          $\Leftrightarrow A$的特征值$\lambda_{i}>0(i=1,2,\cdots,n)$
+
+          $\Leftrightarrow f$的正惯性指数$p=n$
+
+          $\Leftrightarrow$存在可逆矩阵$D$，使得$A=D^{T}D$
+
+          $\Leftrightarrow A$与$E$合同
+
+          $\Leftrightarrow A$的各阶顺序主子式均大于0.
+    \item 二次型$f=x^TAx$正定的必要条件
+          \begin{enumerate}
+              \item $a_{ii}>0\left(i=1,2,\cdots,n\right).$
+              \item $| A| > 0$.
+          \end{enumerate}
+    \item 重要结论
+          \begin{enumerate}
+              \item 若$A$正定，则$A^-1,A^{*},A^{m}(m$为正整数$),kA(k>0),C^{\mathrm{T}}AC(C$可逆 )均正定 .
+
+              \item 若$A,B$正定，则$A+B$正定，$\begin{bmatrix}A&O\\O&B\end{bmatrix}$正定.
+
+              \item ${\text{若}A,B}$正定，则$AB$正定的充要条件是$AB= BA$ .
+          \end{enumerate}
+
+\end{enumerate}
+
+\section{二次型的最值}
+\DOne+\DTwoTwo+\DTwoThree
+
+

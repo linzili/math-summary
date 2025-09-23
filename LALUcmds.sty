@@ -1,0 +1,20 @@
+% LALUcmds.sty
+\ProvidesPackage{LALUcmds}[My personal LaTeX commands]
+
+% 向量、范畴、集合类
+\renewcommand{\vec}[1]{\boldsymbol{#1}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\FVect}{\mathsf{FVect}}
+\newcommand{\Set}{\mathsf{Set}}
+\newcommand{\FSet}{\mathsf{FSet}}
+
+% 算子
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\Ob}{Ob}
+\DeclareMathOperator{\Hom}{Hom}
+
+% 特殊标记
+% \newcommand{\term}[1]{{\sffamily\heiti\bfseries{#1}}}
+\NewDocumentCommand{\term}{m}{{\sffamily\heiti\bfseries{#1}}}
+
