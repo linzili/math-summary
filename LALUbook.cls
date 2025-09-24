@@ -71,6 +71,7 @@
 % ----------------
 \titleformat{\section}{\centering\Large\bfseries}{\thesection}{1em}{}
 
+\newCJKfontfamily\FangSong{FangSong_GB2312} % 仿宋
 
 % 首行缩进 2 字符
 \setlength{\parindent}{2em}
@@ -166,9 +167,9 @@
     title=#1\IfBlankF{#2}{\quad#2},
     #3,
 }
-
-\NewDocumentEnvironment{proof}{O{}O{}}{\begin{tcblaluthmbox}{{\heiti 证明}}{#1}{#2}\fangsong}{\hspace*{\fill}$\square$\end{tcblaluthmbox}}
-\NewDocumentEnvironment{solution}{O{}O{}}{\begin{tcblaluthmbox}{{\heiti 解}}{#1}{#2}\fangsong}{\end{tcblaluthmbox}}
+\setCJKmonofont   { FangSong }
+\NewDocumentEnvironment{proof}{O{}O{}}{\begin{tcblaluthmbox}{{\heiti 证明}}{#1}{#2}\FangSong}{\hspace*{\fill}$\square$\end{tcblaluthmbox}}
+\NewDocumentEnvironment{solution}{O{}O{}}{\begin{tcblaluthmbox}{{\heiti 解}}{#1}{#2}\FangSong}{\end{tcblaluthmbox}}
 
 \usepackage{xcolor} % 记得导入 xcolor
 

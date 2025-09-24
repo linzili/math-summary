@@ -1,1 +1,160 @@
 \chapter{行列式}
+
+\section{具体型行列式的计算：$a_{ij}$已给出}
+\begin{enumerate}
+    \item 化为基本型行列式
+          \DTwoThree
+          \begin{enumerate}
+              \item 主对角线行列式
+                    $$\begin{vmatrix}
+                            a_{11} & a_{12} & \cdots & a_{1n} \\
+                            0      & a_{22} & \cdots & a_{2n} \\
+                            \vdots & \vdots &        & \vdots \\
+                            0      & 0      & \cdots & a_{nn}
+                        \end{vmatrix}=
+                        \begin{vmatrix}
+                            a_{11} & 0      & \cdots & 0      \\
+                            a_{21} & a_{22} & \cdots & 0      \\
+                            \vdots & \vdots &        & \vdots \\
+                            a_{n1} & a_{n2} & \cdots & a_{nn}
+                        \end{vmatrix}=
+                        \begin{vmatrix}
+                            a_{11} & 0      & \cdots & 0      \\
+                            0      & a_{22} & \cdots & 0      \\
+                            \vdots & \vdots &        & \vdots \\
+                            0      & 0      & \cdots & a_{nn}
+                        \end{vmatrix}=\prod_{i=1}^na_{ii}.$$
+              \item 副对角线行列式
+                    $$\begin{aligned}
+                            \begin{vmatrix}
+                                a_{11} & a_{12} & \cdots & a_{1,n-1} & a_{1n} \\
+                                a_{21} & a_{22} & \cdots & a_{2,n-1} & 0      \\
+                                \vdots & \vdots &        & \vdots    & \vdots \\
+                                a_{n1} & 0      & \cdots & 0         & 0
+                            \end{vmatrix} & =
+                            \begin{vmatrix}
+                                0      & \cdots & 0         & a_{1n} \\
+                                0      & \cdots & a_{2,n-1} & a_{2n} \\
+                                \vdots &        & \vdots    & \vdots \\
+                                a_{n1} & \cdots & a_{n,n-1} & a_{nn}
+                            \end{vmatrix}=
+                            \begin{vmatrix}
+                                0      & \cdots & 0         & a_{1n} \\
+                                0      & \cdots & a_{2,n-1} & 0      \\
+                                \vdots &        & \vdots    & \vdots \\
+                                a_{n1} & \cdots & 0         & 0
+                            \end{vmatrix}                                                                     \\
+                                                                             & =(-1)^{\frac{n(n-1)}{2}}a_{1n}a_{2,n-1}\cdots a_{n1}.
+                        \end{aligned}$$
+              \item 拉普拉斯展开式
+
+                    设$A$为$m$阶矩阵，$B$为$n$阶矩阵，则
+                    $$\begin{gathered}
+                            \begin{vmatrix}
+                                A & O \\
+                                O & B
+                            \end{vmatrix}=
+                            \begin{vmatrix}
+                                A & C \\
+                                O & B
+                            \end{vmatrix}=
+                            \begin{vmatrix}
+                                A & O \\
+                                C & B
+                            \end{vmatrix}=|A||B|, \\
+                            \begin{vmatrix}
+                                O & A \\
+                                B & O
+                            \end{vmatrix}=
+                            \begin{vmatrix}
+                                C & A \\
+                                B & O
+                            \end{vmatrix}=
+                            \begin{vmatrix}
+                                O & A \\
+                                B & C
+                            \end{vmatrix}=(-1)^{mn}|A||B|.
+                        \end{gathered}$$
+              \item 范德蒙德行列式
+                    $$\begin{vmatrix}
+                            1         & 1         & \cdots & 1         \\
+                            x_1       & x_2       & \cdots & x_n       \\
+                            x_1^2     & x_2^2     & \cdots & x_n^2     \\
+                            \vdots    & \vdots    &        & \vdots    \\
+                            x_1^{n-1} & x_2^{n-1} & \cdots & x_n^{n-1}
+                        \end{vmatrix}=\prod_{1\leq i<j\leq n}(x_j-x_i),n\geq2.$$
+          \end{enumerate}
+          \begin{note}{行列式计算思路}{行列式计算思路}
+              \begin{enumerate}
+                  \item 若所给行列式就是基本形或接近基本形，则直接套公式或经过简单处理化成基本形后套公式．
+                  \item 简单处理的手段： \DTwoOne
+                        \begin{enumerate}
+                            \item 按零元素多的行或列展开；
+                            \item 用行列式的性质对差别最小的“对应位置元素”进行处理，尽可能多地化出零元素，再按此行或列展开；
+                            \item 对于行和或列和相等的情形，将所有列加到第1列或将所有行加到第1行，提出公因式，再用上述方法，等等．
+                        \end{enumerate}
+                  \item 具体型行列式的元素中若含$x$，则其为$x$的多项式．
+              \end{enumerate}
+          \end{note}
+    \item 加边法
+          \DTwoThree
+          对于某些一开始不宜使用“互换”“倍乘”“倍加”性质的行列式，可以考虑使用加边法：$n$阶行列式中添加一行、一列升至$n+1$阶行列式.若添加在第 $1$ 列，且添加的是$[ 1, 0,...,0]^\mathrm{T}$,则第 $1$ 行其余元素可以任意添加，行列式的值不变，即
+          $$D_n=
+              \begin{vmatrix}
+                  a_{11} & a_{12} & \cdots & a_{1n} \\
+                  a_{21} & a_{22} & \cdots & a_{2n} \\
+                  \vdots & \vdots &        & \vdots \\
+                  a_{n1} & a_{n2} & \cdots & a_{nn}
+              \end{vmatrix}=
+              \begin{vmatrix}
+                  1      & *      & *      & \cdots & *      \\
+                  0      & a_{11} & a_{12} & \cdots & a_{1n} \\
+                  0      & a_{21} & a_{22} & \cdots & a_{2n} \\
+                  \vdots & \vdots & \vdots &        & \vdots \\
+                  0      & a_{n1} & a_{n2} & \cdots & a_{nn}
+              \end{vmatrix},$$
+    \item 递推法
+          \DOne+\DTwoOne
+
+          \begin{enumerate}
+              \item 建立递推公式，即建立$D_n$ 与$D_{n-1}$的关系，有些复杂的题甚至要建立$D_n$,$D_{n-1}$与$D_{n-2}$的关系.
+              \item$D_{n-1}$与$D_n$要有完全相同的元素分布规律，只是$D_n-1$ 比 $D_n$ 低了一阶.
+          \end{enumerate}
+    \item 数学归纳法
+          \PThree
+
+          涉及$n$阶行列式的证明型计算问题，即告知行列式计算结果，让考生证明之，可考虑数学归纳法．
+          \begin{enumerate}
+              \item 第一数学归纳法 (适用于 $F(D_{n},D_{n-1})=0$)：
+                    \begin{enumerate}
+                        \item 验证当 $n=1$ 时，命题成立；
+                        \item 假设当 $n=k$ （≥2）时，命题成立；
+                        \item 证明当 $n=k+1$ 时，命题成立．
+                    \end{enumerate}
+                    则命题对任意正整数 $n$ 成立．
+              \item 第二数学归纳法 (适用于 $F(D_{n},D_{n-1},D_{n-2})=0$)：
+                    \begin{enumerate}
+                        \item 验证当 $n=1$ 和 $n=2$ 时，命题成立；
+                        \item 假设当 $n＜k$ 时，命题成立；
+                        \item 证明当 $n=k$ （$≥3$）时，命题成立．
+                    \end{enumerate}
+                    则命题对任意正整数 $n$ 成立．
+
+          \end{enumerate}
+\end{enumerate}
+\section{抽象型行列式的计算：$a_{ij}$未给出}
+
+\begin{enumerate}
+    \item 用行列式的性质
+
+          用行列式的性质将所求行列式进一步化成已知行列式.
+    \item 用矩阵知识
+          \begin{enumerate}
+              \item 设$C=AB,A,B$为同阶方阵，则$|C|=|AB|=|A||B|.$
+              \item 设$C=A+B,A,B$ 为同阶方阵，则 $|C|=|A+B|$,但由于$|A+B|$ 不一定等于$|A|+|B|$,故需对$|A+B|$作恒等变形，转化为矩阵乘积的行列式.这里的恒等变形一般是：
+                    \begin{enumerate}
+                        \item 由题设条件，如 $E=AA^\mathrm{T}$;
+                        \item 用$E=AA^{-1}$等.
+                    \end{enumerate}
+          \end{enumerate}
+\end{enumerate}

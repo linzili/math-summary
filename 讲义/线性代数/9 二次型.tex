@@ -163,4 +163,31 @@ $\star\star\star$
 \section{二次型的最值}
 \DOne+\DTwoTwo+\DTwoThree
 
+设 $A$ 为实对称矩阵，令
+\[
+    f(x)=x^T A x,\qquad x\in\mathbb R^n.
+\]
+若 $A=Q\Lambda Q^T$（$Q$ 正交, $\Lambda=\mathrm{diag}(\lambda_i)$），令 $x=Qy$ 得
+\[
+    f(x)=\sum_{i=1}^n\lambda_i y_i^2.
+\]
+记 $\lambda_{\min}=\min_i\lambda_i,\ \lambda_{\max}=\max_i\lambda_i$，则
+\[
+    \boxed{\;\lambda_{\min}\|x\|^2 \le x^TAx \le \lambda_{\max}\|x\|^2\;},
+\]
+两端同时除以 $x^Tx$ 得 Rayleigh 商界：
+\[
+    \lambda_{\min}\le \frac{x^TAx}{x^Tx}\le \lambda_{\max}.
+\]
+等号成立当且仅当 $x$ 为对应的特征向量.
 
+给定对称 $A$ 与对称且正定的 $B$，考题常要求求
+\[
+    \max_{x\ne0}\frac{x^TAx}{x^TBx}\quad\text{或}\quad\min_{x\ne0}\frac{x^TAx}{x^TBx}.
+\]
+
+若 $B$ 为对称正定矩阵，则可作分解 $B=P^TP$.记 $y=Px$，则有
+$\frac{x^TAx}{x^TBx}\xlongequal[x=P^{-1}y]{y=Px} \frac{(P^{-1}y)^TAP^{-1}y}{y^Ty}=\frac{y^T(PAP^{-1})y}{y^Ty}=\frac{y^TCy}{y^Ty}$,
+其中 $C=PAP^{-1}$ 为对称矩阵.
+
+于是，$\dfrac{x^TAx}{x^TBx}$ 的最大值、最小值，分别等于 $C$ 的最大、最小特征值；相应的 $x$ 可由 $y=Px$ 反变换得到.
