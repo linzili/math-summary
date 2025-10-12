@@ -1,0 +1,292 @@
+\chapter{习题3}
+\clearpage
+
+\begin{question}{}{}
+    对于任意给定的 $\varepsilon\in(0,1)$，总存在整数 $N$，当 $n>N$ 时，恒有 $|x_n-a|\le 2\varepsilon$ ，是数列 $\{x_n\}$ 收敛于 $a$ 的( )
+
+    \begin{multicols}{2}  % 并排两列
+        \begin{itemize}[label={}]
+            \item A 充分条件但非必要条件
+            \item B 必要条件但非充分条件
+            \item C 充分必要条件
+            \item D 既非充分条件又非必要条件
+        \end{itemize}
+    \end{multicols}
+\end{question}
+\begin{solution}
+    该条件表述为：对任意 $\varepsilon\in(0,1)$，存在 $N$，当 $n>N$ 时 $|x_n-a|\le2\varepsilon$。要判别此条件与收敛 $x_n\to a$ 的等价性：
+
+    若序列收敛于 $a$，则对任意 $\varepsilon>0$ 存在 $N$ 使得当 $n>N$ 有 $|x_n-a|<\varepsilon$，从而对任意 $\varepsilon\in(0,1)$ 同样成立（取同样的 $N$）。反过来，若题中条件成立，则对任意给定的正 $\varepsilon$：若 $\varepsilon\ge1$，不难直接满足；若 $0<\varepsilon<1$，条件已给出 $|x_n-a|\le2\varepsilon$，令 $\varepsilon'=\varepsilon/2\in(0,1)$，由题意存在 $N$ 使得当 $n>N$ 有 $|x_n-a|\le2\varepsilon'=\varepsilon$，故对任意 $\varepsilon>0$ 都能得到相应 $N$，即 $x_n\to a$。因此该条件与收敛等价。
+
+    答案：C（充分必要条件）。
+\end{solution}
+
+\begin{question}{}{}
+    设 $f^\prime(1)=0,\lim_{x\to1}\frac{f^{\prime}(x)}{\left(x-1\right)^3}=-2$, 则$x=1$为()
+    \begin{multicols}{4}  % 并排两列
+        \begin{itemize}[label={}]
+            \item A 非极值点
+            \item B 极大值点
+            \item C 极小值点
+            \item D 间断点
+        \end{itemize}
+    \end{multicols}
+\end{question}
+\begin{solution}
+    由极限条件有，当 $x\to1$ 时
+    \[
+        f'(x)\sim -2(x-1)^3.
+    \]
+    因此对于 $x>1$（且靠近 1）有 $(x-1)^3>0$，所以 $f'(x)\approx -2(x-1)^3<0$；对于 $x<1$ 有 $(x-1)^3<0$，所以 $f'(x)\approx -2(x-1)^3>0$。即导数在 $x=1$ 处由正变负，函数先增后减，所以在 $x=1$ 处取得局部极大值。
+
+    答案：B（极大值点）。
+\end{solution}
+
+\begin{question}{}{}
+
+    设 $\lim _{x\to 0}\frac {\sin 6x+ xf( x) }{x^3}= 0$,则$\lim_{x\to0}\frac{6+f(x)}{x^2}=$
+    \begin{multicols}{4}  % 并排两列
+        \begin{itemize}[label={}]
+            \item A 0
+            \item B 6
+            \item C 36
+            \item D $\infty$
+        \end{itemize}
+    \end{multicols}
+\end{question}
+\begin{solution}
+    使用 $\sin6x$ 的泰勒展开：
+    \[
+        \sin6x=6x-\frac{(6x)^3}{6}+o(x^3)=6x-36x^3+o(x^3).
+    \]
+    将其代入：
+    \[
+        \frac{\sin6x+xf(x)}{x^3}=\frac{6x-36x^3+xf(x)+o(x^3)}{x^3}
+        =\frac{6}{x^2}-36+\frac{f(x)}{x^2}+o(1).
+    \]
+    极限为 0，故
+    \[
+        \frac{6+f(x)}{x^2}\to 36.
+    \]
+    答案：C（36）。
+\end{solution}
+
+\begin{question}{}{}
+
+    求极限 $\lim_{x \to +\infty} \frac{\sqrt{5x}-1}{\sqrt{x+2}}$.
+\end{question}
+\begin{solution}
+    按主项比较：
+    \[
+        \frac{\sqrt{5x}-1}{\sqrt{x+2}}
+        = \frac{\sqrt{x}\left(\sqrt5 - \tfrac{1}{\sqrt{x}}\right)}{\sqrt{x}\sqrt{1+2/x}}
+        \to \frac{\sqrt5}{1}=\sqrt5.
+    \]
+    答案：$\sqrt5$。
+\end{solution}
+
+\begin{question}{}{}
+
+    求极限 $\lim_{x \to 2} \frac{|x-2|}{x^2-4}$.
+\end{question}
+\begin{solution}
+    化简 ($x\neq2$)：
+    \[
+        \frac{|x-2|}{x^2-4}=\frac{|x-2|}{(x-2)(x+2)}=\frac{1}{|x+2|}.
+    \]
+    当 $x\to2$，得 $1/4$。
+
+    答案：$\displaystyle \frac14$。
+\end{solution}
+
+\begin{question}{}{}
+
+    求极限 $\lim_{x \to 0} \frac{\left(\frac{2+\cos x}{3}\right)^x-1}{x^3}$.
+\end{question}
+\begin{solution}
+    令 $a(x)=\dfrac{2+\cos x}{3}$. 当 $x\to0$，
+    \[
+        a(x)=1-\frac{x^2}{6}+O(x^4).
+    \]
+    因此
+    \[
+        \ln a(x)=-\frac{x^2}{6}+o(x^2).
+    \]
+    有
+    \[
+        \left(a(x)\right)^x=e^{x\ln a(x)}=1+x\ln a(x)+o(x\ln a(x))=1-\frac{x^3}{6}+o(x^3).
+    \]
+    故所求极限为 $-1/6$。
+\end{solution}
+
+\begin{question}{}{}
+
+    求极限 $\lim_{x \to 0} \frac{e^{\tan x}-e^{\sin x}}{x^2 \ln(1+x)}$.
+\end{question}
+\begin{solution}
+    先用展开：
+    \[
+        \tan x = x+\frac{x^3}{3}+o(x^3),\qquad \sin x = x-\frac{x^3}{6}+o(x^3),
+    \]
+    所以
+    \[
+        \tan x-\sin x=\frac{x^3}{2}+o(x^3).
+    \]
+    写
+    \[
+        e^{\tan x}-e^{\sin x}=e^{\sin x}\big(e^{\tan x-\sin x}-1\big)
+        \sim e^{x}\big(\tan x-\sin x\big)\sim 1\cdot\frac{x^3}{2}.
+    \]
+    分母：
+    \[
+        x^2\ln(1+x)=x^2\big(x+o(x)\big)=x^3+o(x^3).
+    \]
+    因此极限为 $(1/2)/1=1/2$。
+\end{solution}
+
+\begin{question}{}{}
+
+    求极限 $\lim_{x \to 0} \frac{e^{x^2}-e^{2-2\cos x}}{x^4}$.
+\end{question}
+\begin{solution}
+    先展开：
+    \[
+        e^{x^2}=1+x^2+\tfrac{x^4}{2}+o(x^4),
+    \]
+    而
+    \[
+        2-2\cos x=2-2\big(1-\tfrac{x^2}{2}+\tfrac{x^4}{24}+o(x^4)\big)=x^2-\tfrac{x^4}{12}+o(x^4).
+    \]
+    于是
+    \[
+        e^{2-2\cos x}=1+(x^2-\tfrac{x^4}{12})+\tfrac{1}{2}x^4+o(x^4)
+        =1+x^2+x^4\Big(-\tfrac{1}{12}+\tfrac{1}{2}\Big)+o(x^4)
+        =1+x^2+\tfrac{5}{12}x^4+o(x^4).
+    \]
+    两者相减得
+    \[
+        e^{x^2}-e^{2-2\cos x}=\Big(\tfrac{1}{2}-\tfrac{5}{12}\Big)x^4+o(x^4)=\tfrac{1}{12}x^4+o(x^4).
+    \]
+    所以极限为 $1/12$。
+\end{solution}
+
+\begin{question}{}{}
+
+    求极限 $\lim_{x \to +\infty} \left[x - x^2 \ln \left(1 + \frac{1}{x}\right)\right]$.
+\end{question}
+\begin{solution}
+    使用 $\ln(1+u)=u-\tfrac{u^2}{2}+o(u^2)$，取 $u=1/x$：
+    \[
+        x^2\ln\Big(1+\frac{1}{x}\Big)=x^2\Big(\frac{1}{x}-\frac{1}{2x^2}+o(1/x^2)\Big)=x-\frac{1}{2}+o(1).
+    \]
+    因此差为约 $\tfrac12$，极限为 $1/2$。
+\end{solution}
+
+\begin{question}{}{}
+
+    求极限 $\lim_{x \to 0} \frac{e^{x^2} - \cos x}{x^2}$.
+\end{question}
+\begin{solution}
+    展开：
+    \[
+        e^{x^2}=1+x^2+\tfrac{x^4}{2}+o(x^4),\qquad \cos x=1-\tfrac{x^2}{2}+\tfrac{x^4}{24}+o(x^4).
+    \]
+    相减得主项为 $x^2+\tfrac{x^2}{2}=\tfrac{3}{2}x^2$，除以 $x^2$ 得 $3/2$。
+\end{solution}
+
+\begin{question}{}{}
+
+    求极限 $\lim_{x \to 0} \frac{[\sin x - \sin (\sin x)] \sin x}{x^4}$.
+\end{question}
+\begin{solution}
+    先展开：
+    \[
+        \sin x = x-\tfrac{x^3}{6}+o(x^3).
+    \]
+    令 $s=\sin x=x-\tfrac{x^3}{6}+o(x^3)$，则
+    \[
+        \sin(\sin x)=s-\tfrac{s^3}{6}+o(s^3)=\Big(x-\tfrac{x^3}{6}\Big)-\tfrac{1}{6}x^3+o(x^3)=x-\tfrac{x^3}{3}+o(x^3).
+    \]
+    因此
+    \[
+        \sin x-\sin(\sin x)=\tfrac{x^3}{6}+o(x^3).
+    \]
+    乘以 $\sin x\sim x$，分子 $\sim \tfrac{x^4}{6}$，故极限为 $1/6$。
+\end{solution}
+
+\begin{question}{}{}
+
+    求极限 $\lim_{x \to 0} \left(\frac{2 + e^{\frac{1}{x}}}{1 + e^{\frac{4}{x}}} + \frac{\sin x}{|x|}\right)$.
+\end{question}
+\begin{solution}
+    分左右极限考察。
+
+    当 $x\to0^+$ 时，$1/x\to+\infty$，故 $e^{1/x}\to\infty,\ e^{4/x}\to\infty$，且
+    \[
+        \frac{2+e^{1/x}}{1+e^{4/x}}=\frac{e^{1/x}\big(1+2e^{-1/x}\big)}{e^{4/x}\big(1+e^{-4/x}\big)}=e^{-3/x}(1+o(1))\to0.
+    \]
+    同时 $\dfrac{\sin x}{|x|}=\dfrac{\sin x}{x}\to1$。和为 $1$。
+
+    当 $x\to0^-$ 时，$1/x\to-\infty$，所以 $e^{1/x}\to0,\ e^{4/x}\to0$，首项 $\to 2$；而 $\dfrac{\sin x}{|x|}=\dfrac{\sin x}{-x}=-\dfrac{\sin x}{x}\to -1$。和为 $2-1=1$。
+
+    左右极限相等，极限存在且等于 $1$。
+\end{solution}
+
+\begin{question}{}{}
+
+    求极限$\lim_{n\to\infty}\left(\frac{1}{\sqrt{n^2+1^2}}+\frac{1}{\sqrt{n^2+2^2}}+\cdots+\frac{1}{\sqrt{n^2+n^2}}\right)$.
+\end{question}
+\begin{solution}
+    写为求和的 Riemann 近似：
+    \[
+        \sum_{k=1}^n \frac{1}{\sqrt{n^2+k^2}}=\sum_{k=1}^n \frac{1}{n}\cdot\frac{1}{\sqrt{1+(k/n)^2}}.
+    \]
+    当 $n\to\infty$，该和趋于
+    \[
+        \int_0^1 \frac{dt}{\sqrt{1+t^2}}.
+    \]
+    计算不定积分，$\int \frac{dt}{\sqrt{1+t^2}}=\operatorname{arsinh}t=\ln\big(t+\sqrt{1+t^2}\big)$。因此值为
+    \[
+        \ln\big(1+\sqrt2\big).
+    \]
+\end{solution}
+
+\begin{question}{}{}
+
+    设$f(x)\in C[a,b]$，证明$\exists\xi\in[a,b]$，使得$\int_{a}^{b}f(x)dx=f(\xi)(b-a)$.
+\end{question}
+\begin{solution}
+    这是积分中值定理（连续函数的平均值定理）。因为 $f$ 在 $[a,b]$ 上连续，令
+    \[
+        m=\min_{[a,b]} f,\qquad M=\max_{[a,b]} f.
+    \]
+    则 $m(b-a)\le\int_a^b f(x)\,dx\le M(b-a)$. 由于 $f$ 在 $[a,b]$ 连续，值域为 $[m,M]$，而平均值 $\dfrac{1}{b-a}\int_a^b f(x)\,dx$ 属于 $[m,M]$，由连续性和介值定理存在 $\xi\in[a,b]$ 使得
+    \[
+        f(\xi)=\frac{1}{b-a}\int_a^b f(x)\,dx,
+    \]
+    即 $\int_a^b f(x)\,dx=f(\xi)(b-a)$。证毕。
+\end{solution}
+
+\begin{question}{}{}
+
+    设$x_{1}=\sqrt{2}$，$x_{n}=\sqrt{2+x_{n-1}}$，$n=2,3,\cdots$. 证明$\{x_{n}\}$极限存在，并求极限.
+\end{question}
+\begin{solution}
+    首先证明单调性与有界性：
+
+    (1) 计算数列初项：$x_1=\sqrt2\approx1.414$，$x_2=\sqrt{2+\sqrt2}\approx1.847\,$。猜测单调递增且有上界 2。
+
+    (2) 若 $x_{n-1}<2$，则 $x_n=\sqrt{2+x_{n-1}}<\sqrt{4}=2$，所以若某一项 $<2$，后项都 $<2$，故有上界 2。且
+    \[
+        x_{n+1}-x_n=\sqrt{2+x_n}-\sqrt{2+x_{n-1}}=\frac{x_n-x_{n-1}}{\sqrt{2+x_n}+\sqrt{2+x_{n-1}}}.
+    \]
+    若已知 $x_n>x_{n-1}$，则右端 $>0$，由此可递推证明 $\{x_n\}$ 单调递增（因 $x_2>x_1$ 起）。
+
+    因此序列单调有界，故收敛。设极限为 $L$，取极限于递推式得
+    \[
+        L=\sqrt{2+L}\quad\Rightarrow\quad L^2=2+L\quad\Rightarrow\quad L^2-L-2=0.
+    \]
+    解得 $L=\dfrac{1\pm\sqrt{1+8}}{2}=\dfrac{1\pm3}{2}$，因为项均为正且小于 2，取正根 $L=2$。
+
+    结论：极限存在且为 $2$。
+\end{solution}

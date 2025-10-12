@@ -106,8 +106,8 @@
         twoside,
         top = 23mm,
         bottom = 23mm,
-        left = 20mm,
-        right = 20mm,
+        left = 18mm,
+        right = 18mm,
         headheight = 5ex,
         headsep = 5ex,
         textwidth = 132mm,
@@ -172,7 +172,8 @@
 \NewDocumentEnvironment{solution}{O{}O{}}{\begin{tcblaluthmbox}{{\heiti 解}}{#1}{#2}\FangSong}{\end{tcblaluthmbox}}
 
 \usepackage{xcolor} % 记得导入 xcolor
-
+\usepackage{enumitem}
+\usepackage{multicol}
 
 \AtEndPreamble{
     \RequirePackage[Bjornstrup]{fncychap} % found on Internet
@@ -189,6 +190,8 @@
     \newtcbtheorem[number within=chapter]{corollary}{推论}{laluthmstyle={green}}{cor}
     \newtcbtheorem[number within=chapter]{axiom}{公理}{laluthmstyle={olive}}{axm}
     \newtcbtheorem[number within=section]{note}{注}{laluthmstyle={orange}}{nt}
+
+    \newtcbtheorem[number within=chapter]{question}{习题}{laluthmstyle={blue}}{quest}
 
     \hypersetup{
         unicode,
