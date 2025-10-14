@@ -1,1 +1,42 @@
 \chapter{大数定律与中心极限定理}
+
+\section{判别或证明依概率收敛}
+设随机变量 $X$ 与随机变量序列 $\{X_n\}$ $(n=1,2,3,\cdots)$，如果对任意的 $\varepsilon > 0$，有
+$$\lim_{n\to\infty}P\{|X_n-X|\geqslant\varepsilon\}=0 \text{ 或 } \lim_{n\to\infty}P\{|X_n-X|<\varepsilon\}=1,$$
+则称随机变量序列 $\{X_n\}$ 依概率收敛于随机变量 $X$，记为 $\lim_{n\to\infty}X_n=X(P)$ 或 $X_n\xrightarrow{P}X(n\to\infty)$.
+
+\section{利用大数定律计算收敛值}
+\begin{enumerate}
+    \item 切比雪夫大数定律
+
+          假设 $\{X_{n}\}(n=1,2,\cdots)$ 是相互独立的随机变量序列，如果方差$DX_i(i\geqslant1)$存在且一致有上界，即存在常数 $C$, 使 $DX_i\leq C$ 对 一 切  $i\geqslant 1$ 均 成 立 , 则  $\{ X_n\}$服从大数定律：$\frac1n\sum_{i=1}^{n}X_i\xrightarrow{p}\frac1n\sum_{i=1}^{n}EX_i$
+    \item 伯努利大数定律
+
+          假设$\mu_n$是$n$重伯努利试验中事件$A$发生的次数，在每次试验中事件$A$ 发 生 的 概 率 为 $p( 0< p< 1)$,则$\frac{\mu_n}n\xrightarrow{P}p$ ,即对任意 $\varepsilon>0$ ,有$\lim_{n\to\infty} P\left\{\left|\frac{\mu_n}{n}-p\right|<\varepsilon\right\}=1$
+    \item 辛钦大数定律
+
+          假设 $\{X_{n}\} (n=1,2,\cdots)$ 是独立同分布的随机变量序列，如果数学期望 $EX_{i}=\mu (i=1,2,\cdots)$ 存在，则$\frac{1}{n}\sum_{i=1}^{n}X_{i} \xrightarrow{p} \mu $, 即对任意$ \varepsilon > 0, $有$ \lim_{n \to \infty} P\left\{\left|\frac{1}{n}\sum_{i=1}^{n}X_{i} - \mu\right| < \varepsilon\right\} = 1 $.
+    \item 考结论
+
+          在满足一定条件时，大数定律都在讲同一个结论，即
+          $$\frac{1}{n}\sum_{i=1}^{n}X_{i}\xrightarrow{P}E\biggl(\frac{1}{n}\sum_{i=1}^{n}X_{i}\biggr)\:.$$
+\end{enumerate}
+
+
+\section{用中心极限定理求概率}
+\begin{enumerate}
+    \item 列维-林德伯格定理
+
+          假设$\{X_n\}(n=1,2,\cdotp\cdotp\cdotp)$是独立同分布的随机变量序列，如果$EX_i=\mu,DX_i=\sigma^2>0(i=1,2,\cdotp\cdotp\cdotp)$存在，则
+          对任意的实数$x$,有
+          $$\lim_{n\to\infty}P\left\{\frac{\sum_{i=1}^{n}X_{i}-n\mu}{\sqrt{n}\sigma}\leqslant x\right\}=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{x}\mathrm{e}^{-\frac{1}{2}t^{2}}\mathrm{d}t=\Phi(x)\:.$$
+    \item 棣莫弗-拉普拉斯定理
+
+          假设随机变量$Y_n\sim B(n,p)(0<p<1,n\geqslant1)$,则对任意实数 $x$,有
+          $$\lim_{n\to\infty}P\left\{\frac{Y_{n}-np}{\sqrt{np(1-p)}}\leqslant x\right\}=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{x}\mathrm{e}^{-\frac{t^{2}}{2}}\mathrm{d}t=\Phi(x).$$
+    \item 考结论
+
+          设 $X_i$ 独立同分布于某一分布，期望、方差均存在，则当 $n \to \infty$ 时，$\sum_{i=1}^{n} X_i$ 服从正态分布，即对任意的 $X_i \sim F(\mu, \sigma^2)$，$\mu = EX_i$，$\sigma^2 = DX_i$，都有在 $n \to \infty$ 时，$\sum_{i=1}^{n} X_i \sim N(n\mu, n\sigma^2)$，$\frac{\sum_{i=1}^{n} X_i - n\mu}{\sqrt{n}\sigma} \sim N(0, 1)$，即
+          $$\lim_{n \to \infty} P\left\{ \frac{\sum_{i=1}^{n} X_i - n\mu}{\sqrt{n}\sigma} \leqslant x \right\} = \Phi(x) \, .$$
+\end{enumerate}
+
