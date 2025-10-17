@@ -1,0 +1,331 @@
+\GAOchapter{微分方程}
+\section{求解微分方程并研究解的性质}
+\subsection{一阶微分方程的求解}
+\DTwoThree
+
+若题目中出现 $y'$ 或 $dy=\cdots dx$,则通常属于以下类型:
+
+\begin{enumerate}
+    % ========== 可分离变量型 ==========
+    \item \textbf{可分离变量型}(或可换元化为此形式)
+          \begin{enumerate}
+              \item 若可写为 $y' = f(x)g(y)$,
+                    则分离变量得:
+                    \[
+                        \frac{dy}{g(y)} = f(x)\,dx,
+                        \qquad
+                        \int \frac{dy}{g(y)} = \int f(x)\,dx.
+                    \]
+
+              \item 若可写为 $y' = f(ax+by+c)$,
+                    令 $u=ax+by+c$,则 $u' = a + b f(u)$,
+                    于是:
+                    \[
+                        \frac{du}{a + b f(u)} = dx,
+                        \qquad
+                        \int \frac{du}{a + b f(u)} = \int dx.
+                    \]
+          \end{enumerate}
+
+          % ========== 齐次型 ==========
+    \item \textbf{齐次型}(或可换元化为此形式)
+          \begin{enumerate}
+              \item 若 $y' = f\!\left(\frac{y}{x}\right)$,
+                    令 $\displaystyle \frac{y}{x} = u$,即 $y=ux,\ y' = u + x u'$,
+                    代入得:
+                    \[
+                        x\,\frac{du}{dx} + u = f(u)
+                        \quad\Rightarrow\quad
+                        \frac{du}{f(u)-u} = \frac{dx}{x}.
+                    \]
+
+              \item 若 $\displaystyle \frac{1}{y'} = f\!\left(\frac{x}{y}\right)$,
+                    令 $\displaystyle \frac{x}{y} = u$,即 $x=uy,\ x' = u + y u'$,
+                    代入得:
+                    \[
+                        y\,\frac{du}{dy} + u = f(u)
+                        \quad\Rightarrow\quad
+                        \frac{du}{f(u)-u} = \frac{dy}{y}.
+                    \]
+
+              \item 若 $y' = f\!\left(\frac{ax+by+c}{a_1x+b_1y+c_1}\right)$,则:
+                    \begin{enumerate}
+                        \item 若 $c^2 + c_1^2 = 0$,可化为 $y' = g\!\left(\frac{y}{x}\right)$;
+                        \item 若 $c^2 + c_1^2 \neq 0$ 且 $\frac{a}{a_1}=\frac{b}{b_1}$,
+                              可化为 $y' = g(ax+by)$;
+                        \item 若 $c^2 + c_1^2 \neq 0$ 且 $\frac{a}{a_1}\neq\frac{b}{b_1}$,
+                              由
+                              \[
+                                  \begin{cases}
+                                      ax+by+c=0, \\
+                                      a_1x+b_1y+c_1=0
+                                  \end{cases}
+                                  \quad\Rightarrow\quad (x_0,y_0)
+                              \]
+                              令
+                              \[
+                                  \begin{cases}
+                                      x = X + x_0, \\
+                                      y = Y + y_0,
+                                  \end{cases}
+                              \]
+                              则方程化为
+                              \[
+                                  y' = f\!\left(\frac{aX+bY}{a_1X+b_1Y}\right)
+                                  \Rightarrow
+                                  \frac{dY}{dX} = g\!\left(\frac{Y}{X}\right).
+                              \]
+                    \end{enumerate}
+          \end{enumerate}
+
+          % ========== 一阶线性型 ==========
+    \item \textbf{一阶线性型}(或可换元化为此形式)
+
+          若 $y' + p(x)y = q(x)$,
+          则通解为:
+          \[
+              y = e^{-\int p(x)\,dx}
+              \left[
+                  \int e^{\int p(x)\,dx}\, q(x)\,dx + C
+                  \right].
+          \]
+
+          % ========== 伯努利型 ==========
+    \item \textbf{伯努利方程}
+
+          若 $y' + p(x)y = q(x) y^n \ (n\neq0,1)$,
+          变形、换元如下:
+          \[
+              y^{-n} y' + p(x) y^{1-n} = q(x),
+              \qquad
+              \text{令 } z = y^{1-n},
+          \]
+          则
+          \[
+              \frac{1}{1-n}\frac{dz}{dx} + p(x)z = q(x),
+          \]
+          为一阶线性方程,可按前述方法求解.
+\end{enumerate}
+
+\subsection{二阶可降阶微分方程的求解}
+\DTwoThree
+
+若二阶方程中缺少某个变量($x$ 或 $y$)，可通过设 $y' = p$ 将其降为一阶方程.
+
+\begin{enumerate}
+    % ============================================================
+    \item \textbf{缺 $y$ 的情形}:
+          方程可写成
+          \[
+              y'' = f(x, y') \quad \text{或} \quad y'' = f(y').
+          \]
+          \begin{enumerate}[label=(\roman*)]
+              \item 令 $y' = p$，则 $y'' = p' = \dfrac{dp}{dx}$，
+                    方程化为一阶方程
+                    \[
+                        \frac{dp}{dx} = f(x, p)
+                        \quad \text{或} \quad
+                        \frac{dp}{dx} = f(p).
+                    \]
+              \item 若其通解为 $p = \varphi(x, C_1)$，即
+                    \[
+                        y' = \varphi(x, C_1),
+                    \]
+                    再对 $x$ 积分得:
+                    \[
+                        \boxed{
+                            y = \int \varphi(x, C_1)\,dx + C_2.
+                        }
+                    \]
+          \end{enumerate}
+
+          % ============================================================
+    \item \textbf{缺 $x$ 的情形}:
+          方程可写成
+          \[
+              y'' = f(y, y').
+          \]
+          \begin{enumerate}[label=(\roman*)]
+              \item 令 $y' = p$，则
+                    \[
+                        y'' = \frac{dp}{dx}
+                        = \frac{dp}{dy} \cdot \frac{dy}{dx}
+                        = p\,\frac{dp}{dy}.
+                    \]
+                    代入原方程得一阶方程:
+                    \[
+                        p\,\frac{dp}{dy} = f(y, p).
+                    \]
+              \item 若其通解为 $p = \varphi(y, C_1)$，
+                    则由 $p = \dfrac{dy}{dx}$ 得
+                    \[
+                        \frac{dy}{dx} = \varphi(y, C_1),
+                        \qquad
+                        \text{即 } \frac{dy}{\varphi(y, C_1)} = dx.
+                    \]
+              \item 两边积分得:
+                    \[
+                        \boxed{
+                            \int \frac{dy}{\varphi(y, C_1)} = x + C_2,
+                        }
+                    \]
+                    即为原方程的通解.
+          \end{enumerate}
+\end{enumerate}
+
+\subsection{高阶常系数线性微分方程的求解}
+\DTwoThree
+
+一般形式为
+\[
+    y'' + p y' + q y = f(x),
+\]
+其中 $p,q$ 为常数，$f(x)$ 为已知函数.
+
+\begin{enumerate}
+    % ============================================================
+    \item \textbf{二阶非齐次方程:}
+          \[
+              y'' + p y' + q y = f(x).
+          \]
+          \begin{enumerate}[label=(\roman*)]
+              \item 写出特征方程:
+                    \[
+                        \lambda^2 + p\lambda + q = 0,
+                        \quad \Rightarrow \quad
+                        \lambda_1,\,\lambda_2.
+                    \]
+              \item 得齐次方程通解:
+                    \[
+                        y_h =
+                        \begin{cases}
+                            C_1 e^{\lambda_1 x} + C_2 e^{\lambda_2 x}, & \lambda_1 \neq \lambda_2, \\[0.5em]
+                            (C_1 + C_2 x)e^{\lambda x},                & \lambda_1 = \lambda_2.
+                        \end{cases}
+                    \]
+              \item 设特解为 $\dot{y}$，代入原方程求待定系数;
+              \item 写出通解:
+                    \[
+                        \boxed{y = y_h + \dot{y}.}
+                    \]
+          \end{enumerate}
+
+          % ============================================================
+    \item \textbf{右端项可分解时:}
+          \[
+              y'' + p y' + q y = f_1(x) + f_2(x).
+          \]
+          \begin{enumerate}[label=(\roman*)]
+              \item 对每一项分别求特解:
+                    \[
+                        \begin{cases}
+                            y'' + p y' + q y = f_1(x) \quad \Rightarrow \quad \text{特解 } \dot{y}_1, \\[0.3em]
+                            y'' + p y' + q y = f_2(x) \quad \Rightarrow \quad \text{特解 } \dot{y}_2.
+                        \end{cases}
+                    \]
+              \item 总特解为两者之和:
+                    \[
+                        \boxed{\dot{y} = \dot{y}_1 + \dot{y}_2.}
+                    \]
+              \item 写出总通解:
+                    \[
+                        y = y_h + \dot{y}.
+                    \]
+          \end{enumerate}
+
+          % ============================================================
+    \item \textbf{欧拉方程(Cauchy–Euler 型)}
+          \[
+              x^2 y'' + p x y' + q y = f(x).
+          \]
+          \begin{enumerate}[label=(\roman*)]
+              \item 当 $x>0$ 时，令 $x = e^t$，则 $t = \ln x$，有
+                    \[
+                        \frac{dy}{dx} = \frac{1}{x}\frac{dy}{dt},
+                        \quad
+                        \frac{d^2y}{dx^2}
+                        = \frac{1}{x^2}\left( \frac{d^2y}{dt^2} - \frac{dy}{dt} \right).
+                    \]
+                    代入得
+                    \[
+                        \frac{d^2y}{dt^2} + (p - 1)\frac{dy}{dt} + qy = f(e^t).
+                    \]
+                    解此方程后，用 $t = \ln x$ 回代.
+              \item 当 $x<0$ 时，令 $x = -e^t$，同理可解.
+          \end{enumerate}
+
+          % ============================================================
+    \item \textbf{$n$阶齐次线性方程:}
+          \[
+              y^{(n)} + a_1 y^{(n-1)} + \cdots + a_n y = 0.
+          \]
+          其特征方程为
+          \[
+              \lambda^n + a_1 \lambda^{n-1} + \cdots + a_n = 0.
+          \]
+          根据根的类型写通解:
+          \begin{enumerate}[label=(\roman*)]
+              \item 若 $\lambda$ 为\textbf{单实根}:
+                    \[
+                        y = C e^{\lambda x};
+                    \]
+              \item 若 $\lambda$ 为\textbf{$k$重实根}:
+                    \[
+                        y = (C_1 + C_2 x + \cdots + C_k x^{k-1}) e^{\lambda x};
+                    \]
+              \item 若 $\lambda = \alpha \pm \beta i$ 为\textbf{单复根}:
+                    \[
+                        y = e^{\alpha x}(C_1 \cos \beta x + C_2 \sin \beta x);
+                    \]
+              \item 若 $\lambda = \alpha \pm \beta i$ 为\textbf{二重复根}:
+                    \[
+                        y = e^{\alpha x}(C_1 \cos \beta x + C_2 \sin \beta x
+                        + C_3 x \cos \beta x + C_4 x \sin \beta x).
+                    \]
+          \end{enumerate}
+\end{enumerate}
+
+\subsection{用换元法求解微分方程}
+
+\DTwoThree
+\begin{enumerate}
+    \item \textbf{根据表达式形式直接换元}
+          \begin{enumerate}
+              \item 若出现 $f(x\pm y)$，令 $t = x \pm y$;
+              \item 若出现 $f(xy)$，令 $t = xy$;
+              \item 若出现 $f\!\left(\dfrac{y}{x}\right)$，令 $t = \dfrac{y}{x}$;
+              \item 若出现 $f(x^{2}\pm y^{2})$，令 $t = x^{2} \pm y^{2}$.
+          \end{enumerate}
+          (说明:这类方程常见于可分离或齐次方程.换元后需写出 $dt$ 与 $dx,dy$ 的关系以进行分离.)
+
+    \item \textbf{逆用求导公式进行换元}
+
+          若方程中某部分可看作已知复合函数的导数形式，可通过“逆用求导”来换元简化.
+          \[
+              \begin{cases}
+                  \text{见到 } f^{\prime}[g(x)] \cdot g^{\prime}(x) \ \Rightarrow \ \left(f[g(x)]\right)^{\prime},      & \text{令 } u = f[g(x)];   \\
+                  \text{见到 } f^{\prime}(x) g(x) + f(x) g^{\prime}(x) \ \Rightarrow \ \left(f(x) g(x)\right)^{\prime}, & \text{令 } u = f(x) g(x).
+              \end{cases}
+          \]
+          (说明:此法相当于“识别导数结构”，遇到链式或积的求导形式时可直接降阶或积分.)
+
+    \item \textbf{交换自变量与因变量}
+
+          当微分方程关于 $x$ 的形式复杂、而关于 $y$ 的形式更简单时，可以交换 $x,y$ 的角色，
+          即令 $x$ 为 $y$ 的函数，用 $\dfrac{dx}{dy}$ 代替 $\dfrac{dy}{dx}$.
+
+          (说明:尤其当方程“缺 $x$”时，令 $p = \dfrac{dy}{dx}$，转为 $p\dfrac{dp}{dy} = f(y,p)$ 类型;若“缺 $y$”，则令 $p = \dfrac{dy}{dx}$，转为 $p' = f(x,p)$.)
+\end{enumerate}
+
+\section{建立微分方程并求解}
+寻找信息点$A$与信息点$B$，根据题设关系，建立方程
+
+\DThree
+\subsection{用极限、导数、积分表达式建方程}
+\DTwoTwo+\DThree
+\subsection{用几何量表达式建方程}
+\DThree
+\subsection{用变化率建方程}
+\DThree
+
+

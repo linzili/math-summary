@@ -81,7 +81,6 @@
 \theorembodyfont{\fangsong}
 
 \usetikzlibrary{shapes.symbols}
-
 % 设置页面尺寸
 \IfStrEq{\@LALU@geometry}{16k}{% 载入 16k 版面设置
     \geometry{
