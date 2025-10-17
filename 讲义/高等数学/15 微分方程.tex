@@ -323,9 +323,61 @@
 \DThree
 \subsection{用极限、导数、积分表达式建方程}
 \DTwoTwo+\DThree
+\begin{enumerate}
+    \item 信息点$A,B$为极限、导数、积分表达式且为等量关系时，令$A=B$,建立方程。
+    \item 信息点为$f(x),g(x)$及$f^\prime(x),g^{\prime}(x)$的等量关系组，用求导、消元建方程.如：
+
+          $$\begin{cases}f'(x)+xf'(-x)=x,\\f'(-x)-xf'(x)=-x\end{cases}\Rightarrow f'(x)=\frac{x+x^2}{1+x^2}\Rightarrow f(x)=x+\frac{1}{2}\ln(1+x^2)-\arctan x+C\:.$$
+    \item 信息点为关于$x,y$的恒等式，如$f(xy)=yf(x)+xf(y)$,代入特殊点，并写$f^\prime(x)$定义.
+\end{enumerate}
 \subsection{用几何量表达式建方程}
 \DThree
+
+\begin{enumerate}
+    \item 用曲线的切线斜率.
+          $$k = f'(x_0) = \tan \alpha.$$
+    \item 用两曲线 $f(x)$ 与 $g(x)$ 的公切线斜率.
+          $$f'(x_0) = g'(x_0).$$
+    \item 用截距.
+          $$Y - y = y'(X - x) \begin{cases} \text{令 } Y = 0, 则 X = x - \frac{y}{y'} (\text{x轴上的截距}); \\ \text{令 } X = 0, 则 Y = y - xy' (\text{y轴上的截距}). \end{cases}$$
+          如, 令 $X = Y$, 建等式(方程).
+    \item 用面积.
+          $$
+              \int_a^b f(x) \, \mathrm{d}x.$$
+    \item 用体积.
+
+          $$V_{x}=\int_{a}^{b}\pi f^{2}(x)\mathrm{d}x\:,\:V_{y}=\int_{a}^{b}2\pi x\big|f(x)\big|\mathrm{d}x\:.$$
+
+    \item 用平均值.
+
+
+          $$\overline{f}=\frac{1}{b-a}\int_{a}^{b}f(x)\mathrm{d}x=f(\xi)\:.$$
+
+    \item 用弧长.
+
+          $$s=\int_{a}^{b}\sqrt{1+\left(y_{x}^{\prime}\right)^{2}}\mathrm{d}x\:.$$
+
+    \item 用侧面积.
+
+
+          $$S=\int_{a}^{b}2\pi\big|y(x)\big|\sqrt{1+(y_{x}^{\prime})^{2}}\mathrm{d}x\:.$$
+
+    \item 用曲率.
+          $$k=\frac{|y^{\prime\prime}|}{\left[1+(y^{\prime})^2\right]^{\frac{3}{2}}}.$$
+
+    \item 用形心.
+
+          $$\overline{x}=\frac{\iint_Dx\:\mathrm{d}\sigma}{\iint_D\mathrm{d}\sigma}\:,\:\overline{y}=\frac{\iint_Dy\:\mathrm{d}\sigma}{\iint_D\mathrm{d}\sigma}\:.$$
+\end{enumerate}
 \subsection{用变化率建方程}
 \DThree
+\begin{enumerate}
+    \item  信息点A的变化率与B成比例，令$\frac{\mathrm{d}A}{\mathrm{d}t}=\pm kB$．
+
+          物理背景：位移、速度、加速度，$F=ma$．
+    \item 见到“$P$点的运动方向始终指向$Q$点”,立即寻找◯信息点$A:P$点处的切线斜率$.\textcircled{2}$信息点$B:PQ$
+
+          连线与水平线夹角的正切值.令(1)=2(注意正负).
+\end{enumerate}
 
 
