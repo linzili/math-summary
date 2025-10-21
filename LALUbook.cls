@@ -71,7 +71,6 @@
 % ----------------
 \titleformat{\section}{\centering\Large\bfseries}{\thesection}{1em}{}
 
-\newCJKfontfamily\FangSong{FangSong_GB2312} % 仿宋
 
 % 首行缩进 2 字符
 \setlength{\parindent}{2em}
@@ -166,7 +165,22 @@
     title=#1\IfBlankF{#2}{\quad#2},
     #3,
 }
-\setCJKmonofont   { FangSong }
+
+\newCJKfontfamily\FangSong{FangSong_GB2312} % 仿宋
+% \setCJKmonofont   { FangSong }
+
+\setCJKmainfont[
+    BoldFont = Songti SC Bold,
+    ItalicFont = Kaiti SC
+]{Songti SC}
+
+\setCJKsansfont[
+    BoldFont = Heiti SC Medium,
+    ItalicFont = Kaiti SC
+]{Heiti SC}
+
+\setCJKmonofont{PingFang SC}
+
 \NewDocumentEnvironment{proof}{O{}O{}}{\begin{tcblaluthmbox}{{\heiti 证明}}{#1}{#2}\FangSong}{\hspace*{\fill}$\square$\end{tcblaluthmbox}}
 \NewDocumentEnvironment{solution}{O{}O{}}{\begin{tcblaluthmbox}{{\heiti 解}}{#1}{#2}\FangSong}{\end{tcblaluthmbox}}
 
