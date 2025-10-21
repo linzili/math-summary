@@ -165,40 +165,6 @@
 }
 \makeatother
 
-% % === 通用章节样式（直接方法）===
-% \makeatletter
-% \newcommand{\DefineStyledChapter}[3]{%
-%   % #1: 计数器名（如 GAOchapter）
-%   % #2: 前缀名（如 高等数学）
-%   % #3: 命令名（如 \GAOchapter）
-%   \newcounter{#1}
-%   \expandafter\newcommand\csname #3\endcsname[1]{%
-  
-%     \begingroup
-%     \refstepcounter{#1}%
-%     \addtocounter{chapter}{-1}%
-
-%     % 直接设置章节格式
-%     \ctexset{
-%         chapter={
-%           format={\centering\Huge\bfseries},
-%           name={#2},  % 前缀
-%           number={\zhnumber{\arabic{#1}}} % 使用自定义计数器的值
-%         },
-%     }%
-%     \chapter{##1}%
-%     % 在章节创建后重定义编号格式
-%     \renewcommand{\thechapter}{#2\zhnumber{\arabic{#1}}}
-%     \expandafter\xdef\csname @exist@#1@\arabic{chapter}\endcsname{\null}%
-%     \endgroup
-%   }%
-% }
-% \makeatother
-
-% % === 定义三个独立章节命令 ===
-% \DefineStyledChapter{GAOchapter}{高数强化}{GAOchapter}
-% \DefineStyledChapter{XIANchapter}{线代强化}{XIANchapter}
-% \DefineStyledChapter{GAIchapter}{概率强化}{GAIchapter}
 \ctexset{
     chapter={format={\centering\Huge\bfseries},name={强化专题,},number={\zhnumber{\arabic{chapter}}}},
     % chapter={format={\centering\Huge\bfseries},name={第,讲},number=\arabic{chapter}},
@@ -233,7 +199,24 @@
 \addtolength{\parskip}{.5em}
 
 \mainmatter
+\input{高等数学/1 函数极限与连续.tex}
+\input{高等数学/2 数列极限.tex}
+\input{高等数学/3 一元函数微分学的概念.tex}
+\input{高等数学/4 一元函数微分学的计算.tex}
+\input{高等数学/5 一元函数微分学的应用(一)——几何应用.tex}
+\input{高等数学/6 一元函数微分学的应用(二)——中值定理、微分等式与微分不等式.tex}
+\input{高等数学/7 一元函数微分学的应用(三)——物理应用.tex}
+\input{高等数学/8 一元函数积分学的概念与性质.tex}
+\input{高等数学/9 一元函数积分学的计算.tex}
+\input{高等数学/10 一元函数积分学的应用(一)——几何应用.tex}
+\input{高等数学/11 一元函数积分学的应用(二)——积分等式与积分不等式.tex}
+\input{高等数学/12 一元函数积分学的应用(三)——物理应用.tex}
+\input{高等数学/13 多元函数微分学.tex}
+\input{高等数学/14 二重积分.tex}
 \input{高等数学/15 微分方程.tex}
+\input{高等数学/16 无穷级数.tex}
+\input{高等数学/17 多元函数积分学的预备知识.tex}
+\input{高等数学/18 多元函数积分学.tex}
 \input{线性代数/1 行列式.tex}
 \input{线性代数/2 余子式和代数余子式的计算.tex}
 
