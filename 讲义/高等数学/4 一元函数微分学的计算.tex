@@ -1,1 +1,145 @@
 \GAOchapter{一元函数微分学的计算}
+
+\section{泰勒展开法}
+\DTwoThree
+
+若 $f(x)$ 是 $e^x$、$\ln(1+x)$、$\sin x$、$\cos x$、$\frac{1}{1+x}$ 等函数或其“亲戚”，
+可通过适当的恒等变形，将其化为已知展开式形式，再利用\textbf{泰勒展开的唯一性}求得 $f^{(n)}(x_0)$。
+
+\begin{enumerate}
+    \item \textbf{通分的逆运算（瓦解敌人，各个击破）}
+          \[
+              \frac{1}{x(x+1)} = \frac{1}{x} - \frac{1}{x+1}.
+          \]
+
+    \item \textbf{对数运算性质}
+          \[
+              \ln(2+x) = \ln\!\left[2\!\left(1+\frac{x}{2}\right)\right]
+              = \ln 2 + \ln\!\left(1+\frac{x}{2}\right).
+          \]
+
+    \item \textbf{三角恒等式}
+          \[
+              \sin^2 x = \frac{1-\cos 2x}{2}.
+          \]
+
+    \item \textbf{广义化：} 若 $x \to 0$，可作类似极限形式的推广分析。
+
+    \item \textbf{“偏导数化”：} 若函数中含多元关系，可视作 $x$ 的偏导形式进行处理。
+\end{enumerate}
+
+\section{莱布尼茨公式法}
+\DTwoThree
+
+若函数含有可有限次求导的多项式部分，如
+\[
+    f(x)\cdot (a x^2 + b x + c),
+\]
+例如 $e^x(1+x^2)$，则用\textbf{莱布尼茨乘积求导公式}更为高效。
+因为 $(a x^2 + b x + c)^{(3)} = 0$，使用该公式后仅保留前三项。
+
+常用 $n$ 阶导数公式（$n$ 为正整数）如下：
+\[
+    \begin{aligned}
+        (a^x)^{(n)}                      & = a^x (\ln a)^n,                       \\
+        \left(\frac{1}{1+x}\right)^{(n)} & = \frac{(-1)^n n!}{(1+x)^{n+1}},       \\
+        [\ln(1+x)]^{(n)}                 & = \frac{(-1)^{n-1}(n-1)!}{(1+x)^n},    \\
+        (\sin x)^{(n)}                   & = \sin\!\left(x+n\frac{\pi}{2}\right), \\
+        (\cos x)^{(n)}                   & = \cos\!\left(x+n\frac{\pi}{2}\right).
+    \end{aligned}
+\]
+
+\section{求导转化法}
+\DTwoThree
+\begin{enumerate}
+    \item 若函数既非“亲戚”，又不便于恒等变形，可先求一阶、二阶导，再转化为熟悉形式。
+          例如：
+          \[
+              y = \arctan x, \quad y' = \frac{1}{1+x^2} \Rightarrow y'(1+x^2)=1,
+          \]
+          从而转化为“莱布尼茨公式法”情形。
+
+    \item 必须熟记前述莱布尼茨法中的常用五个公式，并掌握其\textbf{递推规律}。
+\end{enumerate}
+
+\section{特殊点的高阶导数}
+\begin{enumerate}
+    \item 分段函数的分段点；
+    \item 含绝对值的函数。
+\end{enumerate}
+
+
+\section{奇偶与周期函数的高阶导数}
+
+\begin{enumerate}
+    \item 若 $f(x)$ 为奇函数：
+          \[
+              \begin{cases}
+                  f^{(2n)}(x)\text{ 为奇函数}, \\
+                  f^{(2n+1)}(x)\text{ 为偶函数}.
+              \end{cases}
+          \]
+    \item 若 $f(x)$ 为偶函数：
+          \[
+              \begin{cases}
+                  f^{(2n)}(x)\text{ 为偶函数}, \\
+                  f^{(2n+1)}(x)\text{ 为奇函数}.
+              \end{cases}
+          \]
+    \item 若 $f(x)$ 为周期函数，则 $f^{(n)}(x)$ 亦为周期函数。
+\end{enumerate}
+
+
+\section{隐函数的二阶导}
+
+若 $F(x, y) = 0$，且 $y = y(x)$，则对 $x$ 求导：
+\[
+    F_x + F_y y' = 0 \Rightarrow y' = -\frac{F_x}{F_y}.
+\]
+再对该式关于 $x$ 求导，得：
+\[
+    y'' = -\frac{F_{xx} + 2F_{xy}y' + F_{yy}(y')^2}{F_y}.
+\]
+
+
+\section{参数方程的二阶导}
+
+若
+\[
+    \begin{cases}
+        x = x(t), \\
+        y = y(t),
+    \end{cases}
+\]
+则
+\[
+    \frac{\mathrm{d}y}{\mathrm{d}x}
+    = \frac{\mathrm{d}y/\mathrm{d}t}{\mathrm{d}x/\mathrm{d}t}
+    = \frac{y'(t)}{x'(t)} = \varphi(t),
+\]
+进而
+\[
+    \frac{\mathrm{d}^2y}{\mathrm{d}x^2}
+    = \frac{\mathrm{d}\varphi/\mathrm{d}t}{\mathrm{d}x/\mathrm{d}t}
+    = \frac{\varphi'(t)}{x'(t)}.
+\]
+
+
+\section{反函数的二阶导}
+
+若 $y=f(x)$ 单调且二阶可导，且 $f'(x)\ne0$，则存在反函数 $x=\varphi(y)$。
+
+设
+\[
+    f'(x)=y'_x,\quad \varphi'(y)=x'_y,
+\]
+则
+\[
+    y'_x=\frac{1}{x'_y}, \qquad
+    y''_{xx}=-\frac{x''_{yy}}{(x'_y)^3}.
+\]
+反过来，有
+\[
+    x'_y = \frac{1}{y'_x}, \qquad
+    x''_{yy} = -\frac{y''_{xx}}{(y'_x)^3}.
+\]
