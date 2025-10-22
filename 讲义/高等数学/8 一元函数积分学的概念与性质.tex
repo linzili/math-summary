@@ -1,1 +1,212 @@
 \GAOchapter{一元函数积分学的概念与性质}
+
+\section{求连和 $\sum_{k=1}^{n} a_k$、连积 $\prod_{k=1}^{n} a_k$ 的极限}
+
+连积常可取对数化为连和：
+\[
+    \prod_{k=1}^{n} a_k = e^{\sum_{k=1}^{n} \ln a_k}.
+\]
+
+\subsection{基本型（能凑成 $\frac{i}{n}$）}
+
+若通项中能化为含 $\frac{i}{n}$ 的形式，则可用定积分定义处理。典型结构：
+
+\begin{enumerate}
+    \item $n + i = n\left(1 + \frac{i}{n}\right)$；
+    \item $n^2 + i^2 = n^2\left[1 + \left(\frac{i}{n}\right)^2\right]$；
+    \item $n^2 + ni = n^2\left(1 + \frac{i}{n}\right)$。
+\end{enumerate}
+
+于是可直接套用定积分定义：
+\[
+    \lim_{n \to \infty} \sum_{i=1}^{n} f\!\left(0+\frac{1-0}{n}i\right) \frac{1-0}{n}
+    = \int_{0}^{1} f(x)\,dx,
+\]
+或
+\[
+    \lim_{n \to \infty} \sum_{i=0}^{n-1} f\!\left(0+\frac{1-0}{n}i\right) \frac{1-0}{n}
+    = \int_{0}^{1} f(x)\,dx.
+\]
+
+\subsection{放缩型（凑不成 $\frac{i}{n}$）}
+
+\begin{enumerate}
+    \item \textbf{夹逼准则法：}
+          若通项含 $n^2+i$ 等无法化为 $\frac{i}{n}$ 的形式，可尝试对通项放缩后夹逼。
+
+    \item \textbf{放缩后再凑 $\frac{i}{n}$：}
+          如通项 $\frac{i^2+1}{n^2}$，虽凑不成 $\frac{i}{n}$，但可放缩为：
+          \[
+              \left(\frac{i}{n}\right)^2 < \frac{i^2+1}{n^2} < \left(\frac{i+1}{n}\right)^2,
+          \]
+          从而凑出 $\frac{i}{n}$，再按定积分处理。
+\end{enumerate}
+
+\subsection{变量上限型}
+
+若通项含 $\frac{x}{n}$，则：
+\[
+    \lim_{n \to \infty} \sum_{i=1}^{n} f\!\left(0+\frac{x-0}{n}i\right) \frac{x-0}{n}
+    = \int_{0}^{x} f(t)\,dt.
+\]
+
+\subsection{其他分割与取高方式}
+
+若分割方法或取样点不同，依然可按定积分定义处理。例如：
+
+\begin{enumerate}
+    \item \textbf{极坐标分割型：}
+          \begin{example}
+              求极限 $\lim_{n\to\infty}\sum_{k=1}^{n}\frac{\pi}{4n}\cos^{2}\frac{k\pi}{4n}$。
+          \end{example}
+          \begin{solution}
+              \[
+                  \lim_{n\to\infty}\sum_{k=1}^{n}\cos^{2}\!\left(\frac{\pi k}{4n}\right)\frac{\pi}{4n}
+                  = \int_{0}^{\pi/4}\cos^{2}\theta\,d\theta
+                  = \frac{1}{4}+\frac{\pi}{8}.
+              \]
+          \end{solution}
+
+    \item 取中点：$\frac{\frac{k-1}{n}+\frac{k}{n}}{2}$；
+    \item 取凸组合：$\lambda_1\frac{k-1}{n}+\lambda_2\frac{k}{n}$，$\lambda_1+\lambda_2=1$；
+    \item 取几何均值：$\sqrt{\frac{k-1}{n}\cdot\frac{k}{n}}$；
+    \item 取均方根：$\sqrt{\frac{(\frac{k-1}{n})^2+(\frac{k}{n})^2}{2}}$；
+    \item 取调和均值：$\frac{2}{\frac{1}{\frac{k-1}{n}}+\frac{1}{\frac{k}{n}}}$。
+\end{enumerate}
+
+\section{判断反常积分的敛散性}
+
+\subsection{基本结论}
+
+\begin{enumerate}
+    \item $\displaystyle \int_0^{1}\frac{dx}{x^{p}}$
+          \[
+              \begin{cases}
+                  \text{收敛}, & 0<p<1,  \\
+                  \text{发散}, & p\ge 1;
+              \end{cases}
+          \]
+          \quad
+          $\displaystyle \int_0^{1}\frac{\ln x}{x^{p}}dx$
+          \[
+              \begin{cases}
+                  \text{收敛}, & 0\le p<1, \\
+                  \text{发散}, & p\ge 1.
+              \end{cases}
+          \]
+
+    \item $\displaystyle \int_1^{+\infty}\frac{dx}{x^{p}}$
+          \[
+              \begin{cases}
+                  \text{收敛}, & p>1,    \\
+                  \text{发散}, & p\le 1;
+              \end{cases}
+          \]
+          \quad
+          $\displaystyle \int_1^{+\infty}\frac{\ln x}{x^{p}}dx$
+          \[
+              \begin{cases}
+                  \text{收敛}, & p>1,    \\
+                  \text{发散}, & p\le 1.
+              \end{cases}
+          \]
+\end{enumerate}
+
+\subsection{常用判定方法}
+
+\begin{enumerate}
+    \item \textbf{积分可拆性：}
+          \[
+              \int_{a}^{b} f(x)\,dx = \int_{a}^{c} f(x)\,dx + \int_{c}^{b} f(x)\,dx.
+          \]
+
+    \item \textbf{分母设置法：}
+          将 $x^p=\frac{1}{x^{-p}}$，$\ln^q x=\frac{1}{\ln^{-q}x}$ 化简。
+
+    \item \textbf{换元法：}
+          常用 $1-x=t$ 或 $\ln x=t$。
+
+    \item \textbf{分部积分法：}
+          例如：
+          \[
+              \int_{1}^{+\infty}\frac{\sin x}{x}dx
+              = -\frac{\cos x}{x}\Big|_1^{+\infty} - \int_{1}^{+\infty}\frac{\cos x}{x^{2}}dx.
+          \]
+          因 $\displaystyle \int_{1}^{+\infty}\left|\frac{\cos x}{x^{2}}\right|dx\le\int_{1}^{+\infty}\frac{1}{x^{2}}dx<\infty$，
+          故原积分收敛但不绝对收敛。
+
+    \item \textbf{等价代换：}
+          当 $x\to 0$ 时，$\ln(1+x)\sim x$，$\arctan x\sim x$。
+
+    \item \textbf{绝对值判敛法：}
+          若 $\int |f(x)|dx$ 收敛，则 $\int f(x)dx$ 绝对收敛。
+\end{enumerate}
+
+\subsection{含参反常积分敛散性结论大观}
+
+\begin{enumerate}
+    \item $\displaystyle \int_{1}^{2}\frac{dx}{x\ln^{p}x}$
+          \[
+              \begin{cases}
+                  \text{收敛}, & 0<p<1,  \\
+                  \text{发散}, & p\ge 1.
+              \end{cases}
+          \]
+
+    \item $\displaystyle \int_{2}^{+\infty}\frac{dx}{x\ln^{p}x}$
+          与 $\sum_{n=2}^{\infty}\frac{1}{n\ln^{p}n}$ 同敛散：
+          \[
+              \begin{cases}
+                  \text{收敛}, & p>1,    \\
+                  \text{发散}, & p\le 1.
+              \end{cases}
+          \]
+
+    \item $\displaystyle \int_{1}^{+\infty}\frac{dx}{x\ln^{p}x}$ 必发散。
+
+    \item $\displaystyle \int_{k}^{+\infty} e^{-\alpha x}\ln^{p}x\,dx$
+          或 $\displaystyle \int_{A}^{+\infty} e^{-\alpha x}x^{q}\,dx$：
+          \[
+              \begin{cases}
+                  \alpha>0 \Rightarrow \text{收敛}, \\
+                  \alpha<0 \Rightarrow \text{发散}.
+              \end{cases}
+          \]
+
+    \item $\displaystyle \int_{1}^{2}\frac{dx}{x^{p}\ln^{q}x}$
+          \[
+              \begin{cases}
+                  \text{收敛}, & 0<q<1,  \\
+                  \text{发散}, & q\ge 1.
+              \end{cases}
+          \]
+
+    \item $\displaystyle \int_{2}^{+\infty}\frac{dx}{x^{p}\ln^{q}x}$
+          与 $\sum_{n=2}^{\infty}\frac{1}{n^{p}\ln^{q}n}$ 同敛散：
+          \[
+              \begin{cases}
+                  \text{收敛}, & p>1,        \\
+                  \text{发散}, & p<1,        \\
+                  \text{收敛}, & p=1,q>1,    \\
+                  \text{发散}, & p=1,q\le 1.
+              \end{cases}
+          \]
+
+    \item $\displaystyle \int_{0}^{1}\frac{dx}{|\ln x|^{p}}$
+          \[
+              \begin{cases}
+                  \text{收敛}, & p<1,    \\
+                  \text{发散}, & p\ge 1.
+              \end{cases}
+          \]
+
+    \item $\displaystyle \int_{1}^{2}\frac{dx}{|\ln x|^{p}}$
+          \[
+              \begin{cases}
+                  \text{收敛}, & 0<p<1,  \\
+                  \text{发散}, & p\ge 1.
+              \end{cases}
+          \]
+
+    \item $\displaystyle \int_{2}^{\infty}\frac{dx}{|\ln x|^{p}}$ 必发散。
+\end{enumerate}
