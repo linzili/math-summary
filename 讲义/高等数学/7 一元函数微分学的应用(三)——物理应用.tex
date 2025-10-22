@@ -1,1 +1,84 @@
 \GAOchapter{一元函数微分学的应用(三)——物理应用}
+
+\section{寻找、建立相关变化率等式并求解}
+
+\begin{enumerate}
+    \item \textbf{运动学关系：}
+          若质点的位移关于时间的函数为 $x=x(t)$，则：
+          \[
+              v = \frac{dx}{dt}, \quad
+              a = \frac{dv}{dt} = \frac{dv}{dx}\frac{dx}{dt} = v\frac{dv}{dx}.
+          \]
+          （其中 $v$ 为速度，$a$ 为加速度。）
+
+    \item \textbf{参数形式下的变化率关系：}
+          若函数 $y=f(x)$ 由参数方程
+          \[
+              \begin{cases}
+                  x = x(t), \\
+                  y = y(t)
+              \end{cases}
+          \]
+          所确定，且 $y$ 对 $t$ 的变化率与 $x$ 对 $t$ 的变化率成比例，
+          即
+          \[
+              \frac{dy}{dt} = k a \frac{dx}{dt}, \quad (k \neq 0),
+          \]
+          则有
+          \[
+              \frac{dy}{dx} = k a.
+          \]
+          （常用于求相关变化率或速度比。）
+\end{enumerate}
+
+\section{根据题设写出物理量微元（微段常量化），建立等式并求解}
+
+若题中给出“A 对时间 $t$ 的变化率与 $B$ 成正比”，则有：
+\[
+    \frac{dA}{dt} = kB, \quad (k \neq 0),
+\]
+由此建立微分方程并求解即可。
+
+\subsection*{常见模型举例}
+\begin{enumerate}
+    \item \textbf{匀加速直线运动：}
+          \[
+              \frac{dv}{dt} = a_0 \Rightarrow v = a_0t + v_0, \quad x = \frac{1}{2}a_0t^2 + v_0t + x_0.
+          \]
+    \item \textbf{牛顿冷却定律：}
+          物体温度 $T$ 的变化率与其与环境温度 $T_0$ 的温差成正比：
+          \[
+              \frac{dT}{dt} = -k(T - T_0),
+          \]
+          解得
+          \[
+              T = T_0 + Ce^{-kt}.
+          \]
+    \item \textbf{放射性衰变 / 电容放电：}
+          数量 $N$ 的减少率与其本身成正比：
+          \[
+              \frac{dN}{dt} = -kN,
+          \]
+          解得
+          \[
+              N = N_0 e^{-kt}.
+          \]
+    \item \textbf{人口增长模型（逻辑斯蒂型）：}
+          若增长率受限于总容量 $M$，
+          \[
+              \frac{dN}{dt} = kN\left(1-\frac{N}{M}\right),
+          \]
+          解得
+          \[
+              N = \frac{M}{1+Ce^{-kt}}.
+          \]
+\end{enumerate}
+
+\subsection*{小结：解题步骤}
+\begin{enumerate}
+    \item 根据题意确定变量间的依赖关系；
+    \item 用比例、速率等物理语言写出微分方程；
+    \item 若能分离变量，则两边积分；
+    \item 结合初值（如 $t=0$ 时条件）求出常数；
+    \item 给出解析式或函数关系。
+\end{enumerate}
