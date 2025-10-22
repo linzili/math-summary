@@ -107,63 +107,65 @@
 }
 
 \newcommand{\GAOchapter}[1]{%
-%   \LUgroupsancheck
   \begingroup
   \addtocounter{chapter}{-1}
   \refstepcounter{GAOchapter}
-  % 去掉希腊字母，只保留强化专题 + 中文编号
+  % 设置章节编号格式
   \renewcommand*{\thechapter}{\arabic{GAOchapter}}
-%   \renewcommand*{\theHchapter}{LU.\arabic{LUchapter}}
+  % 设置超链接锚点格式
+  \renewcommand*{\theHchapter}{GAO.\arabic{GAOchapter}}
+  
   \ctexset{
       chapter={
         format={\centering\Huge\bfseries},
-        name={高数专题,},      % “强化专题”前缀
-        number={\zhnumber{\arabic{GAOchapter}}} % 中文数字
+        name={高数专题,},
+        number={\zhnumber{\arabic{GAOchapter}}}
       },
   }
   \csname @std@chapter\endcsname{#1}
   \expandafter\xdef\csname @exist@GAOchapter@\arabic{chapter}\endcsname{\null}
 }
 
-
 \newcommand{\XIANchapter}[1]{%
-%   \LUgroupsancheck
   \begingroup
   \addtocounter{chapter}{-1}
   \refstepcounter{XIANchapter}
-  % 去掉希腊字母，只保留强化专题 + 中文编号
+  % 设置章节编号格式
   \renewcommand*{\thechapter}{\arabic{XIANchapter}}
-%   \renewcommand*{\theHchapter}{LU.\arabic{LUchapter}}
+  % 设置超链接锚点格式
+  \renewcommand*{\theHchapter}{XIAN.\arabic{XIANchapter}}
+  
   \ctexset{
       chapter={
         format={\centering\Huge\bfseries},
-        name={线代专题,},      % “强化专题”前缀
-        number={\zhnumber{\arabic{XIANchapter}}} % 中文数字
+        name={线代专题,},
+        number={\zhnumber{\arabic{XIANchapter}}}
       },
   }
   \csname @std@chapter\endcsname{#1}
   \expandafter\xdef\csname @exist@XIANchapter@\arabic{chapter}\endcsname{\null}
 }
 
-
 \newcommand{\GAIchapter}[1]{%
-%   \LUgroupsancheck
   \begingroup
   \addtocounter{chapter}{-1}
   \refstepcounter{GAIchapter}
-  % 去掉希腊字母，只保留强化专题 + 中文编号
+  % 设置章节编号格式
   \renewcommand*{\thechapter}{\arabic{GAIchapter}}
-%   \renewcommand*{\theHchapter}{LU.\arabic{LUchapter}}
+  % 设置超链接锚点格式
+  \renewcommand*{\theHchapter}{GAI.\arabic{GAIchapter}}
+  
   \ctexset{
       chapter={
         format={\centering\Huge\bfseries},
-        name={概率专题,},      % “强化专题”前缀
-        number={\zhnumber{\arabic{GAIchapter}}} % 中文数字
+        name={概率专题,},
+        number={\zhnumber{\arabic{GAIchapter}}}
       },
   }
   \csname @std@chapter\endcsname{#1}
-  \expandafter\xdef\csname @exist@GAOchapter@\arabic{chapter}\endcsname{\null}
+  \expandafter\xdef\csname @exist@GAIchapter@\arabic{chapter}\endcsname{\null}
 }
+
 \makeatother
 
 \ctexset{
@@ -219,8 +221,6 @@
 \input{高等数学/18 多元函数积分学.tex}
 \input{线性代数/1 行列式.tex}
 \input{线性代数/2 余子式和代数余子式的计算.tex}
-
-% \input{高数习题/习题3.tex}
 \input{线性代数/3 矩阵运算.tex}
 \input{线性代数/4 矩阵的秩.tex}
 \input{线性代数/5 线性方程组.tex}
