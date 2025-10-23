@@ -1,1 +1,187 @@
 \GAOchapter{二重积分}
+
+\section{和式极限与二重积分的定义}
+
+设 $D = \{(x, y) \mid a \le x \le b,\, c \le y \le d\}$，若极限存在，则称为 $f(x,y)$ 在 $D$ 上的二重积分：
+\[
+    \iint_{D} f(x, y) \, d\sigma
+    = \lim_{n \to \infty} \sum_{i=1}^{n} \sum_{j=1}^{n}
+    f\!\left(a + \frac{b-a}{n}i,\; c + \frac{d-c}{n}j\right)
+    \cdot \frac{b-a}{n} \cdot \frac{d-c}{n}.
+\]
+
+\section{交换积分次序的技巧与必要性}
+
+\begin{itemize}
+    \item 若题中给出累次积分：
+          \[
+              \int_{a}^{b} \left[\int_{g_1(x)}^{g_2(x)} f(x,y)\,dy\right] dx,
+          \]
+          当 \textbf{内层积分} 属于以下类型时，应优先考虑交换积分次序：
+          \begin{enumerate}
+              \item 可积但不可求积型；
+              \item 计算困难型。
+          \end{enumerate}
+
+    \item 常见“可积不可求积”形式：
+          \[
+              \int \frac{\sin x}{x}\,dx, \quad
+              \int \frac{\cos x}{x}\,dx, \quad
+              \int \frac{1}{\ln x}\,dx, \quad
+              \int \sin x^2\,dx, \quad
+              \int e^{x^2}\,dx, \quad
+              \int \frac{e^x}{x}\,dx, \quad
+              \int \frac{\tan x}{x}\,dx.
+          \]
+          见到这些形式的被积函数时，一般都是\textbf{需要交换积分次序}的信号。
+\end{itemize}
+
+\section{积分的保号性}
+
+\begin{enumerate}
+    \item 若连续函数 $f(x,y) \ge 0$ 且不恒为 $0$，则
+          \[
+              \iint\limits_D f(x,y)\, d\sigma > 0.
+          \]
+    \item 若连续函数 $f(x,y)$ 满足：
+          \[
+              \forall D, \quad \iint\limits_D f(x,y)\, d\sigma = 0,
+          \]
+          则必有 $f(x,y) \equiv 0$。
+\end{enumerate}
+
+\section{对称性法则}
+
+\subsection{普通对称性}
+设 $D$ 与 $f(x,y)$ 同时具备一定对称性，则可大幅简化计算：
+
+\begin{enumerate}
+    \item 关于 $y$ 轴对称：
+          \[
+              \iint\limits_D f(x,y)\,d\sigma =
+              \begin{cases}
+                  2\iint\limits_{D_1} f(x,y)\,d\sigma, & f(x,y)=f(-x,y),  \\[4pt]
+                  0,                                   & f(x,y)=-f(-x,y),
+              \end{cases}
+          \]
+          其中 $D_1$ 为 $D$ 的右半部分。
+    \item 关于 $x$ 轴对称：
+          \[
+              \iint\limits_D f(x,y)\,d\sigma =
+              \begin{cases}
+                  2\iint\limits_{D_1} f(x,y)\,d\sigma, & f(x,y)=f(x,-y),  \\[4pt]
+                  0,                                   & f(x,y)=-f(x,-y).
+              \end{cases}
+          \]
+    \item 关于原点对称：
+          \[
+              \iint\limits_D f(x,y)\,d\sigma =
+              \begin{cases}
+                  2\iint\limits_{D_1} f(x,y)\,d\sigma, & f(x,y)=f(-x,-y),  \\[4pt]
+                  0,                                   & f(x,y)=-f(-x,-y).
+              \end{cases}
+          \]
+    \item 关于直线 $y = x$ 对称：
+          \[
+              \iint\limits_D f(x,y)\,d\sigma =
+              \begin{cases}
+                  2\iint\limits_{D_1} f(x,y)\,d\sigma, & f(x,y)=f(y,x),  \\[4pt]
+                  0,                                   & f(x,y)=-f(y,x).
+              \end{cases}
+          \]
+\end{enumerate}
+
+\subsection{轮换对称性}
+若交换 $x$ 与 $y$ 后区域 $D$ 不变（即关于 $y=x$ 对称），则：
+\[
+    \iint\limits_D f(x,y)\,d\sigma = \iint\limits_D f(y,x)\,d\sigma.
+\]
+
+\section{二重积分常用结论（单位圆区域）}
+
+\[
+    \begin{aligned}
+         & \iint_{x^2+y^2\le1}(x^2+y^2)\,d\sigma = \frac{\pi}{2}, \qquad
+        \iint_{x^2+y^2\le1}\sqrt{x^2+y^2}\,d\sigma = \frac{2\pi}{3},                  \\[6pt]
+         & \iint_{x^2+y^2\le1}\sqrt{1-(x^2+y^2)}\,d\sigma = \frac{2\pi}{3}, \qquad
+        \iint_{x^2+y^2\le1}\!\!\bigl(1-\sqrt{x^2+y^2}\bigr)\,d\sigma = \frac{\pi}{3}, \\[6pt]
+         & \iint_{x^2+y^2\le1}\!\!\left(\frac{x^2}{a^2}+\frac{y^2}{b^2}\right)d\sigma
+        = \frac{\pi}{4}\!\left(\frac{1}{a^2}+\frac{1}{b^2}\right).
+    \end{aligned}
+\]
+
+
+\section{二重积分的计算方法}
+
+\subsection{直角坐标法}
+\begin{enumerate}
+    \item $X$ 型区域：
+          \[
+              \iint\limits_D f(x,y)\,d\sigma = \int_a^b \!dx \int_{\varphi_1(x)}^{\varphi_2(x)}\! f(x,y)\,dy.
+          \]
+    \item $Y$ 型区域：
+          \[
+              \iint\limits_D f(x,y)\,d\sigma = \int_c^d \!dy \int_{\psi_1(y)}^{\psi_2(y)}\! f(x,y)\,dx.
+          \]
+\end{enumerate}
+
+\subsection{极坐标法}
+
+设
+\[
+    \begin{cases}
+        x = r\cos\theta, \\
+        y = r\sin\theta,
+    \end{cases}
+    \quad d\sigma = r\,dr\,d\theta,
+\]
+则
+\[
+    \iint\limits_D f(x,y)\,d\sigma
+    = \int_{\alpha}^{\beta}\!d\theta \int_{r_1(\theta)}^{r_2(\theta)}\! f(r\cos\theta, r\sin\theta)\,r\,dr.
+\]
+常见情况：
+\begin{itemize}
+    \item 极点 $O$ 在区域外；
+    \item 极点在边界上；
+    \item 极点在区域内部（常为圆或扇形区域）。
+\end{itemize}
+
+\subsection{二重积分的换元法}
+
+\begin{enumerate}
+    \item \textbf{一元换元回顾：}
+          \[
+              \int_a^b f(x)\,dx = \int_{\alpha}^{\beta} f[\varphi(t)]\,\varphi'(t)\,dt.
+          \]
+    \item \textbf{二重积分换元：}
+          \[
+              \iint_{D_{xy}} f(x,y)\,dx\,dy
+              = \iint_{D_{uv}} f[x(u,v),y(u,v)]\,
+              \left|\frac{\partial(x,y)}{\partial(u,v)}\right| du\,dv,
+          \]
+          其中
+          \[
+              \frac{\partial(x,y)}{\partial(u,v)} =
+              \begin{vmatrix}
+                  \dfrac{\partial x}{\partial u} & \dfrac{\partial x}{\partial v} \\[4pt]
+                  \dfrac{\partial y}{\partial u} & \dfrac{\partial y}{\partial v}
+              \end{vmatrix} \ne 0.
+          \]
+
+    \item \textbf{极坐标换元：}
+          \[
+              \begin{cases}
+                  x = r\cos\theta, \\
+                  y = r\sin\theta,
+              \end{cases}
+              \quad
+              \left|\dfrac{\partial(x,y)}{\partial(r,\theta)}\right|
+              = r.
+          \]
+          因此：
+          \[
+              \iint_{D_{xy}} f(x,y)\,dx\,dy
+              = \iint_{D_{r\theta}} f(r\cos\theta, r\sin\theta)\,r\,dr\,d\theta.
+          \]
+\end{enumerate}
