@@ -1,7 +1,7 @@
 INFO:  latexindent version 3.24.4, 2024-07-18, a script to indent .tex files
        latexindent lives here: /usr/local/texlive/2025/texmf-dist/scripts/latexindent/
-       Thu Oct 23 18:58:09 2025
-       Filename: /Users/linzili/考研/数学/lu/讲义/高等数学/__latexindent_temp_16 无穷级数.tex
+       Thu Oct 23 20:36:52 2025
+       Filename: /Users/linzili/考研/数学/lu/讲义/高等数学/__latexindent_temp_18 多元函数积分学.tex
 INFO:  Processing switches:
        -y|--yaml: YAML settings specified via command line
        -c|--cruft: cruft directory
@@ -14,9 +14,9 @@ INFO:  YAML reading settings
        latexindent.pl didn't find indentconfig.yaml or .indentconfig.yaml
        see all possible locations: https://latexindentpl.readthedocs.io/en/latest/sec-appendices.html#indentconfig-options)
 INFO:  YAML settings read: -y switch
-       YAML setting: defaultIndent:'    '
-       single-quoted string found in -y switch: '    ', substitute to     
-       Updating mainSettings with defaultIndent:     
+       YAML setting: defaultIndent:'      '
+       single-quoted string found in -y switch: '      ', substitute to       
+       Updating mainSettings with defaultIndent:       
 INFO:  Phase 1: searching for objects
 INFO:  Phase 2: finding surrounding indentation
 INFO:  Phase 3: indenting objects

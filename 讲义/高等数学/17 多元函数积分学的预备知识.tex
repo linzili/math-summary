@@ -1,1 +1,131 @@
 \GAOchapter{多元函数积分学的预备知识}
+
+\section{方向导数}
+
+\begin{enumerate}
+    \item \textbf{定义}
+
+          设函数 $f(x,y)$ 在点 $(a,b)$ 及其邻域内有定义，单位向量
+          $l = (\cos\alpha, \cos\beta)$ 给出方向。若极限
+          \[
+              \lim_{t \to 0^+} \frac{f(a + t\cos\alpha,\, b + t\cos\beta) - f(a,b)}{t}
+          \]
+          存在，则称其为函数 $f(x,y)$ 在点 $(a,b)$ 沿方向 $l$ 的\textbf{方向导数}，记作
+          \[
+              \left.\frac{\partial f}{\partial l}\right|_{(a,b)}.
+          \]
+
+    \item \textbf{计算公式}
+
+          若 $f(x,y)$ 在点 $(a,b)$ 可微，则沿任意方向 $l = (\cos\alpha, \cos\beta)$ 的方向导数存在，且
+          \[
+              \left.\frac{\partial f}{\partial l}\right|_{(a,b)}
+              = f_x'(a,b)\cos\alpha + f_y'(a,b)\cos\beta.
+          \]
+
+          该式表明方向导数是偏导数的线性组合。
+\end{enumerate}
+
+\section{梯度的概念}
+
+设 $f(x,y)$ 在点 $(a,b)$ 处可微，定义其\textbf{梯度（Gradient）}为
+\[
+    \nabla f(a,b) = (f_x'(a,b),\, f_y'(a,b)).
+\]
+
+梯度的几何意义如下：
+\begin{enumerate}
+    \item 梯度方向是函数增长最快的方向；
+    \item 梯度的模表示函数在该点处的最大方向导数：
+          \[
+              \max_{|l|=1}\left.\frac{\partial f}{\partial l}\right|_{(a,b)} = |\nabla f(a,b)|.
+          \]
+\end{enumerate}
+
+\section{多元函数的泰勒多项式}
+
+若 $f(x,y)$ 在点 $X_0(x_0,y_0)$ 处二阶偏导连续，记
+\[
+    \Delta X = (\Delta x,\Delta y) = (x - x_0, y - y_0),
+\]
+则其二阶泰勒多项式为
+\[
+    f(x,y) \approx f(x_0,y_0)
+    + (f_x', f_y')|_{X_0}
+    \begin{pmatrix}\Delta x\\\Delta y\end{pmatrix}
+    + \frac{1}{2}
+    (\Delta x,\Delta y)
+    \begin{pmatrix}
+        f_{xx}'' & f_{xy}'' \\
+        f_{yx}'' & f_{yy}''
+    \end{pmatrix}_{X_0}
+    \begin{pmatrix}\Delta x\\\Delta y\end{pmatrix}.
+\]
+
+若高阶项趋于零，则函数在该点可用此近似。
+
+\section{空间曲线的切线与法平面}
+
+设空间曲线
+\[
+    L:\begin{cases}
+        x = x(t), \\
+        y = y(t), \\
+        z = z(t),
+    \end{cases}
+    \quad t \in [\alpha, \beta],
+\]
+其中 $x(t),y(t),z(t)$ 一阶连续可导，且不全为零。
+
+\begin{enumerate}
+    \item \textbf{切向量}
+          \[
+              \boldsymbol{\tau} = (x'(t_0), y'(t_0), z'(t_0)).
+          \]
+    \item \textbf{切线方程}
+          \[
+              \frac{x - x(t_0)}{x'(t_0)}
+              = \frac{y - y(t_0)}{y'(t_0)}
+              = \frac{z - z(t_0)}{z'(t_0)}.
+          \]
+    \item \textbf{法平面方程}
+          \[
+              x'(t_0)[x - x(t_0)] + y'(t_0)[y - y(t_0)] + z'(t_0)[z - z(t_0)] = 0.
+          \]
+\end{enumerate}
+
+\section{空间曲面的切平面与法线}
+
+设光滑曲面
+\[
+    F(x,y,z) = 0,
+\]
+且在点 $(a,b,c)$ 处有
+\[
+    F_x'^2 + F_y'^2 + F_z'^2 \ne 0.
+\]
+
+\begin{enumerate}
+    \item \textbf{法向量}
+          \[
+              \boldsymbol{n} = (F_x'(a,b,c),\, F_y'(a,b,c),\, F_z'(a,b,c)).
+          \]
+
+    \item \textbf{切平面方程}
+          \[
+              F_x'(a,b,c)(x - a)
+              + F_y'(a,b,c)(y - b)
+              + F_z'(a,b,c)(z - c)
+              = 0.
+          \]
+
+    \item \textbf{法线方程}
+          \[
+              \frac{x - a}{F_x'(a,b,c)}
+              = \frac{y - b}{F_y'(a,b,c)}
+              = \frac{z - c}{F_z'(a,b,c)}.
+          \]
+\end{enumerate}
+
+\textbf{几何意义：}
+法向量垂直于曲面，切平面在该点处与曲面“最贴近”，法线即过该点且垂直于切平面的直线。

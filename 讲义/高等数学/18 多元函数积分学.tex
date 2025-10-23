@@ -1,1 +1,659 @@
 \GAOchapter{多元函数积分学}
+\section{计算三重积分}
+
+\subsection{和式极限定义}
+
+设区域
+\[
+      \Omega = \{(x, y, z) \mid a \le x \le b,\, c \le y \le d,\, e \le z \le f\},
+\]
+则三重积分定义为
+\[
+      \iiint_{\Omega} g(x, y, z) \, \mathrm{d}v
+      = \lim_{n \to \infty}
+      \sum_{i=1}^{n} \sum_{j=1}^{n} \sum_{k=1}^{n}
+      g\!\left(a + \tfrac{b-a}{n}i,\, c + \tfrac{d-c}{n}j,\, e + \tfrac{f-e}{n}k\right)
+      \frac{(b-a)(d-c)(f-e)}{n^3}.
+\]
+
+\subsection{积分次序的交换}
+
+将所给积分次序还原为
+\[
+      \iiint_\Omega f(x,y,z)\, \mathrm{d}v,
+\]
+再根据区域特征或函数形式，选择新的积分次序以便计算（如先 $z$ 后 $x,y$ 或先 $x$ 后 $y,z$）。
+
+\subsection{积分的保号性}
+
+\begin{enumerate}
+      \item 若 $f(x,y,z)$ 在 $\Omega$ 上连续且 $f \ge 0$ 且不恒为零，则
+            \[
+                  \iiint_{\Omega} f(x,y,z)\, \mathrm{d}v > 0.
+            \]
+      \item 若连续函数 $f(x,y,z)$ 满足对任意有界闭区域 $\Omega$，
+            \[
+                  \iiint_{\Omega} f(x,y,z)\, \mathrm{d}v = 0,
+            \]
+            则必有 $f(x,y,z) \equiv 0$ 于该区域。
+\end{enumerate}
+
+\subsection{对称性的应用}
+
+与二重积分完全类似。
+
+\begin{enumerate}
+      \item \textbf{普通对称性.}
+            \begin{enumerate}
+                  \item 若 $\Omega$ 关于 $xOz$ 面对称，则
+                        \[
+                              \iiint_{\Omega} f(x, y, z)\, \mathrm{d}v =
+                              \begin{cases}
+                                    2\iiint_{\Omega_1} f(x,y,z)\, \mathrm{d}v, & f(x,y,z) = f(x,-y,z),  \\[4pt]
+                                    0,                                         & f(x,y,z) = -f(x,-y,z),
+                              \end{cases}
+                        \]
+                        其中 $\Omega_1$ 为 $\Omega$ 在 $xOz$ 面右侧部分。
+                  \item 若 $\Omega$ 关于三个坐标面对称，$\Omega_1$ 为第一卦限部分，则
+                        \[
+                              \iiint_{\Omega} f(x,y,z)\, \mathrm{d}v =
+                              \begin{cases}
+                                    8\iiint_{\Omega_1} f(x,y,z)\, \mathrm{d}v, & f(x,y,z)=f(-x,-y,-z),  \\[4pt]
+                                    0,                                         & f(x,y,z)=-f(-x,-y,-z).
+                              \end{cases}
+                        \]
+            \end{enumerate}
+
+      \item \textbf{轮换对称性.}
+            若 $\Omega$ 在交换 $x,y$ 后不变，则
+            \[
+                  \iiint_{\Omega} f(x,y,z)\, \mathrm{d}v
+                  = \iiint_{\Omega} f(y,x,z)\, \mathrm{d}v.
+            \]
+            特别地，若 $\Omega=\{x^2+y^2+z^2\le R^2\}$，则
+            \[
+                  I = \iiint_{\Omega} f(x)\, \mathrm{d}v
+                  = \iiint_{\Omega} f(y)\, \mathrm{d}v
+                  = \iiint_{\Omega} f(z)\, \mathrm{d}v
+                  = \tfrac{1}{3} \iiint_{\Omega} [f(x)+f(y)+f(z)]\, \mathrm{d}v.
+            \]
+\end{enumerate}
+
+\subsection{直角坐标系下的积分方法}
+
+\begin{enumerate}
+      \item \textbf{先一后二法（投影穿线法）}
+            \begin{enumerate}
+                  \item 适用：区域 $\Omega$ 由下曲面 $z=z_1(x,y)$ 与上曲面 $z=z_2(x,y)$ 所围。
+                  \item 计算公式：
+                        \[
+                              \iiint_{\Omega} f(x,y,z)\, \mathrm{d}v
+                              = \iint_{D_{xy}} \mathrm{d}\sigma
+                              \int_{z_1(x,y)}^{z_2(x,y)} f(x,y,z)\, \mathrm{d}z.
+                        \]
+            \end{enumerate}
+
+      \item \textbf{先二后一法（定限截面法）}
+            \begin{enumerate}
+                  \item 适用：$\Omega$ 是旋转体或按 $z$ 分层。
+                  \item 计算公式：
+                        \[
+                              \iiint_{\Omega} f(x,y,z)\, \mathrm{d}v
+                              = \int_{a}^{b} \mathrm{d}z
+                              \iint_{D_z} f(x,y,z)\, \mathrm{d}\sigma.
+                        \]
+            \end{enumerate}
+\end{enumerate}
+
+\subsection{柱面坐标系积分法}
+
+若积分区域适于极坐标表示，令
+\[
+      \begin{cases}
+            x = r\cos\theta, \\
+            y = r\sin\theta,
+      \end{cases}
+\]
+则
+\[
+      \iiint_{\Omega} f(x,y,z)\, \mathrm{d}x\mathrm{d}y\mathrm{d}z
+      = \iiint_{\Omega} f(r\cos\theta,r\sin\theta,z)\, r\, \mathrm{d}r\,\mathrm{d}\theta\,\mathrm{d}z.
+\]
+
+\subsection{球面坐标系积分法}
+
+\begin{enumerate}
+      \item \textbf{适用场合：}
+            \begin{enumerate}
+                  \item 被积函数含有 $f(x^2 + y^2 + z^2)$；
+                  \item 积分区域为球体或锥体的部分。
+            \end{enumerate}
+      \item \textbf{坐标变换：}
+            \[
+                  \begin{cases}
+                        x = r\sin\varphi\cos\theta, \\
+                        y = r\sin\varphi\sin\theta, \\
+                        z = r\cos\varphi,
+                  \end{cases}
+                  \quad
+                  \mathrm{d}v = r^2 \sin\varphi\, \mathrm{d}r\, \mathrm{d}\varphi\, \mathrm{d}\theta.
+            \]
+      \item \textbf{积分形式：}
+            \[
+                  \iiint_{\Omega} f(x,y,z)\, \mathrm{d}v
+                  = \int_{\theta_1}^{\theta_2} \!\mathrm{d}\theta
+                  \int_{\varphi_1(\theta)}^{\varphi_2(\theta)} \!\mathrm{d}\varphi
+                  \int_{r_1(\varphi,\theta)}^{r_2(\varphi,\theta)}\!
+                  f(r\sin\varphi\cos\theta, r\sin\varphi\sin\theta, r\cos\varphi)
+                  r^2 \sin\varphi\, \mathrm{d}r.
+            \]
+\end{enumerate}
+\subsection{重积分的应用}
+
+\begin{enumerate}
+      \item \textbf{体积：}
+            \[
+                  V = \iiint_{\Omega} 1\, \mathrm{d}v.
+            \]
+
+      \item \textbf{重心（质心）：}
+            若体密度为 $\rho(x,y,z)$，则
+            \[
+                  \overline{x} = \frac{\iiint_{\Omega} x\rho\, \mathrm{d}v}{\iiint_{\Omega} \rho\, \mathrm{d}v},\quad
+                  \overline{y} = \frac{\iiint_{\Omega} y\rho\, \mathrm{d}v}{\iiint_{\Omega} \rho\, \mathrm{d}v},\quad
+                  \overline{z} = \frac{\iiint_{\Omega} z\rho\, \mathrm{d}v}{\iiint_{\Omega} \rho\, \mathrm{d}v}.
+            \]
+
+      \item \textbf{引力：}
+            对物体外一点 $M_0(x_0,y_0,z_0)$，质量为 $m$，体密度 $\rho(x,y,z)$，
+            \[
+                  \begin{aligned}
+                        F_x & = Gm \iiint_{\Omega} \frac{\rho(x,y,z)(x-x_0)}{[(x-x_0)^2+(y-y_0)^2+(z-z_0)^2]^{3/2}}\, \mathrm{d}v, \\
+                        F_y & = Gm \iiint_{\Omega} \frac{\rho(x,y,z)(y-y_0)}{[(x-x_0)^2+(y-y_0)^2+(z-z_0)^2]^{3/2}}\, \mathrm{d}v, \\
+                        F_z & = Gm \iiint_{\Omega} \frac{\rho(x,y,z)(z-z_0)}{[(x-x_0)^2+(y-y_0)^2+(z-z_0)^2]^{3/2}}\, \mathrm{d}v.
+                  \end{aligned}
+            \]
+
+      \item \textbf{转动惯量：}
+            \[
+                  \begin{aligned}
+                        I_x & = \iiint_{\Omega} \rho(y^2+z^2)\, \mathrm{d}v,     \\
+                        I_y & = \iiint_{\Omega} \rho(x^2+z^2)\, \mathrm{d}v,     \\
+                        I_z & = \iiint_{\Omega} \rho(x^2+y^2)\, \mathrm{d}v,     \\
+                        I_O & = \iiint_{\Omega} \rho(x^2+y^2+z^2)\, \mathrm{d}v.
+                  \end{aligned}
+            \]
+\end{enumerate}
+\section{计算第一型曲面积分}
+
+\subsection{定义}
+
+设 $f(x,y,z)$ 定义在光滑曲面 $\Sigma$ 上，若将 $\Sigma$ 分割为若干小面元 $\Delta S_i$，取 $\Sigma_i$ 上一点 $M_i(x_i,y_i,z_i)$，当面元最大直径趋于零时，若极限
+\[
+      \lim_{\lambda \to 0} \sum_i f(x_i,y_i,z_i)\Delta S_i
+\]
+存在，则称其为函数 $f(x,y,z)$ 在曲面 $\Sigma$ 上的\textbf{第一型曲面积分}，记作
+\[
+      \iint_{\Sigma} f(x,y,z)\, \mathrm{d}S.
+\]
+
+其物理意义：当 $f(x,y,z)\ge0$ 表示面密度时，该积分即为曲面薄片的质量。
+
+
+\subsection{代入曲面方程}
+
+若曲面方程为 $\Sigma: z = z(x,y)$，则需将其代入被积函数：
+\[
+      f(x,y,z) \;\Rightarrow\; f(x,y,z(x,y)),
+\]
+并结合面积微元
+\[
+      \mathrm{d}S = \sqrt{1 + z_x'^2 + z_y'^2}\, \mathrm{d}x\, \mathrm{d}y,
+\]
+从而化为二重积分形式：
+\[
+      \iint_{\Sigma} f(x,y,z)\, \mathrm{d}S
+      = \iint_{D_{xy}} f(x,y,z(x,y)) \sqrt{1 + z_x'^2 + z_y'^2}\, \mathrm{d}x\, \mathrm{d}y.
+\]
+
+
+\subsection{几何意义}
+
+当 $f(x,y,z)\equiv1$ 时，
+\[
+      \iint_{\Sigma} \mathrm{d}S
+\]
+即为曲面 $\Sigma$ 的面积。
+
+
+\subsection{形心公式的应用}
+
+若曲面 $\Sigma$ 的形心（或质心）坐标为 $(\overline{x},\overline{y},\overline{z})$，则
+\[
+      \overline{x} = \frac{\iint_{\Sigma} x\, \mathrm{d}S}{\iint_{\Sigma} \mathrm{d}S}, \quad
+      \overline{y} = \frac{\iint_{\Sigma} y\, \mathrm{d}S}{\iint_{\Sigma} \mathrm{d}S}, \quad
+      \overline{z} = \frac{\iint_{\Sigma} z\, \mathrm{d}S}{\iint_{\Sigma} \mathrm{d}S}.
+\]
+若 $\Sigma$ 为规则对称图形（形心坐标已知，面积易求），可得
+\[
+      \iint_{\Sigma} x\, \mathrm{d}S = \overline{x} \, S_{\Sigma}, \quad
+      \iint_{\Sigma} y\, \mathrm{d}S = \overline{y} \, S_{\Sigma}, \quad
+      \iint_{\Sigma} z\, \mathrm{d}S = \overline{z} \, S_{\Sigma}.
+\]
+
+
+\subsection{对称性}
+
+\begin{enumerate}
+      \item \textbf{普通对称性.}
+            若 $\Sigma$ 关于 $xOz$ 面对称，则
+            \[
+                  \iint_{\Sigma} f(x,y,z)\, \mathrm{d}S =
+                  \begin{cases}
+                        2 \iint_{\Sigma_1} f(x,y,z)\, \mathrm{d}S, & f(x,y,z) = f(x,-y,z),  \\[4pt]
+                        0,                                         & f(x,y,z) = -f(x,-y,z),
+                  \end{cases}
+            \]
+            其中 $\Sigma_1$ 为 $\Sigma$ 在 $xOz$ 面右侧部分。
+            其他关于 $yOz$ 或 $xOy$ 的情形类似。
+
+      \item \textbf{轮换对称性.}
+            若曲面 $\Sigma: z=z(x,y)$ 在交换 $x,y$ 后不变，则
+            \[
+                  \iint_{\Sigma} f(x,y,z)\, \mathrm{d}S
+                  = \iint_{\Sigma} f(y,x,z)\, \mathrm{d}S.
+            \]
+            若 $\Sigma$ 关于 $x,y,z$ 完全对称，则
+            \[
+                  \iint_{\Sigma} f(x,y,z)\, \mathrm{d}S
+                  = \frac{1}{3} \iint_{\Sigma} [f(x,y,z) + f(y,z,x) + f(z,x,y)]\, \mathrm{d}S.
+            \]
+\end{enumerate}
+
+
+\subsection{物理应用}
+
+\begin{enumerate}
+      \item \textbf{重心（质心）或形心.}
+            对光滑曲面薄片 $\Sigma$，面密度为 $\rho(x,y,z)$，则
+            \[
+                  \overline{x} = \frac{\iint_{\Sigma} x\rho(x,y,z)\, \mathrm{d}S}{\iint_{\Sigma} \rho(x,y,z)\, \mathrm{d}S}, \quad
+                  \overline{y} = \frac{\iint_{\Sigma} y\rho(x,y,z)\, \mathrm{d}S}{\iint_{\Sigma} \rho(x,y,z)\, \mathrm{d}S}, \quad
+                  \overline{z} = \frac{\iint_{\Sigma} z\rho(x,y,z)\, \mathrm{d}S}{\iint_{\Sigma} \rho(x,y,z)\, \mathrm{d}S}.
+            \]
+
+      \item \textbf{转动惯量.}
+            面密度为 $\rho(x,y,z)$ 的曲面薄片 $\Sigma$，其关于 $x$、$y$、$z$ 轴及原点的转动惯量分别为：
+            \[
+                  \begin{aligned}
+                        I_x & = \iint_{\Sigma} (y^2 + z^2)\rho(x,y,z)\, \mathrm{d}S,       \\
+                        I_y & = \iint_{\Sigma} (z^2 + x^2)\rho(x,y,z)\, \mathrm{d}S,       \\
+                        I_z & = \iint_{\Sigma} (x^2 + y^2)\rho(x,y,z)\, \mathrm{d}S,       \\
+                        I_O & = \iint_{\Sigma} (x^2 + y^2 + z^2)\rho(x,y,z)\, \mathrm{d}S.
+                  \end{aligned}
+            \]
+\end{enumerate}
+
+\section{计算第一型曲面积分}
+
+\subsection{定义与物理意义}
+
+设函数 $f(x,y,z)$ 定义在空间曲面 $\Sigma$ 上。
+第一型曲面积分的物理意义是：若 $f(x,y,z) \ge 0$ 表示曲面上各点的面密度，则
+\[
+      \iint_{\Sigma} f(x,y,z)\,\mathrm{d}S
+\]
+表示该物质曲面的总质量。
+其定义方式与二重积分、三重积分类似，都是“分割—近似—求和—取极限”的结果。
+
+
+\subsection{代入曲面方程}
+
+若曲面 $\Sigma$ 可表示为 $z = z(x,y)$，则需将其代入被积函数中化简：
+\[
+      f(x,y,z) \;\Rightarrow\; f\big(x,\,y,\,z(x,y)\big).
+\]
+
+
+\subsection{几何意义}
+
+若 $f(x,y,z) \equiv 1$，则
+\[
+      \iint_{\Sigma} \mathrm{d}S = S_{\Sigma},
+\]
+即为曲面 $\Sigma$ 的面积。
+
+\subsection{利用形心公式}
+
+由形心定义：
+\[
+      \overline{x} = \frac{\iint_{\Sigma} x\,\mathrm{d}S}{\iint_{\Sigma}\mathrm{d}S},
+\]
+可得
+\[
+      \iint_{\Sigma} x\,\mathrm{d}S = \overline{x} \cdot S_{\Sigma}.
+\]
+当 $\Sigma$ 为规则图形（形心坐标 $\overline{x}$ 已知且面积易求）时，此公式尤为方便。
+
+
+\subsection{利用对称性质}
+
+\begin{enumerate}
+      \item \textbf{普通对称性：}
+            若 $\Sigma$ 关于 $xOz$ 面对称，则
+            \[
+                  \iint_{\Sigma} f(x,y,z)\,\mathrm{d}S =
+                  \begin{cases}
+                        2\displaystyle\iint_{\Sigma_1} f(x,y,z)\,\mathrm{d}S, & f(x,y,z)=f(x,-y,z),  \\[6pt]
+                        0,                                                    & f(x,y,z)=-f(x,-y,z),
+                  \end{cases}
+            \]
+            其中 $\Sigma_1$ 为 $\Sigma$ 在 $xOz$ 面右侧部分。
+            其余坐标面对称情况类似。
+
+      \item \textbf{轮换对称性：}
+            若曲面 $\Sigma: z=z(x,y)$ 在交换 $x,y$ 后保持不变，则
+            \[
+                  \iint_{\Sigma} f(x,y,z)\,\mathrm{d}S = \iint_{\Sigma} f(y,x,z)\,\mathrm{d}S.
+            \]
+            若 $\Sigma$ 关于 $x,y,z$ 三坐标完全对称，则
+            \[
+                  \iint_{\Sigma} f(x,y,z)\,\mathrm{d}S
+                  = \frac{1}{3}\iint_{\Sigma}\!\big[f(x,y,z)+f(y,z,x)+f(z,x,y)\big]\,\mathrm{d}S.
+            \]
+\end{enumerate}
+
+
+\subsection{物理应用}
+
+\begin{enumerate}
+      \item \textbf{形心（重心）计算：}
+            对面密度为 $\rho(x,y,z)$ 的光滑曲面 $\Sigma$，其形心 $(\overline{x},\overline{y},\overline{z})$ 为
+            \[
+                  \overline{x} = \frac{\iint_{\Sigma} x\rho(x,y,z)\,\mathrm{d}S}{\iint_{\Sigma}\rho(x,y,z)\,\mathrm{d}S},\quad
+                  \overline{y} = \frac{\iint_{\Sigma} y\rho(x,y,z)\,\mathrm{d}S}{\iint_{\Sigma}\rho(x,y,z)\,\mathrm{d}S},\quad
+                  \overline{z} = \frac{\iint_{\Sigma} z\rho(x,y,z)\,\mathrm{d}S}{\iint_{\Sigma}\rho(x,y,z)\,\mathrm{d}S}.
+            \]
+
+      \item \textbf{转动惯量：}
+            对同一曲面，其关于各坐标轴与原点的转动惯量分别为：
+            \[
+                  I_x = \iint_{\Sigma}(y^2+z^2)\rho(x,y,z)\,\mathrm{d}S,\quad
+                  I_y = \iint_{\Sigma}(z^2+x^2)\rho(x,y,z)\,\mathrm{d}S,
+            \]
+            \[
+                  I_z = \iint_{\Sigma}(x^2+y^2)\rho(x,y,z)\,\mathrm{d}S,\quad
+                  I_O = \iint_{\Sigma}(x^2+y^2+z^2)\rho(x,y,z)\,\mathrm{d}S.
+            \]
+\end{enumerate}
+
+
+\subsection*{小结}
+
+\begin{itemize}
+      \item 第一型曲面积分计算的是曲面“面积型”量（如面积、质量、形心、惯量等）；
+      \item 对称性与形心法常用于快速求积分；
+      \item 若 $f(x,y,z)=1$，积分即为曲面面积。
+\end{itemize}
+
+\section{计算第二型线面积分}
+\subsection{第二型曲线积分}
+
+\begin{enumerate}
+      \item \textbf{定义与物理意义（做功）}
+
+            设向量场
+            \[
+                  \mathbf{F}(x,y)=P(x,y)\mathbf{i}+Q(x,y)\mathbf{j}
+                  \quad\text{或}\quad
+                  \mathbf{F}(x,y,z)=P(x,y,z)\mathbf{i}+Q(x,y,z)\mathbf{j}+R(x,y,z)\mathbf{k},
+            \]
+            定义在有向曲线 $L$（或空间曲线 $\Gamma$）上，则第二型曲线积分表示变力 $\mathbf{F}$ 沿该曲线从起点到终点所做的功：
+            \[
+                  \int_{L} P\,dx + Q\,dy
+                  \quad\text{或}\quad
+                  \int_{\Gamma} P\,dx + Q\,dy + R\,dz.
+            \]
+
+            与定积分、二重积分、三重积分、第一型曲线与曲面积分不同，
+            第二型曲线积分是\textbf{向量场沿有向曲线的积分}（非几何量）。
+
+            \[
+                  \begin{cases}
+                        \text{平面：} & \displaystyle\int_L (P,Q)\cdot(dx,dy) = \int_L P\,dx + Q\,dy,                        \\[6pt]
+                        \text{空间：} & \displaystyle\int_\Gamma (P,Q,R)\cdot(dx,dy,dz) = \int_\Gamma P\,dx + Q\,dy + R\,dz.
+                  \end{cases}
+            \]
+
+
+      \item \textbf{计算方法}
+
+            \begin{enumerate}
+                  \item \textbf{对称性法（类对称）}
+
+                        若 $L^*$ 可分为关于某直线类对称的两部分 $L_1,L_2$，且对称点处 $P$ 绝对值相等，则
+                        \[
+                              \int_{L^*} P\,dx =
+                              \begin{cases}
+                                    2\displaystyle\int_{L_1} P\,dx, & P(x,y)=P(-x,y),  \\[6pt]
+                                    0,                              & P(x,y)=-P(-x,y),
+                              \end{cases}
+                              \qquad
+                              \int_{L^*} Q\,dy =
+                              \begin{cases}
+                                    0,                              & Q(x,y)=Q(-x,y),  \\[6pt]
+                                    2\displaystyle\int_{L_1} Q\,dy, & Q(x,y)=-Q(-x,y).
+                              \end{cases}
+                        \]
+
+                  \item \textbf{参数化法——一投二代三计算（化为定积分）}
+
+                        若 $L$ 的参数方程为
+                        \[
+                              \begin{cases}
+                                    x = x(t), \\
+                                    y = y(t),
+                              \end{cases}\quad t\in[\alpha,\beta],
+                        \]
+                        则
+                        \[
+                              \int_{L} P\,dx + Q\,dy
+                              = \int_{\alpha}^{\beta}\!\big[P(x(t),y(t))x'(t) + Q(x(t),y(t))y'(t)\big]\,dt.
+                        \]
+                        起点终点由参数 $\alpha,\beta$ 对应，顺序须与曲线方向一致。
+
+                  \item \textbf{格林公式（将曲线积分化为二重积分）}
+
+                        设平面区域 $D$ 由分段光滑的正向闭曲线 $L$ 围成，且 $P,Q$ 在 $D$ 上具有连续一阶偏导数，则
+                        \[
+                              \oint_{L} P\,dx + Q\,dy = \iint_{D}\!\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\!d\sigma.
+                        \]
+                        \begin{enumerate}
+                              \item 若 $L$ 为闭曲线且内部无奇点，可直接使用格林公式。
+                              \item 若有奇点但除奇点外 $\dfrac{\partial Q}{\partial x}=\dfrac{\partial P}{\partial y}$，可换路径封闭。
+                              \item 若非封闭曲线且 $\dfrac{\partial Q}{\partial x}=\dfrac{\partial P}{\partial y}$，可在区域内换一条起终点相同的简路径计算。
+                              \item 若非封闭曲线且两偏导不等，可补线成闭合曲线 $L=L_{AB}+C_{BA}$，应用格林公式后再减去补线部分。
+                        \end{enumerate}
+
+                  \item \textbf{积分与路径无关（保守场条件）}
+
+                        若 $P,Q$ 在单连通区域 $D$ 内具有一阶连续偏导，则下列命题等价：
+                        \begin{enumerate}[label=(\alph*)]
+                              \item $\int_{L_{AB}} P\,dx+Q\,dy$ 与路径无关；
+                              \item 对任意闭曲线 $\oint_L P\,dx+Q\,dy=0$；
+                              \item 存在函数 $u(x,y)$ 使 $du = P\,dx + Q\,dy$；
+                              \item $\mathbf{F}=(P,Q)$ 为某函数的梯度场；
+                              \item $\dfrac{\partial P}{\partial y}=\dfrac{\partial Q}{\partial x}$。
+                        \end{enumerate}
+
+                        \textbf{求原函数法：}
+                        \[
+                              u(x,y) = \int_{(x_0,y_0)}^{(x,y)} P\,dx + Q\,dy,
+                        \]
+                        或沿折线路径计算：
+                        \[
+                              u(x,y) = \int_{x_0}^{x} P(x,y_0)\,dx + \int_{y_0}^{y} Q(x,y)\,dy.
+                        \]
+                        若 $\frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y}$ 不成立，则 $u(x,y)$ 不存在。
+
+                        \textbf{凑微分法：}
+                        若能写出 $P\,dx+Q\,dy=d[u(x,y)]$，则
+                        \[
+                              \int_{L_{AB}} P\,dx + Q\,dy = u(B)-u(A).
+                        \]
+
+                  \item \textbf{两类曲线积分关系式}
+                        \[
+                              \int_{\Gamma} P\,dx + Q\,dy + R\,dz
+                              = \int_{\Gamma} (P\cos\alpha + Q\cos\beta + R\cos\gamma)\,ds,
+                        \]
+                        其中 $(\cos\alpha,\cos\beta,\cos\gamma)$ 为 $\Gamma$ 上点处的单位切向量。
+
+                  \item \textbf{空间曲线的两种计算法}
+                        \begin{enumerate}
+                              \item \textbf{参数法（一投二代三计算）：}
+                                    \[
+                                          \Gamma:\begin{cases}
+                                                x=x(t), \\
+                                                y=y(t), \\
+                                                z=z(t),\quad t\in[a,b],
+                                          \end{cases}
+                                    \]
+                                    \[
+                                          \int_{\Gamma} P\,dx+Q\,dy+R\,dz
+                                          = \int_a^b [P x'(t)+Q y'(t)+R z'(t)]\,dt.
+                                    \]
+
+                              \item \textbf{斯托克斯公式：}
+                                    若 $\Gamma=\partial\Sigma$ 为曲面 $\Sigma$ 的正向边界，则
+                                    \[
+                                          \oint_{\Gamma} P\,dx+Q\,dy+R\,dz
+                                          = \iint_{\Sigma}
+                                          \begin{vmatrix}
+                                                dy\,dz                       & dz\,dx                       & dx\,dy                       \\
+                                                \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\
+                                                P                            & Q                            & R
+                                          \end{vmatrix}
+                                          = \iint_{\Sigma}
+                                          \begin{vmatrix}
+                                                \cos\alpha                   & \cos\beta                    & \cos\gamma                   \\
+                                                \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\
+                                                P                            & Q                            & R
+                                          \end{vmatrix} dS.
+                                    \]
+                                    其中 $(\cos\alpha,\cos\beta,\cos\gamma)$ 为 $\Sigma$ 的单位外法线方向余弦。
+
+                              \item 若 $\operatorname{rot}\mathbf{F}=0$（无旋场），则积分与路径无关，可换路径计算。
+                        \end{enumerate}
+            \end{enumerate}
+\end{enumerate}
+
+\subsection*{小结}
+
+\begin{itemize}
+      \item 第二型曲线积分体现\textbf{向量场沿曲线的累积作用}（常为功、环流等）；
+      \item 计算常用方法：参数化、一投二代三计算、对称性、格林公式；
+      \item 若 $\nabla\times\mathbf{F}=0$，则积分与路径无关；
+      \item 与第一型曲线积分关系：$\displaystyle\int_\Gamma (P,Q,R)\cdot(dx,dy,dz) = \int_\Gamma (P\cos\alpha+Q\cos\beta+R\cos\gamma)\,ds.$
+\end{itemize}
+
+\subsection{第二型曲面积分}
+
+\subsubsection{定义与物理意义（通量）}
+
+设向量场
+\[
+      \mathbf{F}(x, y, z) = P(x, y, z)\mathbf{i} + Q(x, y, z)\mathbf{j} + R(x, y, z)\mathbf{k},
+\]
+定义在光滑有向曲面 $\Sigma$ 上。
+第二型曲面积分表示向量场 $\mathbf{F}$ 通过曲面 $\Sigma$ 的\textbf{通量}：
+\[
+      \iint_{\Sigma} P\,\mathrm{d}y\,\mathrm{d}z + Q\,\mathrm{d}z\,\mathrm{d}x + R\,\mathrm{d}x\,\mathrm{d}y
+      = \iint_{\Sigma} \mathbf{F} \cdot (\mathrm{d}y\,\mathrm{d}z,\, \mathrm{d}z\,\mathrm{d}x,\, \mathrm{d}x\,\mathrm{d}y).
+\]
+它反映了向量场穿过曲面的量，与第一型曲面积分（面积量）不同，应注意区分。
+
+
+\subsubsection{计算方法：一投二代三计算}
+
+若曲面 $\Sigma$ 可写为 $z = z(x, y)$，则：
+\[
+      \iint_{\Sigma} R(x, y, z)\,\mathrm{d}x\,\mathrm{d}y
+      = \pm \iint_{D_{xy}} R[x, y, z(x, y)]\,\mathrm{d}x\,\mathrm{d}y,
+\]
+其中 $D_{xy}$ 为 $\Sigma$ 在 $xOy$ 平面的投影区域。符号“$\pm$”根据法向量方向确定：
+- 当上侧为正（$\cos\gamma > 0$）取“+”；
+- 当下侧为正（$\cos\gamma < 0$）取“-”。
+
+若曲面垂直于投影面，则该积分为零。
+若曲面在投影中有重叠部分，应先剖分为互不重叠的曲面片再计算。
+
+\subsubsection{转换投影法}
+
+\paragraph{1. 法向量表达式}
+若曲面 $\Sigma: z = z(x, y)$，则其单位法向量为
+\[
+      \mathbf{n} = \pm \frac{1}{\sqrt{1 + z_x^2 + z_y^2}} \, (-z_x, -z_y, 1),
+\]
+上侧为正取“+”，下侧为正取“-”。
+
+\paragraph{2. 转换投影公式}
+设 $P, Q, R$ 在 $\Sigma$ 上连续，且 $z = z(x, y)$ 有连续一阶偏导，则
+\[
+      \iint_{\Sigma} P\,\mathrm{d}y\,\mathrm{d}z + Q\,\mathrm{d}z\,\mathrm{d}x + R\,\mathrm{d}x\,\mathrm{d}y
+      = \pm \iint_{D_{xy}} \big(-P\,z_x - Q\,z_y + R\big)\,\mathrm{d}x\,\mathrm{d}y.
+\]
+
+
+\subsubsection{“类”对称性}
+
+若 $\Sigma^*$ 关于某平面对称，且对称点处 $R(x, y, z)$ 绝对值相等，则
+\[
+      \iint_{\Sigma^*} R(x, y, z)\,\mathrm{d}x\,\mathrm{d}y
+      = \begin{cases}
+            2 \displaystyle\iint_{\Sigma_1} R(x, y, z)\,\mathrm{d}x\,\mathrm{d}y, & R(x, y, z)\mathrm{d}x\,\mathrm{d}y \text{ 同号}, \\[6pt]
+            0,                                                                    & R(x, y, z)\mathrm{d}x\,\mathrm{d}y \text{ 异号},
+      \end{cases}
+\]
+其中 $\Sigma_1$ 为 $\Sigma^*$ 的一侧部分。
+对 $P\,\mathrm{d}y\,\mathrm{d}z$、$Q\,\mathrm{d}z\,\mathrm{d}x$ 可类比处理。
+
+
+\subsubsection{高斯公式（散度定理）}
+
+设空间闭区域 $\Omega$ 由光滑闭曲面 $\Sigma$ 围成，且 $\Sigma$ 外侧为正。若 $P, Q, R$ 在 $\Omega$ 上具有连续一阶偏导数，则有
+\[
+      \iint_{\Sigma} P\,\mathrm{d}y\,\mathrm{d}z + Q\,\mathrm{d}z\,\mathrm{d}x + R\,\mathrm{d}x\,\mathrm{d}y
+      = \iiint_{\Omega} \left(
+      \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}
+      \right)\mathrm{d}v.
+\]
+
+\paragraph{常用技巧：}
+\begin{enumerate}
+      \item \textbf{封闭曲面、无奇点：} 直接用高斯公式；
+      \item \textbf{封闭曲面、有奇点，且 $\mathrm{div}\,\mathbf{F}=0$：} 可换为包含奇点的其他封闭曲面；
+      \item \textbf{非封闭曲面，且 $\mathrm{div}\,\mathbf{F}=0$：} 可换路径但边界需相同；
+      \item \textbf{非封闭曲面，$\mathrm{div}\,\mathbf{F}\neq0$：} 可补面封闭（加面减面法）；
+      \item \textbf{若 $\mathrm{div}\,\mathbf{F}=0$ 对任意闭曲面成立：} 可建立方程求未知函数 $f(x)$。
+\end{enumerate}
+
+\subsubsection{两类曲面积分的关系}
+
+设曲面 $\Sigma$ 有单位法向量 $\mathbf{n} = (\cos\alpha, \cos\beta, \cos\gamma)$，则
+\[
+      \iint_{\Sigma} P\,\mathrm{d}y\,\mathrm{d}z + Q\,\mathrm{d}z\,\mathrm{d}x + R\,\mathrm{d}x\,\mathrm{d}y
+      = \iint_{\Sigma} (P\cos\alpha + Q\cos\beta + R\cos\gamma)\,\mathrm{d}S.
+\]
+右式即为第一型曲面积分的形式，表示通量的几何意义。
+
+
+\subsubsection{总结}
+
+\begin{itemize}
+      \item \textbf{第一型曲面积分：} 几何量（面积、质量）；
+      \item \textbf{第二型曲面积分：} 向量场通量；
+      \item \textbf{高斯公式：} 封闭曲面 $\leftrightarrow$ 体积分；
+      \item \textbf{斯托克斯公式：} 曲线 $\leftrightarrow$ 曲面；
+      \item 若 $\mathrm{div}\,\mathbf{F}=0$（无源场），则通量与选取曲面无关。
+\end{itemize}
