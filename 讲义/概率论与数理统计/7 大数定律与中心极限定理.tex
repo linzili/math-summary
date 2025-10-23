@@ -1,42 +1,105 @@
 \GAIchapter{大数定律与中心极限定理}
 
-\section{判别或证明依概率收敛}
-设随机变量 $X$ 与随机变量序列 $\{X_n\}$ $(n=1,2,3,\cdots)$，如果对任意的 $\varepsilon > 0$，有
-$$\lim_{n\to\infty}P\{|X_n-X|\geqslant\varepsilon\}=0 \text{ 或 } \lim_{n\to\infty}P\{|X_n-X|<\varepsilon\}=1,$$
-则称随机变量序列 $\{X_n\}$ 依概率收敛于随机变量 $X$，记为 $\lim_{n\to\infty}X_n=X(P)$ 或 $X_n\xrightarrow{P}X(n\to\infty)$.
-
-\section{利用大数定律计算收敛值}
-\begin{enumerate}
-      \item 切比雪夫大数定律
-
-            假设 $\{X_{n}\}(n=1,2,\cdots)$ 是相互独立的随机变量序列，如果方差$DX_i(i\geqslant1)$存在且一致有上界，即存在常数 $C$, 使 $DX_i\leq C$ 对 一 切  $i\geqslant 1$ 均 成 立 , 则  $\{ X_n\}$服从大数定律：$\frac1n\sum_{i=1}^{n}X_i\xrightarrow{p}\frac1n\sum_{i=1}^{n}EX_i$
-      \item 伯努利大数定律
-
-            假设$\mu_n$是$n$重伯努利试验中事件$A$发生的次数，在每次试验中事件$A$ 发 生 的 概 率 为 $p( 0< p< 1)$,则$\frac{\mu_n}n\xrightarrow{P}p$ ,即对任意 $\varepsilon>0$ ,有$\lim_{n\to\infty} P\left\{\left|\frac{\mu_n}{n}-p\right|<\varepsilon\right\}=1$
-      \item 辛钦大数定律
-
-            假设 $\{X_{n}\} (n=1,2,\cdots)$ 是独立同分布的随机变量序列，如果数学期望 $EX_{i}=\mu (i=1,2,\cdots)$ 存在，则$\frac{1}{n}\sum_{i=1}^{n}X_{i} \xrightarrow{p} \mu $, 即对任意$ \varepsilon > 0, $有$ \lim_{n \to \infty} P\left\{\left|\frac{1}{n}\sum_{i=1}^{n}X_{i} - \mu\right| < \varepsilon\right\} = 1 $.
-      \item 考结论
-
-            在满足一定条件时，大数定律都在讲同一个结论，即
-            $$\frac{1}{n}\sum_{i=1}^{n}X_{i}\xrightarrow{P}E\biggl(\frac{1}{n}\sum_{i=1}^{n}X_{i}\biggr)\:.$$
-\end{enumerate}
+\textbf{考点综述：}
+掌握随机变量的依概率收敛、三种大数定律及中心极限定理的内容与应用；
+会判断收敛类型、求极限值或计算概率。
 
 
-\section{用中心极限定理求概率}
-\begin{enumerate}
-      \item 列维-林德伯格定理
+\section{依概率收敛（Convergence in Probability）}
 
-            假设$\{X_n\}(n=1,2,\cdotp\cdotp\cdotp)$是独立同分布的随机变量序列，如果$EX_i=\mu,DX_i=\sigma^2>0(i=1,2,\cdotp\cdotp\cdotp)$存在，则
-            对任意的实数$x$,有
-            $$\lim_{n\to\infty}P\left\{\frac{\sum_{i=1}^{n}X_{i}-n\mu}{\sqrt{n}\sigma}\leqslant x\right\}=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{x}\mathrm{e}^{-\frac{1}{2}t^{2}}\mathrm{d}t=\Phi(x)\:.$$
-      \item 棣莫弗-拉普拉斯定理
+\textbf{定义：}
+设随机变量 $X$ 与序列 $\{X_n\}$，若对任意 $\varepsilon>0$：
+$$
+      \lim_{n\to\infty}P(|X_n-X|\ge\varepsilon)=0
+      \quad\text{或}\quad
+      \lim_{n\to\infty}P(|X_n-X|<\varepsilon)=1,
+$$
+则称 $\{X_n\}$ 依概率收敛于 $X$，记为
+$$
+      X_n\xrightarrow{P}X\quad(n\to\infty).
+$$
 
-            假设随机变量$Y_n\sim B(n,p)(0<p<1,n\geqslant1)$,则对任意实数 $x$,有
-            $$\lim_{n\to\infty}P\left\{\frac{Y_{n}-np}{\sqrt{np(1-p)}}\leqslant x\right\}=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{x}\mathrm{e}^{-\frac{t^{2}}{2}}\mathrm{d}t=\Phi(x).$$
-      \item 考结论
+\textbf{理解：} 随着 $n$ 增大，$X_n$ 偏离 $X$ 的概率趋于 0。
 
-            设 $X_i$ 独立同分布于某一分布，期望、方差均存在，则当 $n \to \infty$ 时，$\sum_{i=1}^{n} X_i$ 服从正态分布，即对任意的 $X_i \sim F(\mu, \sigma^2)$，$\mu = EX_i$，$\sigma^2 = DX_i$，都有在 $n \to \infty$ 时，$\sum_{i=1}^{n} X_i \sim N(n\mu, n\sigma^2)$，$\frac{\sum_{i=1}^{n} X_i - n\mu}{\sqrt{n}\sigma} \sim N(0, 1)$，即
-            $$\lim_{n \to \infty} P\left\{ \frac{\sum_{i=1}^{n} X_i - n\mu}{\sqrt{n}\sigma} \leqslant x \right\} = \Phi(x) \, .$$
-\end{enumerate}
 
+\section{大数定律（Law of Large Numbers）}
+
+\textbf{核心思想：}
+大量独立随机变量的平均值趋向其期望值。
+
+\subsection*{1. 切比雪夫大数定律}
+若 $\{X_i\}$ 相互独立，且 $DX_i$ 存在并一致有上界（即 $\exists C>0$，使 $DX_i\le C$），则：
+$$
+      \frac1n\sum_{i=1}^{n}X_i\xrightarrow{P}\frac1n\sum_{i=1}^{n}EX_i.
+$$
+
+\subsection*{2. 伯努利大数定律}
+设 $\mu_n$ 为 $n$ 次伯努利试验中事件 $A$ 发生次数，每次成功概率为 $p$，则：
+$$
+      \frac{\mu_n}{n}\xrightarrow{P}p,
+$$
+即
+$$
+      \forall \varepsilon>0,\quad
+      \lim_{n\to\infty}P\left(\Big|\frac{\mu_n}{n}-p\Big|<\varepsilon\right)=1.
+$$
+
+\subsection*{3. 辛钦大数定律}
+若 $\{X_i\}$ 为独立同分布序列，且 $E X_i=\mu$ 存在，则：
+$$
+      \frac1n\sum_{i=1}^{n}X_i\xrightarrow{P}\mu.
+$$
+
+\subsection*{4. 统一结论}
+在适当条件下，大数定律的结论形式一致：
+$$
+      \frac1n\sum_{i=1}^{n}X_i\xrightarrow{P}E\!\left(\frac1n\sum_{i=1}^{n}X_i\right).
+$$
+
+\textbf{记忆口诀：}
+“方差有界用切比，伯努利事件趋概率，同分布者用辛钦。”
+
+
+\section{中心极限定理（Central Limit Theorem）}
+
+\textbf{核心思想：}
+大量独立同分布随机变量的标准化和，近似服从标准正态分布。
+
+\subsection*{1. 列维–林德伯格定理（一般形式）}
+若 $\{X_i\}$ 独立同分布，且 $E X_i=\mu, D X_i=\sigma^2>0$，则对任意实数 $x$：
+$$
+      \lim_{n\to\infty}P\!\left(\frac{\sum_{i=1}^{n}X_i-n\mu}{\sqrt{n}\sigma}\le x\right)
+      =\Phi(x)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{x}e^{-t^2/2}\,dt.
+$$
+
+\subsection*{2. 棣莫弗–拉普拉斯定理（伯努利情形）}
+若 $Y_n\sim B(n,p)$，则对任意实数 $x$：
+$$
+      \lim_{n\to\infty}P\!\left(\frac{Y_n-np}{\sqrt{np(1-p)}}\le x\right)
+      =\Phi(x).
+$$
+\textbf{说明：} 二项分布在 $n$ 大时近似 $N(np,np(1-p))$。
+
+\subsection*{3. 一般结论}
+若 $X_i$ 独立同分布于某分布，$E X_i=\mu$，$D X_i=\sigma^2$，则当 $n\to\infty$：
+$$
+      \sum_{i=1}^{n}X_i\sim N(n\mu,n\sigma^2),
+      \qquad
+      \frac{\sum_{i=1}^{n}X_i-n\mu}{\sqrt{n}\sigma}\sim N(0,1),
+$$
+即
+$$
+      \lim_{n\to\infty}P\!\left(\frac{\sum_{i=1}^{n}X_i-n\mu}{\sqrt{n}\sigma}\le x\right)=\Phi(x).
+$$
+
+\textbf{记忆口诀：}
+“同分布加独立，标准化后正态起。”
+
+
+\section*{小结}
+\begin{itemize}
+      \item \textbf{依概率收敛：} $X_n\xrightarrow{P}X \Rightarrow P(|X_n-X|\ge\varepsilon)\to0$。
+      \item \textbf{大数定律：} 平均值趋向期望值。
+      \item \textbf{中心极限定理：} 和的标准化近似正态分布。
+      \item \textbf{常见应用：} 二项分布$\to$正态分布近似求概率。
+\end{itemize}

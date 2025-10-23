@@ -1,104 +1,144 @@
 \GAIchapter{统计量及其分布}
+
+\textbf{考点综述：}
+掌握常见统计量及其分布（$N$、$\chi^2$、$t$、$F$ 分布）的定义、性质与相互关系；
+会判别统计量的分布类型并据此计算概率。
+
+
 \section{统计量及其数字特征}
-设 $X_{1}, X_{2}, \cdots, X_{n}$ 是来自总体 $X$ 的简单随机样本，则
-\begin{enumerate}
-      \item 样本均值 $\bar{X}=\frac{1}{n} \sum_{i=1}^{n} X_{i}$.
-      \item 样本方差 $S^{2}=\frac{1}{n-1} \sum_{i=1}^{n}\left(X_{i}-\bar{X}\right)^{2}=\frac{1}{n-1}\left(\sum_{i=1}^{n} X_{i}^{2}-n \bar{X}^{2}\right)$.
 
-            样本标准差 $S=\sqrt{\frac{1}{n-1} \sum_{i=1}^{n}\left(X_{i}-\bar{X}\right)^{2}}$.
-      \item 样本 $k$ 阶原点矩 $A_{k}=\frac{1}{n} \sum_{i=1}^{n} X_{i}^{k}(k=1,2, \cdots)$.
-      \item 样本 $k$ 阶中心矩 $B_{k}=\frac{1}{n} \sum_{i=1}^{n}\left(X_{i}-\bar{X}\right)^{k}(k=2,3, \cdots)$.
-      \item 顺序统计量
-
-            将样本 $X_{1}, X_{2}, \cdots, X_{n}$ 的 $n$ 个观测量按其取值从小到大的顺序排列，得
-            $$X_{(1)} \leqslant X_{(2)} \leqslant \cdots \leqslant X_{(n)}.$$
-            随机变量 $X_{(k)}(k=1,2, \cdots, n)$ 称作第 $k$ 顺序统计量，其中 $X_{(1)}$ 是最小观测量， $X_{(n)}$ 是最大观测量，即
-            $$X_{(1)}=\min \left\{X_{1}, X_{2}, \cdots, X_{n}\right\}, \quad X_{(n)}=\max \left\{X_{1}, X_{2}, \cdots, X_{n}\right\}.$$
-\end{enumerate}
-
-\section{判别统计量的分布}
-定义：统计量的分布称为抽样分布
+设 $X_1, X_2, \cdots, X_n$ 是来自总体 $X$ 的简单随机样本。
 
 \begin{enumerate}
-      \item 正态分布
-            \begin{enumerate}
-                  \item 概念
-
-                        如果 $X$ 的概率密度为
-                        $$f(x) = \frac{1}{\sqrt{2 \pi} \sigma} \mathrm{e}^{-\frac{1}{2} \left( \frac{x - \mu}{\sigma} \right)^2} \quad (-\infty < x < +\infty),$$
-                        其中 $-\infty < \mu < +\infty$, $\sigma > 0$, 则称 $X$ 服从参数为 $(\mu, \sigma^2)$ 的正态分布或称 $X$ 为正态变量, 记为 $X \sim N(\mu, \sigma^2)$.
-                  \item 上$\alpha$分位数
-
-                        若 $X \sim N(0, 1)$, $P\{X > \mu_\alpha\} = \alpha$ ( $0 < \alpha < 1$ ), 则称 $\mu_\alpha$ 为标准正态分布的上 $\alpha$ 分位数
-                  \item 性质
-
-                        $f(x)$ 的图形关于直线 $x=\mu$对称，即$f(\mu-x)=f(\mu+x)$,并在$x=\mu$处有唯一最大值
-                        $$f(\mu)=\frac{1}{\sqrt{2\pi}\sigma}.$$
-                        通常称$\mu=0$ , $\sigma=1$时的正态分布$N(0,1)$为标准正态分布，记标准正态分布的概率密度为
-                        $\varphi(x)=\frac{1}{\sqrt{2\pi}}\mathrm{e}^{-\frac{1}{2}x^{2}}$,分布函数为$Q(x)=\frac1{\sqrt{2\pi}}\int_{-\infty}^{x}\mathrm{e}^{-\frac{t^{2}}{2}}dt$ .显然$\varphi(x)$为偶函数，且有
-                        $$\Phi(0)=\frac{1}{2},\Phi(-x)=1-\Phi(x).$$
-            \end{enumerate}
-      \item $\chi^2$分布
-            \begin{enumerate}
-                  \item 概念
-
-                        若随机变量 $X_{1}, X_{2}, \cdots, X_{n}$ 相互独立，且都服从标准正态分布，则随机变量 $X = \sum_{i=1}^{n} X_{i}^{2}$ 服从自由度为 $n$ 的 $\chi^{2}$ 分布，记为 $X \sim \chi^{2}(n)$.
-                  \item 上$\alpha$分位数
-
-                        对给定的 $\alpha (0 < \alpha < 1)$，称满足
-                        $$P\{\chi^{2} > \chi_{\alpha}^{2}(n)\} = \int_{\chi_{\alpha}^{2}(n)}^{+\infty} f(x) \, \mathrm{d}x = \alpha$$
-                        的 $\chi_{\alpha}^{2}(n)$ 为 $\chi^{2}(n)$ 分布的上 $\alpha$ 分位数（见图）. 对于不同的 $\alpha, n$，$\chi^{2}(n)$ 分布上 $\alpha$ 分位数可通过查表求得．
-                  \item 性质
-                        \begin{enumerate}
-                              \item  若 $X_{1} \sim \chi^{2}(n_{1})$，$X_{2} \sim \chi^{2}(n_{2})$，$X_{1}$ 与 $X_{2}$ 相互独立，则
-                                    $$
-                                          X_{1} + X_{2} \sim \chi^{2}(n_{1} + n_{2}).$$
-                                    此结论可推广至有限多个随机变量的和．
-                              \item $若X\sim\chi^{2}(n)$,则$EX=n,DX=2n.$
-                        \end{enumerate}
-            \end{enumerate}
-      \item $t$ 分布
-            \begin{enumerate}
-                  \item 概念
-                        设随机变量 $X \sim N(0,1)$, $Y \sim \chi^2(n)$, $X$ 与 $Y$ 相互独立, 则随机变量 $t = \frac{X}{\sqrt{Y/n}}$ 服从自由度为 $n$ 的 $t$ 分布, 记为 $t \sim t(n)$.
-                  \item 上$\alpha$分位数
-
-                        对给定的 $\alpha(0 < \alpha < 1)$, 称满足
-                        $$P\{t > t_{\alpha}(n)\} = \alpha$$
-                        的 $t_{\alpha}(n)$ 为 $t(n)$ 分布的上 $\alpha$ 分位数.
-                  \item 性质
-                        \begin{enumerate}
-                              \item  $t$ 分布概率密度 $f(x)$ 的图形关于 $x = 0$ 对称, 因此
-                                    $$Et = 0 \quad (n \geqslant 2).$$
-                              \item 由 $t$ 分布概率密度 $f(x)$ 图形的对称性, 知 $P\{t > -t_{\alpha}(n)\} = P\{t > t_{1-\alpha}(n)\}$, 故 $t_{1-\alpha}(n) = -t_{\alpha}(n)$. 当 $\alpha$ 值在表中没有时, 可用此式求得上 $\alpha$ 分位数.
-                        \end{enumerate}
-            \end{enumerate}
-      \item $F$ 分布
-            \begin{enumerate}
-                  \item 概念
-
-                        设随机变量 $X \sim \chi^2(n_1)$，$Y \sim \chi^2(n_2)$，且 $X$ 与 $Y$ 相互独立，则 $F = \frac{X / n_1}{Y / n_2}$ 服从自由度为 $(n_1, n_2)$ 的 $F$ 分布，记为 $F \sim F(n_1, n_2)$，其中 $n_1$ 称为第一自由度，$n_2$ 称为第二自由度．$F$ 分布的概率密度 $f(x)$ 的图形．
-                  \item 上$\alpha$分位数
-
-                        对给定的 $\alpha (0 < \alpha < 1)$，称满足
-                        $$P\{F > F_\alpha(n_1, n_2)\} = \alpha$$
-                        的 $F_\alpha(n_1, n_2)$ 为 $F(n_1, n_2)$ 分布的上 $\alpha$ 分位数.
-                  \item 性质
-                        \begin{enumerate}
-                              \item 若 $F \sim F(n_1, n_2)$，则 $\frac{1}{F} \sim F(n_2, n_1)$．
-                              \item $F_{1-\alpha}(n_1, n_2) = \frac{1}{F_\alpha(n_2, n_1)}$．常用来求 $F$ 分布表中未列出的上 $\alpha$ 分位数，显然，有些特殊值可直接得出，如 $1-\alpha = \alpha$，$n_1 = n_2 = n$ 时，有 $F_{0.5}(n, n) = \frac{1}{F_{0.5}(n, n)}$，且 $F_{0.5}(n, n) > 0$，故 $F_{0.5}(n, n) = 1$.
-                              \item 若 $t \sim t(n)$，则 $t^2 \sim F(1, n)$．
-                        \end{enumerate}
-            \end{enumerate}
+      \item 样本均值：\quad $\bar{X} = \dfrac{1}{n} \sum_{i=1}^{n} X_i.$
+      \item 样本方差：
+            $$
+                  S^2 = \frac{1}{n-1}\sum_{i=1}^{n}(X_i - \bar{X})^2
+                  = \frac{1}{n-1}\left(\sum_{i=1}^{n} X_i^2 - n\bar{X}^2\right),
+                  \quad S = \sqrt{S^2}.
+            $$
+      \item 样本 $k$ 阶原点矩：\quad $A_k = \dfrac{1}{n} \sum_{i=1}^{n} X_i^k.$
+      \item 样本 $k$ 阶中心矩：\quad $B_k = \dfrac{1}{n} \sum_{i=1}^{n}(X_i - \bar{X})^k.$
+      \item 顺序统计量：\quad
+            将样本按大小排列：
+            $$
+                  X_{(1)} \le X_{(2)} \le \cdots \le X_{(n)},
+            $$
+            称 $X_{(k)}$ 为第 $k$ 顺序统计量。
+            特别地，
+            $$
+                  X_{(1)} = \min\{X_1, \cdots, X_n\}, \quad
+                  X_{(n)} = \max\{X_1, \cdots, X_n\}.
+            $$
 \end{enumerate}
-\section{用正态总体下的常用结论判别分布、计算概率}
-设 $X_{1}, X_{2}, \cdots, X_{n}$ 是取自正态总体 $N(\mu, \sigma^{2})$ 的一个样本， $\bar{X}$ ， $S^{2}$ 分别是样本均值和样本方差，则
+
+
+\section{统计量的抽样分布}
+
+\textbf{定义：}
+统计量的分布称为\textbf{抽样分布}。
+
+
+\subsection*{1. 正态分布 $N(\mu,\sigma^2)$}
 
 \begin{enumerate}
-      \item $\bar{X} \sim N\left(\mu, \frac{\sigma^{2}}{n}\right)$ ，即 $\frac{\bar{X}-\mu}{\frac{\sigma}{\sqrt{n}}} = \frac{\sqrt{n}(\bar{X}-\mu)}{\sigma} \sim N(0,1)$
-      \item $\frac{1}{\sigma^{2}} \sum_{i=1}^{n}(X_{i}-\mu)^{2} \sim \chi^{2}(n)$ ；
-      \item $\frac{(n-1)S^{2}}{\sigma^{2}} = \sum_{i=1}^{n}\left(\frac{X_{i}-\bar{X}}{\sigma}\right)^{2} \sim \chi^{2}(n-1)$ （ $\mu$ 未知，在 “2.” 中用 $\bar{X}$ 替代 $\mu$ ）；
-      \item $\bar{X}$ 与 $S^{2}$ 相互独立， $\frac{\sqrt{n}(\bar{X}-\mu)}{S} \sim t(n-1)$ （ $\sigma$ 未知，在 “1.” 中用 $S$ 替代 $\sigma$ ）. 进一步有
-            $$\frac{n(\bar{X}-\mu)^{2}}{S^{2}} \sim F(1, n-1).$$
+      \item 概念：
+            若随机变量 $X$ 的密度为
+            $$
+                  f(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2},
+            $$
+            则称 $X \sim N(\mu,\sigma^2)$。
+      \item 上 $\alpha$ 分位数：
+            若 $X\sim N(0,1)$，有 $P\{X > \mu_\alpha\} = \alpha$，则 $\mu_\alpha$ 称为上 $\alpha$ 分位数。
+      \item 性质：
+            \begin{itemize}
+                  \item 关于 $x=\mu$ 对称，峰值 $f(\mu)=\dfrac{1}{\sqrt{2\pi}\sigma}$；
+                  \item 标准正态分布：$\varphi(x)=\dfrac{1}{\sqrt{2\pi}}e^{-x^2/2}$；
+                  \item 分布函数 $\Phi(x)=\dfrac{1}{\sqrt{2\pi}}\int_{-\infty}^{x} e^{-t^2/2}dt$，
+                        且 $\Phi(0)=\frac{1}{2},\ \Phi(-x)=1-\Phi(x)$。
+            \end{itemize}
 \end{enumerate}
 
+
+\subsection*{2. $\chi^2$ 分布}
+
+\begin{enumerate}
+      \item 概念：
+            若 $X_i \sim N(0,1)$ 且相互独立，则
+            $$
+                  X = \sum_{i=1}^{n} X_i^2 \sim \chi^2(n),
+            $$
+            称自由度为 $n$。
+      \item 上 $\alpha$ 分位数：
+            $$P\{\chi^2 > \chi^2_\alpha(n)\} = \alpha.$$
+      \item 性质：
+            \begin{itemize}
+                  \item 若 $X_1\sim\chi^2(n_1)$, $X_2\sim\chi^2(n_2)$ 独立，则 $X_1+X_2\sim\chi^2(n_1+n_2)$；
+                  \item $E X = n,\quad D X = 2n$。
+            \end{itemize}
+\end{enumerate}
+
+
+\subsection*{3. $t$ 分布}
+
+\begin{enumerate}
+      \item 概念：
+            若 $X\sim N(0,1)$, $Y\sim\chi^2(n)$ 且独立，则
+            $$t=\frac{X}{\sqrt{Y/n}}\sim t(n).$$
+      \item 上 $\alpha$ 分位数：
+            $$P\{t>t_\alpha(n)\}=\alpha.$$
+      \item 性质：
+            \begin{itemize}
+                  \item 关于 0 对称，$E t = 0$；
+                  \item $t_{1-\alpha}(n) = -t_\alpha(n)$；
+                  \item 当自由度 $n\to\infty$ 时，$t(n)\to N(0,1)$。
+            \end{itemize}
+\end{enumerate}
+
+
+\subsection*{4. $F$ 分布}
+
+\begin{enumerate}
+      \item 概念：
+            若 $X\sim\chi^2(n_1)$，$Y\sim\chi^2(n_2)$ 且独立，则
+            $$
+                  F=\frac{X/n_1}{Y/n_2}\sim F(n_1,n_2).
+            $$
+      \item 上 $\alpha$ 分位数：
+            $$P\{F>F_\alpha(n_1,n_2)\}=\alpha.$$
+      \item 性质：
+            \begin{itemize}
+                  \item $\dfrac{1}{F}\sim F(n_2,n_1)$；
+                  \item $F_{1-\alpha}(n_1,n_2)=\dfrac{1}{F_\alpha(n_2,n_1)}$；
+                  \item 若 $t\sim t(n)$，则 $t^2\sim F(1,n)$。
+            \end{itemize}
+\end{enumerate}
+
+
+\section{正态总体下的常用结论}
+
+设 $X_1,\cdots,X_n$ 来自总体 $N(\mu,\sigma^2)$，
+样本均值 $\bar{X}$，样本方差 $S^2$。
+
+\begin{enumerate}
+      \item $\bar{X}\sim N\!\left(\mu,\dfrac{\sigma^2}{n}\right)$，
+            即
+            $$\frac{\sqrt{n}(\bar{X}-\mu)}{\sigma}\sim N(0,1).$$
+      \item $\dfrac{1}{\sigma^2}\sum_{i=1}^{n}(X_i-\mu)^2 \sim \chi^2(n).$
+      \item $\dfrac{(n-1)S^2}{\sigma^2}=\sum_{i=1}^{n}\left(\dfrac{X_i-\bar{X}}{\sigma}\right)^2 \sim \chi^2(n-1).$
+      \item $\bar{X}$ 与 $S^2$ 相互独立，且
+            $$\frac{\sqrt{n}(\bar{X}-\mu)}{S}\sim t(n-1),\quad \frac{n(\bar{X}-\mu)^2}{S^2}\sim F(1,n-1).$$
+\end{enumerate}
+
+
+\section*{小结：四种分布间的关系}
+\[
+      \boxed{
+            \begin{aligned}
+                  X_i                                & \sim N(0,1) \Rightarrow \sum X_i^2 \sim \chi^2(n); \\[3pt]
+                  X\sim N(0,1),~Y\sim\chi^2(n)       & \Rightarrow \frac{X}{\sqrt{Y/n}}\sim t(n);         \\[3pt]
+                  X\sim\chi^2(n_1),~Y\sim\chi^2(n_2) & \Rightarrow \frac{X/n_1}{Y/n_2}\sim F(n_1,n_2);    \\[3pt]
+                  t^2(n)                             & \sim F(1,n).
+            \end{aligned}
+      }
+\]

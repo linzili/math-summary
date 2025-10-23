@@ -1,66 +1,123 @@
 \GAIchapter{多维随机变量及其分布}
 
 \section{离散型问题}
-一般不会考
+一般不作重点考查。
 
 \section{连续型问题}
 \begin{enumerate}
-      \item 二维均匀分布
+      \item \textbf{二维均匀分布}
 
-            如果$(X,Y)$的概率密度为
-            $$f(x,y)=\begin{cases}\dfrac{1}{S_D},&(x,y)\in D,\\0,&\text{其他,}\end{cases}$$
-            其中$S_{_{D}}$为区域$D$ 的面积，则称$(X,Y)$在平面有界区域$D$ 上服从均匀分布.
+            若 $(X,Y)$ 的概率密度为
+            $$
+                  f(x,y)=
+                  \begin{cases}
+                        \dfrac{1}{S_D}, & (x,y)\in D, \\
+                        0,              & \text{其他,}
+                  \end{cases}
+            $$
+            其中 $S_D$ 为区域 $D$ 的面积，则称 $(X,Y)$ 在平面有界区域 $D$ 上服从\textbf{二维均匀分布}。
 
-      \item 二维正态分布
+      \item \textbf{二维正态分布}
 
-            如果(X,Y)的概率密度为
-            $$f(x,y)=\frac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}\exp\left\{-\frac{1}{2(1-\rho^2)}\left[\left(\frac{x-\mu_1}{\sigma_1}\right)^2-2\rho\left(\frac{x-\mu_1}{\sigma_1}\right)\left(\frac{y-\mu_2}{\sigma_2}\right)+\left(\frac{y-\mu_2}{\sigma_2}\right)^2\right]\right\},$$
-
-            其中$\mu_1\in R$，$\mu_2\in R$，$\sigma_1>0$，$\sigma_2>0$，$-1<\rho<1$，则称(X,Y)服从参数为$\mu_1$，$\mu_2$，$\sigma_1^2$，$\sigma_2^2$，$\rho$的二维正态分布，记为$(X,Y)\sim N(\mu_1,\mu_2;\sigma_1^2,\sigma_2^2;\rho)$。
-
+            若 $(X,Y)$ 的概率密度为
+            $$
+                  f(x,y)=\frac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}
+                  \exp\!\left\{
+                  -\frac{1}{2(1-\rho^2)}
+                  \left[
+                        \left(\frac{x-\mu_1}{\sigma_1}\right)^2
+                        -2\rho\!\left(\frac{x-\mu_1}{\sigma_1}\right)\!\left(\frac{y-\mu_2}{\sigma_2}\right)
+                        +\left(\frac{y-\mu_2}{\sigma_2}\right)^2
+                        \right]
+                  \right\},
+            $$
+            其中 $\mu_1,\mu_2\in\mathbb{R}$，$\sigma_1,\sigma_2>0$，$-1<\rho<1$，则称
+            $$
+                  (X,Y)\sim N(\mu_1,\mu_2;\sigma_1^2,\sigma_2^2;\rho)
+            $$
+            为\textbf{二维正态分布}。
 \end{enumerate}
-\section{求边缘分布、条件分布与独立性问题}
+
+\section{边缘分布、条件分布与独立性}
+
+\subsection*{(1) 边缘分布}
 \begin{enumerate}
-      \item 边缘分布
-            \begin{enumerate}
-                  \item 求$F_X(x),F_Y(y)$.
-                        $$F_{X}(x)=F(x,+\infty) ,\quad F_{Y}(y)=F(+\infty,y).$$
-                  \item 求$p_{i\cdot},p_{\cdot j}$.
-                        $$p_{i\cdot}=\sum_{j}p_{ij},\quad p_{\cdot j}=\sum_{i}p_{ij}.$$
-                  \item 求$f_X(x),f_Y(y)$.
-                        $$f_{X}(x)=\int_{-\infty}^{+\infty}f(x,y)\mathrm{d}y=\int_{-\infty}^{+\infty}f_{Y}(y)f_{X|Y}(x\mid y)\mathrm{d}y,$$
-                        $$f_{Y}(y)=\int_{-\infty}^{+\infty}f(x,y)\mathrm{d}x=\int_{-\infty}^{+\infty}f_{X}(x)f_{Y|X}(y\mid x)\mathrm{d}x.$$
-            \end{enumerate}
-      \item 条件分布
-            \begin{enumerate}
-                  \item 求 $F(x\mid y_j),F(y\mid x_i).$
-                        $$F(x\mid y_{j})=\sum_{x_{i}\leq x}P\{X=x_{i}\mid Y=y_{j}\},$$
-                        $$F(y\mid x_{i})=\sum_{y_{j}\leq y}P\{Y=y_{j}\mid X=x_{i}\}.$$
-                  \item 求 $F(x\mid y),F(y\mid x).$
-                        $$F(x\mid y)=\int_{-\infty}^{x}f(u\mid y)\mathrm{d}u=\int_{-\infty}^{x}\frac{f(u,y)}{f_{Y}(y)}\mathrm{d}u,$$
-                        $$F(y\mid x)=\int_{-\infty}^{y}f(v\mid x)\mathrm{d}v=\int_{-\infty}^{y}\frac{f(x,v)}{f_{X}(x)}\mathrm{d}v.$$
-                  \item 求$P\{ Y= y_{j}\mid X= x_{i}\}$ , $P\{ X= x_{i}\mid Y= y_{j}\}$ .
-                        $$P\{Y=y_{j}\mid X=x_{i}\}=\frac{P\{X=x_{i},Y=y_{j}\}}{P\{X=x_{i}\}}=\frac{p_{ij}}{p_{i}.}\:,$$
-                        $$P\{X=x_{i}\mid Y=y_{j}\}=\frac{P\Big\{X=x_{i},Y=y_{j}\Big\}}{P\Big\{Y=y_{j}\Big\}}=\frac{p_{ij}}{p_{\cdot j}}\:.$$
-                  \item 求$f_{Y\mid X}(y\mid x),f_{X\mid Y}(x\mid y).$
-                        $$f_{Y\mid X}(y\mid x)=\frac{f(x,y)}{f_{X}(x)},\quad f_{X|Y}(x\mid y)=\frac{f(x,y)}{f_{Y}(y)}$$
-            \end{enumerate}
-      \item 判独立
-            \begin{enumerate}
-                  \item $X$与$Y$相互独立 $\Leftrightarrow$ 对任意$x,y$，$F(x,y)=F_X(x)\cdot F_Y(y)$.
-
-                        $X,Y$不独立 $\Leftrightarrow$ 存在$x_0,y_0$，使$A=\{X\leqslant x_0\}$与$B=\{Y\leqslant y_0\}$不独立，即$F(x_0,y_0)\neq F_X(x_0)\cdot F_Y(y_0)$．
-
-                        因此，证明不独立的常用方法：找$x_0,y_0$，使$0<P\{X\leqslant x_0\}$，$P\{Y\leqslant y_0\}<1$，$\{X\leqslant x_0\}\subseteq\{Y\leqslant y_0\}$或$\{Y\leqslant y_0\}\subseteq\{X\leqslant x_0\}$或$\{X\leqslant x_0,Y\leqslant y_0\}=\varnothing$．
-                  \item 若$(X,Y)$为二维离散型随机变量，$X$与$Y$相互独立 $\Leftrightarrow$ 对任意$i,j$，$p_{ij}=p_i\cdot p_j$．
-                  \item 若$(X,Y)$为二维连续型随机变量，$X$与$Y$相互独立 $\Leftrightarrow$ 对任意$x,y$，$f(x,y)=f_X(x)f_Y(y)$．
-            \end{enumerate}
+      \item 分布函数：
+            $$
+                  F_X(x)=F(x,+\infty), \quad F_Y(y)=F(+\infty,y).
+            $$
+      \item 离散情形：
+            $$
+                  p_{i\cdot}=\sum_j p_{ij}, \quad p_{\cdot j}=\sum_i p_{ij}.
+            $$
+      \item 连续情形：
+            $$
+                  f_X(x)=\int_{-\infty}^{+\infty} f(x,y)\,dy, \quad
+                  f_Y(y)=\int_{-\infty}^{+\infty} f(x,y)\,dx.
+            $$
 \end{enumerate}
+
+\subsection*{(2) 条件分布}
+\begin{enumerate}
+      \item 离散型：
+            $$
+                  P\{Y=y_j|X=x_i\}=\frac{p_{ij}}{p_{i\cdot}},\quad
+                  P\{X=x_i|Y=y_j\}=\frac{p_{ij}}{p_{\cdot j}}.
+            $$
+      \item 连续型：
+            $$
+                  f_{Y|X}(y|x)=\frac{f(x,y)}{f_X(x)}, \quad
+                  f_{X|Y}(x|y)=\frac{f(x,y)}{f_Y(y)}.
+            $$
+            对应分布函数为：
+            $$
+                  F(x|y)=\int_{-\infty}^x f_{X|Y}(u|y)\,du, \quad
+                  F(y|x)=\int_{-\infty}^y f_{Y|X}(v|x)\,dv.
+            $$
+\end{enumerate}
+
+\subsection*{(3) 独立性判定}
+\begin{enumerate}
+      \item $X$ 与 $Y$ 独立 $\Leftrightarrow$
+            $$
+                  F(x,y)=F_X(x)F_Y(y).
+            $$
+      \item 离散型：
+            $$
+                  X,Y\text{独立} \Leftrightarrow p_{ij}=p_{i\cdot}p_{\cdot j}.
+            $$
+      \item 连续型：
+            $$
+                  X,Y\text{独立} \Leftrightarrow f(x,y)=f_X(x)f_Y(y).
+            $$
+      \item 若要证明“不独立”，可取 $x_0,y_0$ 使得
+            $$
+                  F(x_0,y_0)\ne F_X(x_0)F_Y(y_0),
+            $$
+            或 $\{X\le x_0\}\subseteq\{Y\le y_0\}$ 等。
+\end{enumerate}
+
 
 \section{用分布求概率及反问题}
 \begin{enumerate}
-      \item $(X,Y)\sim p_{ij}$,则$P\{ ( X, Y) \in D\} = \sum_{( x_{i}, y_{j}) \in D}p_{ij}$.
-      \item $(X,Y)\sim f(x,y)$,则$P\{(X,Y)\in D\}=\iint_{D}f(x,y)$d$x$d$y$ .
-      \item $(X,Y)$为混合型，则用全概率公式.
-      \item 反问题：已知概率反求参数.
+      \item 若 $(X,Y)\sim p_{ij}$，则
+            $$
+                  P\{(X,Y)\in D\}=\sum_{(x_i,y_j)\in D} p_{ij}.
+            $$
+      \item 若 $(X,Y)\sim f(x,y)$，则
+            $$
+                  P\{(X,Y)\in D\}=\iint_D f(x,y)\,dx\,dy.
+            $$
+      \item 若为混合型，用全概率公式分情况计算。
+      \item \textbf{反问题：}已知概率关系，建立方程求参数。
 \end{enumerate}
+
+
+\section*{小结}
+\begin{itemize}
+      \item 边缘分布：对另一变量积分（或求和）；
+      \item 条件分布：联合分布除以边缘分布；
+      \item 独立性：$f(x,y)=f_X(x)f_Y(y)$；
+      \item 常见二维分布：均匀、正态；
+      \item 二维正态分布由参数 $(\mu_1,\mu_2,\sigma_1,\sigma_2,\rho)$ 唯一确定。
+\end{itemize}

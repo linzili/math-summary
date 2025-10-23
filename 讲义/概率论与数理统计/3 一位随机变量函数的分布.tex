@@ -1,77 +1,83 @@
-\GAIchapter{一位随机变量函数的分布}
+\GAIchapter{一维随机变量函数的分布}
 
 \section{离散型$\rightarrow$离散型}
-设$X$为离散型随机变量，其概率分布为$p_i=P\{X=x_i\}(i=1,2,\cdotp\cdotp\cdotp)$,则$X$的函数$Y=g(X)$也是离散型随机变量，其概率分布为$P\{Y=g(x_i)\}=p_i$ ,即
+设离散型随机变量 $X$ 的分布为 $P\{X = x_i\} = p_i \ (i=1,2,\cdots)$，若 $Y = g(X)$，则 $Y$ 仍为离散型随机变量，其分布为
+$$
+      Y \sim
+      \begin{pmatrix}
+            g(x_1) & g(x_2) & \cdots \\
+            p_1    & p_2    & \cdots
+      \end{pmatrix}.
+$$
+若若干个 $g(x_k)$ 取相同值，则合并为一项，并将对应概率相加。
 
-$$Y\sim\begin{pmatrix}g(x_1)&g(x_2)&...\\p_1&p_2&...\end{pmatrix}.$$
+\section{连续型$\rightarrow$连续型（或混合型）}
+设连续型随机变量 $X$ 的分布函数与密度分别为 $F_X(x)$、$f_X(x)$，若 $Y = g(X)$，则可用以下两种方法求其分布：
 
-如果有若干个$g(x_k)$相同，则合并诸项为一项$g(x_k)$,并将相应概率相加作为 $Y$取 $g(x_k)$值的概率.
-\section{连续型$\rightarrow$连续型(或混合型)}
-设$X$为连续型随机变量，其分布函数、概率密度分别为$F_x(x)$与$f_x(x)$,随机变量$Y=g(X)$是$X$的函数，则$Y$的分布函数或概率密度可用下面两种方法求得.
-\begin{enumerate}
-      \item 分布函数法
+\subsection*{(1) 分布函数法}
+由定义直接求：
+$$
+      F_Y(y) = P\{Y \le y\} = P\{g(X) \le y\} = \int_{g(x) \le y} f_X(x) \, dx.
+$$
+若 $F_Y(y)$ 连续且可导，则 $f_Y(y) = F_Y'(y)$。
 
-            直接由定义求$Y$的分布函数
+\subsection*{(2) 公式法（单调可导变换）}
+若 $y = g(x)$ 在 $(a,b)$ 上严格单调且可导，则存在反函数 $x = h(y)$，其概率密度为
+$$
+      f_Y(y) = f_X[h(y)] \cdot |h'(y)|, \quad \alpha < y < \beta,
+$$
+其中
+$$
+      \alpha = \min\{\lim_{x\to a^+} g(x), \lim_{x\to b^-} g(x)\}, \quad
+      \beta = \max\{\lim_{x\to a^+} g(x), \lim_{x\to b^-} g(x)\}.
+$$
 
-            $$F_{Y}(y)=P\{Y\leqslant y\}=P\{g(X)\leqslant y\}=\int_{g(x)\leqslant y}f_{X}(x)\mathrm{d}x\:.$$
-
-            如果$F_Y(y)$连续，且除有限个点外，$F_Y^\prime(y)$存在且连续，则 $Y$的概率密度$f_Y(y)=F_Y^\prime(y)$ .
-      \item 公式法 \DTwoThree
-
-            根据上面的分布函数法，若 $y = g(x)$ 在 $(a, b)$ 上是关于 $x$ 的严格单调可导函数，则存在 $x = h(y)$ 是 $y = g(x)$ 在 $(a, b)$ 上的可导反函数.
-            \begin{enumerate}
-                  \item 若 $y = g(x)$ 严格单调增加，则 $x = h(y)$ 也严格单调增加，即 $h'(y) > 0$，且
-                        $$F_y(y) = P\{Y \leqslant y\} = P\{g(X) \leqslant y\} = P\{X \leqslant h(y)\} = \int_{-\infty}^{h(y)} f_X(x) \, dx$$
-                        故 $f_y(y) = F_y'(y) = f_X[h(y)] \cdot h'(y)$.
-                  \item 若 $y = g(x)$ 严格单调减少，则 $x = h(y)$ 也严格单调减少，即 $h'(y) < 0$，且
-                        $$
-                              F_y(y) = P\{Y \leqslant y\} = P\{g(X) \leqslant y\} = P\{X \geqslant h(y)\} = \int_{h(y)}^{+\infty} f_X(x) \, dx$$
-                        故 $f_y(y) = F_y'(y) = -f_X[h(y)] \cdot h'(y) = f_X[h(y)] \cdot [-h'(y)]$.
-            \end{enumerate}
-
-            综上，
-            $$f_y(y) = \begin{cases} f_X[h(y)] \cdot |h'(y)|, & \alpha < y < \beta, \\ 0, & \text{其他,} \end{cases}$$
-
-            其中 $\alpha = \min \left\{ \lim_{x \to a^+} g(x), \lim_{x \to b^-} g(x) \right\}$, $\beta = \max \left\{ \lim_{x \to a^+} g(x), \lim_{x \to b^-} g(x) \right\}$.
-
-\end{enumerate}
 \section{连续型$\rightarrow$离散型}
-若$X\thicksim f_X(x)$,且$Y=g(X)$是离散型随机变量.首先确定$Y$的可能取值$a$,然后通过计算概率$P\{Y=a\}$求得$Y$的概率分布.
-
+若 $X \sim f_X(x)$ 且 $Y = g(X)$ 为离散型变量，先求出 $Y$ 的可能取值 $a_i$，再由
+$$
+      P\{Y = a_i\} = \int_{g(x)=a_i} f_X(x) \, dx
+$$
+得出其分布。
 \section{两种重要的随机变量变换}
 
-\begin{enumerate}
-      \item 变换于$U(0,1)$
-            \begin{example}{}{}
-                  设随机变量$X$的分布函数$F_x(x)$ 是严格单调增加函数，其反函数$F_x^{-1}(y)$存在，$Y=F_X(X)$.证明：$Y$服从区间$(0,1)$上的均匀分布.
-            \end{example}
-            \begin{proof}
-                  $Y = F_{X}(X)$ 是在区间$(0,1)$上取值的随机变量，故
+\subsection*{(1) 变换于 $U(0,1)$}
+\begin{example}{}{}
+      设随机变量 $X$ 的分布函数 $F_X(x)$ 严格单调递增，反函数 $F_X^{-1}(y)$ 存在，令 $Y = F_X(X)$，则 $Y \sim U(0,1)$。
+\end{example}
+\begin{proof}
+      由定义：
+      $$
+            F_Y(y) = P\{Y \le y\} = P\{F_X(X) \le y\} = P\{X \le F_X^{-1}(y)\} = F_X[F_X^{-1}(y)] = y,
+      $$
+      对 $0 \le y < 1$ 成立；此外，$F_Y(y) = 0 (y < 0)$，$F_Y(y) = 1 (y \ge 1)$，即
+      $$
+            F_Y(y) =
+            \begin{cases}
+                  0, & y < 0,       \\
+                  y, & 0 \le y < 1, \\
+                  1, & y \ge 1,
+            \end{cases}
+      $$
+      故 $Y \sim U(0,1)$。
+\end{proof}
 
-                  当$y<0$时，$F_{Y}(y)=0$；
 
-                  当$y\ge 1$时，$F_{Y}(y)=1$；
-
-                  当$0\ge y<1$时，
-                  $$F_{Y}(y)=P\{Y\le y\}=P\{F_{X}(X)\le y\}=P\{X\le F_{X}^{-1}(y)\}=F_{X}[F_{X}^{-1}(y)]=y.$$
-                  综上所述，$Y = F_{X}(X)$ 的分布函数为
-                  $$
-                        F_{Y}(y)=\begin{cases}0,&y<0,\\y,&0\le y<1,\\1,&y\ge 1,\end{cases}$$
-                  这就是在区间$(0,1)$上的均匀分布函数，所以$Y\sim U(0,1)$.
-            \end{proof}
-      \item 变换于$E(1)$
-            \begin{example}{}{}
-                  设随机变量$X$的分布函数$F_x(x)$连续，且$F_x(x)$在$X$的正概率密度区间上严格单调.$Y=-\ln[1-F_{\chi}(X)]$,证明随机变量 $Y$服从指数分布 $E(1).$
-            \end{example}
-            \begin{proof}
-                  由于$F_{X}(x)$连续，因此$Y$为单调不减且非负的连续函数，又对任意的$x>0$，有
-
-                  $$P\{Y\leqslant x\}=P\{-\ln[1-F_{X}(X)]\leqslant x\}=P\{F_{X}(X)\leqslant 1-e^{-x}\},$$
-
-                  且随机变量$F_{X}(X)$服从$U(0,1)$，于是
-
-                  $$P\{Y\leqslant x\}=P\{F_{X}(X)\leqslant 1-e^{-x}\}=1-e^{-x},x>0,$$
-
-                  故$Y$服从指数分布$E(1)$.
-            \end{proof}
-\end{enumerate}
+\subsection*{(2) 变换于 $E(1)$}
+\begin{example}{}{}
+      设 $X$ 的分布函数 $F_X(x)$ 连续且在其密度区间上严格单调，令
+      $$
+            Y = -\ln[1 - F_X(X)],
+      $$
+      则 $Y \sim E(1)$。
+\end{example}
+\begin{proof}
+      由定义：
+      $$
+            P\{Y \le y\} = P\{-\ln[1 - F_X(X)] \le y\} = P\{F_X(X) \le 1 - e^{-y}\}.
+      $$
+      由于 $F_X(X) \sim U(0,1)$，故
+      $$
+            F_Y(y) = 1 - e^{-y}, \quad y > 0,
+      $$
+      即 $Y \sim E(1)$。
+\end{proof}
