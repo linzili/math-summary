@@ -60,7 +60,7 @@
 \RequirePackage{mismath} % 包含 rank, span 等运算符
 \RequirePackage{zhnumber}
 \RequirePackage{array}
-\RequirePackage{arydshln}
+% \RequirePackage{arydshln}
 \RequirePackage{tikz}
 \RequirePackage{rotating}
 

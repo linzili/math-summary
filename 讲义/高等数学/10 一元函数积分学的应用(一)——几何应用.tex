@@ -1,1 +1,282 @@
 \GAOchapter{一元函数积分学的应用(一)——几何应用}
+\section{计算公式}
+
+\begin{enumerate}
+    \item \textbf{面积公式}
+          \begin{enumerate}
+              \item 直角坐标系下：
+                    $$S = \int_{a}^{b} |f_{1}(x) - f_{2}(x)| \, \mathrm{d}x.$$
+              \item 极坐标系下：
+                    $$S = \frac{1}{2} \int_{\alpha}^{\beta} \left| r_{2}^{2}(\theta) - r_{1}^{2}(\theta) \right| \, \mathrm{d}\theta.$$
+              \item 参数方程形式：
+                    若曲线由
+                    $$\begin{cases}
+                            x = x(t), \\
+                            y = y(t)
+                        \end{cases}
+                        \quad (\alpha \leqslant t \leqslant \beta)
+                    $$
+                    给出，则曲边梯形的面积为
+                    $$
+                        S = \int_{a}^{b} |y| \, \mathrm{d}x
+                        = \int_{\alpha}^{\beta} |y(t) x'(t)| \, \mathrm{d}t.
+                    $$
+          \end{enumerate}
+
+    \item \textbf{旋转体体积}
+          \begin{enumerate}
+              \item 绕 $x$ 轴旋转：
+                    $$
+                        V = \pi \int_{a}^{b} [f(x)]^{2} \, \mathrm{d}x.
+                    $$
+              \item 绕 $y$ 轴旋转：
+                    $$
+                        V = 2\pi \int_{a}^{b} x |f(x)| \, \mathrm{d}x.
+                    $$
+              \item 绕一般直线 $L_{0}$ 旋转：
+                    若曲线 $L: y = f(x)$，定直线 $L_{0}: Ax + By + C = 0$，
+                    且 $L_{0}$ 的任意垂线与 $L$ 至多有一个交点，则
+                    $$
+                        V = \frac{\pi}{(A^{2} + B^{2})^{3/2}}
+                        \int_{a}^{b} [A x + B f(x) + C]^{2} |A f'(x) - B| \, \mathrm{d}x.
+                    $$
+                    特别地，若 $A = C = 0, B \neq 0$，则 $L_{0}$ 为 $x$ 轴，有
+                    $$
+                        V = \pi \int_{a}^{b} [f(x)]^{2} \, \mathrm{d}x.
+                    $$
+              \item 极坐标下：
+                    若区域
+                    $D = \{ (r, \theta) \mid 0 \le r \le r(\theta),\, \theta \in [\alpha, \beta] \subset [0, \pi] \}$，
+                    则绕极轴旋转一周的体积为
+                    $$
+                        V = \frac{2}{3}\pi \int_{\alpha}^{\beta} [r(\theta)]^{3} \sin\theta \, \mathrm{d}\theta.
+                    $$
+          \end{enumerate}
+
+    \item \textbf{平均值公式}
+
+          若 $f(x)$ 在区间 $[a, b]$ 上连续，则其平均值为
+          $$
+              \overline{f} = \frac{1}{b - a} \int_{a}^{b} f(x) \, \mathrm{d}x.
+          $$
+
+    \item \textbf{平面曲线的弧长}
+          \begin{enumerate}
+              \item 直角坐标方程 $y = y(x)$：
+                    $$
+                        s = \int_{a}^{b} \sqrt{1 + [y'(x)]^{2}} \, \mathrm{d}x.
+                    $$
+              \item 极坐标方程 $r = r(\theta)$：
+                    $$
+                        s = \int_{\alpha}^{\beta} \sqrt{[r(\theta)]^{2} + [r'(\theta)]^{2}} \, \mathrm{d}\theta.
+                    $$
+              \item 参数方程 $\begin{cases} x = x(t), \\ y = y(t) \end{cases}$：
+                    $$
+                        s = \int_{\alpha}^{\beta} \sqrt{[x'(t)]^{2} + [y'(t)]^{2}} \, \mathrm{d}t.
+                    $$
+          \end{enumerate}
+
+    \item \textbf{旋转曲面的面积（侧面积）}
+          \begin{enumerate}
+              \item 绕 $x$ 轴旋转：
+                    $$
+                        S = 2\pi \int_{a}^{b} |y(x)| \sqrt{1 + [y'(x)]^{2}} \, \mathrm{d}x.
+                    $$
+              \item 极坐标形式：
+                    $$
+                        S = 2\pi \int_{\alpha}^{\beta} |r(\theta)\sin\theta| \sqrt{[r(\theta)]^{2} + [r'(\theta)]^{2}} \, \mathrm{d}\theta.
+                    $$
+              \item 参数方程形式：
+                    若
+                    $$\begin{cases}
+                            x = x(t), \\
+                            y = y(t)
+                        \end{cases}, \quad (\alpha \le t \le \beta,\, x'(t) \neq 0),
+                    $$
+                    则绕 $x$ 轴旋转的曲面面积为
+                    $$
+                        S = 2\pi \int_{\alpha}^{\beta} |y(t)| \sqrt{[x'(t)]^{2} + [y'(t)]^{2}} \, \mathrm{d}t.
+                    $$
+          \end{enumerate}
+\end{enumerate}
+
+\section{常见极坐标曲线及其面积、体积、弧长汇总表}
+\begin{small}
+    \begin{longtable}{|c|c|c|c|c|}
+        \hline
+        \textbf{名称}                                                              & \textbf{表达式}                     & \textbf{面积 $S$} & \textbf{绕极轴体积 $V$} & \textbf{弧长 $L$} \\ \hline
+        \endfirsthead
+        \hline
+        \textbf{名称}                                                              & \textbf{表达式}                     & \textbf{面积 $S$} & \textbf{绕极轴体积 $V$} & \textbf{弧长 $L$} \\ \hline
+        \endhead
+
+        心形线                                                                      & $r = a(1 + \cos\theta)$          &
+        $\displaystyle S = \frac{3}{2}\pi a^2$                                   &
+        $\displaystyle V = \frac{5}{2}\pi^2 a^3$                                 &
+        $\displaystyle L = 8a$                                                                                                                                               \\ \hline
+
+        内缩心形线                                                                    & $r = a(1 - \cos\theta)$          &
+        $\displaystyle S = \frac{3}{2}\pi a^2$                                   &
+        $\displaystyle V = \frac{5}{2}\pi^2 a^3$                                 &
+        $\displaystyle L = 8a$                                                                                                                                               \\ \hline
+
+        竖直心形线                                                                    & $r = a(1 + \sin\theta)$          &
+        $\displaystyle S = \frac{3}{2}\pi a^2$                                   &
+        $\displaystyle V = \frac{5}{2}\pi^2 a^3$                                 &
+        $\displaystyle L = 8a$                                                                                                                                               \\ \hline
+
+        双纽线（$\cos2\theta$型）                                                      & $r^2 = a^2 \cos2\theta$          &
+        $\displaystyle S = a^2$                                                  &
+        $\displaystyle V = \frac{4}{3}\pi a^3$                                   &
+        $\displaystyle L = 4aE\!\left(\frac{1}{\sqrt2}\right)$                                                                                                               \\ \hline
+
+        双纽线（$\sin2\theta$型）                                                      & $r^2 = a^2 \sin2\theta$          &
+        $\displaystyle S = a^2$                                                  &
+        $\displaystyle V = \frac{4}{3}\pi a^3$                                   &
+        $\displaystyle L = 4aE\!\left(\frac{1}{\sqrt2}\right)$                                                                                                               \\ \hline
+
+        三叶玫瑰线                                                                    & $r = a\sin3\theta$               &
+        $\displaystyle S = \frac{3}{4}\pi a^2$                                   &
+        $\displaystyle V = \frac{3}{8}\pi^2 a^3$                                 &
+        $\displaystyle L = 12aE\!\left(\frac{\sqrt{3}}{2}\right)$                                                                                                            \\ \hline
+
+        四叶玫瑰线                                                                    & $r = a\cos2\theta$               &
+        $\displaystyle S = \pi a^2$                                              &
+        $\displaystyle V = \frac{4}{3}\pi^2 a^3$                                 &
+        $\displaystyle L = 8aE\!\left(\frac{1}{\sqrt2}\right)$                                                                                                               \\ \hline
+
+        阿基米德螺线                                                                   & $r = a\theta$                    &
+        $\displaystyle S = \tfrac{1}{6}a^2(\theta_2^3 - \theta_1^3)$             &
+        $\displaystyle V = \tfrac{\pi a^3}{2}(\theta_2^4 - \theta_1^4)$          &
+        $\displaystyle L = \tfrac{a}{3}\!\left[(\theta^2+1)^{3/2}-1\right]$                                                                                                  \\ \hline
+
+        对数螺线                                                                     & $r = ae^{b\theta}$               &
+        $\displaystyle S = \tfrac{a^2}{4b}(e^{2b\theta_2} - e^{2b\theta_1})$     &
+        $\displaystyle V = \tfrac{\pi a^3}{6b}(e^{3b\theta_2} - e^{3b\theta_1})$ &
+        $\displaystyle L = \tfrac{a}{2b}\sqrt{1+b^2}(e^{b\theta_2} - e^{b\theta_1})$                                                                                         \\ \hline
+
+        半圆                                                                       & $r = 2a\sin\theta$               &
+        $\displaystyle S = \tfrac{1}{2}\pi a^2$                                  &
+        $\displaystyle V = \tfrac{2}{3}\pi^2 a^3$                                &
+        $\displaystyle L = \pi a$                                                                                                                                            \\ \hline
+
+        星形线                                                                      & $r = a(1 - \sin\theta)$          &
+        $\displaystyle S = \tfrac{3}{2}\pi a^2$                                  &
+        $\displaystyle V = \tfrac{5}{2}\pi^2 a^3$                                &
+        $\displaystyle L = 8a$                                                                                                                                               \\ \hline
+
+        阿斯特罗伊德                                                                   & $r = a\sqrt{\cos2\theta}$        &
+        $\displaystyle S = \tfrac{3}{8}\pi a^2$                                  &
+        $\displaystyle V = \tfrac{3}{8}\pi^2 a^3$                                &
+        $\displaystyle L = 6a$                                                                                                                                               \\ \hline
+
+        伯努利双纽线                                                                   & $r^2(r^2 - a^2) = b^2 a^2$       &
+        $\displaystyle S = \tfrac{1}{2}a^2\sin2\theta$                           &
+        $\displaystyle V = \tfrac{\pi a^3}{3}(1 - \cos^3\theta)$                 &
+        $\displaystyle L = \int \!\sqrt{r^2 + (r')^2}\, d\theta$                                                                                                             \\ \hline
+
+        圆                                                                        & $r = a$                          &
+        $\displaystyle S = \pi a^2$                                              &
+        $\displaystyle V = \tfrac{4}{3}\pi^2 a^3$                                &
+        $\displaystyle L = 2\pi a$                                                                                                                                           \\ \hline
+
+        椭圆                                                                       & $\dfrac{r}{1 - e\cos\theta} = p$ &
+        $\displaystyle S = \pi ab$                                               &
+        $\displaystyle V = \tfrac{4}{3}\pi a^2 b$                                &
+        $\displaystyle L \approx \pi[3(a+b) - \sqrt{(3a+b)(a+3b)}]$                                                                                                          \\ \hline
+    \end{longtable}
+\end{small}
+\section{各种函数表达形式的几何量计算}
+
+本节总结典型函数形式在求面积与弧长中的常见方法。总体思路：
+\begin{itemize}
+    \item 先确定函数定义区间；
+    \item 求导得到 $y'$；
+    \item 再根据几何量定义公式求解相应积分。
+\end{itemize}
+
+\subsection{幂函数类表达式的几何量}
+\begin{example}{}{}
+    设
+    $$y = \lim_{n \to \infty} \frac{1 + x}{1 + n x^{2n}},$$
+    求曲线 $y = y(x)$ 与 $x$ 轴及 $x = 1$ 所围成图形的面积。
+\end{example}
+
+\begin{solution}
+    当 $|x| < 1$ 时，$x^{2n} \to 0$，故
+    $$\frac{1 + x}{1 + n x^{2n}} \to 1 + x.$$
+    当 $|x| \ge 1$ 时，$n x^{2n} \to +\infty$，故
+    $$\frac{1 + x}{1 + n x^{2n}} \to 0.$$
+    于是：
+    $$
+        y =
+        \begin{cases}
+            0,     & |x| \ge 1, \\[3pt]
+            1 + x, & |x| < 1.
+        \end{cases}
+    $$
+    由此可得面积：
+    $$
+        S = \int_{-1}^{1} (1 + x)\, \mathrm{d}x
+        = \left(x + \tfrac{x^2}{2}\right)\Big|_{-1}^{1} = 2.
+    $$
+\end{solution}
+
+\subsection{三角函数类表达式的几何量}
+\begin{example}{}{}
+    求曲线
+    $$y = \int_{0}^{x} \sqrt{\cos t}\, \mathrm{d}t$$
+    的全弧长。
+\end{example}
+
+\begin{solution}
+    由 $y' = \sqrt{\cos x}$，且要求 $\cos x \ge 0$，即 $x \in \left[-\tfrac{\pi}{2}, \tfrac{\pi}{2}\right]$。
+    则有：
+    $$
+        \mathrm{d}s = \sqrt{1 + (y')^2}\, \mathrm{d}x
+        = \sqrt{1 + \cos x}\, \mathrm{d}x
+        = \sqrt{2}\cos \frac{x}{2}\, \mathrm{d}x.
+    $$
+    因此：
+    $$
+        s = \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \sqrt{1 + \cos x}\, \mathrm{d}x
+        = 2\sqrt{2} \int_{0}^{\frac{\pi}{2}} \cos \frac{x}{2}\, \mathrm{d}x
+        = 4.
+    $$
+\end{solution}
+
+\subsection{对数函数类表达式的几何量}
+\begin{example}{}{}
+    求下列曲线的弧长：
+    \begin{enumerate}
+        \item $y = \ln(\cos x),\quad 0 \le x \le \tfrac{\pi}{6}$；
+        \item $\ln y + 2x - \tfrac{1}{2}y^2 = 0,\quad 1 \le y \le e$。
+    \end{enumerate}
+\end{example}
+
+\begin{solution}
+    \begin{enumerate}
+        \item 由 $y' = -\tan x$，则
+              $$
+                  s = \int_{0}^{\frac{\pi}{6}} \sqrt{1 + y'^2}\, \mathrm{d}x
+                  = \int_{0}^{\frac{\pi}{6}} \sec x\, \mathrm{d}x
+                  = \ln|\sec x + \tan x|\Big|_{0}^{\frac{\pi}{6}}
+                  = \tfrac{1}{2}\ln 3.
+              $$
+        \item 将方程化为 $x = \tfrac{1}{4}y^2 - \tfrac{1}{2}\ln y$，则
+              $$
+                  x_y = \frac{1}{2}y - \frac{1}{2y}, \quad
+                  s = \int_{1}^{e} \sqrt{1 + x_y^2}\, \mathrm{d}y
+                  = \int_{1}^{e} \frac{1}{2}\!\left(y + \frac{1}{y}\right)\mathrm{d}y
+                  = \frac{1}{4}(e^2 + 1).
+              $$
+    \end{enumerate}
+\end{solution}
+
+\vspace{1em}
+\noindent\textbf{小结：}
+\begin{itemize}
+    \item 幂函数型通常需判断极限定义域；
+    \item 三角函数型常通过半角公式简化；
+    \item 对数函数型适合换元或视$y$为自变量积分。
+\end{itemize}
