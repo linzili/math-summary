@@ -1,1 +1,563 @@
-\GAOchapter{多元函数微分学}
+\GAOchapter{多元函数微积分（一）——二元函数的极限与连续性}
+
+\section{计算二元函数的极限}
+
+\subsection{判别二重极限是否存在——特殊路径法}
+
+\begin{enumerate}
+    \item \textbf{同阶路径法}
+
+          \begin{example}{}{}
+              求 $\displaystyle \lim_{(x,y)\to(0,0)}\frac{x^2-y^2}{x^2+y^2}$.
+          \end{example}
+
+          \begin{solution}
+              取 $y=kx$，得
+              $$
+                  \lim_{(x,y)\to(0,0)}\frac{x^2-y^2}{x^2+y^2}
+                  =\lim_{x\to0}\frac{x^2(1-k^2)}{x^2(1+k^2)}
+                  =\frac{1-k^2}{1+k^2}.
+              $$
+              极限与 $k$ 有关，不唯一，因此该二重极限不存在。
+          \end{solution}
+
+    \item \textbf{变阶路径法}
+
+          \begin{example}{}{}
+              求 $\displaystyle \lim_{(x,y)\to(0,0)}\frac{x^3+y^3}{x^2+y}$.
+          \end{example}
+
+          \begin{solution}
+              令 $y=x$，得 $\displaystyle \lim_{x\to0}\frac{2x^3}{x^2+x}=0$；
+
+              再令 $y=-x^2+x^3$，得
+              $$
+                  \lim_{x\to0}\frac{x^3+(-x^2+x^3)^3}{x^2+y}=1.
+              $$
+              两路径结果不同，因此极限不存在。
+          \end{solution}
+\end{enumerate}
+
+
+\subsection{计算二重极限}
+
+\begin{example}{}{}
+    求 $\displaystyle \lim_{(x,y)\to(0,0)}\frac{x+y}{x^{2}-xy+y^{2}}$.
+\end{example}
+
+\begin{solution}
+    对 $(x,y)\ne(0,0)$，有
+    $$
+        \left| \frac{x+y}{x^2-xy+y^2} \right|
+        \le \frac{|x|}{\frac{3}{4}x^2+\left(\frac{x}{2}-y\right)^2}
+        + \frac{|y|}{\frac{3}{4}y^2+\left(\frac{y}{2}-x\right)^2}
+        \le \frac{4}{3}\left(\frac{1}{|x|}+\frac{1}{|y|}\right).
+    $$
+    当 $(x,y)\to(0,0)$ 时，右侧趋于 $0$，故极限为 $0$。
+\end{solution}
+
+\begin{example}{}{}
+    求 $\displaystyle \lim_{x\to+\infty,\,y\to1}(x^2+y^2)e^{-(x+y)}$.
+\end{example}
+
+\begin{solution}
+    $$
+        \lim_{\substack{x \to +\infty \\ y \to 1}}
+        (x^2+y^2)e^{-(x+y)}
+        =\lim_{\substack{x \to +\infty \\ y \to 1}}
+        \left(\frac{x^2}{e^x}\cdot\frac{1}{e^y}+\frac{y^2}{e^y}\cdot\frac{1}{e^x}\right)=0.
+    $$
+\end{solution}
+
+
+\subsection{判别累次极限是否存在}
+
+若 $\displaystyle \lim_{x \to x_0}\lim_{y \to y_0} f(x,y)$ 存在，则：
+- 先固定 $x$，算 $\lim_{y \to y_0} f(x,y)$；
+- 若存在，再算外层极限；
+- 若任一层不存在，则累次极限不存在。
+
+\begin{example}{}{}
+    设 $f(x,y)=\frac{xy}{x^2+y^2}$，判断累次极限。
+\end{example}
+
+\begin{solution}
+    取 $y=kx$，则
+    $$
+        I_1=\lim_{x\to0}\frac{kx^2}{x^2(1+k^2)}=\frac{k}{1+k^2},
+    $$
+    与 $k$ 有关，不唯一，故 $I_1$ 不存在。
+
+    但对任意 $y$，$\lim_{x\to0}f(x,y)=0$，于是
+    $$
+        I_2=\lim_{y\to0}0=0.
+    $$
+    故选项：$I_1$ 不存在，$I_2$ 存在。
+\end{solution}
+
+
+\subsection{二重极限与累次极限的关系}
+
+\begin{enumerate}
+    \item 二重极限存在，累次极限不一定存在；
+    \item 累次极限存在，二重极限不一定存在；
+    \item 若二重极限存在，且累次极限存在，则二者相等；
+    \item 若两累次极限存在但不相等，则二重极限不存在。
+\end{enumerate}
+
+\begin{example}{}{}
+    设 $f(x,y)=\dfrac{x^2-y^2}{x^2+y^2}$，比较各极限。
+\end{example}
+
+\begin{solution}
+    当 $x\ne0$ 时，$\lim\limits_{y\to0}f(x,y)=1$；
+    当 $y\ne0$ 时，$\lim\limits_{x\to0}f(x,y)=-1$。
+
+    两个累次极限存在但不相等，因此二重极限不存在。
+\end{solution}
+
+
+\section{研究二元函数的性质}
+
+\subsection{连续性}
+
+\begin{enumerate}
+    \item \textbf{二元函数连续的定义}
+
+          若 $\lim\limits_{(x,y)\to(x_0,y_0)}f(x,y)=f(x_0,y_0)$，
+          则称 $f(x,y)$ 在 $(x_0,y_0)$ 处连续；
+          若在区域 $D$ 内处处连续，则称 $f$ 在 $D$ 上连续。
+
+    \item \textbf{单变量连续性}
+
+          固定一个变量，若
+          $$
+              \lim_{x\to x_0} f(x,y_0)=f(x_0,y_0),
+          $$
+          称 $f$ 在 $(x_0,y_0)$ 关于 $x$ 连续；
+          类似地定义关于 $y$ 的连续性。
+\end{enumerate}
+
+
+\subsection{偏导数的定义}
+
+设 $z=f(x,y)$ 在点 $(x_0,y_0)$ 附近有定义。若极限
+$$
+    \lim_{\Delta x\to0}\frac{f(x_0+\Delta x,y_0)-f(x_0,y_0)}{\Delta x}
+$$
+存在，则称其为 $f$ 在 $(x_0,y_0)$ 处对 $x$ 的偏导数，记作
+$$
+    f_x'(x_0,y_0)\text{ 或 }\frac{\partial f}{\partial x}\bigg|_{(x_0,y_0)}.
+$$
+同理，对 $y$ 的偏导为
+$$
+    f_y'(x_0,y_0)=\lim_{\Delta y\to0}\frac{f(x_0,y_0+\Delta y)-f(x_0,y_0)}{\Delta y}.
+$$
+
+
+\subsection{全微分}
+
+设 $z=f(x,y)$ 在点 $(x,y)$ 附近有定义，若增量可写作
+$$
+    \Delta z = A\Delta x + B\Delta y + o(\rho),\quad \rho=\sqrt{(\Delta x)^2+(\Delta y)^2},
+$$
+其中 $A,B$ 仅依赖于 $(x,y)$，则称 $f$ 在 $(x,y)$ 可微，
+$$
+    \mathrm{d}z = A\,\mathrm{d}x + B\,\mathrm{d}y.
+$$
+若 $A=f_x(x,y)$，$B=f_y(x,y)$，则有
+$$
+    \mathrm{d}z = f_x(x,y)\,\mathrm{d}x + f_y(x,y)\,\mathrm{d}y.
+$$
+
+\textit{可微意味着函数的局部线性化存在，是多元微积分的重要基础。}
+
+\subsection{二元函数各性质之间的概念关系}
+
+记 $f(x, y)$ 在点 $P(x_0, y_0)$ 处的性质如下：
+\begin{enumerate}
+    \item[(1)] 极限存在；
+    \item[(2)] 连续；
+    \item[(3)] 关于 $x, y$ 两个变量的偏导数存在；
+    \item[(4)] 可微；
+    \item[(5)] 一阶偏导数连续。
+\end{enumerate}
+
+则它们之间的逻辑关系为：
+
+\[
+    \boxed{
+        (5) \Rightarrow (4) \Rightarrow (3) \Rightarrow (2) \Rightarrow (1)
+    }
+\]
+
+其中：“$\Rightarrow$” 表示能推出；“$\nRightarrow$” 表示不能反推出。
+
+
+\begin{center}
+    \begin{tabular}{ccl}
+        (5) & $\Rightarrow$ & (4) \quad 一阶偏导连续 $\Rightarrow$ 函数可微； \\
+        (4) & $\Rightarrow$ & (2) \quad 函数可微 $\Rightarrow$ 函数连续；   \\
+        (3) & $\Rightarrow$ & (2) \quad 偏导存在不一定连续，但若偏导连续则一定连续；     \\
+        (2) & $\Rightarrow$ & (1) \quad 函数连续 $\Rightarrow$ 极限存在。
+    \end{tabular}
+\end{center}
+
+\textbf{反向关系一般不成立：}
+\[
+    (1) \nRightarrow (2),\quad (2) \nRightarrow (3),\quad (3) \nRightarrow (4),\quad (4) \nRightarrow (5)
+\]
+
+\textbf{总结：}
+\begin{itemize}
+    \item 极限存在是连续的必要条件；
+    \item 可微是连续的充分条件；
+    \item 偏导存在不代表可微；
+    \item 偏导连续是可微的充分条件。
+\end{itemize}
+
+\section{计算偏导数与全微分}
+
+\subsection{链式求导法则}
+
+\begin{enumerate}
+    \item \textbf{单变量复合函数链式法则：}
+          若 $y = f[g(x)]$，则
+          \[
+              \frac{dy}{dx} = \frac{df}{dg} \cdot \frac{dg}{dx}.
+          \]
+
+    \item \textbf{二元复合函数链式法则：}
+          若 $z = f(u,v)$，且 $u = u(x,y)$，$v = v(x,y)$，则
+          \[
+              \frac{\partial z}{\partial x} = \frac{\partial z}{\partial u} \frac{\partial u}{\partial x} + \frac{\partial z}{\partial v} \frac{\partial v}{\partial x}, \quad
+              \frac{\partial z}{\partial y} = \frac{\partial z}{\partial u} \frac{\partial u}{\partial y} + \frac{\partial z}{\partial v} \frac{\partial v}{\partial y}.
+          \]
+
+    \item \textbf{参数复合函数链式法则：}
+          若 $z = f(u,v)$，且 $u = u(t)$，$v = v(t)$，则
+          \[
+              \frac{dz}{dt} = \frac{\partial z}{\partial u} \frac{du}{dt} + \frac{\partial z}{\partial v} \frac{dv}{dt}.
+          \]
+\end{enumerate}
+
+\subsection{隐函数求导法}
+
+设所有函数的偏导数均连续。
+
+\begin{enumerate}
+    \item \textbf{单个方程的情形：}
+
+          若 $F(x, y, z) = 0$ 且在点 $P_0(x_0, y_0, z_0)$ 满足
+          \[
+              F(P_0) = 0, \quad F_z'(P_0) \neq 0,
+          \]
+          则在 $P_0$ 的某邻域内可确定 $z = z(x, y)$，且有
+          \[
+              \frac{\partial z}{\partial x} = -\frac{F_x'}{F_z'}, \qquad
+              \frac{\partial z}{\partial y} = -\frac{F_y'}{F_z'}.
+          \]
+
+    \item \textbf{方程组的情形：}
+
+          若
+          \[
+              \begin{cases}
+                  F(x,y,z) = 0, \\
+                  G(x,y,z) = 0,
+              \end{cases}
+          \]
+          且
+          \[
+              \frac{\partial(F,G)}{\partial(y,z)} =
+              \begin{vmatrix}
+                  \dfrac{\partial F}{\partial y} & \dfrac{\partial F}{\partial z} \\[4pt]
+                  \dfrac{\partial G}{\partial y} & \dfrac{\partial G}{\partial z}
+              \end{vmatrix}
+              \neq 0,
+          \]
+          则可确定
+          \[
+              \begin{cases}
+                  y = y(x), \\
+                  z = z(x).
+              \end{cases}
+          \]
+
+          并有
+          \[
+              \frac{dy}{dx} =
+              -\frac{\dfrac{\partial(F,G)}{\partial(x,z)}}{\dfrac{\partial(F,G)}{\partial(y,z)}}
+              = -\begin{vmatrix}
+                  \dfrac{\partial F}{\partial x} & \dfrac{\partial F}{\partial z} \\[4pt]
+                  \dfrac{\partial G}{\partial x} & \dfrac{\partial G}{\partial z}
+              \end{vmatrix},
+              \quad
+              \frac{dz}{dx} =
+              -\frac{\dfrac{\partial(F,G)}{\partial(y,x)}}{\dfrac{\partial(F,G)}{\partial(y,z)}}
+              = -\begin{vmatrix}
+                  \dfrac{\partial F}{\partial y} & \dfrac{\partial F}{\partial x} \\[4pt]
+                  \dfrac{\partial G}{\partial y} & \dfrac{\partial G}{\partial x}
+              \end{vmatrix}.
+          \]
+\end{enumerate}
+
+\subsection{全微分的形式不变性}
+
+若 $z = f(u, v)$，且 $u = u(x, y)$，$v = v(x, y)$，若 $f, u, v$ 的偏导数均连续，则复合函数 $z = f(u, v)$ 在 $(x, y)$ 处的全微分可写为
+\[
+    \mathrm{d}z = \frac{\partial z}{\partial u} \mathrm{d}u + \frac{\partial z}{\partial v} \mathrm{d}v.
+\]
+即无论 $u, v$ 是自变量还是中间变量，上式均成立。
+
+\subsection{常用全微分公式总结}
+
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item $x\,\mathrm{d}x + y\,\mathrm{d}y = \mathrm{d}\!\left(\frac{x^{2}+y^{2}}{2}\right)$
+        \item $x\,\mathrm{d}x - y\,\mathrm{d}y = \mathrm{d}\!\left(\frac{x^{2}-y^{2}}{2}\right)$
+        \item $y\,\mathrm{d}x + x\,\mathrm{d}y = \mathrm{d}(xy)$
+        \item $\dfrac{y\,\mathrm{d}x + x\,\mathrm{d}y}{xy} = \mathrm{d}(\ln|xy|)$
+        \item $\dfrac{x\,\mathrm{d}x + y\,\mathrm{d}y}{x^{2}+y^{2}} = \mathrm{d}\!\left[\frac{1}{2}\ln(x^{2}+y^{2})\right]$
+        \item $\dfrac{x\,\mathrm{d}x - y\,\mathrm{d}y}{x^{2}-y^{2}} = \mathrm{d}\!\left[\frac{1}{2}\ln|x^{2}-y^{2}|\right]$
+        \item $\dfrac{y\,\mathrm{d}x - x\,\mathrm{d}y}{x^{2}} = \mathrm{d}\!\left(\frac{y}{x}\right)$
+        \item $\dfrac{y\,\mathrm{d}x - x\,\mathrm{d}y}{y^{2}} = \mathrm{d}\!\left(\frac{x}{y}\right)$
+        \item $\dfrac{y\,\mathrm{d}x - x\,\mathrm{d}y}{x^{2}+y^{2}} = \mathrm{d}\!\left(\arctan\frac{x}{y}\right)$
+        \item $\dfrac{x\,\mathrm{d}y - y\,\mathrm{d}x}{x^{2}+y^{2}} = \mathrm{d}\!\left(\arctan\frac{y}{x}\right)$
+        \item $\dfrac{y\,\mathrm{d}x - x\,\mathrm{d}y}{x^{2}-y^{2}} = \mathrm{d}\!\left[\frac{1}{2}\ln\left|\frac{x-y}{x+y}\right|\right]$
+        \item $\dfrac{x\,\mathrm{d}y - y\,\mathrm{d}x}{x^{2}-y^{2}} = \mathrm{d}\!\left[\frac{1}{2}\ln\left|\frac{x+y}{x-y}\right|\right]$
+        \item $\dfrac{x\,\mathrm{d}x + y\,\mathrm{d}y}{(x^{2}+y^{2})^{2}} = \mathrm{d}\!\left(-\frac{1}{2(x^{2}+y^{2})}\right)$
+        \item $\dfrac{x\,\mathrm{d}x - y\,\mathrm{d}y}{(x^{2}-y^{2})^{2}} = \mathrm{d}\!\left(-\frac{1}{2(x^{2}-y^{2})}\right)$
+        \item $\dfrac{x\,\mathrm{d}x + y\,\mathrm{d}y}{1+(x^{2}+y^{2})^{2}} = \mathrm{d}\!\left[\frac{1}{2}\arctan(x^{2}+y^{2})\right]$
+        \item $\dfrac{x\,\mathrm{d}x - y\,\mathrm{d}y}{1+(x^{2}-y^{2})^{2}} = \mathrm{d}\!\left[\frac{1}{2}\arctan(x^{2}-y^{2})\right]$
+    \end{enumerate}
+\end{multicols}
+
+\textbf{提示：}
+以上公式常用于识别“全微分形式”，快速判断某微分表达式是否为某个函数的全微分。
+
+\section{化简与求解偏微分方程}
+
+\subsection{常见思路与方法}
+
+\begin{enumerate}
+    \item \textbf{根据已知等式求 $f(u,v)$ 的表达式}
+
+          已知方程 $A$，要求函数 $f(u,v)$ 的表达式。
+          首先寻找适当的变量变换
+          \[
+              u = u(x,y), \quad v = v(x,y),
+          \]
+          并令
+          \[
+              f = f(u,v).
+          \]
+          然后计算
+          \[
+              \frac{\partial f}{\partial x}, \quad \frac{\partial^2 f}{\partial x \partial y}, \text{ 等},
+          \]
+          将这些偏导代入题设方程 $A$，即可得到关于 $u,v$ 的偏微分方程。
+          若能化为
+          \[
+              \frac{\partial f}{\partial u} \quad \text{或} \quad \frac{\partial^2 f}{\partial u \partial v},
+          \]
+          则可直接对 $f$ 积分求解。
+
+          \textbf{提示：}此类题核心在于识别合适的变量替换，使方程结构简化为单变量或分离变量形式。
+
+    \item \textbf{变量代换法：将方程 $A$ 化简为方程 $B$}
+
+          若题设给出变换
+          \[
+              \begin{cases}
+                  u = u(x,y), \\
+                  v = v(x,y),
+              \end{cases}
+          \]
+          可将原方程 $A(x,y,f,\partial f/\partial x,\ldots)$ 化为新方程
+          \[
+              B(u,v,f,\partial f/\partial u,\ldots).
+          \]
+          若题中给出方程 $B$，则可“反求参数”以确定变换关系 $u(x,y),v(x,y)$。
+          这是简化偏微分方程的重要技巧。
+
+    \item \textbf{由含 $u$ 的偏导方程反求 $f$ 的表达式}
+
+          若 $u = f[g(x,y)]$ 满足某偏导数方程 $A$，
+          令中间变量
+          \[
+              t = g(x,y),
+          \]
+          则有 $u = f(t)$。绘制复合结构图 $u \rightarrow t \rightarrow (x,y)$，计算
+          \[
+              \frac{\partial u}{\partial x}, \quad \frac{\partial^2 u}{\partial x^2}, \quad \frac{\partial u}{\partial y}, \quad \frac{\partial^2 u}{\partial y^2},
+          \]
+          并代入方程 $A$。此时方程将化为仅含 $f$ 与其导数的常微分方程，即可求出 $f(t)$ 的解析式。
+
+    \item \textbf{典型例：一阶线性偏微分方程}
+
+          \begin{example}{}{}
+              已知 $\dfrac{\partial f}{\partial x} = -f(x,y)$，求 $f(x,y)$。
+          \end{example}
+
+          \begin{solution}
+              由方程得
+              \[
+                  \frac{1}{f}\frac{\partial f}{\partial x} = -1.
+              \]
+              对 $x$ 积分：
+              \[
+                  \ln|f| = -x + C_1(y).
+              \]
+              因此
+              \[
+                  f(x,y) = C(y)e^{-x},
+              \]
+              其中 $C(y)$ 为关于 $y$ 的任意可微函数。
+          \end{solution}
+
+          这是求解一阶偏微分方程的基本模型，常用于分离变量法与特征线法的启蒙题。
+\end{enumerate}
+
+\textbf{总结：}
+\begin{itemize}
+    \item 多数偏微分方程可通过“适当变量代换”或“设中间变量”转化为常微分方程；
+    \item 求解核心：识别函数依赖结构、合理代换、整理偏导形式；
+    \item 常见思路包括：链式代换、分离变量、隐函数化简与积分恢复。
+\end{itemize}
+
+\section{求多元函数的极值与最值}
+
+\subsection{无条件极值}
+
+\begin{enumerate}
+    \item \textbf{必要条件（类比一元函数）}
+
+          若 $z = f(x, y)$ 在点 $(x_0, y_0)$ 处可导并取极值，则必有
+          \[
+              f_x'(x_0, y_0) = 0, \quad f_y'(x_0, y_0) = 0.
+          \]
+
+    \item \textbf{充分条件（$\Delta$ 判别法）}
+
+          若 $z = f(x, y)$ 在点 $(x_0, y_0)$ 的某邻域内二阶连续可导，且
+          \[
+              f_x'(x_0, y_0) = 0, \quad f_y'(x_0, y_0) = 0,
+          \]
+          记
+          \[
+              A = f_{xx}''(x_0, y_0), \quad B = f_{xy}''(x_0, y_0), \quad C = f_{yy}''(x_0, y_0), \quad \Delta = AC - B^2,
+          \]
+          则：
+          \[
+              \begin{cases}
+                  \Delta > 0, & A > 0 \Rightarrow \text{极小值;} \\
+                  \Delta > 0, & A < 0 \Rightarrow \text{极大值;} \\
+                  \Delta < 0, & \text{非极值;}                   \\
+                  \Delta = 0, & \text{判别法失效（需另作分析）.}
+              \end{cases}
+          \]
+
+    \item \textbf{求极值的一般步骤}
+
+          \begin{enumerate}
+              \item 求驻点：解方程组
+                    \[
+                        \begin{cases}
+                            f_x' = 0, \\
+                            f_y' = 0.
+                        \end{cases}
+                    \]
+              \item 计算二阶偏导数 $A, B, C$；
+              \item 用 $\Delta = AC - B^2$ 判别；
+              \item 若 $\Delta = 0$，则沿不同方向考察函数变化：
+                    \begin{itemize}
+                        \item 沿 $x$、$y$ 轴或 $y=kx$ 等路径；
+                        \item 若邻域内存在“既有极大又有极小”，则该点非极值点。
+                    \end{itemize}
+          \end{enumerate}
+
+    \item \textbf{与一元函数的不同}
+
+          \begin{itemize}
+              \item 二元函数中，唯一极值点不一定是全局最值；
+              \item 可能仅存在多个极大值点或多个极小值点。
+          \end{itemize}
+
+    \item \textbf{常见补充类型}
+
+          \begin{itemize}
+              \item 含参极值（对参数分类讨论）；
+              \item 利用闭区域连续性与最值定理；
+              \item 局部分析时可用 $\delta$ 判别法。
+          \end{itemize}
+\end{enumerate}
+
+\subsection{条件极值与拉格朗日乘数法}
+
+\begin{enumerate}
+    \item \textbf{方法步骤}
+
+          求 $u = f(x, y, z)$ 在约束条件
+          \[
+              \begin{cases}
+                  \varphi(x, y, z) = 0, \\
+                  \psi(x, y, z) = 0
+              \end{cases}
+          \]
+          下的最值。
+
+          \begin{enumerate}
+              \item 构造辅助函数：
+                    \[
+                        F(x, y, z, \lambda, \mu)
+                        = f(x, y, z) + \lambda \varphi(x, y, z) + \mu \psi(x, y, z);
+                    \]
+              \item 建立方程组：
+                    \[
+                        \begin{cases}
+                            F_x' = f_x' + \lambda \varphi_x' + \mu \psi_x' = 0, \\
+                            F_y' = f_y' + \lambda \varphi_y' + \mu \psi_y' = 0, \\
+                            F_z' = f_z' + \lambda \varphi_z' + \mu \psi_z' = 0, \\
+                            F_\lambda' = \varphi(x, y, z) = 0,                  \\
+                            F_\mu' = \psi(x, y, z) = 0.
+                        \end{cases}
+                    \]
+              \item 解得所有候选点 $P_i$；
+              \item 代入 $f$ 比较函数值，取最大者为 $u_{\max}$，最小者为 $u_{\min}$。
+          \end{enumerate}
+
+    \item \textbf{常见技巧与注意事项}
+
+          \begin{itemize}
+              \item 消元是基础能力；
+              \item 注意对称性、特殊解；
+              \item 若 $f$ 为 $k$ 阶齐次函数，可用齐次性质简化；
+              \item 条件极值点处，梯度共线：
+                    \[
+                        \begin{vmatrix}
+                            f_x'       & f_y'       & f_z'       \\
+                            \varphi_x' & \varphi_y' & \varphi_z' \\
+                            \psi_x'    & \psi_y'    & \psi_z'
+                        \end{vmatrix}
+                        = 0.
+                    \]
+          \end{itemize}
+\end{enumerate}
+
+\subsection{闭区域 $D$ 上的最值}
+
+\begin{enumerate}
+    \item \textbf{区域内部：} 按无条件极值方法求解，保留 $D$ 内驻点；
+    \item \textbf{区域边界：} 按条件极值（拉格朗日法）处理，或代入边界方程求；
+    \item \textbf{比较：} 将全部候选点的 $f$ 值进行比较，取最大、最小；
+    \item 若题中含参数，应分情形讨论。
+\end{enumerate}
+
+
+\textbf{总结：}
+\begin{itemize}
+    \item 无条件极值——驻点 $\Rightarrow$ 二阶判别；
+    \item 条件极值——构造拉格朗日函数；
+    \item 全局最值——考虑闭区域内、边界及参数变化。
+\end{itemize}
