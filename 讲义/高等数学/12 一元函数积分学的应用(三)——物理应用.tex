@@ -1,1 +1,94 @@
 \GAOchapter{一元函数积分学的应用(三)——物理应用}
+
+\begin{enumerate}
+    \item \textbf{变力沿直线做功}
+
+          设沿 $x$ 轴方向的力为 $F(x)$，物体从 $x=a$ 移动到 $x=b$，则变力所做的功为
+          $$
+              W = \int_{a}^{b} F(x)\,\mathrm{d}x.
+          $$
+          功的微元为
+          $$
+              \mathrm{d}W = F(x)\,\mathrm{d}x.
+          $$
+          \textit{物理意义：} $F(x)$ 为“力—位移”关系曲线下的面积。
+
+          \vspace{0.5em}
+
+    \item \textbf{变速直线运动的位移}
+
+          若质点的速度为 $v(t)$，则从时刻 $t_1$ 到 $t_2$ 的位移为
+          $$
+              s = \int_{t_1}^{t_2} v(t)\,\mathrm{d}t,
+          $$
+          微元形式为 $\mathrm{d}s = v(t)\,\mathrm{d}t$。
+
+          \textit{推论：} 若已知加速度 $a(t)$，则速度变化量为 $\displaystyle v_2 - v_1 = \int_{t_1}^{t_2} a(t)\,\mathrm{d}t$。
+
+          \vspace{0.5em}
+
+    \item \textbf{抽水做功（典型应用）}
+
+          把容器中水全部抽出所做的功为
+          $$
+              W = \rho g \int_{a}^{b} x A(x)\,\mathrm{d}x,
+          $$
+          其中：
+          \begin{itemize}
+              \item $\rho$ —— 水的密度；
+              \item $g$ —— 重力加速度；
+              \item $A(x)$ —— 水平截面积；
+              \item $x$ —— 水被提升的高度。
+          \end{itemize}
+          功的微元：
+          $$
+              \mathrm{d}W = \rho g\,x\,A(x)\,\mathrm{d}x.
+          $$
+          \textit{思路：先确定截面积 $A(x)$，其余均为常量。}
+
+          \vspace{0.5em}
+
+    \item \textbf{静水压力}
+
+          垂直浸没在水中的平板 $ABCD$（见图）一侧所受的水压力为
+          $$
+              P = \rho g \int_{a}^{b} x [f(x) - h(x)]\,\mathrm{d}x,
+          $$
+          其中：
+          \begin{itemize}
+              \item $x$ —— 水深；
+              \item $f(x)-h(x)$ —— 平板在深度 $x$ 处的宽度；
+              \item $\rho g x$ —— 该处压强。
+          \end{itemize}
+          压力微元为
+          $$
+              \mathrm{d}P = \rho g x [f(x)-h(x)]\,\mathrm{d}x.
+          $$
+          \textit{几何意义：水压力等于压强与受力面积的积分。}
+
+          \vspace{0.5em}
+
+    \item \textbf{引力作用}
+
+          一根长度为 $l$、线密度为常数 $\mu$ 的细棒位于 $x\in[-l,0]$，
+          在其右端距离为 $a$ 处有质点 $M(m)$，引力常量为 $G$，则 $M$ 与细棒间的引力为
+          $$
+              F = \int_{-l}^{0} \frac{Gm\mu}{(a-x)^2}\,\mathrm{d}x
+              = Gm\mu\!\left(\frac{1}{a-l} - \frac{1}{a}\right).
+          $$
+          \textit{此类问题的关键是：用微元表示“分布体–质点”之间的作用，然后积分求总量。}
+
+          \vspace{0.5em}
+
+    \item \textbf{综合：用微元法建立物理量积分表达式}
+
+          \textit{步骤总结：}
+          \begin{enumerate}[label=(\arabic*)]
+              \item 明确研究对象（力、速度、压力、质量等）；
+              \item 选取微元并建立物理关系式；
+              \item 写出微元量（$\mathrm{d}W$、$\mathrm{d}P$、$\mathrm{d}F$、$\mathrm{d}m$ 等）；
+              \item 确定积分区间并积分；
+              \item 结合题意写出物理解释。
+          \end{enumerate}
+          \textit{核心思想：} 用积分表示“连续分布量”的总和。
+\end{enumerate}
