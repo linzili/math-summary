@@ -1,1 +1,222 @@
 \GAOchapter{一元函数积分学的应用(二)——积分等式与积分不等式}
+
+\section{定积分等式问题}
+
+\begin{enumerate}
+    \item \textbf{与字母无关性}
+          $$
+              \int_{a}^{b} f(x)\,\mathrm{d}x = \int_{a}^{b} f(y)\,\mathrm{d}y.
+          $$
+
+    \item \textbf{线性性}
+          $$
+              \int_{a}^{b}\!\!\big[k_1f_1(x)+k_2f_2(x)\big]\mathrm{d}x
+              =k_1\!\int_{a}^{b}\!f_1(x)\mathrm{d}x+k_2\!\int_{a}^{b}\!f_2(x)\mathrm{d}x.
+          $$
+
+    \item \textbf{方向性}
+          $$
+              \int_{a}^{b}f(x)\,\mathrm{d}x=-\int_{b}^{a}f(x)\,\mathrm{d}x.
+          $$
+
+    \item \textbf{可加（可拆）性}
+          $$
+              \int_{a}^{b}f(x)\,\mathrm{d}x=\int_{a}^{c}f(x)\,\mathrm{d}x+\int_{c}^{b}f(x)\,\mathrm{d}x.
+          $$
+
+    \item \textbf{“祖孙三代”函数的奇偶性规律}
+          \begin{enumerate}
+              \item 若 $f(x)$ 为可导的奇函数，则 $f'(x)$ 为偶函数；
+              \item 若 $f(x)$ 为可导的偶函数，则 $f'(x)$ 为奇函数；
+              \item 若 $f(x)$ 为可积的奇函数，则 $\displaystyle \int_{0}^{x}f(t)\mathrm{d}t$ 为偶函数；
+              \item 若 $f(x)$ 为可积的偶函数，则 $\displaystyle \int_{0}^{x}f(t)\mathrm{d}t$ 为奇函数；
+              \item 对称积分公式：
+                    $$
+                        \int_{-a}^{a}f(x)\,\mathrm{d}x=
+                        \begin{cases}
+                            2\int_{0}^{a}f(x)\,\mathrm{d}x, & f(x)\text{为偶函数}, \\[4pt]
+                            0,                              & f(x)\text{为奇函数}.
+                        \end{cases}
+                    $$
+              \item 一般形式：
+                    $$
+                        \int_{-a}^{a}f(x)\,\mathrm{d}x
+                        =\tfrac{1}{2}\!\int_{-a}^{a}[f(x)+f(-x)]\,\mathrm{d}x
+                        =\!\int_{0}^{a}[f(x)+f(-x)]\,\mathrm{d}x.
+                    $$
+                    （常见例：$f(x)=\tfrac{1}{1+e^{x}},\ \tfrac{1}{1+e^{1/x}},\ \tfrac{e^x+1}{e^x-1}$ 等）
+          \end{enumerate}
+
+    \item \textbf{“祖孙三代”函数的周期性规律}
+          \begin{enumerate}
+              \item 若 $f(x)$ 可导且以 $T$ 为周期，则 $f'(x)$ 亦以 $T$ 为周期；
+              \item 若 $f(x)$ 可积且以 $T$ 为周期，则
+                    $\displaystyle \int_{0}^{x}f(t)\mathrm{d}t$
+                    以 $T$ 为周期 $\Leftrightarrow \int_{0}^{T}f(x)\mathrm{d}x=0$；
+              \item 对任意常数 $a$，有
+                    $$
+                        \int_{a}^{a+T}f(x)\,\mathrm{d}x=\int_{0}^{T}f(x)\,\mathrm{d}x,
+                        \quad
+                        \int_{a}^{a+nT}f(x)\,\mathrm{d}x=n\int_{0}^{T}f(x)\,\mathrm{d}x.
+                    $$
+          \end{enumerate}
+
+    \item \textbf{区间再现公式}
+          \begin{enumerate}
+              \item $\displaystyle \int_{a}^{b}f(x)\mathrm{d}x=\int_{a}^{b}f(a+b-x)\mathrm{d}x$；
+              \item $\displaystyle \int_{a}^{b}f(x)\mathrm{d}x=\tfrac{1}{2}\int_{a}^{b}[f(x)+f(a+b-x)]\mathrm{d}x$；
+              \item $\displaystyle \int_{a}^{b}f(x)\mathrm{d}x=\int_{a}^{\frac{a+b}{2}}[f(x)+f(a+b-x)]\mathrm{d}x$；
+              \item $\displaystyle \int_{0}^{\pi}xf(\sin x)\mathrm{d}x=\tfrac{\pi}{2}\int_{0}^{\pi}f(\sin x)\mathrm{d}x$；
+              \item $\displaystyle \int_{0}^{\pi}xf(\sin x)\mathrm{d}x=\pi\int_{0}^{\frac{\pi}{2}}f(\sin x)\mathrm{d}x$；
+              \item $\displaystyle \int_{0}^{\frac{\pi}{2}}f(\sin x)\mathrm{d}x=\int_{0}^{\frac{\pi}{2}}f(\cos x)\mathrm{d}x$；
+              \item $\displaystyle \int_{0}^{\frac{\pi}{2}}f(\sin x,\cos x)\mathrm{d}x=\int_{0}^{\frac{\pi}{2}}f(\cos x,\sin x)\mathrm{d}x$。
+          \end{enumerate}
+
+    \item \textbf{华里士公式（Wallis Formula）}
+          \begin{enumerate}
+              \item $\displaystyle \int_{0}^{\frac{\pi}{2}}\!\sin^n x\,\mathrm{d}x
+                        =\!\int_{0}^{\frac{\pi}{2}}\!\cos^n x\,\mathrm{d}x
+                        =\begin{cases}
+                            \frac{n-1}{n}\frac{n-3}{n-2}\cdots\frac{2}{3}\cdot1,             & n\text{奇}, \\[4pt]
+                            \frac{n-1}{n}\frac{n-3}{n-2}\cdots\frac{1}{2}\cdot\frac{\pi}{2}, & n\text{偶}.
+                        \end{cases}$
+
+              \item $\displaystyle \int_{0}^{\pi}\!\sin^n x\,\mathrm{d}x=
+                        \begin{cases}
+                            2\!\times\!\frac{n-1}{n}\!\cdots\!\frac{2}{3}\cdot1,             & n\text{奇}, \\[4pt]
+                            2\!\times\!\frac{n-1}{n}\!\cdots\!\frac{1}{2}\cdot\frac{\pi}{2}, & n\text{偶}.
+                        \end{cases}$
+
+              \item $\displaystyle \int_{0}^{\pi}\!\cos^n x\,\mathrm{d}x=
+                        \begin{cases}
+                            0,                                                               & n\text{奇}, \\[4pt]
+                            2\!\times\!\frac{n-1}{n}\!\cdots\!\frac{1}{2}\cdot\frac{\pi}{2}, & n\text{偶}.
+                        \end{cases}$
+
+              \item $\displaystyle \int_{0}^{2\pi}\!\cos^n x\,\mathrm{d}x
+                        =\int_{0}^{2\pi}\!\sin^n x\,\mathrm{d}x
+                        =\begin{cases}
+                            0,                                                               & n\text{奇}, \\[4pt]
+                            4\!\times\!\frac{n-1}{n}\!\cdots\!\frac{1}{2}\cdot\frac{\pi}{2}, & n\text{偶}.
+                        \end{cases}$
+          \end{enumerate}
+
+    \item \textbf{积分中值定理}
+          若 $f(x)$ 在 $[a,b]$ 上连续，则存在 $\xi\in[a,b]$，使得
+          $$
+              \int_{a}^{b}f(x)\,\mathrm{d}x=f(\xi)(b-a).
+          $$
+
+    \item \textbf{定积分的换元法}
+          设 $f(x)$ 在 $[a,b]$ 上连续，若 $x=\varphi(t)$ 连续可导，且 $\varphi(\alpha)=a,\ \varphi(\beta)=b$，则
+          $$
+              \int_{a}^{b}f(x)\,\mathrm{d}x=\int_{\alpha}^{\beta}f[\varphi(t)]\varphi'(t)\,\mathrm{d}t.
+          $$
+
+    \item \textbf{定积分的分部积分法}
+          $$
+              \int_{a}^{b}u(x)v'(x)\mathrm{d}x
+              =u(x)v(x)\Big|_{a}^{b}-\int_{a}^{b}v(x)u'(x)\mathrm{d}x,
+          $$
+          其中 $u'(x),v'(x)$ 在 $[a,b]$ 上连续。
+
+          \begin{enumerate}
+              \item \textbf{对称性判断：}
+                    \begin{example}{}{}
+                        计算：
+                        \begin{enumerate}
+                            \item $\displaystyle \int_{0}^{2}(x-1)\mathrm{d}x$；
+                            \item $\displaystyle \int_{0}^{2}x(x-1)(x-2)\mathrm{d}x$。
+                        \end{enumerate}
+                    \end{example}
+                    \begin{solution}
+                        令 $t=x-1$：
+                        \begin{align*}
+                            \int_{0}^{2}(x-1)\mathrm{d}x       & = \int_{-1}^{1}t\,\mathrm{d}t = 0,                                       \\
+                            \int_{0}^{2}x(x-1)(x-2)\mathrm{d}x & = \int_{-1}^{1}(t+1)t(t-1)\mathrm{d}t=\int_{-1}^{1}(t^3-t)\mathrm{d}t=0.
+                        \end{align*}
+                    \end{solution}
+
+              \item \textbf{判断积分正负：}
+                    \begin{example}{}{}
+                        设 $I=\displaystyle\int_{0}^{\frac{3\pi}{2}}\frac{\cos x}{2x-3\pi}\mathrm{d}x$，则 $I$（  ）。
+                        \begin{center}
+                            (A) 正 \quad (B) 负 \quad (C) 零 \quad (D) 发散
+                        \end{center}
+                    \end{example}
+                    \begin{solution}
+                        \vspace{-0.5em}
+                        \begin{align*}
+                            I & = \tfrac{1}{2}\int_{0}^{\frac{3\pi}{2}}\frac{\sin t}{t}\,\mathrm{d}t
+                            = \tfrac{1}{2}\int_{0}^{\frac{\pi}{2}}\!\!\!\frac{\sin t}{t}\,\mathrm{d}t
+                            + \tfrac{1}{2}\int_{\frac{\pi}{2}}^{\pi}\!\!\!\frac{\sin t}{t}\,\mathrm{d}t
+                            - \tfrac{1}{2}\int_{0}^{\frac{\pi}{2}}\!\!\!\frac{\sin u}{\pi+u}\,\mathrm{d}u > 0.
+                        \end{align*}
+                        故选 (A)。
+                    \end{solution}
+
+              \item \textbf{升降阶应用：}
+                    \begin{example}{}{}
+                        设 $f(x)=xg'(2x)$，$g(x)$ 的一个原函数为 $\ln(x+1)$，则 $\displaystyle \int_{0}^{1}f(x)\mathrm{d}x=$\underline{\hspace{2cm}}。
+                    \end{example}
+                    \begin{solution}
+                        由分部积分：
+                        \[
+                            \int_{0}^{1}xg'(2x)\mathrm{d}x
+                            =\tfrac{1}{4}\int_{0}^{2}x\,\mathrm{d}[g(x)]
+                            =\tfrac{1}{4}\Big[xg(x)-\!\int_{0}^{2}g(x)\mathrm{d}x\Big]
+                            =\tfrac{1}{4}\Big(\tfrac{2}{3}-\ln3\Big)
+                            =\tfrac{1}{6}-\tfrac{1}{4}\ln3.
+                        \]
+                    \end{solution}
+          \end{enumerate}
+
+    \item \textbf{牛顿–莱布尼茨公式}
+          若 $f(x)$ 在 $[a,b]$ 上连续，$F(x)$ 是其原函数，则
+          $$
+              \int_{a}^{b}f(x)\,\mathrm{d}x=F(b)-F(a).
+          $$
+\end{enumerate}
+\section{定积分不等式问题}
+
+\begin{enumerate}
+    \item \textbf{比较定理（保号性）}
+          \begin{itemize}
+              \item 若 $f(x),g(x)$ 在 $[a,b]$ 上连续，且对任意 $x\in[a,b]$，有 $f(x)\le g(x)$，则
+                    $$
+                        \int_{a}^{b}f(x)\,\mathrm{d}x\le\int_{a}^{b}g(x)\,\mathrm{d}x,\quad (b>a)。
+                    $$
+              \item 若 $f(x)\ge0$，则 $\displaystyle \int_{a}^{b}f(x)\,\mathrm{d}x\ge0$。
+          \end{itemize}
+          \textit{几何意义：曲线 $f$ 位于 $g$ 之下时，其“面积”亦小于后者。}
+
+    \item \textbf{估值定理（夹估不等式）}
+          \begin{itemize}
+              \item 若 $f(x)$ 在 $[a,b]$ 上连续，且
+                    $$
+                        m\le f(x)\le M,\quad \forall x\in[a,b],
+                    $$
+                    则有
+                    $$
+                        m(b-a)\le\int_{a}^{b}f(x)\,\mathrm{d}x\le M(b-a),\quad (b>a)。
+                    $$
+              \item 当 $f(x)$ 在区间上恒为常值时，上下界取等号。
+          \end{itemize}
+          \textit{直观理解：积分相当于“平均值 × 区间长度”，而平均值必位于函数值的上下界之间。}
+
+    \item \textbf{绝对值不等式}
+          若 $f(x)$ 在 $[a,b]$ 上连续，则
+          $$
+              \left|\int_{a}^{b}f(x)\,\mathrm{d}x\right|
+              \le\int_{a}^{b}|f(x)|\,\mathrm{d}x,\quad (b>a)。
+          $$
+          \textit{解释：符号抵消只会减小积分的绝对值。等号成立当且仅当 $f(x)$ 在 $[a,b]$ 上符号恒定。}
+
+    \item \textbf{黎曼思想（分区思想）}
+          将“大区间问题”拆分为若干“小区间”分别求解，是微积分分析中最核心的思想之一：
+          $$
+              \int_{a}^{b}f(x)\,\mathrm{d}x
+              =\int_{a}^{c}f(x)\,\mathrm{d}x+\int_{c}^{b}f(x)\,\mathrm{d}x.
+          $$
+          \textit{启示：当函数在整体上难处理时，分段、局部分析后再综合，是定积分思想的本质体现。}
+\end{enumerate}
