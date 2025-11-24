@@ -172,7 +172,6 @@
                     即为原方程的通解.
           \end{enumerate}
 \end{enumerate}
-
 \subsection{高阶常系数线性微分方程的求解}
 \DTwoThree
 
@@ -180,7 +179,209 @@
 \[
     y'' + p y' + q y = f(x),
 \]
-其中 $p,q$ 为常数，$f(x)$ 为已知函数.
+其中 $p,q$ 为常数，$f(x)$ 为已知函数。
+
+\subsubsection*{微分算子法}
+
+约定：
+\[
+    D=\frac{d}{dx},\quad
+    Dy=\frac{dy}{dx},\quad
+    D^2y=\frac{d^2y}{dx^2}.
+\]
+于是微分方程可写为
+\[
+    (D^{2}+pD+q)y=f(x),
+\]
+记算子多项式为
+\[
+    F(D)=D^{2}+pD+q.
+\]
+则特解可形式写为：
+\[
+    y^{*}=\frac{1}{F(D)}\,f(x).
+\]
+
+并约定 $\frac{1}{D}$ 表示积分操作，例如
+\[
+    D\sin x=\cos x,\qquad
+    \frac{1}{D}\sin x=-\cos x\ (C=0).
+\]
+
+\subsubsection*{1.\quad$\frac{1}{F(D)}e^{\alpha x}$ 型}
+
+\[
+    F(D)e^{\alpha x}=F(\alpha)e^{\alpha x}.
+\]
+
+\begin{enumerate}
+    \item  若 $F(\alpha)\neq 0$，则
+          \[
+              y^{*}=\frac{1}{F(\alpha)}e^{\alpha x}.
+          \]
+
+    \item  若 $F(\alpha)=0,\ F'(\alpha)\neq 0$（一次重复根）：
+          \[
+              y^{*}=x\frac{1}{F'(\alpha)}e^{\alpha x}.
+          \]
+
+    \item  若 $F(\alpha)=F'(\alpha)=0,\ F''(\alpha)\neq 0$（二次重复根）：
+          \[
+              y^{*}=x^{2}\frac{1}{F''(\alpha)}e^{\alpha x}.
+          \]
+\end{enumerate}
+
+\paragraph*{例题}
+\begin{enumerate}
+    \item $y'' + y' - 2y = 2$
+
+          \[
+              y^* = \frac{2e^{0x}}{F(0)}
+              =\frac{2}{-2}=-1.
+          \]
+
+    \item $y'' + y' - 2y = e^x$
+
+          \[
+              F(1)=0,\qquad F'(1)=3.
+          \]
+          \[
+              y^*=x\frac{1}{3}e^x=\frac13 xe^x.
+          \]
+
+    \item $y'' - 2y' + y = e^x$
+
+          \[
+              F(1)=0,\quad F'(1)=0,\quad F''(1)=2.
+          \]
+          \[
+              y^{*}=\frac12 x^{2}e^{x}.
+          \]
+\end{enumerate}
+
+
+\subsubsection*{2.\quad$\frac{1}{F(D)}\sin\beta x,\ \frac{1}{F(D)}\cos\beta x$ 型}
+
+\paragraph{(1) 当 $F(D)=D^{2}+q$}
+
+\[
+    F(i\beta)=q-\beta^{2}.
+\]
+
+\begin{enumerate}
+    \item 若 $q-\beta^{2}\neq 0$：
+          \[
+              y^*=\frac{1}{q-\beta^{2}}\sin\beta x,\qquad
+              y^*=\frac{1}{q-\beta^{2}}\cos\beta x.
+          \]
+
+    \item  若 $q-\beta^{2}=0$（共振）：
+          \[
+              y^{*}=x\frac{1}{F'(D)}\sin\beta x.
+          \]
+\end{enumerate}
+
+\paragraph{(2) 当 $F(D)=D^{2}+pD+q$}
+
+代入 $D^{2}=-\beta^{2}$ 得
+\[
+    F(D)\big|_{D^{2}=\beta i^{2}}=pD+q-\beta^{2}.
+\]
+
+\paragraph*{例题}
+\begin{enumerate}
+    \item $y''-y=\sin x$
+
+          \[
+              F(i)= -1 -1 = -2\neq 0.
+          \]
+          \[
+              y^{*}=-\frac12\sin x.
+          \]
+
+    \item $y''+4y=\sin 2x$
+
+          \[
+              F(2i)= -4+4=0 \Rightarrow \text{共振}.
+          \]
+          \[
+              y^{*}=x\frac{1}{2D}\sin 2x
+              =-\frac14 x\cos 2x.
+          \]
+
+    \item $y''-3y'+2y=-\frac12\cos 2x$
+
+          \[
+              F(D)\to -4-3D+2=-(3D+2)
+          \]
+          \[
+              y^{*}=\frac12\cdot\frac{1}{3D+2}\cos 2x
+              =\frac{1}{40}(3\sin 2x+\cos 2x).
+          \]
+\end{enumerate}
+
+\subsubsection*{3.\quad$\frac{1}{F(D)}P_k(x)$（多项式）}
+
+将
+\[
+    \frac{1}{F(D)}
+\]
+展开成 $k$ 次泰勒多项式：
+\[
+    Q_k(D)=b_0+b_1D+\cdots+b_kD^k.
+\]
+
+则特解为：
+\[
+    y^{*}=Q_k(D)\,P_k(x).
+\]
+
+\paragraph*{例题}
+$y''+y'=x^{2}+1$
+
+\[
+    y^{*}=\frac{1}{D(D+1)}(x^{2}+1)
+    =\frac{1}{D}(1-D+D^{2})(x^{2}+1).
+\]
+
+计算得：
+\[
+    y^{*}=\frac13 x^{3}-x^{2}+3x-1.
+\]
+
+
+\subsubsection*{4.\quad$\frac{1}{F(D)}e^{ax}v(x)$ 型（平移算子）}
+
+\[
+    y^{*}=\frac{1}{F(D)}e^{ax}v(x)
+    =e^{ax}\cdot\frac{1}{F(D+a)}v(x).
+\]
+
+\paragraph*{例题}
+\begin{enumerate}
+    \item $y''+4y'+5y=e^{-2x}\sin x$
+
+          \[
+              y^{*}=e^{-2x}\frac{1}{(D-2)^{2}+4(D-2)+5}\sin x
+              =e^{-2x}\frac{1}{D^{2}+1}\sin x.
+          \]
+          \[
+              y^{*}=-\frac12 x e^{-2x}\cos x.
+          \]
+
+    \item $y''-3y'+2y=2xe^x$
+
+          \[
+              y^{*}=2e^x\cdot\frac{1}{(D+1)^2-3(D+1)+2}x
+              =2e^x\cdot\frac{1}{D(D-1)}x.
+          \]
+
+          \[
+              y^{*}
+              =2e^x\Bigl(-\frac{1}{D}-1\Bigr)x
+              =-x(x+2)e^{x}.
+          \]
+\end{enumerate}
 
 \begin{enumerate}
     % ============================================================

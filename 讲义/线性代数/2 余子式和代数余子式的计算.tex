@@ -1,3 +1,21 @@
 \XIANchapter{余子式和代数余子式的计算}
+\section{用行列式}
 
-\section{计算余子式、代数余子式的线性组合}
+\section{用矩阵}
+
+当$|A|\neq0$时，
+$$A^*=|A|A^{-1}.$$
+由于$A^{\bullet}$由$A_{ij}$组成，用上式求出$A^{\bullet}$,即得到所有的$A_{ij}$.但要注意，此方法要求$|A|\neq0$,这既是前提，也是一种限制.
+
+\section{用特征值}
+设 $A$ 为 3 阶方阵，当 $A$ 为可逆矩阵时，记其特征值为 $\lambda_{1}$，$\lambda_{2}$，$\lambda_{3}$，则 $A^{-1}$ 的特征值为 $\lambda_{1}^{-1}$，$\lambda_{2}^{-1}$，$\lambda_{3}^{-1}$，且由 $A^{*} = |A|A^{-1} = \lambda_{1}\lambda_{2}\lambda_{3}A^{-1}$，可知 $A^{*}$ 的特征值为
+$$\lambda_{1}^{*} = \lambda_{1}\lambda_{2}\lambda_{3} \cdot \lambda_{1}^{-1} = \lambda_{2}\lambda_{3}, \quad \lambda_{2}^{*} = \lambda_{1}\lambda_{2}\lambda_{3} \cdot \lambda_{2}^{-1} = \lambda_{1}\lambda_{3}, \quad \lambda_{3}^{*} = \lambda_{1}\lambda_{2}\lambda_{3} \cdot \lambda_{3}^{-1} = \lambda_{1}\lambda_{2},$$
+故由
+$$
+    A^{*} = \begin{bmatrix}
+        A_{11} & A_{21} & A_{31} \\
+        A_{12} & A_{22} & A_{32} \\
+        A_{13} & A_{23} & A_{33}
+    \end{bmatrix},
+$$
+知 $A_{11} + A_{22} + A_{33} = \operatorname{tr}(A^{*}) = \lambda_{1}^{*} + \lambda_{2}^{*} + \lambda_{3}^{*} = \lambda_{2}\lambda_{3} + \lambda_{1}\lambda_{3} + \lambda_{1}\lambda_{2}$.

@@ -184,113 +184,104 @@
                   \end{aligned}
             \]
 \end{enumerate}
-\section{计算第一型曲面积分}
+\section{计算第一型曲线积分}
 
-\subsection{定义}
+\subsection{定义与物理意义}
 
-设 $f(x,y,z)$ 定义在光滑曲面 $\Sigma$ 上，若将 $\Sigma$ 分割为若干小面元 $\Delta S_i$，取 $\Sigma_i$ 上一点 $M_i(x_i,y_i,z_i)$，当面元最大直径趋于零时，若极限
+设函数 $f(x,y)$ 定义在平面曲线 $L$ 上，或函数 $f(x,y,z)$ 定义在空间曲线 $\Gamma$ 上。
+若 $f(x,y)\ge 0$（或 $f(x,y,z)\ge 0$）表示线密度，则第一型曲线积分
 \[
-      \lim_{\lambda \to 0} \sum_i f(x_i,y_i,z_i)\Delta S_i
+      \int_L f(x,y)\,\mathrm{d}s,
+      \qquad
+      \int_\Gamma f(x,y,z)\,\mathrm{d}s
 \]
-存在，则称其为函数 $f(x,y,z)$ 在曲面 $\Sigma$ 上的\textbf{第一型曲面积分}，记作
+表示沿曲线的物质曲杆的总质量。
+此积分通过“分割—近似—求和—取极限”定义，与定积分、二重积分的思想一致。
+
+\subsection{代入曲线方程}
+
+若曲线 $L$ 可表示为 $y = y(x)$，则需将曲线方程代入被积函数以化简：
 \[
-      \iint_{\Sigma} f(x,y,z)\, \mathrm{d}S.
+      f(x,y) \;\Rightarrow\; f\bigl(x,\,y(x)\bigr),
 \]
-
-其物理意义：当 $f(x,y,z)\ge0$ 表示面密度时，该积分即为曲面薄片的质量。
-
-
-\subsection{代入曲面方程}
-
-若曲面方程为 $\Sigma: z = z(x,y)$，则需将其代入被积函数：
+且弧长微元为
 \[
-      f(x,y,z) \;\Rightarrow\; f(x,y,z(x,y)),
+      \mathrm{d}s = \sqrt{1 + (y')^2}\,\mathrm{d}x.
 \]
-并结合面积微元
-\[
-      \mathrm{d}S = \sqrt{1 + z_x'^2 + z_y'^2}\, \mathrm{d}x\, \mathrm{d}y,
-\]
-从而化为二重积分形式：
-\[
-      \iint_{\Sigma} f(x,y,z)\, \mathrm{d}S
-      = \iint_{D_{xy}} f(x,y,z(x,y)) \sqrt{1 + z_x'^2 + z_y'^2}\, \mathrm{d}x\, \mathrm{d}y.
-\]
-
+空间曲线可令 $\Gamma : (x(t),y(t),z(t))$，并代入参数计算。
 
 \subsection{几何意义}
 
-当 $f(x,y,z)\equiv1$ 时，
+若 $f(x,y)\equiv 1$（或 $f(x,y,z)\equiv 1$），则
 \[
-      \iint_{\Sigma} \mathrm{d}S
+      \int_L \mathrm{d}s = \ell_L,
 \]
-即为曲面 $\Sigma$ 的面积。
+即为曲线 $L$ 的弧长。
 
+\subsection{利用形心公式}
 
-\subsection{形心公式的应用}
-
-若曲面 $\Sigma$ 的形心（或质心）坐标为 $(\overline{x},\overline{y},\overline{z})$，则
+曲线 $L$ 的形心 $\bar{x}$ 满足
 \[
-      \overline{x} = \frac{\iint_{\Sigma} x\, \mathrm{d}S}{\iint_{\Sigma} \mathrm{d}S}, \quad
-      \overline{y} = \frac{\iint_{\Sigma} y\, \mathrm{d}S}{\iint_{\Sigma} \mathrm{d}S}, \quad
-      \overline{z} = \frac{\iint_{\Sigma} z\, \mathrm{d}S}{\iint_{\Sigma} \mathrm{d}S}.
+      \bar{x} = \frac{\int_L x\,\mathrm{d}s}{\int_L \mathrm{d}s},
 \]
-若 $\Sigma$ 为规则对称图形（形心坐标已知，面积易求），可得
+从而
 \[
-      \iint_{\Sigma} x\, \mathrm{d}S = \overline{x} \, S_{\Sigma}, \quad
-      \iint_{\Sigma} y\, \mathrm{d}S = \overline{y} \, S_{\Sigma}, \quad
-      \iint_{\Sigma} z\, \mathrm{d}S = \overline{z} \, S_{\Sigma}.
+      \int_L x\,\mathrm{d}s = \bar{x} \cdot \ell_L.
 \]
+当曲线为规则图形（形心 $\bar{x}$ 已知且长度易求）时，此公式能简化计算。
 
-
-\subsection{对称性}
+\subsection{利用对称性质}
 
 \begin{enumerate}
-      \item \textbf{普通对称性.}
-            若 $\Sigma$ 关于 $xOz$ 面对称，则
+      \item \textbf{普通对称性}
+
+            若曲线 $L$ 关于 $y$ 轴对称，则
             \[
-                  \iint_{\Sigma} f(x,y,z)\, \mathrm{d}S =
+                  \int_L f(x,y)\,\mathrm{d}s
+                  =
                   \begin{cases}
-                        2 \iint_{\Sigma_1} f(x,y,z)\, \mathrm{d}S, & f(x,y,z) = f(x,-y,z),  \\[4pt]
-                        0,                                         & f(x,y,z) = -f(x,-y,z),
+                        2\displaystyle\int_{L_1} f(x,y)\,\mathrm{d}s, & f(x,y)=f(-x,y),  \\[6pt]
+                        0,                                            & f(x,y)=-f(-x,y),
                   \end{cases}
             \]
-            其中 $\Sigma_1$ 为 $\Sigma$ 在 $xOz$ 面右侧部分。
-            其他关于 $yOz$ 或 $xOy$ 的情形类似。
+            其中 $L_1$ 为 $L$ 的右半部分。
+            关于 $x$ 轴对称或空间曲线关于坐标面对称的情况类似。
 
-      \item \textbf{轮换对称性.}
-            若曲面 $\Sigma: z=z(x,y)$ 在交换 $x,y$ 后不变，则
+      \item \textbf{轮换对称性}
+
+            若曲线在交换 $x,y$ 后保持不变，则
             \[
-                  \iint_{\Sigma} f(x,y,z)\, \mathrm{d}S
-                  = \iint_{\Sigma} f(y,x,z)\, \mathrm{d}S.
+                  \int_L f(x,y)\,\mathrm{d}s = \int_L f(y,x)\,\mathrm{d}s.
             \]
-            若 $\Sigma$ 关于 $x,y,z$ 完全对称，则
+            因此可写成对称形式：
             \[
-                  \iint_{\Sigma} f(x,y,z)\, \mathrm{d}S
-                  = \frac{1}{3} \iint_{\Sigma} [f(x,y,z) + f(y,z,x) + f(z,x,y)]\, \mathrm{d}S.
+                  \int_L f(x,y)\,\mathrm{d}s
+                  = \frac12 \int_L \bigl[f(x,y)+f(y,x)\bigr]\,\mathrm{d}s.
             \]
 \end{enumerate}
-
 
 \subsection{物理应用}
 
 \begin{enumerate}
-      \item \textbf{重心（质心）或形心.}
-            对光滑曲面薄片 $\Sigma$，面密度为 $\rho(x,y,z)$，则
+      \item \textbf{质心（形心）}
+
+            若曲线线密度为 $\rho(x,y,z)$，则曲杆的形心为
             \[
-                  \overline{x} = \frac{\iint_{\Sigma} x\rho(x,y,z)\, \mathrm{d}S}{\iint_{\Sigma} \rho(x,y,z)\, \mathrm{d}S}, \quad
-                  \overline{y} = \frac{\iint_{\Sigma} y\rho(x,y,z)\, \mathrm{d}S}{\iint_{\Sigma} \rho(x,y,z)\, \mathrm{d}S}, \quad
-                  \overline{z} = \frac{\iint_{\Sigma} z\rho(x,y,z)\, \mathrm{d}S}{\iint_{\Sigma} \rho(x,y,z)\, \mathrm{d}S}.
+                  \bar{x}=\frac{\int_L x\rho\,\mathrm{d}s}{\int_L \rho\,\mathrm{d}s},\quad
+                  \bar{y}=\frac{\int_L y\rho\,\mathrm{d}s}{\int_L \rho\,\mathrm{d}s},\quad
+                  \bar{z}=\frac{\int_L z\rho\,\mathrm{d}s}{\int_L \rho\,\mathrm{d}s}.
             \]
 
-      \item \textbf{转动惯量.}
-            面密度为 $\rho(x,y,z)$ 的曲面薄片 $\Sigma$，其关于 $x$、$y$、$z$ 轴及原点的转动惯量分别为：
+      \item \textbf{转动惯量}
+
+            曲线对各坐标轴的转动惯量为
             \[
-                  \begin{aligned}
-                        I_x & = \iint_{\Sigma} (y^2 + z^2)\rho(x,y,z)\, \mathrm{d}S,       \\
-                        I_y & = \iint_{\Sigma} (z^2 + x^2)\rho(x,y,z)\, \mathrm{d}S,       \\
-                        I_z & = \iint_{\Sigma} (x^2 + y^2)\rho(x,y,z)\, \mathrm{d}S,       \\
-                        I_O & = \iint_{\Sigma} (x^2 + y^2 + z^2)\rho(x,y,z)\, \mathrm{d}S.
-                  \end{aligned}
+                  I_x=\int_L (y^2+z^2)\rho\,\mathrm{d}s,\quad
+                  I_y=\int_L (z^2+x^2)\rho\,\mathrm{d}s,
+            \]
+            \[
+                  I_z=\int_L (x^2+y^2)\rho\,\mathrm{d}s,\quad
+                  I_O=\int_L (x^2+y^2+z^2)\rho\,\mathrm{d}s.
             \]
 \end{enumerate}
 

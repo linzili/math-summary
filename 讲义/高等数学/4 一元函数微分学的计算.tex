@@ -29,25 +29,34 @@
 \end{enumerate}
 
 \section{莱布尼茨公式法}
-\DTwoThree
 
-若函数含有可有限次求导的多项式部分，如
+若函数含有\textbf{可有限次求导的多项式部分}，如
 \[
-    f(x)\cdot (a x^2 + b x + c),
+    f(x)\,(a x^2 + b x + c),
 \]
-例如 $e^x(1+x^2)$，则用\textbf{莱布尼茨乘积求导公式}更为高效。
-因为 $(a x^2 + b x + c)^{(3)} = 0$，使用该公式后仅保留前三项。
+例如 $e^x(1+x^2)$，则使用\textbf{莱布尼茨乘积求导公式}更为高效。
 
-常用 $n$ 阶导数公式（$n$ 为正整数）如下：
+由莱布尼茨公式可得：
+\[
+    (uv)^{(n)} = \sum_{k=0}^{n} \mathrm{C}_n^k\,u^{(n-k)}\,v^{(k)}.
+\]
+若 $v(x)$ 为多项式，且在 $m$ 阶导后为零（如 $(a x^2 + b x + c)^{(3)}=0$），则求高阶导数时仅需保留前 $m$ 项，极大简化计算。
+
+
+常见函数的 $n$ 阶导数公式（$n$ 为正整数）如下：
 \[
     \begin{aligned}
-        (a^x)^{(n)}                      & = a^x (\ln a)^n,                       \\
-        \left(\frac{1}{1+x}\right)^{(n)} & = \frac{(-1)^n n!}{(1+x)^{n+1}},       \\
-        [\ln(1+x)]^{(n)}                 & = \frac{(-1)^{n-1}(n-1)!}{(1+x)^n},    \\
-        (\sin x)^{(n)}                   & = \sin\!\left(x+n\frac{\pi}{2}\right), \\
-        (\cos x)^{(n)}                   & = \cos\!\left(x+n\frac{\pi}{2}\right).
+        (a^x)^{(n)}                      & = a^x (\ln a)^n,                          \\[4pt]
+        \left(\frac{1}{1+x}\right)^{(n)} & = \dfrac{(-1)^n n!}{(1+x)^{n+1}},         \\[4pt]
+        [\ln(1+x)]^{(n)}                 & = \dfrac{(-1)^{n-1}(n-1)!}{(1+x)^n},      \\[4pt]
+        (\sin x)^{(n)}                   & = \sin\!\left(x + n\dfrac{\pi}{2}\right), \\[4pt]
+        (\cos x)^{(n)}                   & = \cos\!\left(x + n\dfrac{\pi}{2}\right).
     \end{aligned}
 \]
+
+
+\textbf{提示：}
+求如 $e^x(1+x^2)$、$x^3\sin x$ 等函数的高阶导数时，先应用莱布尼茨公式展开，再结合上述常见导数规律，可迅速得到结果。
 
 \section{求导转化法}
 \DTwoThree

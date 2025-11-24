@@ -42,7 +42,7 @@
 \subsection{计算二重极限}
 
 \begin{example}{}{}
-    求 $\displaystyle \lim_{(x,y)\to(0,0)}\frac{x+y}{x^{2}-xy+y^{2}}$.
+    求 $\displaystyle \lim_{(x,y)\to(\infty,\infty)}\frac{x+y}{x^{2}-xy+y^{2}}$.
 \end{example}
 
 \begin{solution}
@@ -53,7 +53,7 @@
         + \frac{|y|}{\frac{3}{4}y^2+\left(\frac{y}{2}-x\right)^2}
         \le \frac{4}{3}\left(\frac{1}{|x|}+\frac{1}{|y|}\right).
     $$
-    当 $(x,y)\to(0,0)$ 时，右侧趋于 $0$，故极限为 $0$。
+    当 $(x,y)\to(\infty,\infty)$ 时，右侧趋于 $0$，故极限为 $0$。
 \end{solution}
 
 \begin{example}{}{}
@@ -73,12 +73,14 @@
 \subsection{判别累次极限是否存在}
 
 若 $\displaystyle \lim_{x \to x_0}\lim_{y \to y_0} f(x,y)$ 存在，则：
-- 先固定 $x$，算 $\lim_{y \to y_0} f(x,y)$；
-- 若存在，再算外层极限；
-- 若任一层不存在，则累次极限不存在。
+\begin{enumerate}
+    \item 先固定 $x$，算 $\lim_{y \to y_0} f(x,y)$；
+    \item 若存在，再算外层极限；
+    \item 若任一层不存在，则累次极限不存在。
+\end{enumerate}
 
 \begin{example}{}{}
-    设 $f(x,y)=\frac{xy}{x^2+y^2}$，判断累次极限。
+    设$f(x,y)=\frac{xy}{x^{2}+y^{2}}$，$I_{1}=\lim\limits_{\substack{x\to 0\\y\to 0}}f(x,y)$，$I_{2}=\lim\limits_{\substack{y\to 0}}[\lim\limits_{x\to 0}f(x,y)]$，则( )
 \end{example}
 
 \begin{solution}
@@ -92,7 +94,7 @@
     $$
         I_2=\lim_{y\to0}0=0.
     $$
-    故选项：$I_1$ 不存在，$I_2$ 存在。
+    $I_1$ 不存在，$I_2$ 存在。
 \end{solution}
 
 
@@ -165,12 +167,21 @@ $$
 $$
     \mathrm{d}z = A\,\mathrm{d}x + B\,\mathrm{d}y.
 $$
-若 $A=f_x(x,y)$，$B=f_y(x,y)$，则有
+若 $A=f'_x(x,y)$，$B=f'_y(x,y)$，则有
 $$
     \mathrm{d}z = f_x(x,y)\,\mathrm{d}x + f_y(x,y)\,\mathrm{d}y.
 $$
 
 \textit{可微意味着函数的局部线性化存在，是多元微积分的重要基础。}
+
+\subsubsection{可微的判别}
+
+判别函数$z=f(x,y)$在点$(x_{0},y_{0})$处是否可微，步骤如下：
+\begin{enumerate}
+    \item 写出全增量$\Delta z=f(x_{0}+\Delta x,y_{0}+\Delta y)-f(x_{0},y_{0})$；
+    \item 写出线性增量$A\Delta x+B\Delta y$，其中$A=f_{x}^{'}(x_{0},y_{0})$，$B=f_{y}^{'}(x_{0},y_{0})$；
+    \item 作极限$\lim_{\Delta x\rightarrow 0,\Delta y\rightarrow 0}\frac{\Delta z-(A\Delta x+B\Delta y)}{\sqrt{(\Delta x)^{2}+(\Delta y)^{2}}}$，若该极限等于0，则$z=f(x,y)$在点$(x_{0},y_{0})$处可微，否则，就不可微．
+\end{enumerate}
 
 \subsection{二元函数各性质之间的概念关系}
 
