@@ -2,7 +2,7 @@
 
 \section{定义}
 
-设 $A$ 为 $m\times n$ 矩阵。$A$ 中阶数最大的非零子式的阶数称为矩阵 $A$ 的秩，记为 $r(A)$。
+设 $A$ 为 $m\times n$ 矩阵.$A$ 中阶数最大的非零子式的阶数称为矩阵 $A$ 的秩，记为 $r(A)$.
 
 亦即：若存在 $k$ 阶子式不为零，而所有 $k+1$ 阶子式（若存在）均为零，则
 \[
@@ -18,16 +18,16 @@
 
 \begin{enumerate}
     \item $0\le r(A_{m\times n})\le \min\{m,n\}$.
-    \item $r(kA)=r(A)$（$k\neq 0$）。
-    \item $r(A)=r(PA)=r(AQ)=r(PAQ)$，其中 $P,Q$ 可逆。
+    \item $r(kA)=r(A)$（$k\neq 0$）.
+    \item $r(A)=r(PA)=r(AQ)=r(PAQ)$，其中 $P,Q$ 可逆.
     \item 若 $A$ 为 $m\times n$，$B$ 为 $n\times s$，则：
 
           \begin{itemize}
               \item 若 $r(A)=n$（列满秩），则 $r(AB)=r(B)$；
-              \item 若 $r(B)=n$（行满秩），则 $r(AB)=r(A)$。
+              \item 若 $r(B)=n$（行满秩），则 $r(AB)=r(A)$.
           \end{itemize}
 
-    \item 若 $CA=CB$ 且 $C$ 列满秩，则 $A=B$；若 $AC=BC$ 且 $C$ 行满秩，则 $A=B$。
+    \item 若 $CA=CB$ 且 $C$ 列满秩，则 $A=B$；若 $AC=BC$ 且 $C$ 行满秩，则 $A=B$.
     \item $r(AB)\le \min\{r(A),r(B)\}$.
     \item $r(A+B)\le r([A,B])\le r(A)+r(B)$.
     \item 若 $A$ 为 $m\times n$，$B$ 为 $n\times s$，则
@@ -61,10 +61,10 @@
               r(A)=r\!\begin{pmatrix}A\\ B\end{pmatrix}=r(B).
           \]
     \item $r(\text{I}) = r(\text{II}) = r(\text{I},\text{II})$
-          当且仅当向量组（I）与向量组（II）等价。
+          当且仅当向量组（I）与向量组（II）等价.
     \item 若 $A\sim \Lambda$，$\lambda_i$ 为 $n_i$ 重特征值，则
           \[
               n_i = n-r(\lambda_iE-A).
           \]
-    \item 若 $A\sim \Lambda$，则 $r(A)$ 等于所有非零特征值的重数之和（按重数计算）。
+    \item 若 $A\sim \Lambda$，则 $r(A)$ 等于所有非零特征值的重数之和（按重数计算）.
 \end{enumerate}
