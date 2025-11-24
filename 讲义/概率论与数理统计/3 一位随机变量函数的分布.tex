@@ -3,13 +3,13 @@
 \section{离散型$\rightarrow$离散型}
 设离散型随机变量 $X$ 的分布为 $P\{X = x_i\} = p_i \ (i=1,2,\cdots)$，若 $Y = g(X)$，则 $Y$ 仍为离散型随机变量，其分布为
 $$
-      Y \sim
-      \begin{pmatrix}
-            g(x_1) & g(x_2) & \cdots \\
-            p_1    & p_2    & \cdots
-      \end{pmatrix}.
+    Y \sim
+    \begin{pmatrix}
+        g(x_1) & g(x_2) & \cdots \\
+        p_1    & p_2    & \cdots
+    \end{pmatrix}.
 $$
-若若干个 $g(x_k)$ 取相同值，则合并为一项，并将对应概率相加。
+若若干个 $g(x_k)$ 取相同值，则合并为一项，并将对应概率相加.
 
 \section{连续型$\rightarrow$连续型（或混合型）}
 设连续型随机变量 $X$ 的分布函数与密度分别为 $F_X(x)$、$f_X(x)$，若 $Y = g(X)$，则可用以下两种方法求其分布：
@@ -17,67 +17,67 @@ $$
 \subsection*{(1) 分布函数法}
 由定义直接求：
 $$
-      F_Y(y) = P\{Y \le y\} = P\{g(X) \le y\} = \int_{g(x) \le y} f_X(x) \, dx.
+    F_Y(y) = P\{Y \le y\} = P\{g(X) \le y\} = \int_{g(x) \le y} f_X(x) \, dx.
 $$
-若 $F_Y(y)$ 连续且可导，则 $f_Y(y) = F_Y'(y)$。
+若 $F_Y(y)$ 连续且可导，则 $f_Y(y) = F_Y'(y)$.
 
 \subsection*{(2) 公式法（单调可导变换）}
 若 $y = g(x)$ 在 $(a,b)$ 上严格单调且可导，则存在反函数 $x = h(y)$，其概率密度为
 $$
-      f_Y(y) = f_X[h(y)] \cdot |h'(y)|, \quad \alpha < y < \beta,
+    f_Y(y) = f_X[h(y)] \cdot |h'(y)|, \quad \alpha < y < \beta,
 $$
 其中
 $$
-      \alpha = \min\{\lim_{x\to a^+} g(x), \lim_{x\to b^-} g(x)\}, \quad
-      \beta = \max\{\lim_{x\to a^+} g(x), \lim_{x\to b^-} g(x)\}.
+    \alpha = \min\{\lim_{x\to a^+} g(x), \lim_{x\to b^-} g(x)\}, \quad
+    \beta = \max\{\lim_{x\to a^+} g(x), \lim_{x\to b^-} g(x)\}.
 $$
 
 \section{连续型$\rightarrow$离散型}
 若 $X \sim f_X(x)$ 且 $Y = g(X)$ 为离散型变量，先求出 $Y$ 的可能取值 $a_i$，再由
 $$
-      P\{Y = a_i\} = \int_{g(x)=a_i} f_X(x) \, dx
+    P\{Y = a_i\} = \int_{g(x)=a_i} f_X(x) \, dx
 $$
-得出其分布。
+得出其分布.
 \section{两种重要的随机变量变换}
 
 \subsection*{(1) 变换于 $U(0,1)$}
 \begin{example}{}{}
-      设随机变量 $X$ 的分布函数 $F_X(x)$ 严格单调递增，反函数 $F_X^{-1}(y)$ 存在，令 $Y = F_X(X)$，则 $Y \sim U(0,1)$。
+    设随机变量 $X$ 的分布函数 $F_X(x)$ 严格单调递增，反函数 $F_X^{-1}(y)$ 存在，令 $Y = F_X(X)$，则 $Y \sim U(0,1)$.
 \end{example}
 \begin{proof}
-      由定义：
-      $$
-            F_Y(y) = P\{Y \le y\} = P\{F_X(X) \le y\} = P\{X \le F_X^{-1}(y)\} = F_X[F_X^{-1}(y)] = y,
-      $$
-      对 $0 \le y < 1$ 成立；此外，$F_Y(y) = 0 (y < 0)$，$F_Y(y) = 1 (y \ge 1)$，即
-      $$
-            F_Y(y) =
-            \begin{cases}
-                  0, & y < 0,       \\
-                  y, & 0 \le y < 1, \\
-                  1, & y \ge 1,
-            \end{cases}
-      $$
-      故 $Y \sim U(0,1)$。
+    由定义：
+    $$
+        F_Y(y) = P\{Y \le y\} = P\{F_X(X) \le y\} = P\{X \le F_X^{-1}(y)\} = F_X[F_X^{-1}(y)] = y,
+    $$
+    对 $0 \le y < 1$ 成立；此外，$F_Y(y) = 0 (y < 0)$，$F_Y(y) = 1 (y \ge 1)$，即
+    $$
+        F_Y(y) =
+        \begin{cases}
+            0, & y < 0,       \\
+            y, & 0 \le y < 1, \\
+            1, & y \ge 1,
+        \end{cases}
+    $$
+    故 $Y \sim U(0,1)$.
 \end{proof}
 
 
 \subsection*{(2) 变换于 $E(1)$}
 \begin{example}{}{}
-      设 $X$ 的分布函数 $F_X(x)$ 连续且在其密度区间上严格单调，令
-      $$
-            Y = -\ln[1 - F_X(X)],
-      $$
-      则 $Y \sim E(1)$。
+    设 $X$ 的分布函数 $F_X(x)$ 连续且在其密度区间上严格单调，令
+    $$
+        Y = -\ln[1 - F_X(X)],
+    $$
+    则 $Y \sim E(1)$.
 \end{example}
 \begin{proof}
-      由定义：
-      $$
-            P\{Y \le y\} = P\{-\ln[1 - F_X(X)] \le y\} = P\{F_X(X) \le 1 - e^{-y}\}.
-      $$
-      由于 $F_X(X) \sim U(0,1)$，故
-      $$
-            F_Y(y) = 1 - e^{-y}, \quad y > 0,
-      $$
-      即 $Y \sim E(1)$。
+    由定义：
+    $$
+        P\{Y \le y\} = P\{-\ln[1 - F_X(X)] \le y\} = P\{F_X(X) \le 1 - e^{-y}\}.
+    $$
+    由于 $F_X(X) \sim U(0,1)$，故
+    $$
+        F_Y(y) = 1 - e^{-y}, \quad y > 0,
+    $$
+    即 $Y \sim E(1)$.
 \end{proof}

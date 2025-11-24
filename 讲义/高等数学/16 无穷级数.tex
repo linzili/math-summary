@@ -4,22 +4,22 @@
 
 \subsection{第一步：计算 $\displaystyle \lim_{n \to \infty} u_n$}
 
-若 $\lim_{n \to \infty} u_n \neq 0$，则级数发散；若等于 0，则需进一步判别。
+若 $\lim_{n \to \infty} u_n \neq 0$，则级数发散；若等于 0，则需进一步判别.
 
 \begin{example}{}{}
-    判别级数 $\displaystyle \sum_{n=2}^{\infty} \left(1-\frac{1}{n}\right)^n$ 的敛散性。
+    判别级数 $\displaystyle \sum_{n=2}^{\infty} \left(1-\frac{1}{n}\right)^n$ 的敛散性.
 \end{example}
 \begin{solution}
-    $\displaystyle \lim_{n\to\infty}\left(1-\frac{1}{n}\right)^n=e^{-1}\neq0$，故该级数发散。
+    $\displaystyle \lim_{n\to\infty}\left(1-\frac{1}{n}\right)^n=e^{-1}\neq0$，故该级数发散.
 \end{solution}
 
 \begin{example}{}{}
-    判别级数 $\displaystyle \sum_{n=2}^{\infty}\left(2-\frac{2}{n}\right)^n\ln\left(\frac{1}{2^n}+1\right)$ 的敛散性。
+    判别级数 $\displaystyle \sum_{n=2}^{\infty}\left(2-\frac{2}{n}\right)^n\ln\left(\frac{1}{2^n}+1\right)$ 的敛散性.
 \end{example}
 \begin{solution}
     $\displaystyle \lim_{n\to\infty}\left(2-\frac{2}{n}\right)^n\ln\left(\frac{1}{2^n}+1\right)
         =\lim_{n\to\infty}\left(1-\frac{1}{n}\right)^n=e^{-1}\neq0$，
-    故该级数发散。
+    故该级数发散.
 \end{solution}
 
 
@@ -31,34 +31,34 @@
           \begin{enumerate}
               \item \textbf{恒等变形与放缩技巧}
                     \begin{itemize}
-                        \item 若含 $a^n - b^n$，提取 $a^n$ 得 $a^n[1 - (b/a)^n]$。
+                        \item 若含 $a^n - b^n$，提取 $a^n$ 得 $a^n[1 - (b/a)^n]$.
                         \item 含 $\ln$ 时：
                               \[
                                   \ln b - \ln a = \ln\frac{b}{a}, \quad
                                   \ln(1+n) < n, \quad \ln n < n.
                               \]
-                        \item 含 $e^{f(n)}$ 或复杂 $f(n)\pm g(n)$ 时，作 \textbf{泰勒展开}，与 $\frac{1}{n^p}$ 比较阶。
+                        \item 含 $e^{f(n)}$ 或复杂 $f(n)\pm g(n)$ 时，作 \textbf{泰勒展开}，与 $\frac{1}{n^p}$ 比较阶.
                     \end{itemize}
 
               \item \textbf{含 $(-1)^n$ 时}
                     \begin{itemize}
-                        \item 若 $(-1)^n$ 不影响正负性，可去掉。
-                        \item 若影响，考虑交错级数判别（莱布尼茨判别法）。
+                        \item 若 $(-1)^n$ 不影响正负性，可去掉.
+                        \item 若影响，考虑交错级数判别（莱布尼茨判别法）.
                         \item 例如：
                               \[
                                   \sum_{n=2}^{\infty}\frac{(-1)^n}{\sqrt{n}+(-1)^n}
                                   =\sum_{n=2}^{\infty}\frac{(-1)^n\sqrt{n}}{n-1}-\sum_{n=2}^{\infty}\frac{1}{n-1},
                               \]
-                              发散。
+                              发散.
                     \end{itemize}
           \end{enumerate}
 
     \item \textbf{见到 $f(n)$ 与 $f'(n)$}
           \begin{itemize}
-              \item 用 \textbf{拉格朗日中值定理}。
+              \item 用 \textbf{拉格朗日中值定理}.
               \item 或用求和恒等式：
                     \[
-                        \sum_{k=1}^{n} [f(k+1)-f(k)] = f(n+1)-f(1)。
+                        \sum_{k=1}^{n} [f(k+1)-f(k)] = f(n+1)-f(1).
                     \]
           \end{itemize}
 
@@ -66,28 +66,28 @@
           优先考虑：
           \begin{itemize}
               \item \textbf{有理化}（处理分子）；
-              \item \textbf{通分}（处理分母）。
+              \item \textbf{通分}（处理分母）.
           \end{itemize}
 
     \item \textbf{见到 $f(a_n)$}
           \begin{itemize}
-              \item 若 $\{a_n\}$ 收敛于 $a>0$，则对充分大 $n$，有 $a_n>\tfrac{a}{2}>0$。
-              \item 若 $\lim n^2 a_n = a>0$，则 $|a_n|\le \tfrac{M}{n^2}$。
-              \item 若 $\lim n^2(a_n-b_n)=k<\infty$，则 $\sum (a_n-b_n)$ 收敛。
+              \item 若 $\{a_n\}$ 收敛于 $a>0$，则对充分大 $n$，有 $a_n>\tfrac{a}{2}>0$.
+              \item 若 $\lim n^2 a_n = a>0$，则 $|a_n|\le \tfrac{M}{n^2}$.
+              \item 若 $\lim n^2(a_n-b_n)=k<\infty$，则 $\sum (a_n-b_n)$ 收敛.
               \item 若 $\lim_{n\to\infty}a_n=p$，则
                     \[
                         \sum\frac{1}{n^{a_n}}
                         \begin{cases}
                             \text{发散,} & p<1, \\
                             \text{收敛,} & p>1, \\
-                            \text{不定,} & p=1。
+                            \text{不定,} & p=1.
                         \end{cases}
                     \]
           \end{itemize}
 
     \item \textbf{见到 $f(a_n,a_{n+1})$}
           \begin{itemize}
-              \item 若给出 $f(a_n,a_{n+1})$ 的关系式，可尝试写为 $S_n$ 或差分形式 $f(a_{n+1})-f(a_n)$。
+              \item 若给出 $f(a_n,a_{n+1})$ 的关系式，可尝试写为 $S_n$ 或差分形式 $f(a_{n+1})-f(a_n)$.
           \end{itemize}
 
     \item \textbf{见到 $f(a_n,b_n)$}
@@ -97,13 +97,13 @@
                         a_n b_n = n a_n \cdot \frac{b_n}{n}, \quad
                         a_n = (a_n-b_n)+b_n,
                     \]
-                    或令 $\frac{b_n}{a_n}=c_n$，转化为单变量函数 $f(c_n)$。
+                    或令 $\frac{b_n}{a_n}=c_n$，转化为单变量函数 $f(c_n)$.
           \end{itemize}
 
     \item \textbf{见到 $f(a_n, n^p)$}
           常用不等式：
           \[
-              |ab|\le \frac{a^2+b^2}{2}。
+              |ab|\le \frac{a^2+b^2}{2}.
           \]
 
     \item \textbf{见到 $f(a_n,S_n)$}
@@ -111,7 +111,7 @@
               \item 代入定义 $a_n=S_n-S_{n-1}$；
               \item 写出 $\sum a_n = S_n$，检查是否望项消去；
               \item $\sum a_n$ 收敛 $\Rightarrow S_n$ 有界；
-              \item $\sum a_n$ 收敛 $\Leftarrow S_n$ 有界且 $a_n\to 0$。
+              \item $\sum a_n$ 收敛 $\Leftarrow S_n$ 有界且 $a_n\to 0$.
           \end{itemize}
 
     \item \textbf{见到 $(-1)^n - 1$ 型通项}
@@ -123,7 +123,7 @@
                     \[
                         \sum\frac{f(n)\pm g(n)}{h(n)} = \sum\frac{f(n)}{h(n)} \pm \sum\frac{g(n)}{h(n)},
                     \]
-                    分别讨论敛散性。
+                    分别讨论敛散性.
           \end{itemize}
 \end{enumerate}
 
@@ -132,24 +132,24 @@
 \begin{itemize}
     \item \textbf{比较判别法}（$u_n>0$）
           \[
-              \text{若 }0<u_n<v_n\text{ 且 }\sum v_n\text{ 收敛，则 }\sum u_n\text{ 收敛。}
+              \text{若 }0<u_n<v_n\text{ 且 }\sum v_n\text{ 收敛，则 }\sum u_n\text{ 收敛.}
           \]
     \item \textbf{比值判别法}：若 $\displaystyle \lim_{n\to\infty}\frac{u_{n+1}}{u_n}=q$，
           \[
               \begin{cases}
                   q<1 & \Rightarrow \text{收敛}, \\
                   q>1 & \Rightarrow \text{发散}, \\
-                  q=1 & \Rightarrow \text{不定。}
+                  q=1 & \Rightarrow \text{不定.}
               \end{cases}
           \]
     \item \textbf{根值判别法}：若 $\displaystyle \lim_{n\to\infty}\sqrt[n]{|u_n|}=q$，
-          结论同上。
+          结论同上.
     \item \textbf{积分判别法}：若 $u_n=f(n)$ 且 $f(x)\ge 0$ 单调递减，
           \[
-              \sum_{n=1}^{\infty} f(n)\text{ 收敛} \iff \int_1^{\infty} f(x)\,dx\text{ 收敛。}
+              \sum_{n=1}^{\infty} f(n)\text{ 收敛} \iff \int_1^{\infty} f(x)\,dx\text{ 收敛.}
           \]
     \item \textbf{莱布尼茨判别法}（交错级数）：
-          若 $a_n>0$ 且 $a_n\downarrow 0$，则 $\sum (-1)^{n-1}a_n$ 收敛。
+          若 $a_n>0$ 且 $a_n\downarrow 0$，则 $\sum (-1)^{n-1}a_n$ 收敛.
 \end{itemize}
 
 \section{求幂级数的和函数}
@@ -173,23 +173,23 @@
                     \]
 
                     \textbf{收敛区间与收敛域：}
-                    在区间 $(-R, R)$ 内绝对收敛。
+                    在区间 $(-R, R)$ 内绝对收敛.
                     当 $x = \pm R$ 时需单独讨论敛散性，故收敛域可能为
-                    $(-R, R)$、$[-R, R)$、$(-R, R]$ 或 $[-R, R]$。
+                    $(-R, R)$、$[-R, R)$、$(-R, R]$ 或 $[-R, R]$.
 
               \item 对于缺项幂级数或一般函数项级数 $\sum u_n(x)$：
 
                     \begin{enumerate}
                         \item 取绝对值写作 $\sum |u_n(x)|$；
                         \item 用比值（或根值）判别法求出收敛区间 $(a,b)$；
-                        \item 再讨论 $x=a,b$ 时的敛散性，从而确定收敛域。
+                        \item 再讨论 $x=a,b$ 时的敛散性，从而确定收敛域.
                     \end{enumerate}
           \end{enumerate}
 
     \item \textbf{抽象型问题——阿贝尔定理的应用}
           \begin{enumerate}
               \item 若 $\sum a_n x^n$ 在 $x=x_1(\ne 0)$ 处收敛，则当 $|x|<|x_1|$ 时绝对收敛；
-                    若在 $x=x_2(\ne 0)$ 处发散，则当 $|x|>|x_2|$ 时发散。
+                    若在 $x=x_2(\ne 0)$ 处发散，则当 $|x|>|x_2|$ 时发散.
 
               \item 根据阿贝尔定理：
                     \[
@@ -204,7 +204,7 @@
                     \begin{enumerate}
                         \item 平移或提出 $(x-x_0)^k$，收敛半径不变；
                         \item \textbf{逐项求导：}收敛半径不变，收敛域可能缩小；
-                        \item \textbf{逐项积分：}收敛半径不变，收敛域可能扩大。
+                        \item \textbf{逐项积分：}收敛半径不变，收敛域可能扩大.
                     \end{enumerate}
           \end{enumerate}
 \end{enumerate}
@@ -216,7 +216,7 @@
           \begin{enumerate}
               \item $\sum (a n + b)x^n$：先积分再求导；
               \item $\sum \dfrac{x^n}{a n + b}$：先求导再积分；
-              \item $\sum \dfrac{c n^2 + d n + e}{a n + b}x^n$：拆为若干简单级数相加。
+              \item $\sum \dfrac{c n^2 + d n + e}{a n + b}x^n$：拆为若干简单级数相加.
           \end{enumerate}
 
     \item \textbf{常用幂级数公式}
@@ -245,14 +245,14 @@
               \item 验证级数满足某微分方程；
               \item 求通解；
               \item 根据初值条件确定常数；
-              \item 代入特定 $x$（如 $0,\frac{1}{2},1$）求具体和。
+              \item 代入特定 $x$（如 $0,\frac{1}{2},1$）求具体和.
           \end{enumerate}
 
     \item \textbf{由通项关系建立微分方程型：}
           \begin{enumerate}
               \item 根据 $a_{n+1}$、$a_n$、$a_{n-1}$ 的关系式建立方程；
               \item 求解通解；
-              \item 展开为 $\sum a_n x^n$ 并确定 $a_n$ 通项。
+              \item 展开为 $\sum a_n x^n$ 并确定 $a_n$ 通项.
           \end{enumerate}
 \end{enumerate}
 
@@ -263,7 +263,7 @@
     \item 边界常考：$\sum \frac{x^n}{n}$、$\sum \frac{(-1)^n x^n}{n}$；
     \item 熟记导数与积分规律：求导 $\Rightarrow$ 乘 $n$；积分 $\Rightarrow$ 除 $n$；
     \item 收敛半径不变的三种操作：提因式、逐项求导、逐项积分；
-    \item 求和函数常从 $\sum x^n$ 推导。
+    \item 求和函数常从 $\sum x^n$ 推导.
 \end{itemize}
 
 \section{函数展开成幂级数}
@@ -311,7 +311,7 @@
               \cos^2x = \frac{1 + \cos 2x}{2}.
           \]
 
-          （常用于将 $\sin^2 x$、$\cos^2 x$ 转化为含单角的可积形式。）
+          （常用于将 $\sin^2 x$、$\cos^2 x$ 转化为含单角的可积形式.）
 \end{enumerate}
 
 \section{傅里叶级数}
@@ -323,7 +323,7 @@
     a_n = \frac{1}{l}\int_{-l}^{l} f(x)\cos\frac{n\pi x}{l}\,\mathrm{d}x, \quad
     b_n = \frac{1}{l}\int_{-l}^{l} f(x)\sin\frac{n\pi x}{l}\,\mathrm{d}x
 \]
-为 $f(x)$ 的傅里叶系数。
+为 $f(x)$ 的傅里叶系数.
 
 则其傅里叶级数为
 \[
@@ -413,5 +413,5 @@
     \item 延拓思想是将 $[0,l]$ 上函数扩展为周期函数；
     \item 计算核心：求 $a_n$、$b_n$ 两类系数；
     \item 在间断点取左右极限的平均值；
-    \item 傅里叶级数是高等数学与信号分析的桥梁。
+    \item 傅里叶级数是高等数学与信号分析的桥梁.
 \end{itemize}

@@ -18,7 +18,7 @@
                   =\lim_{x\to0}\frac{x^2(1-k^2)}{x^2(1+k^2)}
                   =\frac{1-k^2}{1+k^2}.
               $$
-              极限与 $k$ 有关，不唯一，因此该二重极限不存在。
+              极限与 $k$ 有关，不唯一，因此该二重极限不存在.
           \end{solution}
 
     \item \textbf{变阶路径法}
@@ -34,7 +34,7 @@
               $$
                   \lim_{x\to0}\frac{x^3+(-x^2+x^3)^3}{x^2+y}=1.
               $$
-              两路径结果不同，因此极限不存在。
+              两路径结果不同，因此极限不存在.
           \end{solution}
 \end{enumerate}
 
@@ -53,7 +53,7 @@
         + \frac{|y|}{\frac{3}{4}y^2+\left(\frac{y}{2}-x\right)^2}
         \le \frac{4}{3}\left(\frac{1}{|x|}+\frac{1}{|y|}\right).
     $$
-    当 $(x,y)\to(\infty,\infty)$ 时，右侧趋于 $0$，故极限为 $0$。
+    当 $(x,y)\to(\infty,\infty)$ 时，右侧趋于 $0$，故极限为 $0$.
 \end{solution}
 
 \begin{example}{}{}
@@ -76,7 +76,7 @@
 \begin{enumerate}
     \item 先固定 $x$，算 $\lim_{y \to y_0} f(x,y)$；
     \item 若存在，再算外层极限；
-    \item 若任一层不存在，则累次极限不存在。
+    \item 若任一层不存在，则累次极限不存在.
 \end{enumerate}
 
 \begin{example}{}{}
@@ -88,13 +88,13 @@
     $$
         I_1=\lim_{x\to0}\frac{kx^2}{x^2(1+k^2)}=\frac{k}{1+k^2},
     $$
-    与 $k$ 有关，不唯一，故 $I_1$ 不存在。
+    与 $k$ 有关，不唯一，故 $I_1$ 不存在.
 
     但对任意 $y$，$\lim_{x\to0}f(x,y)=0$，于是
     $$
         I_2=\lim_{y\to0}0=0.
     $$
-    $I_1$ 不存在，$I_2$ 存在。
+    $I_1$ 不存在，$I_2$ 存在.
 \end{solution}
 
 
@@ -104,18 +104,18 @@
     \item 二重极限存在，累次极限不一定存在；
     \item 累次极限存在，二重极限不一定存在；
     \item 若二重极限存在，且累次极限存在，则二者相等；
-    \item 若两累次极限存在但不相等，则二重极限不存在。
+    \item 若两累次极限存在但不相等，则二重极限不存在.
 \end{enumerate}
 
 \begin{example}{}{}
-    设 $f(x,y)=\dfrac{x^2-y^2}{x^2+y^2}$，比较各极限。
+    设 $f(x,y)=\dfrac{x^2-y^2}{x^2+y^2}$，比较各极限.
 \end{example}
 
 \begin{solution}
     当 $x\ne0$ 时，$\lim\limits_{y\to0}f(x,y)=1$；
-    当 $y\ne0$ 时，$\lim\limits_{x\to0}f(x,y)=-1$。
+    当 $y\ne0$ 时，$\lim\limits_{x\to0}f(x,y)=-1$.
 
-    两个累次极限存在但不相等，因此二重极限不存在。
+    两个累次极限存在但不相等，因此二重极限不存在.
 \end{solution}
 
 
@@ -128,7 +128,7 @@
 
           若 $\lim\limits_{(x,y)\to(x_0,y_0)}f(x,y)=f(x_0,y_0)$，
           则称 $f(x,y)$ 在 $(x_0,y_0)$ 处连续；
-          若在区域 $D$ 内处处连续，则称 $f$ 在 $D$ 上连续。
+          若在区域 $D$ 内处处连续，则称 $f$ 在 $D$ 上连续.
 
     \item \textbf{单变量连续性}
 
@@ -137,13 +137,13 @@
               \lim_{x\to x_0} f(x,y_0)=f(x_0,y_0),
           $$
           称 $f$ 在 $(x_0,y_0)$ 关于 $x$ 连续；
-          类似地定义关于 $y$ 的连续性。
+          类似地定义关于 $y$ 的连续性.
 \end{enumerate}
 
 
 \subsection{偏导数的定义}
 
-设 $z=f(x,y)$ 在点 $(x_0,y_0)$ 附近有定义。若极限
+设 $z=f(x,y)$ 在点 $(x_0,y_0)$ 附近有定义.若极限
 $$
     \lim_{\Delta x\to0}\frac{f(x_0+\Delta x,y_0)-f(x_0,y_0)}{\Delta x}
 $$
@@ -172,7 +172,7 @@ $$
     \mathrm{d}z = f_x(x,y)\,\mathrm{d}x + f_y(x,y)\,\mathrm{d}y.
 $$
 
-\textit{可微意味着函数的局部线性化存在，是多元微积分的重要基础。}
+\textit{可微意味着函数的局部线性化存在，是多元微积分的重要基础.}
 
 \subsubsection{可微的判别}
 
@@ -191,7 +191,7 @@ $$
     \item[(2)] 连续；
     \item[(3)] 关于 $x, y$ 两个变量的偏导数存在；
     \item[(4)] 可微；
-    \item[(5)] 一阶偏导数连续。
+    \item[(5)] 一阶偏导数连续.
 \end{enumerate}
 
 则它们之间的逻辑关系为：
@@ -202,7 +202,7 @@ $$
     }
 \]
 
-其中：“$\Rightarrow$” 表示能推出；“$\nRightarrow$” 表示不能反推出。
+其中：“$\Rightarrow$” 表示能推出；“$\nRightarrow$” 表示不能反推出.
 
 
 \begin{center}
@@ -210,7 +210,7 @@ $$
         (5) & $\Rightarrow$ & (4) \quad 一阶偏导连续 $\Rightarrow$ 函数可微； \\
         (4) & $\Rightarrow$ & (2) \quad 函数可微 $\Rightarrow$ 函数连续；   \\
         (3) & $\Rightarrow$ & (2) \quad 偏导存在不一定连续，但若偏导连续则一定连续；     \\
-        (2) & $\Rightarrow$ & (1) \quad 函数连续 $\Rightarrow$ 极限存在。
+        (2) & $\Rightarrow$ & (1) \quad 函数连续 $\Rightarrow$ 极限存在.
     \end{tabular}
 \end{center}
 
@@ -224,7 +224,7 @@ $$
     \item 极限存在是连续的必要条件；
     \item 可微是连续的充分条件；
     \item 偏导存在不代表可微；
-    \item 偏导连续是可微的充分条件。
+    \item 偏导连续是可微的充分条件.
 \end{itemize}
 
 \section{计算偏导数与全微分}
@@ -254,7 +254,7 @@ $$
 
 \subsection{隐函数求导法}
 
-设所有函数的偏导数均连续。
+设所有函数的偏导数均连续.
 
 \begin{enumerate}
     \item \textbf{单个方程的情形：}
@@ -319,7 +319,7 @@ $$
 \[
     \mathrm{d}z = \frac{\partial z}{\partial u} \mathrm{d}u + \frac{\partial z}{\partial v} \mathrm{d}v.
 \]
-即无论 $u, v$ 是自变量还是中间变量，上式均成立。
+即无论 $u, v$ 是自变量还是中间变量，上式均成立.
 
 \subsection{常用全微分公式总结}
 
@@ -345,7 +345,7 @@ $$
 \end{multicols}
 
 \textbf{提示：}
-以上公式常用于识别“全微分形式”，快速判断某微分表达式是否为某个函数的全微分。
+以上公式常用于识别“全微分形式”，快速判断某微分表达式是否为某个函数的全微分.
 
 \section{化简与求解偏微分方程}
 
@@ -354,7 +354,7 @@ $$
 \begin{enumerate}
     \item \textbf{根据已知等式求 $f(u,v)$ 的表达式}
 
-          已知方程 $A$，要求函数 $f(u,v)$ 的表达式。
+          已知方程 $A$，要求函数 $f(u,v)$ 的表达式.
           首先寻找适当的变量变换
           \[
               u = u(x,y), \quad v = v(x,y),
@@ -367,14 +367,14 @@ $$
           \[
               \frac{\partial f}{\partial x}, \quad \frac{\partial^2 f}{\partial x \partial y}, \text{ 等},
           \]
-          将这些偏导代入题设方程 $A$，即可得到关于 $u,v$ 的偏微分方程。
+          将这些偏导代入题设方程 $A$，即可得到关于 $u,v$ 的偏微分方程.
           若能化为
           \[
               \frac{\partial f}{\partial u} \quad \text{或} \quad \frac{\partial^2 f}{\partial u \partial v},
           \]
-          则可直接对 $f$ 积分求解。
+          则可直接对 $f$ 积分求解.
 
-          \textbf{提示：}此类题核心在于识别合适的变量替换，使方程结构简化为单变量或分离变量形式。
+          \textbf{提示：}此类题核心在于识别合适的变量替换，使方程结构简化为单变量或分离变量形式.
 
     \item \textbf{变量代换法：将方程 $A$ 化简为方程 $B$}
 
@@ -389,8 +389,8 @@ $$
           \[
               B(u,v,f,\partial f/\partial u,\ldots).
           \]
-          若题中给出方程 $B$，则可“反求参数”以确定变换关系 $u(x,y),v(x,y)$。
-          这是简化偏微分方程的重要技巧。
+          若题中给出方程 $B$，则可“反求参数”以确定变换关系 $u(x,y),v(x,y)$.
+          这是简化偏微分方程的重要技巧.
 
     \item \textbf{由含 $u$ 的偏导方程反求 $f$ 的表达式}
 
@@ -399,16 +399,16 @@ $$
           \[
               t = g(x,y),
           \]
-          则有 $u = f(t)$。绘制复合结构图 $u \rightarrow t \rightarrow (x,y)$，计算
+          则有 $u = f(t)$.绘制复合结构图 $u \rightarrow t \rightarrow (x,y)$，计算
           \[
               \frac{\partial u}{\partial x}, \quad \frac{\partial^2 u}{\partial x^2}, \quad \frac{\partial u}{\partial y}, \quad \frac{\partial^2 u}{\partial y^2},
           \]
-          并代入方程 $A$。此时方程将化为仅含 $f$ 与其导数的常微分方程，即可求出 $f(t)$ 的解析式。
+          并代入方程 $A$.此时方程将化为仅含 $f$ 与其导数的常微分方程，即可求出 $f(t)$ 的解析式.
 
     \item \textbf{典型例：一阶线性偏微分方程}
 
           \begin{example}{}{}
-              已知 $\dfrac{\partial f}{\partial x} = -f(x,y)$，求 $f(x,y)$。
+              已知 $\dfrac{\partial f}{\partial x} = -f(x,y)$，求 $f(x,y)$.
           \end{example}
 
           \begin{solution}
@@ -424,17 +424,17 @@ $$
               \[
                   f(x,y) = C(y)e^{-x},
               \]
-              其中 $C(y)$ 为关于 $y$ 的任意可微函数。
+              其中 $C(y)$ 为关于 $y$ 的任意可微函数.
           \end{solution}
 
-          这是求解一阶偏微分方程的基本模型，常用于分离变量法与特征线法的启蒙题。
+          这是求解一阶偏微分方程的基本模型，常用于分离变量法与特征线法的启蒙题.
 \end{enumerate}
 
 \textbf{总结：}
 \begin{itemize}
     \item 多数偏微分方程可通过“适当变量代换”或“设中间变量”转化为常微分方程；
     \item 求解核心：识别函数依赖结构、合理代换、整理偏导形式；
-    \item 常见思路包括：链式代换、分离变量、隐函数化简与积分恢复。
+    \item 常见思路包括：链式代换、分离变量、隐函数化简与积分恢复.
 \end{itemize}
 
 \section{求多元函数的极值与最值}
@@ -484,7 +484,7 @@ $$
               \item 若 $\Delta = 0$，则沿不同方向考察函数变化：
                     \begin{itemize}
                         \item 沿 $x$、$y$ 轴或 $y=kx$ 等路径；
-                        \item 若邻域内存在“既有极大又有极小”，则该点非极值点。
+                        \item 若邻域内存在“既有极大又有极小”，则该点非极值点.
                     \end{itemize}
           \end{enumerate}
 
@@ -492,7 +492,7 @@ $$
 
           \begin{itemize}
               \item 二元函数中，唯一极值点不一定是全局最值；
-              \item 可能仅存在多个极大值点或多个极小值点。
+              \item 可能仅存在多个极大值点或多个极小值点.
           \end{itemize}
 
     \item \textbf{常见补充类型}
@@ -500,7 +500,7 @@ $$
           \begin{itemize}
               \item 含参极值（对参数分类讨论）；
               \item 利用闭区域连续性与最值定理；
-              \item 局部分析时可用 $\delta$ 判别法。
+              \item 局部分析时可用 $\delta$ 判别法.
           \end{itemize}
 \end{enumerate}
 
@@ -516,7 +516,7 @@ $$
                   \psi(x, y, z) = 0
               \end{cases}
           \]
-          下的最值。
+          下的最值.
 
           \begin{enumerate}
               \item 构造辅助函数：
@@ -535,7 +535,7 @@ $$
                         \end{cases}
                     \]
               \item 解得所有候选点 $P_i$；
-              \item 代入 $f$ 比较函数值，取最大者为 $u_{\max}$，最小者为 $u_{\min}$。
+              \item 代入 $f$ 比较函数值，取最大者为 $u_{\max}$，最小者为 $u_{\min}$.
           \end{enumerate}
 
     \item \textbf{常见技巧与注意事项}
@@ -562,7 +562,7 @@ $$
     \item \textbf{区域内部：} 按无条件极值方法求解，保留 $D$ 内驻点；
     \item \textbf{区域边界：} 按条件极值（拉格朗日法）处理，或代入边界方程求；
     \item \textbf{比较：} 将全部候选点的 $f$ 值进行比较，取最大、最小；
-    \item 若题中含参数，应分情形讨论。
+    \item 若题中含参数，应分情形讨论.
 \end{enumerate}
 
 
@@ -570,5 +570,5 @@ $$
 \begin{itemize}
     \item 无条件极值——驻点 $\Rightarrow$ 二阶判别；
     \item 条件极值——构造拉格朗日函数；
-    \item 全局最值——考虑闭区域内、边界及参数变化。
+    \item 全局最值——考虑闭区域内、边界及参数变化.
 \end{itemize}

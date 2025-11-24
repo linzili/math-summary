@@ -3,51 +3,51 @@
 \textbf{考点综述：}
 掌握数学期望、方差、协方差、相关系数的定义与计算；
 判别独立与不相关的区别；
-能用切比雪夫不等式进行概率估计。
+能用切比雪夫不等式进行概率估计.
 
 
 \section{数学期望（Expectation）}
-数学期望即“取值 × 概率”的加权平均值。
+数学期望即“取值 × 概率”的加权平均值.
 
 \subsection*{1. 一维随机变量}
 \begin{enumerate}
-      \item 离散型：$X\sim p_i$
-            $$EX=\sum_i x_i p_i.$$
-      \item 连续型：$X\sim f(x)$
-            $$EX=\int_{-\infty}^{+\infty} x f(x)\,dx.$$
+    \item 离散型：$X\sim p_i$
+          $$EX=\sum_i x_i p_i.$$
+    \item 连续型：$X\sim f(x)$
+          $$EX=\int_{-\infty}^{+\infty} x f(x)\,dx.$$
 \end{enumerate}
 
 \subsection*{2. 一维函数 $g(X)$}
 \begin{enumerate}
-      \item 离散型：$EY=\sum_i g(x_i)p_i.$
-      \item 连续型：$EY=\int_{-\infty}^{+\infty} g(x)f(x)\,dx.$
+    \item 离散型：$EY=\sum_i g(x_i)p_i.$
+    \item 连续型：$EY=\int_{-\infty}^{+\infty} g(x)f(x)\,dx.$
 \end{enumerate}
 
 \subsection*{3. 二维函数 $g(X,Y)$}
 \begin{enumerate}
-      \item 离散型：$E[g(X,Y)]=\sum_i\sum_j g(x_i,y_j)p_{ij}.$
-      \item 连续型：$E[g(X,Y)]=\iint g(x,y)f(x,y)\,dx\,dy.$
+    \item 离散型：$E[g(X,Y)]=\sum_i\sum_j g(x_i,y_j)p_{ij}.$
+    \item 连续型：$E[g(X,Y)]=\iint g(x,y)f(x,y)\,dx\,dy.$
 \end{enumerate}
 
 \subsection*{4. 最值随机变量}
 若 $X_i(i=1,\dots,n)$ 独立同分布，分布函数 $F(x)$，密度 $f(x)$：
 \begin{align*}
-      F_Y(y) & =1-[1-F(y)]^n, & f_Y(y) & =n[1-F(y)]^{n-1}f(y), \\
-      F_Z(z) & =[F(z)]^n,     & f_Z(z) & =n[F(z)]^{n-1}f(z),
+    F_Y(y) & =1-[1-F(y)]^n, & f_Y(y) & =n[1-F(y)]^{n-1}f(y), \\
+    F_Z(z) & =[F(z)]^n,     & f_Z(z) & =n[F(z)]^{n-1}f(z),
 \end{align*}
 $$EY=\int yf_Y(y)dy,\quad EZ=\int zf_Z(z)dz.$$
 
 常用代换：
 $$
-      \max\{X,Y\}=\tfrac{X+Y+|X-Y|}{2},\quad
-      \min\{X,Y\}=\tfrac{X+Y-|X-Y|}{2}.
+    \max\{X,Y\}=\tfrac{X+Y+|X-Y|}{2},\quad
+    \min\{X,Y\}=\tfrac{X+Y-|X-Y|}{2}.
 $$
 
 \subsection*{5. 分解与性质}
 \begin{enumerate}
-      \item 线性性：$E(aX+bY)=aEX+bEY$.
-      \item 独立性：若 $X,Y$ 独立，则 $E(XY)=EX\cdot EY$.
-      \item 可加性：$E\!\left(\sum_i X_i\right)=\sum_i EX_i$.
+    \item 线性性：$E(aX+bY)=aEX+bEY$.
+    \item 独立性：若 $X,Y$ 独立，则 $E(XY)=EX\cdot EY$.
+    \item 可加性：$E\!\left(\sum_i X_i\right)=\sum_i EX_i$.
 \end{enumerate}
 
 
@@ -57,34 +57,34 @@ $$
 $$DX=E[(X-EX)^2]=E(X^2)-(EX)^2.$$
 
 \begin{itemize}
-      \item 离散型：$DX=\sum_i (x_i-EX)^2p_i.$
-      \item 连续型：$DX=\int (x-EX)^2f(x)\,dx.$
+    \item 离散型：$DX=\sum_i (x_i-EX)^2p_i.$
+    \item 连续型：$DX=\int (x-EX)^2f(x)\,dx.$
 \end{itemize}
 
 \subsection*{2. 常见性质}
 \begin{enumerate}
-      \item $DX\ge0$，且 $DX=0\Leftrightarrow X=a(常数)$；
-      \item $D(aX+b)=a^2DX$；
-      \item $D(X\pm Y)=DX+DY\pm2\operatorname{Cov}(X,Y)$；
-      \item 若 $X_i$ 独立：$D\!\left(\sum_i X_i\right)=\sum_i DX_i$。
+    \item $DX\ge0$，且 $DX=0\Leftrightarrow X=a(常数)$；
+    \item $D(aX+b)=a^2DX$；
+    \item $D(X\pm Y)=DX+DY\pm2\operatorname{Cov}(X,Y)$；
+    \item 若 $X_i$ 独立：$D\!\left(\sum_i X_i\right)=\sum_i DX_i$.
 \end{enumerate}
 
 \subsection*{3. 常见分布的 $EX,DX$}
 \begin{center}
-      \begin{tabular}{lcc}
-            \toprule
-            分布                & $EX$                 & $DX$                   \\
-            \midrule
-            $B(1,p)$          & $p$                  & $p(1-p)$               \\
-            $B(n,p)$          & $np$                 & $np(1-p)$              \\
-            $P(\lambda)$      & $\lambda$            & $\lambda$              \\
-            $G(p)$            & $\dfrac1p$           & $\dfrac{1-p}{p^2}$     \\
-            $U(a,b)$          & $\dfrac{a+b}{2}$     & $\dfrac{(b-a)^2}{12}$  \\
-            $E(\lambda)$      & $\dfrac{1}{\lambda}$ & $\dfrac{1}{\lambda^2}$ \\
-            $N(\mu,\sigma^2)$ & $\mu$                & $\sigma^2$             \\
-            $\chi^2(n)$       & $n$                  & $2n$                   \\
-            \bottomrule
-      \end{tabular}
+    \begin{tabular}{lcc}
+        \toprule
+        分布                & $EX$                 & $DX$                   \\
+        \midrule
+        $B(1,p)$          & $p$                  & $p(1-p)$               \\
+        $B(n,p)$          & $np$                 & $np(1-p)$              \\
+        $P(\lambda)$      & $\lambda$            & $\lambda$              \\
+        $G(p)$            & $\dfrac1p$           & $\dfrac{1-p}{p^2}$     \\
+        $U(a,b)$          & $\dfrac{a+b}{2}$     & $\dfrac{(b-a)^2}{12}$  \\
+        $E(\lambda)$      & $\dfrac{1}{\lambda}$ & $\dfrac{1}{\lambda^2}$ \\
+        $N(\mu,\sigma^2)$ & $\mu$                & $\sigma^2$             \\
+        $\chi^2(n)$       & $n$                  & $2n$                   \\
+        \bottomrule
+    \end{tabular}
 \end{center}
 
 
@@ -92,30 +92,30 @@ $$DX=E[(X-EX)^2]=E(X^2)-(EX)^2.$$
 
 \subsection*{1. 协方差}
 \begin{align*}
-      \mathrm{Cov}(X,Y)
-       & =E[(X-EX)(Y-EY)] \\
-       & =E(XY)-EXEY.
+    \mathrm{Cov}(X,Y)
+     & =E[(X-EX)(Y-EY)] \\
+     & =E(XY)-EXEY.
 \end{align*}
 
 \subsection*{2. 相关系数}
 $$
-      \rho_{XY}=\frac{\mathrm{Cov}(X,Y)}{\sqrt{DX\,DY}}.
+    \rho_{XY}=\frac{\mathrm{Cov}(X,Y)}{\sqrt{DX\,DY}}.
 $$
 \begin{itemize}
-      \item $|\rho_{XY}|\le1$；
-      \item $\rho=0$：不相关；
-      \item $\rho=\pm1$：完全线性相关；
-      \item $\rho=1\Rightarrow Y=aX+b,a>0$；$\rho=-1\Rightarrow Y=aX+b,a<0$。
+    \item $|\rho_{XY}|\le1$；
+    \item $\rho=0$：不相关；
+    \item $\rho=\pm1$：完全线性相关；
+    \item $\rho=1\Rightarrow Y=aX+b,a>0$；$\rho=-1\Rightarrow Y=aX+b,a<0$.
 \end{itemize}
 
 \subsection*{3. 常用性质}
 \begin{enumerate}
-      \item $\mathrm{Cov}(X,Y)=\mathrm{Cov}(Y,X)$；
-      \item $\mathrm{Cov}(aX,bY)=ab\,\mathrm{Cov}(X,Y)$；
-      \item $\mathrm{Cov}(X_1+X_2,Y)=\mathrm{Cov}(X_1,Y)+\mathrm{Cov}(X_2,Y)$；
-      \item 若 $X,Y$ 独立，则 $\mathrm{Cov}(X,Y)=0$；
-      \item $(X,Y)\sim N(\mu_1,\mu_2;\sigma_1^2,\sigma_2^2;\rho)$ 时，
-            独立 $\Leftrightarrow$ 不相关。
+    \item $\mathrm{Cov}(X,Y)=\mathrm{Cov}(Y,X)$；
+    \item $\mathrm{Cov}(aX,bY)=ab\,\mathrm{Cov}(X,Y)$；
+    \item $\mathrm{Cov}(X_1+X_2,Y)=\mathrm{Cov}(X_1,Y)+\mathrm{Cov}(X_2,Y)$；
+    \item 若 $X,Y$ 独立，则 $\mathrm{Cov}(X,Y)=0$；
+    \item $(X,Y)\sim N(\mu_1,\mu_2;\sigma_1^2,\sigma_2^2;\rho)$ 时，
+          独立 $\Leftrightarrow$ 不相关.
 \end{enumerate}
 
 
@@ -123,8 +123,8 @@ $$
 
 \subsection*{1. 独立性判定}
 \begin{itemize}
-      \item 连续型：$f(x,y)=f_X(x)f_Y(y)$；
-      \item 离散型：$p_{ij}=p_i p_j$。
+    \item 连续型：$f(x,y)=f_X(x)f_Y(y)$；
+    \item 离散型：$p_{ij}=p_i p_j$.
 \end{itemize}
 
 \subsection*{2. 不相关性判定}
@@ -132,30 +132,30 @@ $$\rho_{XY}=0\Leftrightarrow \mathrm{Cov}(X,Y)=0\Leftrightarrow E(XY)=EXEY.$$
 
 \subsection*{3. 关系总结}
 \begin{itemize}
-      \item 独立 $\Rightarrow$ 不相关；
-      \item 不相关 $\centernot\Rightarrow$ 独立；
-      \item 二维正态分布中：独立 $\Leftrightarrow$ 不相关；
-      \item 若 $X,Y$ 为 $0$-$1$ 分布：独立 $\Leftrightarrow$ 不相关。
+    \item 独立 $\Rightarrow$ 不相关；
+    \item 不相关 $\centernot\Rightarrow$ 独立；
+    \item 二维正态分布中：独立 $\Leftrightarrow$ 不相关；
+    \item 若 $X,Y$ 为 $0$-$1$ 分布：独立 $\Leftrightarrow$ 不相关.
 \end{itemize}
 
 
 \section{切比雪夫不等式}
 若随机变量 $X$ 的数学期望与方差存在，则对任意 $\varepsilon>0$：
 $$
-      P\{|X-EX|\ge\varepsilon\}\le\frac{DX}{\varepsilon^2},\quad
-      P\{|X-EX|<\varepsilon\}\ge1-\frac{DX}{\varepsilon^2}.
+    P\{|X-EX|\ge\varepsilon\}\le\frac{DX}{\varepsilon^2},\quad
+    P\{|X-EX|<\varepsilon\}\ge1-\frac{DX}{\varepsilon^2}.
 $$
 
 \textbf{常考理解：}
 方差越小，$X$ 越集中于期望附近；
-切比雪夫不等式用于估计偏离概率的上界。
+切比雪夫不等式用于估计偏离概率的上界.
 
 
 \section*{小结}
 \begin{itemize}
-      \item \textbf{计算：} 掌握 $E[g(X,Y)]$ 与 $D(aX+bY)$。
-      \item \textbf{判断：} 独立看分布，相关看 $\mathrm{Cov}$。
-      \item \textbf{记忆：}
-            $$\mathrm{Cov}(X,Y)=E(XY)-EXEY,\quad D(X\pm Y)=DX+DY\pm2\mathrm{Cov}(X,Y).$$
-      \item \textbf{技巧：} 用标准化变量 $U=\dfrac{X-EX}{\sqrt{DX}}$ 可快速处理。
+    \item \textbf{计算：} 掌握 $E[g(X,Y)]$ 与 $D(aX+bY)$.
+    \item \textbf{判断：} 独立看分布，相关看 $\mathrm{Cov}$.
+    \item \textbf{记忆：}
+          $$\mathrm{Cov}(X,Y)=E(XY)-EXEY,\quad D(X\pm Y)=DX+DY\pm2\mathrm{Cov}(X,Y).$$
+    \item \textbf{技巧：} 用标准化变量 $U=\dfrac{X-EX}{\sqrt{DX}}$ 可快速处理.
 \end{itemize}

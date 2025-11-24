@@ -2,14 +2,14 @@
 
 \section{恒等变形法}
 
-通过代数变形，将被积函数化为基本积分公式中的形式，从而直接求得原函数。
+通过代数变形，将被积函数化为基本积分公式中的形式，从而直接求得原函数.
 
 常用方法：
 \begin{enumerate}
     \item 配方、通分、分解因式；
     \item 利用奇偶性、对称性；
     \item 利用三角恒等变换或平方差公式；
-    \item 拆分常数倍：$\displaystyle \int (a f(x) + b g(x))dx = a\int f(x)dx + b\int g(x)dx$。
+    \item 拆分常数倍：$\displaystyle \int (a f(x) + b g(x))dx = a\int f(x)dx + b\int g(x)dx$.
 \end{enumerate}
 
 \section{第一类换元法（凑微分法）}
@@ -18,12 +18,12 @@
     \int f[g(x)]g'(x)\,dx = \int f[g(x)]\,d[g(x)] = \int f(u)\,du.
 \]
 
-若被积函数是 $g(x)$ 的函数与 $g'(x)$ 的乘积，则“凑微分”后即可直接积分。
+若被积函数是 $g(x)$ 的函数与 $g'(x)$ 的乘积，则“凑微分”后即可直接积分.
 
 \textbf{技巧总结：}
 \begin{enumerate}
     \item 常见凑法：若分母是 $x^2+1$、$1-x^2$、$x\sqrt{1-x^2}$ 等；
-    \item 若被积函数可写成 $f'(x)/f(x)$，则 $\displaystyle \int \frac{f'(x)}{f(x)}dx = \ln|f(x)| + C$。
+    \item 若被积函数可写成 $f'(x)/f(x)$，则 $\displaystyle \int \frac{f'(x)}{f(x)}dx = \ln|f(x)| + C$.
 \end{enumerate}
 
 \section{第二类换元法（代换法）}
@@ -32,17 +32,17 @@
     \int f(x)\,dx = \int f[g(u)]g'(u)\,du.
 \]
 
-当被积函数复杂、含根号或分式时，可令 $x=g(u)$，使 $f(x)$ 化为较简单的 $h(u)$。
+当被积函数复杂、含根号或分式时，可令 $x=g(u)$，使 $f(x)$ 化为较简单的 $h(u)$.
 
 \textbf{常见换元：}
 \begin{enumerate}
     \item 去根号：如 $x=a\sin\theta,\ a\tan\theta,\ a\sec\theta$；
     \item 分母变单项：如 $\sqrt[n]{\frac{ax+b}{cx+d}} = u$；
     \item 含对称结构：如 $x+\frac{1}{x}=t$；
-    \item 对称区间换元：$x=a-t$、$x=\frac{1}{t}$ 等。
+    \item 对称区间换元：$x=a-t$、$x=\frac{1}{t}$ 等.
 \end{enumerate}
 
-\textbf{核心目标：} 通过换元使被积函数\textbf{简化为多项式或基本初等函数形式}。
+\textbf{核心目标：} 通过换元使被积函数\textbf{简化为多项式或基本初等函数形式}.
 
 \section{分部积分法}
 
@@ -50,7 +50,7 @@
     \int u\,dv = uv - \int v\,du.
 \]
 
-\textbf{口诀：} “一降一不变，优先降幂项”。
+\textbf{口诀：} “一降一不变，优先降幂项”.
 
 \begin{enumerate}
     \item 若为 $\int f(x)g(x)\,dx$，选取 $u$ 为\textbf{易微分、难积分}的部分；
@@ -60,16 +60,16 @@
               \item \textbf{再现法：} 积分两边含原式，建立方程；
               \item \textbf{抵消法：} 通过两次积分消除复杂项；
               \item \textbf{递推法：} 构造 $I_n$ 递推公式；
-              \item \textbf{定积分结合法：} 特殊上限下限抵消项。
+              \item \textbf{定积分结合法：} 特殊上限下限抵消项.
           \end{enumerate}
 \end{enumerate}
 
 \section{有理函数的积分}
 
-形如 $\displaystyle \int \frac{P_n(x)}{Q_m(x)}dx$（$n<m$）的积分称为有理函数积分。
+形如 $\displaystyle \int \frac{P_n(x)}{Q_m(x)}dx$（$n<m$）的积分称为有理函数积分.
 
 \textbf{常用步骤：}
-若 $n\ge m$，先作多项式除法；若 $n<m$，再作部分分式分解。
+若 $n\ge m$，先作多项式除法；若 $n<m$，再作部分分式分解.
 
 \textbf{四类基本积分：}
 \begin{enumerate}
@@ -87,12 +87,12 @@
 
 \section{三角有理式的积分}
 
-形如 $\displaystyle \int R(\sin x, \cos x)\,dx$ 的积分称为三角有理式积分。
+形如 $\displaystyle \int R(\sin x, \cos x)\,dx$ 的积分称为三角有理式积分.
 
 \subsection{全角换元法}
 \begin{enumerate}
     \item 若 $R(-\sin x, \cos x) = -R(\sin x, \cos x)$，令 $t = \cos x$；
-    \item 若 $R(\sin x, -\cos x) = -R(\sin x, \cos x)$，令 $t = \sin x$。
+    \item 若 $R(\sin x, -\cos x) = -R(\sin x, \cos x)$，令 $t = \sin x$.
 \end{enumerate}
 
 \subsection{半角万能换元法}
@@ -100,7 +100,7 @@
 \[
     \sin x = \frac{2t}{1+t^2}, \quad \cos x = \frac{1-t^2}{1+t^2}, \quad dx = \frac{2\,dt}{1+t^2}.
 \]
-代入后化为 $t$ 的有理函数积分。
+代入后化为 $t$ 的有理函数积分.
 
 \section{定积分的计算（牛顿–莱布尼茨公式）}
 
@@ -127,9 +127,9 @@
               \left[\int_{a}^{\varphi(x)} f(t)\,dt\right]' = f[\varphi(x)]\varphi'(x),\quad
               \left[\int_{\varphi_1(x)}^{\varphi_2(x)} f(t)\,dt\right]' = f[\varphi_2(x)]\varphi_2'(x) - f[\varphi_1(x)]\varphi_1'(x).
           \]
-    \item \textbf{换元求导型：} 先换元，再代入求导。
-    \item \textbf{拆分求导型：} 若带绝对值或分段区间，需拆分处理。
-    \item \textbf{换序积分型：} 累次积分中先交换积分次序以简化计算。
+    \item \textbf{换元求导型：} 先换元，再代入求导.
+    \item \textbf{拆分求导型：} 若带绝对值或分段区间，需拆分处理.
+    \item \textbf{换序积分型：} 累次积分中先交换积分次序以简化计算.
 \end{enumerate}
 
 \section{分段函数的积分}
@@ -137,7 +137,7 @@
 \begin{enumerate}
     \item \textbf{不定积分：} 各段分别求原函数，检查分段点连续性；
     \item \textbf{定积分：} 按区间分段后相加；
-    \item \textbf{变限积分：} 随 $x$ 变化分情况讨论，$F(x)=\int_a^x f(t)dt$ 为累加函数。
+    \item \textbf{变限积分：} 随 $x$ 变化分情况讨论，$F(x)=\int_a^x f(t)dt$ 为累加函数.
 \end{enumerate}
 
 \section{几何法}
@@ -153,4 +153,4 @@
     \int_{a}^{2a}\sqrt{x(2a-x)}\,dx = \frac{\pi a^2}{4}.
 \]
 
-\textbf{应用提示：} 若被积函数可化为圆弧、椭圆或抛物线截面形式，可直接用面积公式代替积分计算。
+\textbf{应用提示：} 若被积函数可化为圆弧、椭圆或抛物线截面形式，可直接用面积公式代替积分计算.

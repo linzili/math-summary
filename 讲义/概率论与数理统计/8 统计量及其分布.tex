@@ -2,143 +2,143 @@
 
 \textbf{考点综述：}
 掌握常见统计量及其分布（$N$、$\chi^2$、$t$、$F$ 分布）的定义、性质与相互关系；
-会判别统计量的分布类型并据此计算概率。
+会判别统计量的分布类型并据此计算概率.
 
 
 \section{统计量及其数字特征}
 
-设 $X_1, X_2, \cdots, X_n$ 是来自总体 $X$ 的简单随机样本。
+设 $X_1, X_2, \cdots, X_n$ 是来自总体 $X$ 的简单随机样本.
 
 \begin{enumerate}
-      \item 样本均值：\quad $\bar{X} = \dfrac{1}{n} \sum_{i=1}^{n} X_i.$
-      \item 样本方差：
-            $$
-                  S^2 = \frac{1}{n-1}\sum_{i=1}^{n}(X_i - \bar{X})^2
-                  = \frac{1}{n-1}\left(\sum_{i=1}^{n} X_i^2 - n\bar{X}^2\right),
-                  \quad S = \sqrt{S^2}.
-            $$
-      \item 样本 $k$ 阶原点矩：\quad $A_k = \dfrac{1}{n} \sum_{i=1}^{n} X_i^k.$
-      \item 样本 $k$ 阶中心矩：\quad $B_k = \dfrac{1}{n} \sum_{i=1}^{n}(X_i - \bar{X})^k.$
-      \item 顺序统计量：\quad
-            将样本按大小排列：
-            $$
-                  X_{(1)} \le X_{(2)} \le \cdots \le X_{(n)},
-            $$
-            称 $X_{(k)}$ 为第 $k$ 顺序统计量。
-            特别地，
-            $$
-                  X_{(1)} = \min\{X_1, \cdots, X_n\}, \quad
-                  X_{(n)} = \max\{X_1, \cdots, X_n\}.
-            $$
+    \item 样本均值：\quad $\bar{X} = \dfrac{1}{n} \sum_{i=1}^{n} X_i.$
+    \item 样本方差：
+          $$
+              S^2 = \frac{1}{n-1}\sum_{i=1}^{n}(X_i - \bar{X})^2
+              = \frac{1}{n-1}\left(\sum_{i=1}^{n} X_i^2 - n\bar{X}^2\right),
+              \quad S = \sqrt{S^2}.
+          $$
+    \item 样本 $k$ 阶原点矩：\quad $A_k = \dfrac{1}{n} \sum_{i=1}^{n} X_i^k.$
+    \item 样本 $k$ 阶中心矩：\quad $B_k = \dfrac{1}{n} \sum_{i=1}^{n}(X_i - \bar{X})^k.$
+    \item 顺序统计量：\quad
+          将样本按大小排列：
+          $$
+              X_{(1)} \le X_{(2)} \le \cdots \le X_{(n)},
+          $$
+          称 $X_{(k)}$ 为第 $k$ 顺序统计量.
+          特别地，
+          $$
+              X_{(1)} = \min\{X_1, \cdots, X_n\}, \quad
+              X_{(n)} = \max\{X_1, \cdots, X_n\}.
+          $$
 \end{enumerate}
 
 
 \section{统计量的抽样分布}
 
 \textbf{定义：}
-统计量的分布称为\textbf{抽样分布}。
+统计量的分布称为\textbf{抽样分布}.
 
 
 \subsection*{1. 正态分布 $N(\mu,\sigma^2)$}
 
 \begin{enumerate}
-      \item 概念：
-            若随机变量 $X$ 的密度为
-            $$
-                  f(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2},
-            $$
-            则称 $X \sim N(\mu,\sigma^2)$。
-      \item 上 $\alpha$ 分位数：
-            若 $X\sim N(0,1)$，有 $P\{X > \mu_\alpha\} = \alpha$，则 $\mu_\alpha$ 称为上 $\alpha$ 分位数。
-      \item 性质：
-            \begin{itemize}
-                  \item 关于 $x=\mu$ 对称，峰值 $f(\mu)=\dfrac{1}{\sqrt{2\pi}\sigma}$；
-                  \item 标准正态分布：$\varphi(x)=\dfrac{1}{\sqrt{2\pi}}e^{-x^2/2}$；
-                  \item 分布函数 $\Phi(x)=\dfrac{1}{\sqrt{2\pi}}\int_{-\infty}^{x} e^{-t^2/2}dt$，
-                        且 $\Phi(0)=\frac{1}{2},\ \Phi(-x)=1-\Phi(x)$。
-            \end{itemize}
+    \item 概念：
+          若随机变量 $X$ 的密度为
+          $$
+              f(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2},
+          $$
+          则称 $X \sim N(\mu,\sigma^2)$.
+    \item 上 $\alpha$ 分位数：
+          若 $X\sim N(0,1)$，有 $P\{X > \mu_\alpha\} = \alpha$，则 $\mu_\alpha$ 称为上 $\alpha$ 分位数.
+    \item 性质：
+          \begin{itemize}
+              \item 关于 $x=\mu$ 对称，峰值 $f(\mu)=\dfrac{1}{\sqrt{2\pi}\sigma}$；
+              \item 标准正态分布：$\varphi(x)=\dfrac{1}{\sqrt{2\pi}}e^{-x^2/2}$；
+              \item 分布函数 $\Phi(x)=\dfrac{1}{\sqrt{2\pi}}\int_{-\infty}^{x} e^{-t^2/2}dt$，
+                    且 $\Phi(0)=\frac{1}{2},\ \Phi(-x)=1-\Phi(x)$.
+          \end{itemize}
 \end{enumerate}
 
 
 \subsection*{2. $\chi^2$ 分布}
 
 \begin{enumerate}
-      \item 概念：
-            若 $X_i \sim N(0,1)$ 且相互独立，则
-            $$
-                  X = \sum_{i=1}^{n} X_i^2 \sim \chi^2(n),
-            $$
-            称自由度为 $n$。
-      \item 上 $\alpha$ 分位数：
-            $$P\{\chi^2 > \chi^2_\alpha(n)\} = \alpha.$$
-      \item 性质：
-            \begin{itemize}
-                  \item 若 $X_1\sim\chi^2(n_1)$, $X_2\sim\chi^2(n_2)$ 独立，则 $X_1+X_2\sim\chi^2(n_1+n_2)$；
-                  \item $E X = n,\quad D X = 2n$。
-            \end{itemize}
+    \item 概念：
+          若 $X_i \sim N(0,1)$ 且相互独立，则
+          $$
+              X = \sum_{i=1}^{n} X_i^2 \sim \chi^2(n),
+          $$
+          称自由度为 $n$.
+    \item 上 $\alpha$ 分位数：
+          $$P\{\chi^2 > \chi^2_\alpha(n)\} = \alpha.$$
+    \item 性质：
+          \begin{itemize}
+              \item 若 $X_1\sim\chi^2(n_1)$, $X_2\sim\chi^2(n_2)$ 独立，则 $X_1+X_2\sim\chi^2(n_1+n_2)$；
+              \item $E X = n,\quad D X = 2n$.
+          \end{itemize}
 \end{enumerate}
 
 
 \subsection*{3. $t$ 分布}
 
 \begin{enumerate}
-      \item 概念：
-            若 $X\sim N(0,1)$, $Y\sim\chi^2(n)$ 且独立，则
-            $$t=\frac{X}{\sqrt{Y/n}}\sim t(n).$$
-      \item 上 $\alpha$ 分位数：
-            $$P\{t>t_\alpha(n)\}=\alpha.$$
-      \item 性质：
-            \begin{itemize}
-                  \item 关于 0 对称，$E t = 0$；
-                  \item $t_{1-\alpha}(n) = -t_\alpha(n)$；
-                  \item 当自由度 $n\to\infty$ 时，$t(n)\to N(0,1)$。
-            \end{itemize}
+    \item 概念：
+          若 $X\sim N(0,1)$, $Y\sim\chi^2(n)$ 且独立，则
+          $$t=\frac{X}{\sqrt{Y/n}}\sim t(n).$$
+    \item 上 $\alpha$ 分位数：
+          $$P\{t>t_\alpha(n)\}=\alpha.$$
+    \item 性质：
+          \begin{itemize}
+              \item 关于 0 对称，$E t = 0$；
+              \item $t_{1-\alpha}(n) = -t_\alpha(n)$；
+              \item 当自由度 $n\to\infty$ 时，$t(n)\to N(0,1)$.
+          \end{itemize}
 \end{enumerate}
 
 
 \subsection*{4. $F$ 分布}
 
 \begin{enumerate}
-      \item 概念：
-            若 $X\sim\chi^2(n_1)$，$Y\sim\chi^2(n_2)$ 且独立，则
-            $$
-                  F=\frac{X/n_1}{Y/n_2}\sim F(n_1,n_2).
-            $$
-      \item 上 $\alpha$ 分位数：
-            $$P\{F>F_\alpha(n_1,n_2)\}=\alpha.$$
-      \item 性质：
-            \begin{itemize}
-                  \item $\dfrac{1}{F}\sim F(n_2,n_1)$；
-                  \item $F_{1-\alpha}(n_1,n_2)=\dfrac{1}{F_\alpha(n_2,n_1)}$；
-                  \item 若 $t\sim t(n)$，则 $t^2\sim F(1,n)$。
-            \end{itemize}
+    \item 概念：
+          若 $X\sim\chi^2(n_1)$，$Y\sim\chi^2(n_2)$ 且独立，则
+          $$
+              F=\frac{X/n_1}{Y/n_2}\sim F(n_1,n_2).
+          $$
+    \item 上 $\alpha$ 分位数：
+          $$P\{F>F_\alpha(n_1,n_2)\}=\alpha.$$
+    \item 性质：
+          \begin{itemize}
+              \item $\dfrac{1}{F}\sim F(n_2,n_1)$；
+              \item $F_{1-\alpha}(n_1,n_2)=\dfrac{1}{F_\alpha(n_2,n_1)}$；
+              \item 若 $t\sim t(n)$，则 $t^2\sim F(1,n)$.
+          \end{itemize}
 \end{enumerate}
 
 
 \section{正态总体下的常用结论}
 
 设 $X_1,\cdots,X_n$ 来自总体 $N(\mu,\sigma^2)$，
-样本均值 $\bar{X}$，样本方差 $S^2$。
+样本均值 $\bar{X}$，样本方差 $S^2$.
 
 \begin{enumerate}
-      \item $\bar{X}\sim N\!\left(\mu,\dfrac{\sigma^2}{n}\right)$，
-            即
-            $$\frac{\sqrt{n}(\bar{X}-\mu)}{\sigma}\sim N(0,1).$$
-      \item $\dfrac{1}{\sigma^2}\sum_{i=1}^{n}(X_i-\mu)^2 \sim \chi^2(n).$
-      \item $\dfrac{(n-1)S^2}{\sigma^2}=\sum_{i=1}^{n}\left(\dfrac{X_i-\bar{X}}{\sigma}\right)^2 \sim \chi^2(n-1).$
-      \item $\bar{X}$ 与 $S^2$ 相互独立，且
-            $$\frac{\sqrt{n}(\bar{X}-\mu)}{S}\sim t(n-1),\quad \frac{n(\bar{X}-\mu)^2}{S^2}\sim F(1,n-1).$$
+    \item $\bar{X}\sim N\!\left(\mu,\dfrac{\sigma^2}{n}\right)$，
+          即
+          $$\frac{\sqrt{n}(\bar{X}-\mu)}{\sigma}\sim N(0,1).$$
+    \item $\dfrac{1}{\sigma^2}\sum_{i=1}^{n}(X_i-\mu)^2 \sim \chi^2(n).$
+    \item $\dfrac{(n-1)S^2}{\sigma^2}=\sum_{i=1}^{n}\left(\dfrac{X_i-\bar{X}}{\sigma}\right)^2 \sim \chi^2(n-1).$
+    \item $\bar{X}$ 与 $S^2$ 相互独立，且
+          $$\frac{\sqrt{n}(\bar{X}-\mu)}{S}\sim t(n-1),\quad \frac{n(\bar{X}-\mu)^2}{S^2}\sim F(1,n-1).$$
 \end{enumerate}
 
 
 \section*{小结：四种分布间的关系}
 \[
-      \boxed{
-            \begin{aligned}
-                  X_i                                & \sim N(0,1) \Rightarrow \sum X_i^2 \sim \chi^2(n); \\[3pt]
-                  X\sim N(0,1),~Y\sim\chi^2(n)       & \Rightarrow \frac{X}{\sqrt{Y/n}}\sim t(n);         \\[3pt]
-                  X\sim\chi^2(n_1),~Y\sim\chi^2(n_2) & \Rightarrow \frac{X/n_1}{Y/n_2}\sim F(n_1,n_2);    \\[3pt]
-                  t^2(n)                             & \sim F(1,n).
-            \end{aligned}
-      }
+    \boxed{
+        \begin{aligned}
+            X_i                                & \sim N(0,1) \Rightarrow \sum X_i^2 \sim \chi^2(n); \\[3pt]
+            X\sim N(0,1),~Y\sim\chi^2(n)       & \Rightarrow \frac{X}{\sqrt{Y/n}}\sim t(n);         \\[3pt]
+            X\sim\chi^2(n_1),~Y\sim\chi^2(n_2) & \Rightarrow \frac{X/n_1}{Y/n_2}\sim F(n_1,n_2);    \\[3pt]
+            t^2(n)                             & \sim F(1,n).
+        \end{aligned}
+    }
 \]

@@ -17,12 +17,12 @@
     \item $[f(x)f'(x)]' = [f'(x)]^2 + f(x)f''(x)$；
     \item $[f(x)g(x)]' = f'(x)g(x) + f(x)g'(x)$；
     \item $[f(x)\arctan x]' = f'(x)\arctan x + \dfrac{f(x)}{1+x^2}$；
-    \item $[f(x)\sin x]' = f'(x)\sin x + f(x)\cos x = [f'(x)\tan x + f(x)]\cos x$。
+    \item $[f(x)\sin x]' = f'(x)\sin x + f(x)\cos x = [f'(x)\tan x + f(x)]\cos x$.
 \end{enumerate}
 
 \subsection{二阶乘积求导公式的逆用}
 \[
-    (uv)'' = u''v + 2u'v' + uv'', \quad [f(x)e^x]'' = e^x[f''(x) + 2f'(x) + f(x)]。
+    (uv)'' = u''v + 2u'v' + uv'', \quad [f(x)e^x]'' = e^x[f''(x) + 2f'(x) + f(x)].
 \]
 
 \subsection{一阶商求导公式的逆用}
@@ -35,7 +35,7 @@
     \item $\displaystyle \left[\frac{f'(x)}{f(x)}\right]' = \frac{f''(x)f(x) - [f'(x)]^2}{f^2(x)}$
           见到 $f''(x)f(x) - [f'(x)]^2$，令 $F(x)=\frac{f'(x)}{f(x)}$；
     \item $[\ln f(x)]'' = \left[\frac{f'(x)}{f(x)}\right]' = \frac{f''(x)f(x) - [f'(x)]^2}{f^2(x)}$
-          见到 $f''(x)f(x) - [f'(x)]^2$，$f(x)>0$ 时可令 $F(x)=\ln f(x)$。
+          见到 $f''(x)f(x) - [f'(x)]^2$，$f(x)>0$ 时可令 $F(x)=\ln f(x)$.
 \end{enumerate}
 
 \subsection{祖孙三代传承法}
@@ -50,7 +50,7 @@
     f''(\xi)-f'(\xi)+f'(\xi)-f(\xi)=0，
 \]
 令 $F'(x)=[f''(x)-f'(x)]e^x + [f'(x)-f(x)]e^x$，则
-$F(x)=[f'(x)-f(x)]e^x$。
+$F(x)=[f'(x)-f(x)]e^x$.
 
 \paragraph{例2：}
 \[
@@ -60,29 +60,29 @@ $F(x)=[f'(x)-f(x)]e^x$。
 \[
     F'(x)=\big([f'(x)-f(x)]+[f(x)-\int_0^x f(t)\,dt]\big)e^x，
 \]
-则 $F(x)=\left[f(x)-\int_0^x f(t)\,dt\right]e^x$。
+则 $F(x)=\left[f(x)-\int_0^x f(t)\,dt\right]e^x$.
 
 \subsection{小伎俩（障眼法）}
 \begin{enumerate}[label=(\arabic*)]
     \item \textbf{简单化：}
           $2\xi-1\rightarrow x^2-x,\ f'(ξ)f(ξ)\rightarrow\frac{1}{2}f^2(x),\
-              \dfrac{f'(ξ)}{f(ξ)}\rightarrow\ln f(x),\ \dfrac{1}{ξ}\rightarrow\ln x$。
+              \dfrac{f'(ξ)}{f(ξ)}\rightarrow\ln f(x),\ \dfrac{1}{ξ}\rightarrow\ln x$.
 
     \item \textbf{升辈降辈：}
-          $f(x)\to f'(x)$ 或 $f(x)\to \int_0^x f(t)dt$。
+          $f(x)\to f'(x)$ 或 $f(x)\to \int_0^x f(t)dt$.
 
     \item \textbf{平移：}
           \[
               [f(x)(x+1)^2]'=(x+1)\big[f'(x)(x+1)+2f(x)\big],
           \]
           \[
-              [f(x)e^{(x-1)^2}]'=e^{(x-1)^2}[f'(x)+2(x-1)f(x)]。
+              [f(x)e^{(x-1)^2}]'=e^{(x-1)^2}[f'(x)+2(x-1)f(x)].
           \]
 
     \item \textbf{恒等变形：}
           \begin{enumerate}
               \item 移项：令右端为 0；
-              \item 乘除：如 $\big[f'(x)g(x)-f(x)g'(x)\big]_{x=\xi}=0 \Rightarrow \dfrac{f'(ξ)}{g'(ξ)}=\dfrac{f(ξ)}{g(ξ)}$。
+              \item 乘除：如 $\big[f'(x)g(x)-f(x)g'(x)\big]_{x=\xi}=0 \Rightarrow \dfrac{f'(ξ)}{g'(ξ)}=\dfrac{f(ξ)}{g(ξ)}$.
           \end{enumerate}
 \end{enumerate}
 
@@ -94,7 +94,7 @@ $F(x)=[f'(x)-f(x)]e^x$。
     \item 用推广积分中值定理：
           $\displaystyle \int_a^b f(x)\,dx=f(\xi)(b-a)$；
     \item 用分部积分：$\displaystyle \int_a^b u\,d\nu=u\nu\Big|_a^b-\int_a^b\nu\,du$；
-    \item 或作泰勒展开再积分。
+    \item 或作泰勒展开再积分.
 \end{enumerate}
 
 
@@ -105,7 +105,7 @@ $F(x)=[f'(x)-f(x)]e^x$。
 \begin{enumerate}
     \item 区间内部最值点：费马定理；
     \item 区间端点值相等：罗尔定理；
-    \item 区间端点导数异号：导数介值定理。
+    \item 区间端点导数异号：导数介值定理.
 \end{enumerate}
 
 
@@ -118,17 +118,17 @@ $F(x)=[f'(x)-f(x)]e^x$。
           若 $f(x)$ 在 $[a,b]$ 上连续且在 $(a,b)$ 内可导，则
           $\exists \xi \in (a,b)$，使得
           \[
-              f'(\xi)=\frac{f(b)-f(a)}{b-a}。
+              f'(\xi)=\frac{f(b)-f(a)}{b-a}.
           \]
-    \item 推论：$f'(x)=0\Rightarrow f(x)$ 在区间上为常数。
+    \item 推论：$f'(x)=0\Rightarrow f(x)$ 在区间上为常数.
     \item 写作 $f(x)-f(a)=f'(\xi)(x-a)$，常用于出现“$f-f$”或“$f-f'$”关系；
     \item 写作 $\dfrac{f(b)-f(a)}{b-a}=f'(\xi)$，常用于“切线斜率”；
     \item 写作 $f(x)-f(a)=f'(\theta x)x$，$0<\theta<1$，用于极限估值；
-    \item 写作 $\int_a^x f(t)\,dt=f(\xi)(x-a)$，用于积分中值定理。
+    \item 写作 $\int_a^x f(t)\,dt=f(\xi)(x-a)$，用于积分中值定理.
 \end{enumerate}
 
 \subsection{柯西中值定理}
-当式子可化为 $\dfrac{f(b)-f(a)}{g(b)-g(a)}$ 或 $\dfrac{f'(\xi)}{g'(\xi)}$ 时使用。
+当式子可化为 $\dfrac{f(b)-f(a)}{g(b)-g(a)}$ 或 $\dfrac{f'(\xi)}{g'(\xi)}$ 时使用.
 \begin{enumerate}
     \item 若一函数取具体形式，可利用 $\displaystyle f(\xi)=\left[\int_a^x f(t)\,dt\right]'_{x=\xi}$；
     \item 若函数值含 $0$ 或 $1$，可利用 $f(a)=0$、$e^0=1$、$\int_a^a f=0$ 等；
@@ -138,7 +138,7 @@ $F(x)=[f'(x)-f(x)]e^x$。
           \]
           再代回主式，得：
           \[
-              f'(\eta)(b^2-a^2)=\frac{2\xi}{\xi-a}\int_a^b f(x)\,dx。
+              f'(\eta)(b^2-a^2)=\frac{2\xi}{\xi-a}\int_a^b f(x)\,dx.
           \]
 \end{enumerate}
 
@@ -156,7 +156,7 @@ $F(x)=[f'(x)-f(x)]e^x$。
               \item $\dfrac{1}{1+x} = 1 - x + x^2 - x^3 + \cdots = \displaystyle\sum_{n=0}^{\infty}(-1)^n x^n, \quad |x| < 1$；
               \item $\dfrac{1}{1-x} = 1 + x + x^2 + x^3 + \cdots = \displaystyle\sum_{n=0}^{\infty} x^n, \quad |x| < 1$；
               \item $\dfrac{1}{(1-x)^2} = 1 + 2x + 3x^2 + \cdots = \displaystyle\sum_{n=0}^{\infty}(n+1)x^n, \quad |x| < 1$；
-              \item $\dfrac{1}{(1+x)^2} = 1 - 2x + 3x^2 - 4x^3 + \cdots = \displaystyle\sum_{n=0}^{\infty}(-1)^n (n+1)x^n, \quad |x| < 1$。
+              \item $\dfrac{1}{(1+x)^2} = 1 - 2x + 3x^2 - 4x^3 + \cdots = \displaystyle\sum_{n=0}^{\infty}(-1)^n (n+1)x^n, \quad |x| < 1$.
           \end{enumerate}
 
     \item \textbf{第二组：指数型展开式}
@@ -164,7 +164,7 @@ $F(x)=[f'(x)-f(x)]e^x$。
               \item $e^x = \displaystyle\sum_{n=0}^{\infty} \dfrac{x^n}{n!}$；
               \item $a^x = e^{x\ln a} = \displaystyle\sum_{n=0}^{\infty} \dfrac{(\ln a)^n x^n}{n!}$；
               \item $\sinh x = \dfrac{e^x - e^{-x}}{2} = \displaystyle\sum_{n=0}^{\infty} \dfrac{x^{2n+1}}{(2n+1)!}$；
-              \item $\cosh x = \dfrac{e^x + e^{-x}}{2} = \displaystyle\sum_{n=0}^{\infty} \dfrac{x^{2n}}{(2n)!}$。
+              \item $\cosh x = \dfrac{e^x + e^{-x}}{2} = \displaystyle\sum_{n=0}^{\infty} \dfrac{x^{2n}}{(2n)!}$.
           \end{enumerate}
 
     \item \textbf{第三组：三角与反三角展开式}
@@ -173,7 +173,7 @@ $F(x)=[f'(x)-f(x)]e^x$。
               \item $\cos x = 1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!} - \cdots = \displaystyle\sum_{n=0}^{\infty} (-1)^n \dfrac{x^{2n}}{(2n)!}$；
               \item $\tan x = x + \dfrac{1}{3}x^3 + \dfrac{2}{15}x^5 + \cdots, \quad |x| < \dfrac{\pi}{2}$；
               \item $\arcsin x = x + \dfrac{1}{6}x^3 + \dfrac{3}{40}x^5 + \cdots, \quad |x| < 1$；
-              \item $\arctan x = x - \dfrac{1}{3}x^3 + \dfrac{1}{5}x^5 - \cdots = \displaystyle\sum_{n=0}^{\infty} (-1)^n \dfrac{x^{2n+1}}{2n+1}, \quad |x| \le 1$。
+              \item $\arctan x = x - \dfrac{1}{3}x^3 + \dfrac{1}{5}x^5 - \cdots = \displaystyle\sum_{n=0}^{\infty} (-1)^n \dfrac{x^{2n+1}}{2n+1}, \quad |x| \le 1$.
           \end{enumerate}
 
     \item \textbf{第四组：对数型展开式}
@@ -184,7 +184,7 @@ $F(x)=[f'(x)-f(x)]e^x$。
               \item $\ln(a+x) = \ln a + \ln\!\left(1+\dfrac{x}{a}\right) = \ln a + \dfrac{x}{a} - \dfrac{1}{2a^2}x^2 + \cdots, \quad a>0,\ -a<x\le a$；
               \item $\ln\dfrac{1+x}{1-x} = 2\left(x + \dfrac{x^3}{3} + \dfrac{x^5}{5} + \cdots\right) = 2\displaystyle\sum_{n=0}^{\infty} \dfrac{x^{2n+1}}{2n+1}, \quad |x| < 1$；
               \item $\ln\dfrac{x+1}{x-1} = 2\displaystyle\sum_{n=0}^{\infty} \dfrac{1}{(2n+1)x^{2n+1}}, \quad |x| > 1$；
-              \item $\ln\!\big(x+\sqrt{x^2+1}\big) = x - \dfrac{1}{6}x^3 + \dfrac{3}{40}x^5 + \cdots, \quad |x| < 1$。
+              \item $\ln\!\big(x+\sqrt{x^2+1}\big) = x - \dfrac{1}{6}x^3 + \dfrac{3}{40}x^5 + \cdots, \quad |x| < 1$.
           \end{enumerate}
 \end{enumerate}
 
@@ -195,7 +195,7 @@ $F(x)=[f'(x)-f(x)]e^x$。
 \]
 其中余项可取：
 \[
-    R_n(x)=o\big((x-x_0)^n\big)\quad\text{或}\quad R_n(x)=\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1}。
+    R_n(x)=o\big((x-x_0)^n\big)\quad\text{或}\quad R_n(x)=\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1}.
 \]
 
 \textbf{常用场景：}
@@ -203,30 +203,30 @@ $F(x)=[f'(x)-f(x)]e^x$。
     \item 求极限；
     \item 判断无穷小阶；
     \item 求 $f^{(n)}(x_0)$；
-    \item 证明估值问题。
+    \item 证明估值问题.
 \end{enumerate}
 
 \textbf{$x_0$ 与 $x$ 的选取：}
 \begin{enumerate}
     \item $x_0$ 取使导数简单的点，如 0、1、端点；
-    \item $x$ 取任意点或关于 $x_0$ 的对称点。
+    \item $x$ 取任意点或关于 $x_0$ 的对称点.
 \end{enumerate}
 
 \section{讨论 $f(x)=0$ 的根的个数}
 
 \begin{enumerate}
     \item \textbf{零点定理及其推广：}
-          若 $f(x)$ 在 $[a,b]$ 上连续，且 $f(a)f(b)<0$，则方程 $f(x)=0$ 在 $(a,b)$ 内至少有一个根。
+          若 $f(x)$ 在 $[a,b]$ 上连续，且 $f(a)f(b)<0$，则方程 $f(x)=0$ 在 $(a,b)$ 内至少有一个根.
     \item \textbf{反证思想：}
-          若要证 $f(x)$ 存在零点，可设 $f(x)$ 无零点，按条件推矛盾；反之亦然。
+          若要证 $f(x)$ 存在零点，可设 $f(x)$ 无零点，按条件推矛盾；反之亦然.
     \item \textbf{导数工具：}
-          用 $f'(x)$ 研究函数单调性、极值性态，以判断零点个数。
+          用 $f'(x)$ 研究函数单调性、极值性态，以判断零点个数.
     \item \textbf{罗尔定理推论：}
-          若 $f^{(n)}(x)=0$ 至多有 $k$ 个根，则 $f(x)=0$ 至多有 $k+n$ 个根。
+          若 $f^{(n)}(x)=0$ 至多有 $k$ 个根，则 $f(x)=0$ 至多有 $k+n$ 个根.
     \item \textbf{实系数奇次方程：}
-          方程 $x^{2n+1}+a_1x^{2n}+\cdots+a_{2n}x+a_{2n+1}=0$ 至少有一个实根。
+          方程 $x^{2n+1}+a_1x^{2n}+\cdots+a_{2n}x+a_{2n+1}=0$ 至少有一个实根.
     \item \textbf{渐近性态：}
-          若 $\lim_{x\to+\infty}f(x)$ 与 $\lim_{x\to-\infty}f(x)$ 异号，则方程至少有一个实根。
+          若 $\lim_{x\to+\infty}f(x)$ 与 $\lim_{x\to-\infty}f(x)$ 异号，则方程至少有一个实根.
 \end{enumerate}
 
 \section{证明不等式}
@@ -235,11 +235,11 @@ $F(x)=[f'(x)-f(x)]e^x$。
     \item \textbf{用单调性：}
           \begin{enumerate}
               \item 若 $\displaystyle\lim_{x\to a^+}F(x)\ge0$ 且 $F'(x)\ge0$，则 $(a,b)$ 内 $F(x)\ge0$；
-              \item 若 $\displaystyle\lim_{x\to b^-}F(x)\ge0$ 且 $F'(x)\le0$，则 $(a,b)$ 内 $F(x)\ge0$。
+              \item 若 $\displaystyle\lim_{x\to b^-}F(x)\ge0$ 且 $F'(x)\le0$，则 $(a,b)$ 内 $F(x)\ge0$.
           \end{enumerate}
 
     \item \textbf{用最值：}
-          若 $F(x)$ 在 $(a,b)$ 有最小值 $m$，则 $F(x)\ge m$；若有最大值 $M$，则 $F(x)\le M$。
+          若 $F(x)$ 在 $(a,b)$ 有最小值 $m$，则 $F(x)\ge m$；若有最大值 $M$，则 $F(x)\le M$.
 
     \item \textbf{用凹凸性：}
           若 $F''(x)>0$，则：
@@ -247,17 +247,17 @@ $F(x)=[f'(x)-f(x)]e^x$。
               \item $\displaystyle \frac{F(x_1)+F(x_2)}{2}\ge F\!\left(\frac{x_1+x_2}{2}\right)$；
               \item 对任意 $\lambda_1,\lambda_2>0$ 且 $\lambda_1+\lambda_2=1$，有
                     $\lambda_1F(x_1)+\lambda_2F(x_2)\ge F(\lambda_1x_1+\lambda_2x_2)$；
-              \item 对任意 $x\ne x_0$，有 $F(x)\ge F(x_0)+F'(x_0)(x-x_0)$。
+              \item 对任意 $x\ne x_0$，有 $F(x)\ge F(x_0)+F'(x_0)(x-x_0)$.
           \end{enumerate}
-          若 $F''(x)<0$，则上述不等式方向反向。
+          若 $F''(x)<0$，则上述不等式方向反向.
 
     \item \textbf{用拉格朗日中值定理：}
           若 $F'(x)\ge A$（或 $\le A$），则
-          $F(b)-F(a)\ge A(b-a)$（或 $\le A(b-a)$）。
+          $F(b)-F(a)\ge A(b-a)$（或 $\le A(b-a)$）.
 
     \item \textbf{用柯西中值定理：}
           若 $\dfrac{F'(x)}{G'(x)}\ge A$（或 $\le A$），则
-          $\dfrac{F(b)-F(a)}{G(b)-G(a)}\ge A$（或 $\le A$）。
+          $\dfrac{F(b)-F(a)}{G(b)-G(a)}\ge A$（或 $\le A$）.
 
     \item \textbf{用带余项的泰勒公式：}
           若 $F''(x)$ 存在且恒 $>0$（或 $<0$），则在 $x_0$ 处展开：
@@ -265,23 +265,23 @@ $F(x)=[f'(x)-f(x)]e^x$。
               F(x)=F(x_0)+F'(x_0)(x-x_0)+\frac{1}{2}F''(\xi)(x-x_0)^2,
           \]
           其中 $\xi$ 介于 $x$ 与 $x_0$，从而有
-          $F(x)\ge F(x_0)+F'(x_0)(x-x_0)$（或反向不等式）。
+          $F(x)\ge F(x_0)+F'(x_0)(x-x_0)$（或反向不等式）.
 \end{enumerate}
 
 \section{求解含参等式或不等式问题}
 
 \begin{enumerate}
     \item \textbf{导数中不含参数：}
-          辅助函数 $f'(x)$ 不含参数。研究函数性态时不考虑参数，最后再根据参数取值讨论与 $x$ 轴位置关系。
+          辅助函数 $f'(x)$ 不含参数.研究函数性态时不考虑参数，最后再根据参数取值讨论与 $x$ 轴位置关系.
     \item \textbf{导数中含参数：}
-          辅助函数 $f'(x)$ 含参数。研究性态时需分类讨论参数取值。常见形式：
+          辅助函数 $f'(x)$ 含参数.研究性态时需分类讨论参数取值.常见形式：
           \begin{enumerate}
               \item 函数型：$f(x)=k$ 或 $f(x,k)$；
               \item 参数方程型：
                     \[
                         \begin{cases}
                             x = x(t,k), \\
-                            y = y(t,k)。
+                            y = y(t,k).
                         \end{cases}
                     \]
           \end{enumerate}

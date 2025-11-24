@@ -4,147 +4,147 @@
 
 \subsection*{(1) 离散型$\rightarrow$离散型}
 \begin{enumerate}
-      \item 若 $(X,Y)\sim p_{ij}$，$Z=g(X,Y)$，则
-            $$
-                  Z\sim q_k, \quad q_k = \sum_{g(x_i,y_j)=z_k} p_{ij}.
-            $$
-      \item 若 $X\sim p_i$, $Y\sim q_j$ 且相互独立，可考
-            $$Z=X+Y,\; XY,\; \max\{X,Y\},\; \min\{X,Y\},$$
-            等离散型函数。
+    \item 若 $(X,Y)\sim p_{ij}$，$Z=g(X,Y)$，则
+          $$
+              Z\sim q_k, \quad q_k = \sum_{g(x_i,y_j)=z_k} p_{ij}.
+          $$
+    \item 若 $X\sim p_i$, $Y\sim q_j$ 且相互独立，可考
+          $$Z=X+Y,\; XY,\; \max\{X,Y\},\; \min\{X,Y\},$$
+          等离散型函数.
 \end{enumerate}
 
 
 \subsection*{(2) 连续型$\rightarrow$连续型}
 
 \begin{enumerate}
-      \item \textbf{分布函数法}
-            $$
-                  (X,Y)\sim f(x,y), \quad Z=g(X,Y),
-            $$
-            则
-            $$
-                  F_Z(z)=P\{g(X,Y)\le z\}=\iint_{g(x,y)\le z} f(x,y)\,dx\,dy,
-                  \qquad f_Z(z)=F_Z'(z).
-            $$
+    \item \textbf{分布函数法}
+          $$
+              (X,Y)\sim f(x,y), \quad Z=g(X,Y),
+          $$
+          则
+          $$
+              F_Z(z)=P\{g(X,Y)\le z\}=\iint_{g(x,y)\le z} f(x,y)\,dx\,dy,
+              \qquad f_Z(z)=F_Z'(z).
+          $$
 
-      \item \textbf{换元法（雅可比法）}
-            \begin{itemize}
-                  \item 设 $\begin{cases} u=u(x,y), \\ v=v(x,y) \end{cases}$ 连续可微，存在反函数 $\begin{cases} x=x(u,v), \\ y=y(u,v) \end{cases}$，
-                        且
-                        $$
-                              J=\frac{\partial(x,y)}{\partial(u,v)}
-                              =\begin{vmatrix}
-                                    \dfrac{\partial x}{\partial u} & \dfrac{\partial x}{\partial v} \\[4pt]
-                                    \dfrac{\partial y}{\partial u} & \dfrac{\partial y}{\partial v}
-                              \end{vmatrix}\neq 0.
-                        $$
-                  \item 则 $(U,V)$ 的联合密度为
-                        $$
-                              f_{U,V}(u,v)=f[x(u,v),y(u,v)]\cdot|J|.
-                        $$
-                  \item 边缘密度：
-                        $$
-                              f_U(u)=\int_{-\infty}^{+\infty}f_{U,V}(u,v)\,dv, \quad
-                              f_V(v)=\int_{-\infty}^{+\infty}f_{U,V}(u,v)\,du.
-                        $$
-            \end{itemize}
+    \item \textbf{换元法（雅可比法）}
+          \begin{itemize}
+              \item 设 $\begin{cases} u=u(x,y), \\ v=v(x,y) \end{cases}$ 连续可微，存在反函数 $\begin{cases} x=x(u,v), \\ y=y(u,v) \end{cases}$，
+                    且
+                    $$
+                        J=\frac{\partial(x,y)}{\partial(u,v)}
+                        =\begin{vmatrix}
+                            \dfrac{\partial x}{\partial u} & \dfrac{\partial x}{\partial v} \\[4pt]
+                            \dfrac{\partial y}{\partial u} & \dfrac{\partial y}{\partial v}
+                        \end{vmatrix}\neq 0.
+                    $$
+              \item 则 $(U,V)$ 的联合密度为
+                    $$
+                        f_{U,V}(u,v)=f[x(u,v),y(u,v)]\cdot|J|.
+                    $$
+              \item 边缘密度：
+                    $$
+                        f_U(u)=\int_{-\infty}^{+\infty}f_{U,V}(u,v)\,dv, \quad
+                        f_V(v)=\int_{-\infty}^{+\infty}f_{U,V}(u,v)\,du.
+                    $$
+          \end{itemize}
 
-      \item \textbf{最值函数的分布}
-            \begin{enumerate}
-                  \item 最大值：
-                        $$
-                              Z=\max\{X,Y\},\quad F_{\max}(z)=P\{\max(X,Y)\le z\}=P\{X\le z, Y\le z\}=F(z,z).
-                        $$
-                        若 $X,Y$ 独立：
-                        $$
-                              F_{\max}(z)=F_X(z)F_Y(z).
-                        $$
+    \item \textbf{最值函数的分布}
+          \begin{enumerate}
+              \item 最大值：
+                    $$
+                        Z=\max\{X,Y\},\quad F_{\max}(z)=P\{\max(X,Y)\le z\}=P\{X\le z, Y\le z\}=F(z,z).
+                    $$
+                    若 $X,Y$ 独立：
+                    $$
+                        F_{\max}(z)=F_X(z)F_Y(z).
+                    $$
 
-                  \item 最小值：
-                        $$
-                              Z=\min\{X,Y\},\quad F_{\min}(z)=P\{\min(X,Y)\le z\}
-                              =F_X(z)+F_Y(z)-F(z,z).
-                        $$
-                        若 $X,Y$ 独立：
-                        $$
-                              F_{\min}(z)=1-[1-F_X(z)][1-F_Y(z)].
-                        $$
-            \end{enumerate}
+              \item 最小值：
+                    $$
+                        Z=\min\{X,Y\},\quad F_{\min}(z)=P\{\min(X,Y)\le z\}
+                        =F_X(z)+F_Y(z)-F(z,z).
+                    $$
+                    若 $X,Y$ 独立：
+                    $$
+                        F_{\min}(z)=1-[1-F_X(z)][1-F_Y(z)].
+                    $$
+          \end{enumerate}
 
-            \textbf{推广到 $n$ 个独立随机变量 $X_1,\dots,X_n$：}
-            $$
-                  F_{\max}(z)=\prod_{i=1}^n F_{X_i}(z),\quad
-                  F_{\min}(z)=1-\prod_{i=1}^n[1-F_{X_i}(z)].
-            $$
-            若 $X_i$ 同分布（$F,f$）：
-            $$
-                  F_{\max}(z)=[F(z)]^n,\quad f_{\max}(z)=n[F(z)]^{n-1}f(z),
-            $$
-            $$
-                  F_{\min}(z)=1-[1-F(z)]^n,\quad f_{\min}(z)=n[1-F(z)]^{n-1}f(z).
-            $$
+          \textbf{推广到 $n$ 个独立随机变量 $X_1,\dots,X_n$：}
+          $$
+              F_{\max}(z)=\prod_{i=1}^n F_{X_i}(z),\quad
+              F_{\min}(z)=1-\prod_{i=1}^n[1-F_{X_i}(z)].
+          $$
+          若 $X_i$ 同分布（$F,f$）：
+          $$
+              F_{\max}(z)=[F(z)]^n,\quad f_{\max}(z)=n[F(z)]^{n-1}f(z),
+          $$
+          $$
+              F_{\min}(z)=1-[1-F(z)]^n,\quad f_{\min}(z)=n[1-F(z)]^{n-1}f(z).
+          $$
 \end{enumerate}
 ---
 
 \subsection*{(3) 离散型、连续型混合}
-设 $X\sim p_i$, $Y\sim f_Y(y)$, $Z=g(X,Y)$。
+设 $X\sim p_i$, $Y\sim f_Y(y)$, $Z=g(X,Y)$.
 
 \begin{enumerate}
-      \item 若 $X,Y$ 独立，用全概率公式：
-            $$
-                  F_Z(z)=\sum_i p_i P\{g(x_i,Y)\le z\}=\sum_i p_i \int_{g(x_i,y)\le z} f_Y(y)\,dy.
-            $$
-      \item 若 $X,Y$ 不独立，直接使用分布函数法。
+    \item 若 $X,Y$ 独立，用全概率公式：
+          $$
+              F_Z(z)=\sum_i p_i P\{g(x_i,Y)\le z\}=\sum_i p_i \int_{g(x_i,y)\le z} f_Y(y)\,dy.
+          $$
+    \item 若 $X,Y$ 不独立，直接使用分布函数法.
 \end{enumerate}
 
 
 \section{一维$\rightarrow$多维}
 
 \begin{enumerate}
-      \item 离散型：
-            $$
-                  X\sim p_i,\;
-                  \begin{cases}U=g(X),\\V=h(X)\end{cases}
-                  \Rightarrow (U,V)\sim q_{ij}.
-            $$
-      \item 连续型：
-            $$
-                  X\sim f(x),\;
-                  \begin{cases}U=g(X),\\V=h(X)\end{cases}
-                  \Rightarrow (U,V)\sim f_{U,V}(u,v)\text{ 或 }p_{ij}.
-            $$
+    \item 离散型：
+          $$
+              X\sim p_i,\;
+              \begin{cases}U=g(X),\\V=h(X)\end{cases}
+              \Rightarrow (U,V)\sim q_{ij}.
+          $$
+    \item 连续型：
+          $$
+              X\sim f(x),\;
+              \begin{cases}U=g(X),\\V=h(X)\end{cases}
+              \Rightarrow (U,V)\sim f_{U,V}(u,v)\text{ 或 }p_{ij}.
+          $$
 \end{enumerate}
 
 
 \section{多维$\rightarrow$多维}
 
 \begin{enumerate}
-      \item 离散型：
-            $$
-                  (X,Y)\sim p_{ij},\;
-                  \begin{cases}U=g(X,Y),\\V=h(X,Y)\end{cases}
-                  \Rightarrow (U,V)\sim q_{ij}.
-            $$
-      \item 连续型：
-            $$
-                  (X,Y)\sim f(x,y),\;
-                  \begin{cases}U=g(X,Y),\\V=h(X,Y)\end{cases}
-                  \Rightarrow (U,V)\sim f_{U,V}(u,v)\text{ 或 }p_{ij}.
-            $$
-      \item 混合型：
-            $$
-                  X\sim p_i,\;Y\sim f_Y(y),\;
-                  \begin{cases}U=g(X,Y),\\V=h(X,Y)\end{cases}
-                  \Rightarrow (U,V)\sim q_{ij}.
-            $$
+    \item 离散型：
+          $$
+              (X,Y)\sim p_{ij},\;
+              \begin{cases}U=g(X,Y),\\V=h(X,Y)\end{cases}
+              \Rightarrow (U,V)\sim q_{ij}.
+          $$
+    \item 连续型：
+          $$
+              (X,Y)\sim f(x,y),\;
+              \begin{cases}U=g(X,Y),\\V=h(X,Y)\end{cases}
+              \Rightarrow (U,V)\sim f_{U,V}(u,v)\text{ 或 }p_{ij}.
+          $$
+    \item 混合型：
+          $$
+              X\sim p_i,\;Y\sim f_Y(y),\;
+              \begin{cases}U=g(X,Y),\\V=h(X,Y)\end{cases}
+              \Rightarrow (U,V)\sim q_{ij}.
+          $$
 \end{enumerate}
 
 
 \section*{小结}
 \begin{itemize}
-      \item 多维 $\to$ 一维：常用分布函数法、换元法、最值法。
-      \item 一维 $\to$ 多维：常由函数对映 $(U,V)=(g(X),h(X))$ 构造。
-      \item 换元法关键在雅可比行列式 $J$。
-      \item 最值函数分布为命题型常考，记忆：
-            $$F_{\max}(z)=[F(z)]^n,\quad F_{\min}(z)=1-[1-F(z)]^n.$$
+    \item 多维 $\to$ 一维：常用分布函数法、换元法、最值法.
+    \item 一维 $\to$ 多维：常由函数对映 $(U,V)=(g(X),h(X))$ 构造.
+    \item 换元法关键在雅可比行列式 $J$.
+    \item 最值函数分布为命题型常考，记忆：
+          $$F_{\max}(z)=[F(z)]^n,\quad F_{\min}(z)=1-[1-F(z)]^n.$$
 \end{itemize}

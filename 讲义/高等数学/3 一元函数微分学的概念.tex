@@ -11,7 +11,7 @@
 \[
     f(x) - f(x_0) = f'(x_0)\Delta x + o(1)\Delta x = f'(x_0)\Delta x + o(\Delta x) \quad (\Delta x \to 0).
 \]
-此即为 \textbf{微分公式}，亦称 \textbf{一阶泰勒公式}。
+此即为 \textbf{微分公式}，亦称 \textbf{一阶泰勒公式}.
 
 \section{导数——因变量差与自变量差的比值极限}
 \DTwoTwo
@@ -26,14 +26,14 @@
     f(x_0 + \Delta x) - f(x_0)
     = f'(x_0)\Delta x + o(\Delta x), \quad \Delta x \to 0.
 \]
-其中 $f'(x_0)$ 为一次项系数，也称 \textbf{微分系数}。
-它反映了因变量增量与自变量增量的一次项比值的极限。若该极限存在，则称 $f(x)$ 在 $x_0$ 处可导。
+其中 $f'(x_0)$ 为一次项系数，也称 \textbf{微分系数}.
+它反映了因变量增量与自变量增量的一次项比值的极限.若该极限存在，则称 $f(x)$ 在 $x_0$ 处可导.
 
 \section{$f(x)$ 与 $|f(x)|$ 的连续与可导关系}
 \DTwoOne+\DFourThree
 
 \begin{enumerate}
-    \item 若 $f(x)$ 在 $x_0$ 处连续，则 $|f(x)|$ 在 $x_0$ 处亦连续；反之不成立。
+    \item 若 $f(x)$ 在 $x_0$ 处连续，则 $|f(x)|$ 在 $x_0$ 处亦连续；反之不成立.
     \item 若 $f(x)$ 在 $x_0$ 处可导，则：
           \begin{enumerate}
               \item 若 $f(x_0) \neq 0$，则 $|f(x)|$ 在 $x_0$ 处可导，且
@@ -48,7 +48,7 @@
                     \[
                         \begin{cases}
                             f'(x_0) = 0 \Rightarrow |f(x)| \text{ 在 } x_0 \text{ 处可导，且 } [|f(x)|]'_{x=x_0}=0, \\[5pt]
-                            f'(x_0) \ne 0 \Rightarrow |f(x)| \text{ 在 } x_0 \text{ 处不可导。}
+                            f'(x_0) \ne 0 \Rightarrow |f(x)| \text{ 在 } x_0 \text{ 处不可导.}
                         \end{cases}
                     \]
           \end{enumerate}
@@ -62,18 +62,18 @@
           \begin{enumerate}
               \item 若导函数 $f'(x)$ 存在，则当 $f'(x)$ 在某点极限存在时，该点处导函数连续；
               \item 若导函数在某点存在，则该点 \textbf{不可能是第一类间断点}；
-              \item 若 $f(x)$ 可导，则 $f'(x)$ 可能连续，也可能含有振荡间断点。
+              \item 若 $f(x)$ 可导，则 $f'(x)$ 可能连续，也可能含有振荡间断点.
           \end{enumerate}
 
     \item 关于 $\lim\limits_{x\to+\infty} f'(x)$：
           \begin{enumerate}
-              \item 若 $\lim\limits_{x\to+\infty} f(x)$ 存在，$\lim\limits_{x\to+\infty} f'(x)$ 不一定存在。
+              \item 若 $\lim\limits_{x\to+\infty} f(x)$ 存在，$\lim\limits_{x\to+\infty} f'(x)$ 不一定存在.
                     例如：$f(x)=\dfrac{\sin x^2}{x}$，
-                    则 $f'(x)=2\cos x^2 - \dfrac{\sin x^2}{x^2}$，其极限不存在。
+                    则 $f'(x)=2\cos x^2 - \dfrac{\sin x^2}{x^2}$，其极限不存在.
               \item 若 $f(x)$ 在 $(0,+\infty)$ 可导，且 $y=f(x)$ 在 $x\to+\infty$ 时有斜渐近线，
-                    $\lim\limits_{x\to+\infty} f'(x)$ 也不一定存在。
+                    $\lim\limits_{x\to+\infty} f'(x)$ 也不一定存在.
                     例如：$f(x)=x+\dfrac{\sin x^2}{x}$，
-                    有斜渐近线 $y=x$，但 $f'(x)=1+2\cos x^2-\dfrac{\sin x^2}{x^2}$，其极限不存在。
+                    有斜渐近线 $y=x$，但 $f'(x)=1+2\cos x^2-\dfrac{\sin x^2}{x^2}$，其极限不存在.
           \end{enumerate}
 \end{enumerate}
 
@@ -85,7 +85,7 @@
               \item $f'(x_0)$ 表示函数在点 $x_0$ 处的导数；
               \item $f'(x)$ 表示用求导法则求得的导函数表达式；
               \item 若 $f'(x)$ 在 $x_0$ 处无定义，仅说明求导法则在此点不适用，
-                    并不意味着 $f(x)$ 在 $x_0$ 处不可导，此时应当\textbf{使用定义求导}。
+                    并不意味着 $f(x)$ 在 $x_0$ 处不可导，此时应当\textbf{使用定义求导}.
           \end{enumerate}
 
     \item \textbf{绝对值型函数的可导性}
@@ -96,7 +96,7 @@
                         F(x) \text{ 在 } x_0 \text{ 处可导 } \Longleftrightarrow g(x_0)=0.
                     \]
                     特别地，若 $F(x)=|x-x_0|g(x)$，且 $g(x)$ 在 $x_0$ 处可导，
-                    则 $F(x)$ 在 $x_0$ 处可导 $\Longleftrightarrow g(x_0)=0$。
+                    则 $F(x)$ 在 $x_0$ 处可导 $\Longleftrightarrow g(x_0)=0$.
               \item 由 $|f(x)| = \sqrt{f^2(x)}$ 得
                     \[
                         [|f(x)|]' = [\sqrt{f^2(x)}]'
@@ -108,7 +108,7 @@
     \item \textbf{分段函数在分段点处的可导性}
 
           \begin{example}{}{}
-              下列函数中，在 $x=0$ 处不可导的是（　）。
+              下列函数中，在 $x=0$ 处不可导的是（　）.
 
               \vspace{0.5em}
               \begin{tabular}{ll}
@@ -146,8 +146,8 @@
                             f'(0)=\lim_{x\to0}\frac{\cos\sqrt{|x|}-1}{x}
                             =\lim_{x\to0}\frac{-\frac{1}{2}|x|}{x},
                         \]
-                        左、右极限符号相反，极限不存在，因此 $f'(0)$ 不存在。
+                        左、右极限符号相反，极限不存在，因此 $f'(0)$ 不存在.
               \end{enumerate}
-              \textbf{故选：} (D)。
+              \textbf{故选：} (D).
           \end{solution}
 \end{enumerate}

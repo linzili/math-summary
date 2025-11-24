@@ -4,65 +4,65 @@
 \DOne + \DTwoTwo
 
 \begin{enumerate}
-      \item \textbf{分布函数判定}
-            \begin{enumerate}
-                  \item \textbf{充要条件：}
-                        \[
-                              F(x)\text{ 是分布函数 } \Leftrightarrow
-                              \begin{cases}
-                                    F(x) \text{ 单调不减且右连续}, \\
-                                    F(-\infty)=0,\quad F(+\infty)=1.
-                              \end{cases}
-                        \]
+    \item \textbf{分布函数判定}
+          \begin{enumerate}
+              \item \textbf{充要条件：}
+                    \[
+                        F(x)\text{ 是分布函数 } \Leftrightarrow
+                        \begin{cases}
+                            F(x) \text{ 单调不减且右连续}, \\
+                            F(-\infty)=0,\quad F(+\infty)=1.
+                        \end{cases}
+                    \]
 
-                  \item \textbf{典型形式：}
-                        \begin{enumerate}
-                              \item 若 $F_i(x)$ 为分布函数，$\lambda_i>0,\ \sum\lambda_i=1$，则 $\sum\lambda_iF_i(x)$ 仍为分布函数；
-                              \item 若 $F(x)$ 为分布函数，则其平移均值
-                                    \[
-                                          \frac{1}{T}\int_x^{x+T}F(t)\,dt
-                                    \]
-                                    仍为分布函数；
-                              \item 几何平均 $\sqrt{F_1(x)F_2(x)}$ 为分布函数；
-                              \item $[F(x)]^n$ 与 $1-[1-F(x)]^n$ 亦为分布函数。
-                        \end{enumerate}
-            \end{enumerate}
+              \item \textbf{典型形式：}
+                    \begin{enumerate}
+                        \item 若 $F_i(x)$ 为分布函数，$\lambda_i>0,\ \sum\lambda_i=1$，则 $\sum\lambda_iF_i(x)$ 仍为分布函数；
+                        \item 若 $F(x)$ 为分布函数，则其平移均值
+                              \[
+                                  \frac{1}{T}\int_x^{x+T}F(t)\,dt
+                              \]
+                              仍为分布函数；
+                        \item 几何平均 $\sqrt{F_1(x)F_2(x)}$ 为分布函数；
+                        \item $[F(x)]^n$ 与 $1-[1-F(x)]^n$ 亦为分布函数.
+                    \end{enumerate}
+          \end{enumerate}
 
-      \item \textbf{分布律判定}
-            \[
-                  \{p_i\}\text{ 为概率分布 } \Leftrightarrow p_i\ge0,\ \sum_i p_i=1.
-            \]
+    \item \textbf{分布律判定}
+          \[
+              \{p_i\}\text{ 为概率分布 } \Leftrightarrow p_i\ge0,\ \sum_i p_i=1.
+          \]
 
-      \item \textbf{概率密度判定}
-            \begin{enumerate}
-                  \item \textbf{充要条件：}
-                        \[
-                              f(x)\text{ 为概率密度 } \Leftrightarrow
-                              f(x)\ge0,\quad
-                              \int_{-\infty}^{+\infty}f(x)\,dx=1.
-                        \]
-                  \item \textbf{常见构造形式：}
-                        \begin{enumerate}
-                              \item 若 $f_i(x)$ 为概率密度，$\sum\lambda_i=1$，则 $\sum\lambda_i f_i(x)$ 仍为密度；
-                              \item 平均形式 $\dfrac{1}{T}\!\int_x^{x+T}\!f(t)\,dt$；
-                              \item 混合型：$\dfrac{2}{n}\sum F_i(x)f_i(x)$；
-                              \item 累积分布组合：
-                                    \[
-                                          f_1F_2\cdots F_n + F_1f_2\cdots F_n + \cdots + F_1F_2\cdots f_n;
-                                    \]
-                              \item 若 $F,f$ 对应，则 $n[F(x)]^{n-1}f(x)$、$n[1-F(x)]^{n-1}f(x)$ 皆为密度。
-                        \end{enumerate}
-            \end{enumerate}
+    \item \textbf{概率密度判定}
+          \begin{enumerate}
+              \item \textbf{充要条件：}
+                    \[
+                        f(x)\text{ 为概率密度 } \Leftrightarrow
+                        f(x)\ge0,\quad
+                        \int_{-\infty}^{+\infty}f(x)\,dx=1.
+                    \]
+              \item \textbf{常见构造形式：}
+                    \begin{enumerate}
+                        \item 若 $f_i(x)$ 为概率密度，$\sum\lambda_i=1$，则 $\sum\lambda_i f_i(x)$ 仍为密度；
+                        \item 平均形式 $\dfrac{1}{T}\!\int_x^{x+T}\!f(t)\,dt$；
+                        \item 混合型：$\dfrac{2}{n}\sum F_i(x)f_i(x)$；
+                        \item 累积分布组合：
+                              \[
+                                  f_1F_2\cdots F_n + F_1f_2\cdots F_n + \cdots + F_1F_2\cdots f_n;
+                              \]
+                        \item 若 $F,f$ 对应，则 $n[F(x)]^{n-1}f(x)$、$n[1-F(x)]^{n-1}f(x)$ 皆为密度.
+                    \end{enumerate}
+          \end{enumerate}
 
-      \item \textbf{反问题：建立方程求参数}
-            \[
-                  \begin{cases}
-                        F(-\infty)=0, \\
-                        F(+\infty)=1, \\
-                        \sum p_i = 1, \\
-                        \int_{-\infty}^{+\infty} f(x)\,dx = 1.
-                  \end{cases}
-            \]
+    \item \textbf{反问题：建立方程求参数}
+          \[
+              \begin{cases}
+                  F(-\infty)=0, \\
+                  F(+\infty)=1, \\
+                  \sum p_i = 1, \\
+                  \int_{-\infty}^{+\infty} f(x)\,dx = 1.
+              \end{cases}
+          \]
 \end{enumerate}
 
 
@@ -71,114 +71,114 @@
 
 \subsection{离散型分布}
 \begin{enumerate}
-      \item \textbf{0-1分布（伯努利试验）}
-            \[
-                  X\sim B(1,p),\quad P(X=1)=p,\ P(X=0)=1-p.
-            \]
+    \item \textbf{0-1分布（伯努利试验）}
+          \[
+              X\sim B(1,p),\quad P(X=1)=p,\ P(X=0)=1-p.
+          \]
 
-      \item \textbf{二项分布}
-            \[
-                  X\sim B(n,p),\quad P(X=k)=C_n^k p^k(1-p)^{n-k},
-            \]
-            \[
-                  E X = np,\quad D X = np(1-p).
-            \]
-            性质：
-            \begin{itemize}
-                  \item $Y=n-X\sim B(n,1-p)$；
-                  \item 概率$P(X=k)$先增后减，最大值在$k=\lfloor (n+1)p\rfloor$附近。
-            \end{itemize}
+    \item \textbf{二项分布}
+          \[
+              X\sim B(n,p),\quad P(X=k)=C_n^k p^k(1-p)^{n-k},
+          \]
+          \[
+              E X = np,\quad D X = np(1-p).
+          \]
+          性质：
+          \begin{itemize}
+              \item $Y=n-X\sim B(n,1-p)$；
+              \item 概率$P(X=k)$先增后减，最大值在$k=\lfloor (n+1)p\rfloor$附近.
+          \end{itemize}
 
-      \item \textbf{几何分布（首次成功试验次数）}
-            \[
-                  P(X=k)=p(1-p)^{k-1},\quad k=1,2,\dots;\quad E X=\tfrac{1}{p},\ D X=\tfrac{1-p}{p^2}.
-            \]
+    \item \textbf{几何分布（首次成功试验次数）}
+          \[
+              P(X=k)=p(1-p)^{k-1},\quad k=1,2,\dots;\quad E X=\tfrac{1}{p},\ D X=\tfrac{1-p}{p^2}.
+          \]
 
-      \item \textbf{超几何分布}
-            \[
-                  P(X=k)=\frac{C_M^kC_{N-M}^{n-k}}{C_N^n},\quad E X=\frac{nM}{N}.
-            \]
+    \item \textbf{超几何分布}
+          \[
+              P(X=k)=\frac{C_M^kC_{N-M}^{n-k}}{C_N^n},\quad E X=\frac{nM}{N}.
+          \]
 
-      \item \textbf{泊松分布}
-            \[
-                  P(X=k)=\frac{\lambda^k e^{-\lambda}}{k!},\quad E X = D X = \lambda.
-            \]
-            用于描述稀有事件次数。
+    \item \textbf{泊松分布}
+          \[
+              P(X=k)=\frac{\lambda^k e^{-\lambda}}{k!},\quad E X = D X = \lambda.
+          \]
+          用于描述稀有事件次数.
 \end{enumerate}
 
 
 \subsection{连续型分布}
 
 \begin{enumerate}
-      \item \textbf{均匀分布} $U(a,b)$
-            \[
-                  f(x)=
-                  \begin{cases}
-                        \dfrac{1}{b-a}, & a<x<b,     \\
-                        0,              & \text{其他},
-                  \end{cases}\quad
-                  F(x)=
-                  \begin{cases}
-                        0,                & x<a,      \\
-                        \dfrac{x-a}{b-a}, & a\le x<b, \\
-                        1,                & x\ge b.
-                  \end{cases}
-            \]
-            $E X=\tfrac{a+b}{2},\quad D X=\tfrac{(b-a)^2}{12}.$
+    \item \textbf{均匀分布} $U(a,b)$
+          \[
+              f(x)=
+              \begin{cases}
+                  \dfrac{1}{b-a}, & a<x<b,     \\
+                  0,              & \text{其他},
+              \end{cases}\quad
+              F(x)=
+              \begin{cases}
+                  0,                & x<a,      \\
+                  \dfrac{x-a}{b-a}, & a\le x<b, \\
+                  1,                & x\ge b.
+              \end{cases}
+          \]
+          $E X=\tfrac{a+b}{2},\quad D X=\tfrac{(b-a)^2}{12}.$
 
-      \item \textbf{指数分布（连续型首次冲击）}
-            \[
-                  f(x)=
-                  \begin{cases}
-                        \lambda e^{-\lambda x}, & x\ge0, \\
-                        0,                      & x<0,
-                  \end{cases}\quad
-                  F(x)=1-e^{-\lambda x}.
-            \]
-            \[
-                  E X=\tfrac{1}{\lambda},\quad D X=\tfrac{1}{\lambda^2}.
-            \]
-            无记忆性：$P(X>t+s\mid X>t)=P(X>s)$。
+    \item \textbf{指数分布（连续型首次冲击）}
+          \[
+              f(x)=
+              \begin{cases}
+                  \lambda e^{-\lambda x}, & x\ge0, \\
+                  0,                      & x<0,
+              \end{cases}\quad
+              F(x)=1-e^{-\lambda x}.
+          \]
+          \[
+              E X=\tfrac{1}{\lambda},\quad D X=\tfrac{1}{\lambda^2}.
+          \]
+          无记忆性：$P(X>t+s\mid X>t)=P(X>s)$.
 
-            \begin{note}{}{}
-                  特殊关系：
-                  \[
-                        E\!\left(\tfrac12\right)\equiv\chi^2(2),\quad
-                        2\lambda X\sim\chi^2(2).
-                  \]
-            \end{note}
+          \begin{note}{}{}
+              特殊关系：
+              \[
+                  E\!\left(\tfrac12\right)\equiv\chi^2(2),\quad
+                  2\lambda X\sim\chi^2(2).
+              \]
+          \end{note}
 
-      \item \textbf{自由度为1的$t$分布（标准柯西分布）}
-            \[
-                  f(x)=\frac{1}{\pi(1+x^2)},\quad X\sim t(1).
-            \]
+    \item \textbf{自由度为1的$t$分布（标准柯西分布）}
+          \[
+              f(x)=\frac{1}{\pi(1+x^2)},\quad X\sim t(1).
+          \]
 
-      \item \textbf{正态分布}
-            \[
-                  f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}},\quad
-                  X\sim N(\mu,\sigma^2).
-            \]
-            \begin{note}{}{}
-                  \begin{enumerate}
-                        \item 标准正态：$N(0,1)$，
-                              \[
-                                    \varphi(x)=\frac{1}{\sqrt{2\pi}}e^{-x^2/2},\quad
-                                    \Phi(x)=\int_{-\infty}^x\varphi(t)\,dt.
-                              \]
-                        \item 性质：
-                              \[
-                                    \Phi(-x)=1-\Phi(x),\quad
-                                    P(|X|\le a)=2\Phi(a)-1.
-                              \]
-                        \item 标准化：
-                              \[
-                                    Z=\frac{X-\mu}{\sigma}\sim N(0,1),
-                                    \quad F(x)=\Phi\!\left(\frac{x-\mu}{\sigma}\right).
-                              \]
-                        \item 含参数密度$f(x)=ke^{-(ax^2+bx+c)}$，
-                              其规范化常数$k=\sqrt{\frac{a}{\pi}}e^{\frac{4ac-b^2}{4a}}$。
-                  \end{enumerate}
-            \end{note}
+    \item \textbf{正态分布}
+          \[
+              f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}},\quad
+              X\sim N(\mu,\sigma^2).
+          \]
+          \begin{note}{}{}
+              \begin{enumerate}
+                  \item 标准正态：$N(0,1)$，
+                        \[
+                            \varphi(x)=\frac{1}{\sqrt{2\pi}}e^{-x^2/2},\quad
+                            \Phi(x)=\int_{-\infty}^x\varphi(t)\,dt.
+                        \]
+                  \item 性质：
+                        \[
+                            \Phi(-x)=1-\Phi(x),\quad
+                            P(|X|\le a)=2\Phi(a)-1.
+                        \]
+                  \item 标准化：
+                        \[
+                            Z=\frac{X-\mu}{\sigma}\sim N(0,1),
+                            \quad F(x)=\Phi\!\left(\frac{x-\mu}{\sigma}\right).
+                        \]
+                  \item 含参数密度$f(x)=ke^{-(ax^2+bx+c)}$，
+                        其规范化常数$k=\sqrt{\frac{a}{\pi}}e^{\frac{4ac-b^2}{4a}}$.
+              \end{enumerate}
+          \end{note}
 \end{enumerate}
 
 
@@ -186,21 +186,21 @@
 \DOne
 
 \begin{enumerate}
-      \item 若 $X\sim F(x)$，则
-            \[
-                  P(X\le a)=F(a),\quad
-                  P(a<X<b)=F(b-0)-F(a),\quad
-                  P(X=a)=F(a)-F(a-0).
-            \]
-      \item 若 $X\sim p_i$，则
-            \[
-                  P(X\in I)=\sum_{x_i\in I}p_i.
-            \]
-      \item 若 $X\sim f(x)$，则
-            \[
-                  P(X\in I)=\int_I f(x)\,dx.
-            \]
-      \item \textbf{反问题：}已知概率表达式，建立方程求参数。
+    \item 若 $X\sim F(x)$，则
+          \[
+              P(X\le a)=F(a),\quad
+              P(a<X<b)=F(b-0)-F(a),\quad
+              P(X=a)=F(a)-F(a-0).
+          \]
+    \item 若 $X\sim p_i$，则
+          \[
+              P(X\in I)=\sum_{x_i\in I}p_i.
+          \]
+    \item 若 $X\sim f(x)$，则
+          \[
+              P(X\in I)=\int_I f(x)\,dx.
+          \]
+    \item \textbf{反问题：}已知概率表达式，建立方程求参数.
 \end{enumerate}
 
 
@@ -209,6 +209,6 @@
 
 根据题意建立
 \[
-      F(x)=P\{X\le x\},
+    F(x)=P\{X\le x\},
 \]
-利用定义及已知条件计算并验证其合法性。
+利用定义及已知条件计算并验证其合法性.

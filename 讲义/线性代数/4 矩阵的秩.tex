@@ -1,1 +1,14 @@
 \XIANchapter{矩阵的秩}
+\section{定义}
+设 $A$ 是 $m\times n$ 矩阵，$A$ 中最大的不为零的子式的阶数称为矩阵 $A$ 的秩，记为 $r(A)$.也可以这样定义：若存在 $k$ 阶子式不为零，而任意 $k+1$ 阶子式全为零（如果有的话），则 $r(A)=k$，且若 $A$ 为 $n\times n$ 矩阵，则
+$$r(A_{n\times n})=n\Leftrightarrow|A|\neq0\Leftrightarrow A \text{可逆.}$$
+\section{公式}
+\begin{enumerate}
+    \item 设$A$ 是 m×n 矩阵，则 $0\leqslant r(A)\leqslant\min\{m,n\}.$
+    \item 设$A$ 是$m\times n$ 矩阵，则$r(kA)=r(A)(k\neq0).$
+    \item 设$A$ 是$m\times n$ 矩阵，$P,Q$分别是$m$阶、$n$阶可逆矩阵，则
+
+          $$r(A)=r(PA)=r(AQ)=r(PAQ).$$
+
+
+\end{enumerate}
